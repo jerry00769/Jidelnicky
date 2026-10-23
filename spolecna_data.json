@@ -268,12 +268,12 @@
           "category2": "RYBY"
         },
         {
-          "closed": false,
-          "soup": "hovězí s česnekovými krutony",
-          "main": "Vepřové na houbách se smetanou, Houskové knedlíky (kynuté)",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "Perkelt z kuřecího masa, Těstoviny",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "closed": true,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
