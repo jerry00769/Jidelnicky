@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová s kuskusem",
-          "main": "Rybí filé pečené na másle, Brambory",
+          "soup": "krupicová maďarská",
+          "main": "Rybí stripsy, Brambory",
           "category": "RYBY",
-          "main2": "",
-          "category2": ""
+          "main2": "Karbanátky pečené, Bramborová kaše",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "celerová se smaženým hráškem",
-          "main": "Fazole a la Katův šleh, Chléb",
+          "soup": "gulášová",
+          "main": "Livance",
+          "category": "SLADKÁ",
+          "main2": "Pekingská směs, Rýže dušená",
+          "category2": "BEZMASÁ SLANÁ"
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s těstovinovou rýží",
+          "main": "Debrecínský guláš, Těstoviny",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "Králík pečený, Bramborové knedlíky (směs)",
+          "category2": "DRŮBEŽ A KRÁLÍK"
+        },
+        {
+          "closed": false,
+          "soup": "ovarová",
+          "main": "Čočka na kyselo, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
+          "main2": "Rizoto srbské",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "rajčatová s těstovinou",
-          "main": "Masová směs \"lamendr\", Rýže dušená",
+          "soup": "bramboračka nezahuštěná",
+          "main": "Zeleninové placičky se sýrem, Brambory",
           "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "špenátová",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "česneková s bramborem a vejcem",
-          "main": "Losos přírodní, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
+          "main2": "Vepřové na paprice, Těstoviny",
+          "category2": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
