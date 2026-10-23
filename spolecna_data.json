@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "drůbková s nudlemi",
+          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "krupicová maďarská",
+          "main": "Smažené točenky s rozinkami",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "vývar s drobením",
+          "main": "Vepřové na houbách se smetanou, Houskové knedlíky (kynuté)",
+          "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "rajčatová s těstovinami",
+          "main": "Zeleninové rizoto",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "česneková s bramborem a vejcem",
+          "main": "Obalované filé s brokolicí a sýrem, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         }
