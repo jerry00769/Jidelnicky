@@ -1,0 +1,526 @@
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  color: #21314b;
+  background: #edf2f7;
+  font-size: 15px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+header {
+  background: #16345c;
+  color: white;
+  padding: 17px max(16px, calc((100vw - 1480px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+header small { opacity: .85; }
+#savedBadge { font-size: .8rem; color: #dbeafe; }
+main {
+  max-width: 1512px;
+  margin: auto;
+  padding: 16px;
+}
+.panel {
+  background: white;
+  border: 1px solid #dbe4ee;
+  border-radius: 12px;
+  padding: 17px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 7px #17304c0a;
+}
+.toolbar, .daybar, .actions {
+  display: flex;
+  gap: 9px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+.toolbar label, .block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: .86rem;
+  font-weight: 600;
+}
+.toolbar input { max-width: 165px; }
+.toolbar input[type=number] { width: 105px; }
+input, select, textarea {
+  border: 1px solid #b7c8db;
+  border-radius: 7px;
+  padding: 9px;
+  background: white;
+  color: #1c314c;
+  font: inherit;
+  min-width: 0;
+}
+textarea { width: 100%; resize: vertical; }
+button, .upload {
+  border: 0;
+  border-radius: 7px;
+  background: #1768b1;
+  color: white;
+  padding: 10px 13px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+button:hover, .upload:hover { filter: brightness(.94); }
+.alt { background: #e6eef7; color: #1d4268; }
+.danger { background: #b83243; }
+.daybar { align-items: center; }
+.daybar label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 355px;
+  gap: 15px;
+}
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 2px solid #dce7f3;
+  padding-bottom: 9px;
+}
+.heading h2 { font-size: 1.27rem; margin: 0; }
+.heading strong, .daytitle { color: #1264ae; }
+.day {
+  border-bottom: 1px solid #e3e9f1;
+  padding: 14px 0;
+}
+.day:last-child { border: 0; }
+.daytitle {
+  font-size: 1.06rem;
+  font-weight: 750;
+  margin-bottom: 9px;
+}
+.meal {
+  display: grid;
+  grid-template-columns: 95px minmax(0, 1fr);
+  align-items: start;
+  gap: 8px;
+  margin: 6px 0;
+}
+.meal button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #f1f6fb;
+  color: #203d5d;
+  font-weight: 500;
+  white-space: normal;
+}
+.meal button:hover { background: #dcebf9; }
+.closed { color: #718096; font-style: italic; }
+.muted {
+  color: #66788b;
+  font-size: .86rem;
+  line-height: 1.55;
+}
+.block { margin: 10px 0; }
+.block input, .block select { width: 100%; }
+aside h2 { font-size: 1.08rem; margin: 0 0 12px; }
+aside details { margin-top: 10px; }
+#history .entry {
+  padding: 9px 0;
+  border-bottom: 1px solid #e4eaf2;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.entry button { padding: 7px 9px; font-size: .82rem; }
+.rule {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin: 9px 0;
+}
+.rule input[type=number] { width: 65px; }
+.rule input[type=checkbox] { width: 18px; height: 18px; }
+#status {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  border-radius: 9px;
+  background: #173b64;
+  color: white;
+  box-shadow: 0 8px 25px #1234;
+  max-width: calc(100vw - 24px);
+  display: none;
+  z-index: 10;
+}
+#status.error { background: #a82b37; }
+dialog {
+  border: 0;
+  border-radius: 13px;
+  padding: 20px;
+  width: min(760px, 95vw);
+  max-height: 88vh;
+  box-shadow: 0 16px 80px #0005;
+}
+dialog::backdrop { background: #10233b99; }
+.dialogtop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.dialogtop h2 { margin: 0 0 12px; }
+#search { width: 100%; margin-bottom: 12px; }
+#choices { max-height: 58vh; overflow: auto; }
+.choice {
+  display: block;
+  width: 100%;
+  margin: 3px 0;
+  text-align: left;
+  background: #f2f6fb;
+  color: #1e3858;
+  font-weight: 500;
+}
+.choice small { display: block; color: #61768c; }
+.empty { padding: 12px; color: #718096; }
+
+/* Tablet / narrow desktop */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  header { padding: 14px 12px; }
+  main { padding: 10px; }
+  .toolbar button { flex: 1 1 auto; }
+}
+
+/* Phones (S21 FE, Redmi Note 13 Pro+, běžné 360–430 px) */
+@media (max-width: 500px) {
+  :root { font-size: 14px; }
+  header {
+    display: block;
+    padding: 12px 10px;
+  }
+  header h1 { font-size: 1.25rem; }
+  header small { font-size: .8rem; }
+  #savedBadge {
+    display: block;
+    margin-top: 4px;
+    font-size: .75rem;
+  }
+  main { padding: 8px; }
+  .panel {
+    padding: 12px 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  .toolbar {
+    gap: 6px;
+    align-items: stretch;
+  }
+  .toolbar label {
+    flex: 1 1 120px;
+    gap: 3px;
+    font-size: .8rem;
+  }
+  .toolbar input,
+  .toolbar select {
+    width: 100%;
+    max-width: none;
+    padding: 7px 8px;
+    font-size: .9rem;
+  }
+  .toolbar input[type=number] { width: 100%; }
+  button, .upload, .help-link {
+    padding: 8px 10px;
+    font-size: .88rem;
+    border-radius: 6px;
+  }
+  .daybar {
+    gap: 6px 10px;
+    font-size: .9rem;
+  }
+  .daybar label { gap: 3px; }
+  .heading {
+    gap: 6px;
+    padding-bottom: 6px;
+  }
+  .heading h2 { font-size: 1.1rem; }
+  .day { padding: 10px 0; }
+  .daytitle {
+    font-size: .95rem;
+    margin-bottom: 6px;
+  }
+  .meal {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    margin: 4px 0;
+  }
+  .meal strong {
+    font-size: .8rem;
+    color: #4a6080;
+  }
+  .meal button {
+    padding: 8px 10px;
+    font-size: .9rem;
+  }
+  .muted { font-size: .8rem; }
+  aside h2 { font-size: 1rem; margin-bottom: 8px; }
+  .block { margin: 8px 0; gap: 3px; }
+  .block input, .block select, textarea {
+    padding: 7px 8px;
+    font-size: .9rem;
+  }
+  .rule {
+    margin: 6px 0;
+    gap: 8px;
+    font-size: .85rem;
+  }
+  .rule input[type=number] { width: 56px; padding: 6px; }
+  .rule input[type=checkbox] { width: 16px; height: 16px; }
+  #history .entry {
+    padding: 7px 0;
+    gap: 6px;
+  }
+  .entry button {
+    padding: 6px 8px;
+    font-size: .78rem;
+  }
+  .actions { gap: 6px; }
+  dialog {
+    padding: 14px 12px;
+    width: 96vw;
+    max-height: 92vh;
+    border-radius: 10px;
+  }
+  .dialogtop h2 { font-size: 1.05rem; margin-bottom: 8px; }
+  #search { padding: 8px; margin-bottom: 8px; }
+  #choices { max-height: 55vh; }
+  .choice {
+    padding: 8px 10px;
+    margin: 2px 0;
+    font-size: .9rem;
+  }
+  #status {
+    padding: 10px 14px;
+    font-size: .9rem;
+    bottom: 10px;
+  }
+}
+
+/* Extra small phones / narrow portrait */
+@media (max-width: 380px) {
+  :root { font-size: 13.5px; }
+  .toolbar label { flex: 1 1 100%; }
+  .daybar { gap: 4px 8px; }
+  button, .upload, .help-link { padding: 7px 8px; font-size: .85rem; }
+}
+
+/* History dialog */
+.help-link {
+  display: inline-flex;
+  align-items: center;
+  background: #e8edf6;
+  color: #173c70;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 7px;
+  font-weight: 700;
+}
+.history-dialog {
+  width: min(1100px, 96vw);
+  max-width: 96vw;
+  max-height: 92vh;
+}
+.history-layout {
+  display: grid;
+  grid-template-columns: minmax(210px, 32%) 1fr;
+  gap: 18px;
+}
+.history-list {
+  overflow-y: auto;
+  max-height: 65vh;
+}
+.history-list input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 8px 0;
+}
+.history-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 5px 0;
+  background: #e9eef7;
+  color: #15355c;
+}
+.history-item.selected {
+  background: #2d60a7;
+  color: white;
+}
+.history-detail {
+  min-width: 0;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+.history-day {
+  padding: 9px 4px;
+  border-bottom: 1px solid #dce3ed;
+  line-height: 1.55;
+}
+.history-day strong {
+  display: block;
+  color: #285a9e;
+}
+.history-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.history-actions button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+@media (max-width: 680px) {
+  .history-layout { grid-template-columns: 1fr; }
+  .history-list { max-height: 160px; }
+  .history-detail { max-height: 50vh; }
+}
+@media (max-width: 500px) {
+  .history-dialog { padding: 12px 10px; }
+  .history-list { max-height: 140px; }
+  .history-detail { max-height: 48vh; }
+  .history-actions { gap: 6px; }
+  .history-actions button {
+    padding: 7px 9px;
+    font-size: .85rem;
+  }
+}
+
+/* Print */
+@media print {
+  header, .toolbar, .daybar, aside, .muted, #status, dialog {
+    display: none !important;
+  }
+  body { background: white; }
+  main { padding: 0; }
+  .layout { display: block; }
+  .panel {
+    border: 0;
+    box-shadow: none;
+  }
+  .meal button {
+    background: white;
+    color: black;
+    padding: 2px 0;
+  }
+  .heading { margin-bottom: 12px; }
+  .history-dialog { display: none !important; }
+}
+/* Databáze jídel */
+.catalog-list{max-height:290px;overflow-y:auto;border:1px solid #dbe4ee;border-radius:8px;padding:5px;margin:8px 0;overscroll-behavior:contain}
+.catalog-item{display:block;width:100%;text-align:left;color:#203d5d;background:#f1f6fb;font-weight:500;margin:3px 0;white-space:normal;overflow-wrap:anywhere}
+.catalog-item.selected{background:#245d9b;color:white}
+/* Dialog historie přesně ve viditelné části mobilního displeje */
+.history-dialog{position:fixed;inset:0;margin:auto;box-sizing:border-box;overflow-y:auto;max-height:calc(100dvh - 24px)}
+@media(max-width:680px){
+ .history-dialog{width:calc(100vw - 16px);max-width:calc(100vw - 16px);height:calc(100dvh - 24px);max-height:calc(100dvh - 24px);padding:12px;}
+ .history-layout{display:flex;flex-direction:column;gap:10px}
+ .history-list{max-height:25dvh;flex-shrink:0}
+ .history-detail{max-height:none;overflow:visible}
+ .history-actions{padding-bottom:12px}
+}
+
+/* Mobilní historie: skutečně vystředěný modal bez horizontálního posuvu */
+@media screen and (max-width: 680px) {
+  dialog.history-dialog,
+  dialog.history-dialog[open] {
+    position: fixed !important;
+    inset: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    margin: auto !important;
+    width: calc(100% - 20px) !important;
+    max-width: calc(100% - 20px) !important;
+    min-width: 0 !important;
+    height: calc(100% - 24px) !important;
+    max-height: calc(100% - 24px) !important;
+    padding: 12px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+    overscroll-behavior: contain;
+  }
+  .history-dialog *, .history-dialog *::before, .history-dialog *::after { box-sizing: border-box; min-width: 0; }
+  .history-dialog .dialogtop { position: sticky; top: -12px; z-index: 2; background: white; padding: 10px 0; align-items: center; }
+  .history-dialog .dialogtop h2 { font-size: 1.13rem; margin: 0; overflow-wrap: anywhere; }
+  .history-dialog .dialogtop button { min-height: 46px; padding: 10px 16px; font-size: 1rem; flex-shrink: 0; }
+  .history-dialog .history-layout { display: flex; flex-direction: column; width: 100%; gap: 12px; }
+  .history-dialog .history-list { width: 100%; max-height: 26vh; max-height: 26dvh; overflow-y: auto; }
+  .history-dialog .history-detail { width: 100%; max-height: none; overflow: visible; }
+  .history-dialog .history-item { min-height: 46px; padding: 11px 12px; font-size: 1rem; overflow-wrap: anywhere; }
+  .history-dialog .history-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .history-dialog .history-actions button { width: 100%; min-height: 50px; padding: 11px 8px; font-size: .95rem; line-height: 1.25; white-space: normal; overflow-wrap: anywhere; }
+  .history-dialog input { min-height: 46px; font-size: 16px; width: 100%; }
+  .history-dialog #historyPreview { overflow-wrap: anywhere; }
+}
+@media screen and (max-width: 360px) {
+  .history-dialog .history-actions { grid-template-columns: 1fr; }
+}
+
+/* v2: mobilní historie jako samostatná obrazovka; bez desktopových minimálních šířek */
+@media screen and (max-width: 800px) {
+ html,body {max-width:100%;overflow-x:hidden}
+ dialog#historyDialog[open] {
+   position:fixed !important; inset:0 !important; margin:0 !important;
+   width:100% !important; min-width:0 !important; max-width:100% !important;
+   height:100% !important; height:100dvh !important;
+   max-height:100% !important; max-height:100dvh !important;
+   border:0 !important; border-radius:0 !important;
+   padding:0 12px 18px !important; overflow-x:hidden !important;
+   overflow-y:auto !important; overscroll-behavior:contain;
+ }
+ #historyDialog .dialogtop {position:sticky;top:0 !important;z-index:5;background:white;
+   margin:0 -12px 12px;padding:12px;min-height:66px;display:flex;gap:8px;}
+ #historyDialog .dialogtop h2 {font-size:clamp(17px,5vw,22px);line-height:1.25;flex:1;}
+ #historyDialog .dialogtop button {min-width:95px;min-height:48px;font-size:16px;}
+ #historyDialog .history-layout {display:flex !important;flex-direction:column !important;
+   grid-template-columns:none !important;gap:12px;width:100%;min-width:0;}
+ #historyDialog .history-list {max-height:none !important;overflow:visible !important;width:100%;}
+ #historyDialog #historyList {max-height:28dvh;overflow-y:auto;overscroll-behavior:contain;}
+ #historyDialog .history-detail {width:100%;min-width:0;max-height:none !important;overflow:visible !important;}
+ #historyDialog .history-actions {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+ #historyDialog .history-actions button {font-size:15px;min-height:52px;padding:10px 7px;}
+ #historyDialog .history-item {min-height:48px;font-size:16px;}
+ #historyDialog input {font-size:16px;min-height:48px;}
+ #historyDialog #historyPreview {overflow-wrap:anywhere;}
+}
+@media screen and (max-width:380px) {
+ #historyDialog .history-actions {grid-template-columns:1fr;}
+}
+
+/* v3: kompaktní historie pro telefony */
+@media screen and (max-width:800px) {
+ #historyDialog .dialogtop {min-height:48px;padding:8px 12px;margin-bottom:5px;}
+ #historyDialog .dialogtop h2 {font-size:18px;margin:0;line-height:1.2;}
+ #historyDialog .dialogtop button {min-height:40px;min-width:78px;padding:7px 10px;font-size:14px;}
+ #historyDialog .history-layout {gap:8px;}
+ #historyDialog #historyList {max-height:22dvh;}
+ #historyDialog .history-item {min-height:39px;font-size:14px;padding:8px 10px;margin:3px 0;}
+ #historyDialog .history-detail h3 {font-size:16px;line-height:1.35;margin:8px 0;}
+ #historyDialog .history-day {padding:6px 2px;font-size:14px;line-height:1.4;}
+ #historyDialog .history-actions {gap:7px;margin-top:10px;}
+ #historyDialog .history-actions button {min-height:44px;font-size:14px;padding:8px;}
+}
