@@ -252,10 +252,10 @@
       "week": "2026-10-19",
       "days": [
         {
-          "closed": false,
-          "soup": "hovězí s kuskusem",
-          "main": "Srbská čočka, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "closed": true,
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
