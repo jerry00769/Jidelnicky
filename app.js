@@ -375,9 +375,11 @@ function renderCatalogList(){
  const query=norm($('catalogSearch').value),list=$('catalogList');list.replaceChildren();
  const total=Object.values(state.catalog[kind]||{}).reduce((n,a)=>n+a.length,0);
  $('catalogCount').textContent=`${cat?'Kategorie':'VŠECHNY'}: ${items.length} jídel · Celkem ${total} (${kind==='soup'?'polévky':'hlavní jídla'})`;
+ const duplicateNames=new Map();
+ for(const item of items){const key=norm(item.name);duplicateNames.set(key,(duplicateNames.get(key)||0)+1)}
  let found=0;
  for(const {name,cat:itemCat} of items){if(!norm(name).includes(query)&&!norm(itemCat).includes(query))continue;found++;
-  const b=document.createElement('button');b.type='button';b.className='catalog-item'+(name===selectedCatalogMeal&&itemCat===selectedCatalogCategory?' selected':'');b.textContent=cat?name:`${name}  [${itemCat}]`;
+  const b=document.createElement('button');b.type='button';b.className='catalog-item'+(name===selectedCatalogMeal&&itemCat===selectedCatalogCategory?' selected':'');b.textContent=(!cat&&duplicateNames.get(norm(name))>1)?`${name}  [${itemCat}]`:name;
   b.onclick=()=>{selectedCatalogMeal=name;selectedCatalogCategory=itemCat;$('mealName').value=name;renderCatalogList()};list.append(b)
  }
  if(!found){const e=document.createElement('p');e.className='empty';e.textContent='Žádná odpovídající jídla.';list.append(e)}
