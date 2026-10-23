@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-16",
+      "week": "2026-11-09",
       "days": [
         {
           "closed": false,
-          "soup": "z rybího filé",
-          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Hovězí pečeně na houbách, Těstoviny",
-          "category2": "HOVĚZÍ A TELECÍ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s těstovinou",
-          "main": "Králík pečený, Brambory",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Zapečené těstoviny s uzeným masem",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s játrovými knedlíčky",
-          "main": "Kuře Šanghaj s jasmínovou rýží",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Zeleninové rizoto",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s pohankou",
-          "main": "Lotrinské tagliatelle se sýrem",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
-          "category2": "LUŠTĚNINOVÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová zahuštěná červenou čočkou",
-          "main": "Rybí filé po mlynářsku, Brambory",
-          "category": "RYBY",
-          "main2": "Bramborový guláš, Rohlík",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
