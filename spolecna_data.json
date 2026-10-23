@@ -249,47 +249,32 @@
       }
     },
     "week": {
-      "week": "2026-12-21",
+      "week": "2026-11-02",
       "days": [
         {
-          "closed": false,
-          "soup": "hovězí se strouháním",
-          "main": "Čočkový kotlík, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
+          "soup": "Rajská s ovesnými vločkami",
+          "main": "Rybí filé s rajčaty, bazalkou, brambory",
+          "category": "RYBY"
         },
         {
-          "closed": false,
-          "soup": "Špenátová s vajíčkem",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
-          "category": "SLADKÁ",
-          "main2": "",
-          "category2": ""
+          "soup": "Ovarová s kroupami",
+          "main": "Krůtí maso na pórku, rýže",
+          "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "closed": false,
-          "soup": "vývar s drobením",
-          "main": "Guláš maďarský, Rýže dušená",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
+          "soup": "Zeleninová s pohankou",
+          "main": "Bulgur se zeleninou a kuřecím masem",
+          "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "closed": false,
-          "soup": "zeleninová s hrachovými nudlemi",
-          "main": "Karbanátek z rybího file - pečený, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
+          "soup": "Hovězí se strouháním",
+          "main": "Dukátové buchtičky se šódo",
+          "category": "SLADKÁ"
         },
         {
-          "closed": false,
-          "soup": "selská ii.",
-          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
+          "soup": "Hrachová",
+          "main": "Domažlické vepřové ragů, těstoviny",
+          "category": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
