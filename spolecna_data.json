@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-16",
+      "week": "2026-11-09",
       "days": [
         {
           "closed": false,
-          "soup": "z kysaného zelí s klobásou",
-          "main": "Hrachová kaše s cibulkou, Vejce vařené",
+          "soup": "česneková s bramborem a vejcem",
+          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Gnocchi s kuřecím masem, smetanou a špenátem",
-          "category2": "DRŮBEŽ A KRÁLÍK"
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s kuskusem",
-          "main": "Hovězí pečeně frankfurtská, Těstoviny",
-          "category": "HOVĚZÍ A TELECÍ",
-          "main2": "Vepřová pečeně selská, Nastavovaná kaše s cibulkou",
-          "category2": "VEPŘOVÉ A UZENÉ"
-        },
-        {
-          "closed": false,
-          "soup": "luštěninová",
-          "main": "Obalované filé s brokolicí a sýrem, Brambory",
-          "category": "RYBY",
-          "main2": "Nudle s mákom",
+          "main2": "Bramborák",
           "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "vývar s drobením",
-          "main": "Vepřová kýta hamburská, Houskové knedlíky (kynuté)",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "Zeleninový salát, Kuřecí stripsy",
+          "soup": "květáková",
+          "main": "Kapustové karbanátky, Bramborová kaše",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "main2": "Kuskus s kuřecím masem, brokolicí a suš.rajčaty",
           "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "dýňový krém",
-          "main": "Zeleninové rizoto",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Zapečené těstoviny s uzeným masem",
+          "soup": "bramboračka nezahuštěná",
+          "main": "Rybí filé obalované, Brambory",
+          "category": "RYBY",
+          "main2": "Sekaná pečeně, Bramborová kaše",
           "category2": "MLETÉ MASO A ZAPÉKANÉ"
+        },
+        {
+          "closed": false,
+          "soup": "hrachová",
+          "main": "Brokolicová poezie (květák, niva)",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Kapustové karbanátky s masem, Brambory",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+        },
+        {
+          "closed": false,
+          "soup": "čočková",
+          "main": "Omáčka koprová, Brambory, Vejce vařené",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Vepřové v mrkvi, Brambory",
+          "category2": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
