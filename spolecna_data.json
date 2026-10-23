@@ -253,42 +253,42 @@
       "days": [
         {
           "closed": false,
-          "soup": "česneková s bramborem a vejcem",
-          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+          "soup": "z kysaného zelí",
+          "main": "Hrachová kaše s cibulkou, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Bramborák",
+          "main2": "Nudle s mákom",
           "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "květáková",
-          "main": "Kapustové karbanátky, Bramborová kaše",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
-          "main2": "Kuskus s kuřecím masem, brokolicí a suš.rajčaty",
+          "soup": "bramboračka nezahuštěná",
+          "main": "Rybí filé smažené, Bramborová kaše",
+          "category": "RYBY",
+          "main2": "Džuveč, Chléb",
+          "category2": "BEZMASÁ SLANÁ"
+        },
+        {
+          "closed": false,
+          "soup": "česneková s bramborem a vejcem",
+          "main": "Španělský plátek, Rýže dušená",
+          "category": "HOVĚZÍ A TELECÍ",
+          "main2": "Rybí filé po mlynářsku, Brambory",
+          "category2": "RYBY"
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s celozrnnými knedlíčky",
+          "main": "Těstoviny s brokolicí",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Gnocchi s kuřecím masem, smetanou a špenátem",
           "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "bramboračka nezahuštěná",
-          "main": "Rybí filé obalované, Brambory",
-          "category": "RYBY",
-          "main2": "Sekaná pečeně, Bramborová kaše",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
-        },
-        {
-          "closed": false,
-          "soup": "hrachová",
-          "main": "Brokolicová poezie (květák, niva)",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Kapustové karbanátky s masem, Brambory",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
-        },
-        {
-          "closed": false,
-          "soup": "čočková",
-          "main": "Omáčka koprová, Brambory, Vejce vařené",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Vepřové v mrkvi, Brambory",
+          "soup": "čočková se zeleninou",
+          "main": "Kuřecí řízek smažený, Bramborová kaše",
+          "category": "DRŮBEŽ A KRÁLÍK",
+          "main2": "Vepřové na houbách se smetanou, Houskové knedlíky (kynuté)",
           "category2": "VEPŘOVÉ A UZENÉ"
         }
       ]
