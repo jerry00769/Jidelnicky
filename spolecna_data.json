@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "hovězí s kuskusem",
+          "main": "Srbská čočka, Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "z kysaného zelí",
-          "main": "Livance",
-          "category": "SLADKÁ",
+          "soup": "z rybího filé",
+          "main": "Španělský plátek, Rýže dušená",
+          "category": "HOVĚZÍ A TELECÍ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s hrachovými nudlemi",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "soup": "hovězí s těstovinami",
+          "main": "Španělský ptáček rozházený, Rýže dušená",
+          "category": "HOVĚZÍ A TELECÍ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zimní zeleninová s ovesnými vločkami",
+          "main": "Nákyp rýžový se švestkami",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "kapustová s rýží",
+          "main": "Rybí stripsy, Brambory",
           "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "čočková se zeleninou",
-          "main": "Pekingská směs, Rýže dušená",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "krupicová maďarská",
-          "main": "Těstovinový salát s marinovaným tofu",
-          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
