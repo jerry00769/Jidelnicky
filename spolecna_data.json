@@ -1627,6 +1627,51 @@
             "category": "VEPŘOVÉ A UZENÉ"
           }
         ]
+      },
+      {
+        "week": "2026-11-23",
+        "days": [
+          {
+            "closed": false,
+            "soup": "zeleninová s těstovinami",
+            "main": "Tilápie s rajčaty a sýrem, Brambory",
+            "category": "RYBY",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "zelenin. s fridátovými nudlemi",
+            "main": "Čočkový kotlík, Chléb",
+            "category": "LUŠTĚNINOVÁ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "z fazolových lusků",
+            "main": "Kuskus s ovocem",
+            "category": "SLADKÁ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "zimní zeleninová s ovesnými vločkami",
+            "main": "Lotrinské tagliatelle se sýrem",
+            "category": "BEZMASÁ SLANÁ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "hrachová",
+            "main": "Italský guláš (zbruf se sýrem), Těstoviny",
+            "category": "BEZMASÁ SLANÁ",
+            "main2": "",
+            "category2": ""
+          }
+        ]
       }
     ],
     "rules": {
