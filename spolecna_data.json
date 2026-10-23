@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-10-19",
+      "week": "2026-10-26",
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s drožďovými knedlíčky",
-          "main": "Hrachová kaše s cibulkou, Vejce vařené",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Karbanátky pečené, Bramborová kaše",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "z kysaného zelí s klobásou",
-          "main": "Bramborový guláš, Rohlík",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Bramborové knedlíky plň.uzeným masem (salám), Zelí kysané",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "rajčatová s ovesnými vločkami",
-          "main": "Nákyp rýžový s meruňkami",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Vepřová pečeně selská, Nastavovaná kaše s cibulkou",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "koprová (kulajda)",
-          "main": "Zeleninové rizoto",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Zapečené těstoviny s uzeným masem",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "květáková s červenou čočkou",
-          "main": "Rybí filé obalované, Brambory",
-          "category": "RYBY",
-          "main2": "Džuveč, Chléb",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
