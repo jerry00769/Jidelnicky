@@ -249,32 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-10-26",
+      "week": "2026-10-19",
       "days": [
         {
-          "soup": "Rajská s ovesnými vločkami",
-          "main": "Rybí filé s rajčaty, bazalkou, brambory",
-          "category": "RYBY"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Ovarová s kroupami",
-          "main": "Krůtí maso na pórku, rýže",
-          "category": "DRŮBEŽ A KRÁLÍK"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Zeleninová s pohankou",
-          "main": "Bulgur se zeleninou a kuřecím masem",
-          "category": "DRŮBEŽ A KRÁLÍK"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Hovězí se strouháním",
-          "main": "Dukátové buchtičky se šódo",
-          "category": "SLADKÁ"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Hrachová",
-          "main": "Domažlické vepřové ragů, těstoviny",
-          "category": "VEPŘOVÉ A UZENÉ"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
