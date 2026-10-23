@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
           "soup": "hovězí s těstovinami",
-          "main": "Španělský ptáček rozházený, Rýže dušená",
-          "category": "HOVĚZÍ A TELECÍ",
+          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Nákyp rýžový se švestkami",
+          "soup": "hovězí s játrovými knedlíčky",
+          "main": "Rybí filé pečené na másle, Brambory",
+          "category": "RYBY",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová se sýrovým kapáním",
+          "main": "Dukátové buchtičky s krémem",
+          "category": "SLADKÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "luštěninová",
+          "main": "Nudle s mákom",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "kapustová s rýží",
-          "main": "Rybí stripsy, Brambory",
-          "category": "RYBY",
+          "soup": "hovězí s těstovinou",
+          "main": "Zapečené těstoviny s uzeninou",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
           "main2": "",
           "category2": ""
         }
