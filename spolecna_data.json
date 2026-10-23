@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-09",
+      "week": "2026-11-16",
       "days": [
         {
           "closed": false,
-          "soup": "cibulová se sýrem",
-          "main": "Hrachová kaše s cibulkou, Vejce vařené",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Omáčka rajčatová, Hovězí maso vařené, Houskové knedlíky (kynuté)",
-          "category2": "HOVĚZÍ A TELECÍ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí se strouháním",
-          "main": "Nudle s mákom",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Horňácký guláš (maso, fazole), Chléb",
-          "category2": "LUŠTĚNINOVÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s ovesnými vločkami",
-          "main": "Rybí filé smažené, Bramborová kaše",
-          "category": "RYBY",
-          "main2": "Těstovinový salát s marinovaným tofu",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "gulášová",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
-          "category": "RYBY",
-          "main2": "Zapečené těstoviny s kuřecím masem a zeleninou",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Rybí filé pečené na másle, Brambory",
-          "category": "RYBY",
-          "main2": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
