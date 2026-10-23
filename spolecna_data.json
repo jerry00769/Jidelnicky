@@ -249,47 +249,32 @@
       }
     },
     "week": {
-      "week": "2026-11-23",
+      "week": "2026-11-02",
       "days": [
         {
-          "closed": false,
-          "soup": "drůbková s nudlemi",
-          "main": "Rybí filé po mlynářsku, Brambory",
-          "category": "RYBY",
-          "main2": "Nudle s mákem",
-          "category2": "SLADKÁ"
+          "soup": "Rajská s ovesnými vločkami",
+          "main": "Rybí filé s rajčaty, bazalkou, brambory",
+          "category": "RYBY"
         },
         {
-          "closed": false,
-          "soup": "vývar s drobením",
-          "main": "Čočkový kotlík, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Těstovinový salát s marinovaným tofu",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "Ovarová s kroupami",
+          "main": "Krůtí maso na pórku, rýže",
+          "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "closed": false,
-          "soup": "hovězí s masem a vejcem",
-          "main": "Kuře pečené, Bulgur",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Nákyp rýžový s meruňkami",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "Zeleninová s pohankou",
+          "main": "Bulgur se zeleninou a kuřecím masem",
+          "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "closed": false,
-          "soup": "zeleninová zahuštěná červenou čočkou",
-          "main": "Těstoviny se sýrovou omáčkou",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Sekaná zahradnická, Brambory",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "soup": "Hovězí se strouháním",
+          "main": "Dukátové buchtičky se šódo",
+          "category": "SLADKÁ"
         },
         {
-          "closed": false,
-          "soup": "zeleninová s ovesnými vločkami",
-          "main": "Rybí stripsy, Brambory",
-          "category": "RYBY",
-          "main2": "Králík pečený, Brambory",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "Hrachová",
+          "main": "Domažlické vepřové ragů, těstoviny",
+          "category": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
@@ -1683,7 +1668,7 @@
       "avoidFishPair": true
     },
     "txt": "",
-    "count": 2,
+    "count": 1,
     "lockMain": 8,
     "lockSoup": 3
   }
