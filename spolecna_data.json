@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "z kysaného zelí s klobásou",
-          "main": "Rybí file pečené na másle, Bramborová kaše",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s játrovými noky",
-          "main": "Rizoto z vepřového masa",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "brokolicová",
-          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+          "soup": "dýňový krém",
+          "main": "Hrachová kaše s cibulkou, Párky",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "čočková se zeleninou",
-          "main": "Kovbojská pánev, Chléb",
+          "soup": "pórková",
+          "main": "Hovězí pečeně pražská, Rýže dušená",
+          "category": "HOVĚZÍ A TELECÍ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "fazolová",
+          "main": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zelenin. s bulgurem",
+          "main": "Bramborák",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hrachová",
-          "main": "Zapečené těstoviny s uzeným masem",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "soup": "květáková s červenou čočkou",
+          "main": "Rybí filé smažené, Bramborová kaše",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         }
