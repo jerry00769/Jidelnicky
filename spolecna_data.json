@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "gulášová",
-          "main": "Losos přírodní, Brambory",
+          "soup": "bramboračka nezahuštěná",
+          "main": "Rybí filé obalované, Brambory",
           "category": "RYBY",
-          "main2": "",
-          "category2": ""
+          "main2": "Pizza se šunkou",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "hovězí s těstovinami",
-          "main": "Hrachová kaše s cibulkou, Párky",
+          "soup": "hovězí s jáhly",
+          "main": "Fazole a la Katův šleh, Chléb",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
+          "main2": "Karbanátky pečené, Bramborová kaše",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "fazolová se zeleninou",
-          "main": "Bramborový guláš, Rohlík",
+          "soup": "gulášová",
+          "main": "Těstoviny s brokolicí",
           "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
+          "main2": "Sekaná zahradnická, Brambory",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "hovězí s kuskusem",
-          "main": "Těstoviny se sýrovou omáčkou",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "krupicová s vejcem",
+          "soup": "rychlá s vejcem",
           "main": "Knedlíky švestkové (bramborové) s mákem",
           "category": "SLADKÁ",
-          "main2": "",
-          "category2": ""
+          "main2": "Těstoviny penne s tuňákem a chery rajčaty",
+          "category2": "RYBY"
+        },
+        {
+          "closed": false,
+          "soup": "hovězí se strouháním",
+          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Rybí filé pečené na másle, Brambory",
+          "category2": "RYBY"
         }
       ]
     },
