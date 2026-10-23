@@ -309,10 +309,11 @@ function renderRules(){
 function renderCategories(){
     const kind=$('kind').value,sel=$('category'),prev=sel.value;
     sel.replaceChildren();
+    const every=document.createElement('option');every.value='';every.textContent='VŠECHNY';sel.append(every);
     for(const cat of Object.keys(state.catalog[kind]||{})){
         const option=document.createElement('option');option.value=cat;option.textContent=cat;sel.append(option)
     }
-    if(Object.hasOwn(state.catalog[kind],prev))sel.value=prev;
+    if(Object.hasOwn(state.catalog[kind],prev))sel.value=prev;else sel.value='';
     renderCatalogList();
 }
 
@@ -320,16 +321,18 @@ let picking=null;
 function openPicker(day,key){
     picking={day,key};
     $('pickerTitle').textContent=`${weekdays[day]} – ${key==='soup'?'Polévka':key==='main'?'Oběd 1':'Oběd 2'}`;
-    $('search').value='';renderChoices();$('picker').showModal();$('search').focus()
+    $('search').value='';$('pickerCategory').value='';renderChoices();$('picker').showModal();$('search').focus()
 }
 
 function renderChoices(){
-    const kind=picking.key==='soup'?'soup':'main',q=norm($('search').value),el=$('choices');el.replaceChildren();
+    const kind=picking.key==='soup'?'soup':'main',q=norm($('search').value),catFilter=$('pickerCategory').value,el=$('choices');el.replaceChildren();
+    const cats=Object.keys(state.catalog[kind]||{});const categorySelect=$('pickerCategory');
+    if(categorySelect.options.length!==cats.length+1||cats.some((c,i)=>categorySelect.options[i+1]?.value!==c)){categorySelect.replaceChildren();categorySelect.add(new Option('VŠECHNY',''));for(const cat of cats)categorySelect.add(new Option(cat,cat));categorySelect.value=cats.includes(catFilter)?catFilter:'';}
     const current=state.week.days[picking.day];
-    const options=all(kind).filter(x=>contains(x.name,q)||contains(x.cat,q)).filter(x=>picking.key==='soup'||(picking.key==='main'?x.name!==current.main2:x.name!==current.main));
+    const options=all(kind).filter(x=>(!categorySelect.value||x.cat===categorySelect.value)&&(contains(x.name,q)||contains(x.cat,q))).filter(x=>picking.key==='soup'||(picking.key==='main'?x.name!==current.main2:x.name!==current.main));
     options.sort((a,b)=>a.name.localeCompare(b.name,'cs'));
     for(const item of options){
-        const btn=document.createElement('button');btn.className='choice';btn.textContent=item.name;
+        const btn=document.createElement('button');btn.className='choice';btn.dataset.meal=item.name;btn.textContent=item.name;
         const sub=document.createElement('small');sub.textContent=item.cat;btn.append(sub);
         btn.onclick=()=>{
             snapshot();const d=state.week.days[picking.day];
@@ -339,6 +342,7 @@ function renderChoices(){
         };
         el.append(btn)
     }
+    const currentName=current[picking.key];const active=Array.from(el.querySelectorAll('.choice')).find(b=>b.dataset.meal===currentName);if(active){active.classList.add('selected');active.scrollIntoView({block:'nearest'});}
     if(!options.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='Žádné odpovídající jídlo.';el.append(empty)}
 }
 
@@ -365,28 +369,28 @@ $('saveRules').onclick=()=>safe(()=>{const rules={};for(const input of document.
 $('kind').onchange=()=>{renderCategories();renderCatalogList()};
 $('category').onchange=renderCatalogList;
 
-let selectedCatalogMeal='';
+let selectedCatalogMeal='',selectedCatalogCategory='';
 function renderCatalogList(){
- const kind=$('kind').value,cat=$('category').value,items=(state.catalog[kind]?.[cat]||[]).slice().sort((a,b)=>a.localeCompare(b,'cs'));
+ const kind=$('kind').value,cat=$('category').value,items=(cat?(state.catalog[kind]?.[cat]||[]).map(name=>({name,cat})):all(kind)).sort((a,b)=>a.name.localeCompare(b.name,'cs'));
  const query=norm($('catalogSearch').value),list=$('catalogList');list.replaceChildren();
  const total=Object.values(state.catalog[kind]||{}).reduce((n,a)=>n+a.length,0);
- $('catalogCount').textContent=`Kategorie: ${items.length} jídel · Celkem ${total} (${kind==='soup'?'polévky':'hlavní jídla'})`;
+ $('catalogCount').textContent=`${cat?'Kategorie':'VŠECHNY'}: ${items.length} jídel · Celkem ${total} (${kind==='soup'?'polévky':'hlavní jídla'})`;
  let found=0;
- for(const name of items){if(!norm(name).includes(query))continue;found++;
-  const b=document.createElement('button');b.type='button';b.className='catalog-item'+(name===selectedCatalogMeal?' selected':'');b.textContent=name;
-  b.onclick=()=>{selectedCatalogMeal=name;$('mealName').value=name;renderCatalogList()};list.append(b)
+ for(const {name,cat:itemCat} of items){if(!norm(name).includes(query)&&!norm(itemCat).includes(query))continue;found++;
+  const b=document.createElement('button');b.type='button';b.className='catalog-item'+(name===selectedCatalogMeal&&itemCat===selectedCatalogCategory?' selected':'');b.textContent=cat?name:`${name}  [${itemCat}]`;
+  b.onclick=()=>{selectedCatalogMeal=name;selectedCatalogCategory=itemCat;$('mealName').value=name;renderCatalogList()};list.append(b)
  }
  if(!found){const e=document.createElement('p');e.className='empty';e.textContent='Žádná odpovídající jídla.';list.append(e)}
 }
 function editCatalog(operation){safe(()=>{
- const kind=$('kind').value,cat=$('category').value,name=$('mealName').value.trim(),items=state.catalog[kind]?.[cat];
- if(!items)throw Error('Nejdříve vyber kategorii.');
+ const kind=$('kind').value,filterCat=$('category').value,cat=filterCat||(operation==='add'?'':selectedCatalogCategory),name=$('mealName').value.trim(),items=state.catalog[kind]?.[cat];
+ if(!items)throw Error(operation==='add'?'Pro přidání jídla nejdříve vyber konkrétní kategorii.':'Nejdříve vyber jídlo nebo konkrétní kategorii.');
  if(operation==='add'){
   if(name.length<2)throw Error('Zadej název nového jídla.');
   if(items.some(x=>norm(x)===norm(name)))throw Error('Jídlo už v kategorii existuje.');
-  snapshot();items.push(name);selectedCatalogMeal=name;
+  snapshot();items.push(name);selectedCatalogMeal=name;selectedCatalogCategory=cat;
  }else{
-  if(!selectedCatalogMeal||!items.includes(selectedCatalogMeal))throw Error('Nejdříve vyber jídlo ze seznamu.');
+  if(!selectedCatalogMeal||selectedCatalogCategory!==cat||!items.includes(selectedCatalogMeal))throw Error('Nejdříve vyber jídlo ze seznamu.');
   if(operation==='rename'){
    if(name.length<2)throw Error('Zadej nový název.');
    if(items.some(x=>x!==selectedCatalogMeal&&norm(x)===norm(name)))throw Error('Jídlo už existuje.');
@@ -394,7 +398,7 @@ function editCatalog(operation){safe(()=>{
    snapshot();const oldName=selectedCatalogMeal;items[items.indexOf(oldName)]=name;for(const day of state.week.days){if(kind==='soup'&&day.soup===oldName)day.soup=name;if(kind==='main'){if(day.main===oldName&&day.category===cat)day.main=name;if(day.main2===oldName&&day.category2===cat)day.main2=name}}selectedCatalogMeal=name;
   }else{
    if(!confirm(`Opravdu smazat jídlo „${selectedCatalogMeal}“?`))return;
-   snapshot();items.splice(items.indexOf(selectedCatalogMeal),1);selectedCatalogMeal='';$('mealName').value='';
+   snapshot();items.splice(items.indexOf(selectedCatalogMeal),1);selectedCatalogMeal='';selectedCatalogCategory='';$('mealName').value='';
   }
  }
  items.sort((a,b)=>a.localeCompare(b,'cs'));render();renderCatalogList();notice(operation==='add'?'Jídlo přidáno.':operation==='rename'?'Jídlo přejmenováno.':'Jídlo smazáno.');
@@ -403,9 +407,10 @@ $('add').onclick=()=>editCatalog('add');
 $('rename').onclick=()=>editCatalog('rename');
 $('remove').onclick=()=>editCatalog('remove');
 $('catalogSearch').oninput=renderCatalogList;
-$('kind').addEventListener('change',()=>{selectedCatalogMeal='';$('mealName').value='';$('catalogSearch').value=''});
+$('kind').addEventListener('change',()=>{selectedCatalogMeal='';selectedCatalogCategory='';$('mealName').value='';$('catalogSearch').value=''});
 $('category').addEventListener('change',()=>{selectedCatalogMeal='';$('mealName').value=''});
 $('search').oninput=renderChoices;
+$('pickerCategory').onchange=renderChoices;
 $('closePicker').onclick=()=>$('picker').close();
 $('csv').onclick=csv;
 $('print').onclick=()=>window.print();
