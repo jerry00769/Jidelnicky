@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-23",
+      "week": "2026-11-30",
       "days": [
         {
           "closed": false,
-          "soup": "kuřecí s nudlemi",
-          "main": "Hrachová kaše s cibulkou, Vejce vařené",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Rizoto s kuřecím masem",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "rajčatová s těstovinou",
-          "main": "Losos přírodní, Brambory",
-          "category": "RYBY",
-          "main2": "Kapustové karbanátky s masem, Brambory",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "bramborová",
-          "main": "Italský guláš (zbruf se sýrem), Těstoviny",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Hovězí pečeně pražská, Rýže dušená",
-          "category2": "HOVĚZÍ A TELECÍ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "ze zahradních jahod",
-          "main": "Obalované filé s brokolicí a sýrem, Brambory",
-          "category": "RYBY",
-          "main2": "Zeleninové rizoto",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s celozrnnými knedlíčky",
-          "main": "Kuřecí roláda, Rýže dušená",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Hovězí pečeně frankfurtská, Těstoviny",
-          "category2": "HOVĚZÍ A TELECÍ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
