@@ -113,12 +113,13 @@ function start(a){
   connect()
  };
  $('ghRefresh').onclick=refresh;$('ghDisconnect').onclick=disconnect;const resolver=$('ghResolve');if(resolver)resolver.onclick=resolveConflict;
- controls();if(token)connect();
+ controls();const initialSync=token?connect():Promise.resolve();
  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected)refresh()});
  window.addEventListener('online',()=>{if(connected)refresh();else if(token&&!busy&&!conflicted)connect()});
  // Automatická kontrola při otevřené stránce; vyhneme se zbytečným API voláním na pozadí.
  setInterval(()=>{if(connected&&!document.hidden&&!busy)refresh()},15000);
  window.addEventListener('focus',()=>{if(connected&&!busy)refresh()});
+ return initialSync;
 }
 return {start,changed};
 })();

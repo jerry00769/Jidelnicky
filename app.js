@@ -123,7 +123,11 @@ function generate(){
         }
         if(failed||secondRequired.length)continue;
         const w={week,days},errors=validate(w);
-        if(!errors.length)return w;
+        if(!errors.length){
+            if(active.includes(0)&&!starts(w.days[0].category,mondayCat(week)))
+                throw Error('Vnitřní chyba: pondělní Oběd 1 neodpovídá ISO týdnu.');
+            return w;
+        }
         lastErrors=errors
     }
     throw Error('Nelze sestavit platný týden. '+lastErrors.slice(0,3).join(' '))
@@ -300,7 +304,7 @@ function csv(){
 
 function safe(fn){try{fn()}catch(e){console.error(e);notice(e.message||'Nastala chyba.',true)}}
 
-$('generate').onclick=()=>safe(()=>{snapshot();state.week=generate();render();notice('Vygenerováno pět dnů jídelníčku.')});
+$('generate').onclick=()=>safe(()=>{const proposal=generate();snapshot();state.week=proposal;render();notice('Vygenerováno pět dnů jídelníčku.')});
 $('approve').onclick=()=>safe(()=>{const errors=validate();if(errors.length)throw Error(errors.join(' · '));if(state.history.some(h=>h.week===state.week.week)&&!confirm('Tento týden už je v historii. Opravdu přepsat schválenou verzi?'))return;snapshot();state.history=state.history.filter(h=>h.week!==state.week.week);state.history.push(clone(state.week));render();notice('Jídelníček schválen a uložen do historie.')});
 $('validate').onclick=()=>safe(()=>{const e=validate();notice(e.length?e.join(' · '):'Jídelníček splňuje nastavená pravidla.',!!e.length)});
 $('new').onclick=()=>safe(()=>{snapshot();const closed=state.week.days.map(d=>d.closed);state.week=freshWeek($('date').value);state.week.days.forEach((d,i)=>d.closed=closed[i]);render();notice('Prázdný týden připraven.')});
@@ -458,10 +462,17 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 
     render();
-    window.GitHubSync?.start(window.JidelnickyApp);
+    // Nejprve dokončíme první načtení z GitHubu. Jinak by vzdálená data
+    // mohla následně přepsat uživatelem zvolený aktuální týden.
+    try {
+        await window.GitHubSync?.start(window.JidelnickyApp);
+    } catch (e) {
+        console.error('Počáteční synchronizace selhala:', e);
+        notice('Synchronizace se nezdařila; místní data zůstala zachována.', true);
+    }
     // Při novém otevření nabídnout aktuální týden, ale nikdy nepřepsat
     // rozpracovaný jídelníček bez výslovného souhlasu.
-    if(hasSavedState && state.week.week!==monday(iso(new Date()))){
+    if(state.week.week!==monday(iso(new Date()))){
         const current=monday(iso(new Date()));
         if(confirm('Pracovní jídelníček je pro týden '+format(dateAt(state.week.week,0))+'.\n\nPřejít na aktuální týden od '+format(dateAt(current,0))+'?\n\nOK = založit prázdný aktuální týden.\nZrušit = zachovat rozpracovaný jídelníček.')){
             snapshot();
