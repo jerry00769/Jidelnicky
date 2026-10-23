@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "hovězí s játrovými knedlíčky",
+          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Nákyp rýžový se švestkami",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "hovězí s těstovinou",
+          "main": "Žemlovka s jablky a tvarohem",
+          "category": "SLADKÁ",
+          "main2": "Vepřové v kapustě, Brambory",
+          "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "česneková s osmaženou hostičkou",
+          "main": "Těstovinový salát s marinovaným tofu",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Sicilské špagety (boloňské)",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "kmínová s vejcem",
+          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "category": "RYBY",
+          "main2": "Kuře na paprice, Těstoviny",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "vývar s drobením",
+          "main": "Bramborové šišky s mákem (strouhankou)",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Rybí filé po mlynářsku, Brambory",
+          "category2": "RYBY"
         }
       ]
     },
