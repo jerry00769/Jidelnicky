@@ -252,7 +252,7 @@
       "week": "2026-10-19",
       "days": [
         {
-          "closed": true,
+          "closed": false,
           "soup": "",
           "main": "",
           "category": "",
@@ -261,9 +261,9 @@
         },
         {
           "closed": false,
-          "soup": "z rybího filé",
-          "main": "Španělský plátek, Rýže dušená",
-          "category": "HOVĚZÍ A TELECÍ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
