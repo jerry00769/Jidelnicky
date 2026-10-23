@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "krupicová s vejcem",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "soup": "kuřecí s nudlemi",
+          "main": "Hrachová kaše s cibulkou, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Pizza se šunkou",
+          "main2": "Rizoto s kuřecím masem",
+          "category2": "DRŮBEŽ A KRÁLÍK"
+        },
+        {
+          "closed": false,
+          "soup": "rajčatová s těstovinou",
+          "main": "Losos přírodní, Brambory",
+          "category": "RYBY",
+          "main2": "Kapustové karbanátky s masem, Brambory",
           "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "kapustová s rýží",
-          "main": "Brokolicová poezie (květák, niva)",
+          "soup": "bramborová",
+          "main": "Italský guláš (zbruf se sýrem), Těstoviny",
           "category": "BEZMASÁ SLANÁ",
-          "main2": "Karbanátek z rybího file - pečený, Brambory",
-          "category2": "RYBY"
-        },
-        {
-          "closed": false,
-          "soup": "zelenin. s kroupami",
-          "main": "Zapečené těstoviny s kuřecím masem a zeleninou",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Rybí filé pečené na másle, Brambory",
-          "category2": "RYBY"
-        },
-        {
-          "closed": false,
-          "soup": "z batátových brambor",
-          "main": "Losos přírodní, Brambory",
-          "category": "RYBY",
-          "main2": "Svíčková na smetaně, Houskové knedlíky (kynuté)",
+          "main2": "Hovězí pečeně pražská, Rýže dušená",
           "category2": "HOVĚZÍ A TELECÍ"
         },
         {
           "closed": false,
-          "soup": "hovězí s jáhly",
-          "main": "Kuřecí prsa na kari koření, Rýže dušená",
+          "soup": "ze zahradních jahod",
+          "main": "Obalované filé s brokolicí a sýrem, Brambory",
+          "category": "RYBY",
+          "main2": "Zeleninové rizoto",
+          "category2": "BEZMASÁ SLANÁ"
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s celozrnnými knedlíčky",
+          "main": "Kuřecí roláda, Rýže dušená",
           "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Livance",
-          "category2": "SLADKÁ"
+          "main2": "Hovězí pečeně frankfurtská, Těstoviny",
+          "category2": "HOVĚZÍ A TELECÍ"
         }
       ]
     },
