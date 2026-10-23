@@ -249,31 +249,31 @@
       }
     },
     "week": {
-      "week": "2026-10-19",
+      "week": "2026-10-26",
       "days": [
         {
-          "soup": "Hovězí s masem a vejcem",
-          "main": "Srbská čočka, Chléb",
-          "category": "LUŠTĚNINOVÁ"
+          "soup": "Rajská s ovesnými vločkami",
+          "main": "Rybí filé s rajčaty, bazalkou, brambory",
+          "category": "RYBY"
         },
         {
-          "soup": "Bramboračka",
-          "main": "Španělský ptáček, rýže",
-          "category": "HOVĚZÍ A TELECÍ"
-        },
-        {
-          "soup": "Celerová se smaženým hráškem",
-          "main": "Těstovinový salát s kuřecím masem",
+          "soup": "Ovarová s kroupami",
+          "main": "Krůtí maso na pórku, rýže",
           "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "soup": "Kysané zelí",
-          "main": "Vepřové v mrkvi, brambor",
-          "category": "VEPŘOVÉ A UZENÉ"
+          "soup": "Zeleninová s pohankou",
+          "main": "Bulgur se zeleninou a kuřecím masem",
+          "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "soup": "Zeleninová s kuskusem",
-          "main": "Vepřová pečeně selská, Bramborové knedlíky",
+          "soup": "Hovězí se strouháním",
+          "main": "Dukátové buchtičky se šódo",
+          "category": "SLADKÁ"
+        },
+        {
+          "soup": "Hrachová",
+          "main": "Domažlické vepřové ragů, těstoviny",
           "category": "VEPŘOVÉ A UZENÉ"
         }
       ]
