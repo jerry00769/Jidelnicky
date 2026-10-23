@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-12-07",
+      "week": "2026-11-09",
       "days": [
         {
           "closed": false,
-          "soup": "selská ii.",
-          "main": "Horňácký guláš (maso, fazole), Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Těstoviny penne s tuňákem a chery rajčaty",
-          "category2": "RYBY"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "frankfurtská s bramborem",
-          "main": "Kapustové karbanátky s masem, Brambory",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
-          "main2": "Džuveč, Chléb",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s těstovinovou",
-          "main": "Rybí filé zapečené se špenátem, Brambory",
-          "category": "RYBY",
-          "main2": "Těstoviny s brokolicí a sýrovou omáčkou",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s kroupami",
-          "main": "Smažené točenky s rozinkami",
-          "category": "SLADKÁ",
-          "main2": "Kuskus s kuřecím masem",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "rajčatová s těstovinami",
-          "main": "Těstoviny po Lotrinsku",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Kapustové karbanátky, Bramborová kaše",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
