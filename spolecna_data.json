@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "hráškový krém",
-          "main": "Fazole a la Katův šleh, Chléb",
+          "soup": "zimní zeleninová s ovesnými vločkami",
+          "main": "Čočka na kyselo, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zel. vývar s dýňovým kapáním",
-          "main": "Hovězí pečeně na houbách, Těstoviny",
-          "category": "HOVĚZÍ A TELECÍ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "bramborová",
-          "main": "Hovězí pečeně frankfurtská, Těstoviny",
-          "category": "HOVĚZÍ A TELECÍ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s játrovými knedlíčky",
-          "main": "Rybí filé po mlynářsku, Brambory",
+          "soup": "hovězí s těstovinami",
+          "main": "Hejk pečený na bylinkovém másle, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s těstovinovou rýží",
-          "main": "Nákyp rýžový se švestkami",
+          "soup": "z kysaného zelí s klobásou",
+          "main": "Guláš maďarský, Rýže dušená",
           "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "brokolicová",
+          "main": "Čočkový kotlík, Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "fazolová se zeleninou",
+          "main": "Smažené točenky s rozinkami",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         }
