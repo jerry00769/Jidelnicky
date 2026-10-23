@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-11-23",
+      "week": "2026-10-19",
       "days": [
         {
           "closed": false,
-          "soup": "hrachová",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "bramborová",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s vaječnou jíškou",
-          "main": "Pekingská směs, Rýže dušená",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "rajčatová s ovesnými vločkami",
-          "main": "Kuřecí nudličky se sýrovou omáčkou, Těstoviny",
-          "category": "DRŮBEŽ A KRÁLÍK",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "čočková",
-          "main": "Kuře pečené, Brambory",
-          "category": "DRŮBEŽ A KRÁLÍK",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         }
