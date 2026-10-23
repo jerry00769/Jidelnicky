@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-16",
+      "week": "2026-11-23",
       "days": [
         {
           "closed": false,
-          "soup": "hovězí s jáhly",
-          "main": "Hrachová kaše s cibulkou, Vejce vařené",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Hovězí pečeně pražská, Rýže dušená",
-          "category2": "HOVĚZÍ A TELECÍ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "brokolicová",
-          "main": "Bramborové šišky s mákem (strouhankou)",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Vepřový řízek přírodní, Brambory",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s játrovými knedlíčky",
-          "main": "Guláš maďarský, Houskové knedlíky (kynuté)",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Sicilské špagety (boloňské)",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zel. vývar s dýňovým kapáním",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
-          "category": "SLADKÁ",
-          "main2": "Kuře pečené, Šťouchané brambory s cibulkou",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová zahuštěná červenou čočkou",
-          "main": "Rybí filé zapečené se špenátem, Brambory",
-          "category": "RYBY",
-          "main2": "Kuřecí nudličky se sýrovou omáčkou, Těstoviny",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
