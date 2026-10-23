@@ -325,15 +325,18 @@ function openPicker(day,key){
 }
 
 function renderChoices(){
-    const kind=picking.key==='soup'?'soup':'main',q=norm($('search').value),catFilter=$('pickerCategory').value,el=$('choices');el.replaceChildren();
+    const kind=picking.key==='soup'?'soup':'main',q=norm($('search').value.trim()),catFilter=$('pickerCategory').value,el=$('choices');el.replaceChildren();
     const cats=Object.keys(state.catalog[kind]||{});const categorySelect=$('pickerCategory');
     if(categorySelect.options.length!==cats.length+1||cats.some((c,i)=>categorySelect.options[i+1]?.value!==c)){categorySelect.replaceChildren();categorySelect.add(new Option('VŠECHNY',''));for(const cat of cats)categorySelect.add(new Option(cat,cat));categorySelect.value=cats.includes(catFilter)?catFilter:'';}
     const current=state.week.days[picking.day];
+    // Presny podretezec nazvu NEBO kategorie, bez diakritiky; bez fuzzy shod a aliasu.
     const options=all(kind).filter(x=>(!categorySelect.value||x.cat===categorySelect.value)&&(contains(x.name,q)||contains(x.cat,q))).filter(x=>picking.key==='soup'||(picking.key==='main'?x.name!==current.main2:x.name!==current.main));
-    options.sort((a,b)=>a.name.localeCompare(b.name,'cs'));
+    options.sort((a,b)=>a.name.localeCompare(b.name,'cs')||a.cat.localeCompare(b.cat,'cs'));
+    const duplicateNames=new Map();
+    for(const item of options){const key=norm(item.name);duplicateNames.set(key,(duplicateNames.get(key)||0)+1)}
     for(const item of options){
-        const btn=document.createElement('button');btn.className='choice';btn.dataset.meal=item.name;btn.textContent=item.name;
-        const sub=document.createElement('small');sub.textContent=item.cat;btn.append(sub);
+        const btn=document.createElement('button');btn.type='button';btn.className='choice';btn.dataset.meal=item.name;btn.dataset.category=item.cat;
+        btn.textContent=duplicateNames.get(norm(item.name))>1?`${item.name}  [${item.cat}]`:item.name;
         btn.onclick=()=>{
             snapshot();const d=state.week.days[picking.day];
             d[picking.key]=item.name;
@@ -342,7 +345,7 @@ function renderChoices(){
         };
         el.append(btn)
     }
-    const currentName=current[picking.key];const active=Array.from(el.querySelectorAll('.choice')).find(b=>b.dataset.meal===currentName);if(active){active.classList.add('selected');active.scrollIntoView({block:'nearest'});}
+    const currentName=current[picking.key],currentCat=picking.key==='main'?current.category:picking.key==='main2'?current.category2:'';const active=Array.from(el.querySelectorAll('.choice')).find(b=>b.dataset.meal===currentName&&(!currentCat||b.dataset.category===currentCat));if(active){active.classList.add('selected');active.scrollIntoView({block:'nearest'});}
     if(!options.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='Žádné odpovídající jídlo.';el.append(empty)}
 }
 
@@ -372,7 +375,7 @@ $('category').onchange=renderCatalogList;
 let selectedCatalogMeal='',selectedCatalogCategory='';
 function renderCatalogList(){
  const kind=$('kind').value,cat=$('category').value,items=(cat?(state.catalog[kind]?.[cat]||[]).map(name=>({name,cat})):all(kind)).sort((a,b)=>a.name.localeCompare(b.name,'cs'));
- const query=norm($('catalogSearch').value),list=$('catalogList');list.replaceChildren();
+ const query=norm($('catalogSearch').value.trim()),list=$('catalogList');list.replaceChildren();
  const total=Object.values(state.catalog[kind]||{}).reduce((n,a)=>n+a.length,0);
  $('catalogCount').textContent=`${cat?'Kategorie':'VŠECHNY'}: ${items.length} jídel · Celkem ${total} (${kind==='soup'?'polévky':'hlavní jídla'})`;
  const duplicateNames=new Map();
