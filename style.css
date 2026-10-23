@@ -558,3 +558,28 @@ dialog::backdrop { background: #10233b99; }
 .picker-category-label{display:flex;flex-direction:column;gap:5px;margin-bottom:10px;font-weight:600}
 #pickerCategory{width:100%;max-width:100%}
 .choice.selected{background:#dce9fa;outline:2px solid #3766a6;outline-offset:-2px}
+
+/* v16: seznam databaze drzi staly prostor pri filtrovani */
+#catalogList.catalog-list { height:290px; min-height:290px; max-height:290px; overflow-y:auto; overscroll-behavior:contain; }
+/* v16: vyber jidel neztraci vysku pri ubyvani vysledku */
+#picker[open] { display:flex; flex-direction:column; }
+#picker #choices { flex:1 1 auto; min-height:0; overflow-y:auto; overscroll-behavior:contain; }
+#picker #search, #picker .picker-category-label, #picker .dialogtop { flex:0 0 auto; }
+@media screen and (max-width:680px) {
+ #picker[open] {
+  position:fixed; inset:0; margin:auto; box-sizing:border-box;
+  width:calc(100vw - 12px); max-width:calc(100vw - 12px);
+  height:calc(100dvh - 12px); max-height:calc(100dvh - 12px);
+  padding:12px; overflow:hidden;
+ }
+ #picker .dialogtop {gap:8px;align-items:center;margin-bottom:8px;}
+ #picker .dialogtop h2 {font-size:1.08rem;line-height:1.2;margin:0;}
+ #picker .dialogtop button {padding:8px 10px;min-height:40px;}
+ #picker #search {font-size:16px;min-height:44px;margin:0 0 8px;}
+ #picker .picker-category-label {font-size:.85rem;gap:3px;margin:0 0 8px;}
+ #picker #pickerCategory {font-size:16px;min-height:42px;}
+ #picker #choices {max-height:none;min-height:0;}
+ #picker .choice {min-height:42px;padding:10px 9px;}
+ #catalogList.catalog-list {height:250px;min-height:250px;max-height:250px;}
+ #catalogSearch {font-size:16px;}
+}
