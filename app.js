@@ -40,7 +40,15 @@ function txtRules(){
 }
 
 const contains=(name,term)=>norm(name).includes(norm(term));
-function mondayCat(week){const last=state.history.filter(h=>h.week<week&&!h.days?.[0]?.closed&&['RYBY','LUŠTĚNINOVÁ'].some(p=>starts(h.days?.[0]?.category||'',p))).sort((a,b)=>b.week.localeCompare(a.week))[0];return starts(last?.days?.[0]?.category||'','LUŠTĚNINOVÁ')?'RYBY':'LUŠTĚNINOVÁ'}
+// Pevné střídání podle ISO týdne, nezávislé na schválené historii.
+function isoWeekNumber(week){
+    const d=parseDate(monday(week));
+    d.setDate(d.getDate()+3); // čtvrtek určuje ISO rok
+    const first=new Date(d.getFullYear(),0,4,12);
+    first.setDate(first.getDate()-(first.getDay()+6)%7);
+    return 1+Math.round((d-first)/604800000);
+}
+function mondayCat(week){return isoWeekNumber(week)%2===0?'RYBY':'LUŠTĚNINOVÁ'}
 
 function validate(w=state.week){
     const e=[],r=state.rules,t=txtRules(),active=w.days.filter(d=>!d.closed),usedMain=[],usedSoup=[],cats=[];
@@ -451,5 +459,17 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     render();
     window.GitHubSync?.start(window.JidelnickyApp);
+    // Při novém otevření nabídnout aktuální týden, ale nikdy nepřepsat
+    // rozpracovaný jídelníček bez výslovného souhlasu.
+    if(hasSavedState && state.week.week!==monday(iso(new Date()))){
+        const current=monday(iso(new Date()));
+        if(confirm('Pracovní jídelníček je pro týden '+format(dateAt(state.week.week,0))+'.\n\nPřejít na aktuální týden od '+format(dateAt(current,0))+'?\n\nOK = založit prázdný aktuální týden.\nZrušit = zachovat rozpracovaný jídelníček.')){
+            snapshot();
+            state.week=freshWeek(current);
+            render();
+            save();
+            notice('Založen aktuální týden. Předchozí pracovní stav lze vrátit tlačítkem Zpět.');
+        }
+    }
 });
 })();
