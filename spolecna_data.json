@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "cibulová se sýrem",
+          "main": "Hrachová kaše s cibulkou, Vejce vařené",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Omáčka rajčatová, Hovězí maso vařené, Houskové knedlíky (kynuté)",
+          "category2": "HOVĚZÍ A TELECÍ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "hovězí se strouháním",
+          "main": "Nudle s mákom",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Horňácký guláš (maso, fazole), Chléb",
+          "category2": "LUŠTĚNINOVÁ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zelenin. s ovesnými vločkami",
+          "main": "Rybí filé smažené, Bramborová kaše",
+          "category": "RYBY",
+          "main2": "Těstovinový salát s marinovaným tofu",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "gulášová",
+          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "category": "RYBY",
+          "main2": "Zapečené těstoviny s kuřecím masem a zeleninou",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zimní zeleninová s ovesnými vločkami",
+          "main": "Rybí filé pečené na másle, Brambory",
+          "category": "RYBY",
+          "main2": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
+          "category2": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
