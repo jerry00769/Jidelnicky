@@ -1627,51 +1627,6 @@
             "category": "VEPŘOVÉ A UZENÉ"
           }
         ]
-      },
-      {
-        "week": "2026-12-21",
-        "days": [
-          {
-            "closed": false,
-            "soup": "hovězí s česnekovými krutony",
-            "main": "Španělská čočka s mletým masem, Chléb",
-            "category": "LUŠTĚNINOVÁ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "hovězí s těstovinami",
-            "main": "Španělský plátek, Rýže dušená",
-            "category": "HOVĚZÍ A TELECÍ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "zeleninová s těstovinovou rýží",
-            "main": "Bramborový guláš, Rohlík",
-            "category": "BEZMASÁ SLANÁ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "z batátových brambor",
-            "main": "Nudle s mákem",
-            "category": "SLADKÁ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "čočková se zeleninou",
-            "main": "Rybí filé smažené, Bramborová kaše",
-            "category": "RYBY",
-            "main2": "",
-            "category2": ""
-          }
-        ]
       }
     ],
     "rules": {
