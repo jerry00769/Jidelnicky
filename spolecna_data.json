@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-11-23",
+      "week": "2026-10-19",
       "days": [
         {
           "closed": false,
-          "soup": "dýňový krém",
-          "main": "Hrachová kaše s cibulkou, Párky",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "pórková",
-          "main": "Hovězí pečeně pražská, Rýže dušená",
-          "category": "HOVĚZÍ A TELECÍ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "fazolová",
-          "main": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
-          "category": "VEPŘOVÉ A UZENÉ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s bulgurem",
-          "main": "Bramborák",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "květáková s červenou čočkou",
-          "main": "Rybí filé smažené, Bramborová kaše",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         }
