@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-23",
+      "week": "2026-11-09",
       "days": [
         {
           "closed": false,
-          "soup": "dýňový krém",
-          "main": "Fazole a la Katův šleh, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Vepřový řízek přírodní, Kuskus - příloha",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "kmínová s vejcem",
-          "main": "Těstoviny se sýrovou omáčkou",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Vepřová kotleta na houbách, Těstoviny",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "koprová (kulajda)",
-          "main": "Karbanátek z rybího file - pečený, Brambory",
-          "category": "RYBY",
-          "main2": "Sekaná zahradnická, Brambory",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s ovesnými vločkami",
-          "main": "Smažené točenky s rozinkami",
-          "category": "SLADKÁ",
-          "main2": "Horňácký guláš (maso, fazole), Chléb",
-          "category2": "LUŠTĚNINOVÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Čočka na kyselo, Vejce vařené",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Kuřecí prsa na kari koření, Rýže dušená",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
