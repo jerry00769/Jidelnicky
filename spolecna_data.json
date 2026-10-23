@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "z kysaného zelí s klobásou",
+          "main": "Rybí file pečené na másle, Bramborová kaše",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "hovězí s játrovými noky",
+          "main": "Rizoto z vepřového masa",
+          "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "brokolicová",
+          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "čočková se zeleninou",
+          "main": "Kovbojská pánev, Chléb",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "hrachová",
+          "main": "Zapečené těstoviny s uzeným masem",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
           "main2": "",
           "category2": ""
         }
@@ -1668,6 +1668,51 @@
             "soup": "bramborová",
             "main": "Žemlovka s jablky a tvarohem",
             "category": "SLADKÁ",
+            "main2": "",
+            "category2": ""
+          }
+        ]
+      },
+      {
+        "week": "2026-11-23",
+        "days": [
+          {
+            "closed": false,
+            "soup": "z kysaného zelí s klobásou",
+            "main": "Rybí file pečené na másle, Bramborová kaše",
+            "category": "RYBY",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "hovězí s játrovými noky",
+            "main": "Rizoto z vepřového masa",
+            "category": "VEPŘOVÉ A UZENÉ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "brokolicová",
+            "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+            "category": "LUŠTĚNINOVÁ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "čočková se zeleninou",
+            "main": "Kovbojská pánev, Chléb",
+            "category": "BEZMASÁ SLANÁ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "hrachová",
+            "main": "Zapečené těstoviny s uzeným masem",
+            "category": "MLETÉ MASO A ZAPÉKANÉ",
             "main2": "",
             "category2": ""
           }
