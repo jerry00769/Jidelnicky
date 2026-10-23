@@ -249,46 +249,46 @@
       }
     },
     "week": {
-      "week": "2026-11-16",
+      "week": "2026-11-23",
       "days": [
         {
           "closed": false,
           "soup": "zelenin. s fridátovými nudlemi",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "category": "RYBY",
+          "main2": "Rizoto z vepřového masa",
+          "category2": "VEPŘOVÉ A UZENÉ"
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s masem a vejcem",
+          "main": "Španělská čočka s mletým masem, Chléb",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Holandský řízek, Bramborová kaše",
+          "main2": "Karbanátky pečené, Bramborová kaše",
           "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "čočková se zeleninou",
-          "main": "Kapustové karbanátky, Bramborová kaše",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "soup": "zimní zeleninová s ovesnými vločkami",
+          "main": "Nákyp rýžový s meruňkami",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Hovězí pečeně frankfurtská, Těstoviny",
+          "category2": "HOVĚZÍ A TELECÍ"
+        },
+        {
+          "closed": false,
+          "soup": "mrkvová",
+          "main": "Špagety s vepřovým masem a rajčaty",
+          "category": "VEPŘOVÉ A UZENÉ",
           "main2": "Brokolicová poezie (květák, niva)",
           "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "pórková s vejci",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
+          "soup": "hovězí s těstovinami",
+          "main": "Žemlovka s jablky a tvarohem",
           "category": "SLADKÁ",
-          "main2": "Obalované filé s brokolicí a sýrem, Brambory",
-          "category2": "RYBY"
-        },
-        {
-          "closed": false,
-          "soup": "cibulová se sýrem",
-          "main": "Rybí file pečené na másle, Bramborová kaše",
-          "category": "RYBY",
-          "main2": "Gnocchi s kuřecím masem, smetanou a špenátem",
-          "category2": "DRŮBEŽ A KRÁLÍK"
-        },
-        {
-          "closed": false,
-          "soup": "hovězí se strouháním",
-          "main": "Italský guláš (zbruf se sýrem), Těstoviny",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Sekaná pečeně, Bramborová kaše",
+          "main2": "Zapečené těstoviny s uzeninou",
           "category2": "MLETÉ MASO A ZAPÉKANÉ"
         }
       ]
