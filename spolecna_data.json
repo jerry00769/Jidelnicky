@@ -252,7 +252,7 @@
       "week": "2026-10-19",
       "days": [
         {
-          "closed": true,
+          "closed": false,
           "soup": "",
           "main": "",
           "category": "",
