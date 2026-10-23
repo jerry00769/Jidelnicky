@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-10-19",
+      "week": "2026-11-16",
       "days": [
         {
           "closed": false,
-          "soup": "hovězí s těstovinami",
-          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "fazolová",
-          "main": "Hovězí guláš, Rýže dušená",
-          "category": "HOVĚZÍ A TELECÍ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová se sýrovým kapáním",
-          "main": "Dukátové buchtičky s krémem",
-          "category": "SLADKÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "luštěninová",
-          "main": "Nudle s mákom",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s těstovinou",
-          "main": "Zapečené těstoviny s uzeninou",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         }
