@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "z batátových brambor",
-          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+          "soup": "zelenin. s ovesnými vločkami",
+          "main": "Čočka na kyselo, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Zapečené těstoviny s uzeninou",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "main2": "Perkelt z kuřecího masa, Těstoviny",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "dýňový krém",
-          "main": "Zeleninové rizoto",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Moravský vrabec, Bramborové knedlíky (směs), Zelí kysané",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "soup": "mrkvová",
+          "main": "Vepřový řízek přírodní, Brambory",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "Zapečené těstoviny s kuřecím masem a zeleninou",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "hrachová",
-          "main": "Zeleninové placičky se sýrem, Brambory",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Obalované filé s brokolicí a sýrem, Brambory",
-          "category2": "RYBY"
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s masem a vejcem",
-          "main": "Losos přírodní, Brambory",
+          "soup": "z fazolových lusků",
+          "main": "Rybí stripsy, Brambory",
           "category": "RYBY",
-          "main2": "Masová směs \"lamendr\", Rýže dušená",
+          "main2": "Pekingská směs, Rýže dušená",
           "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "zeleninová s celozrnnými knedlíčky",
-          "main": "Kuře na paprice, Těstoviny",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Omáčka rajčatová, Hovězí maso vařené, Těstoviny",
-          "category2": "HOVĚZÍ A TELECÍ"
+          "soup": "květáková s červenou čočkou",
+          "main": "Těstovinový salát s marinovaným tofu",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Sicilské špagety (boloňské)",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+        },
+        {
+          "closed": false,
+          "soup": "z kysaného zelí",
+          "main": "Zapečené těstoviny s uzeným masem",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "main2": "Lotrinské tagliatelle se sýrem",
+          "category2": "BEZMASÁ SLANÁ"
         }
       ]
     },
