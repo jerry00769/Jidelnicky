@@ -19,7 +19,7 @@ function valid(s){return !!(s?.catalog?.main&&s?.catalog?.soup&&Array.isArray(s?
 async function remote(){const item=await request('GET');if(!item)return null;if(item.type!=='file'||!item.content)throw Error('GitHub nevrátil obsah souboru.');const obj=JSON.parse(decode(item.content));if(obj.format!=='jidelnicky-shared-v1'||!valid(obj.state))throw Error('Společný soubor nemá správný formát.');return {sha:item.sha,state:obj.state}}
 async function put(s,expected){const content=encode(JSON.stringify({format:'jidelnicky-shared-v1',state:s},null,2));return request('PUT',{message:'Jídelníčky: synchronizace společných dat',content,...(expected?{sha:expected}:{})})}
 async function connect(){
- if(busy)return;busy=true;status('GitHub: připojuji…');
+ if(busy)return;busy=true;status('GitHub: čeká na synchronizaci…');
  try{
   const r=await remote();
   if(!r){
@@ -31,7 +31,7 @@ async function connect(){
   // Bezpečné obnovení offline zápisu: server se od poslední synchronizace nezměnil.
   if(dirty&&storedBaseline===remoteJson){
    sha=r.sha;baseline=storedBaseline;connected=true;conflicted=false;controls();
-   status('GitHub: odesílám změny uložené offline…');
+   status('GitHub: čeká na synchronizaci offline změn…');
    setTimeout(flush,0);return;
   }
   // Nové zařízení: uživatel musí potvrdit první převzetí vzdálených dat.
@@ -42,10 +42,13 @@ async function connect(){
     if(confirm('Na zařízení jsou místní změny odlišné od GitHubu.\n\nOK = stáhnout zálohu místních dat (doporučeno).\nZrušit = zatím nic neměnit.'))backup(local);
     return;
    }
-   if(!confirm('Na GitHubu jsou společná data.\n\nOK = převzít společná data do tohoto zařízení.\nZrušit = ponechat místní data beze změny.\n\nPřed převzetím doporučujeme Export JSON.')){status('GitHub: místní data zachována, nepřipojeno');return}
+   // Běžné znovupřipojení čistého zařízení proběhne bez dialogu.
+   // Při úplně prvním připojení (bez známé výchozí verze) zůstává jednorázová ochrana dat.
+   if(!storedBaseline&&!confirm('První připojení: převzít společná data z GitHubu?\n\nMístní data tohoto zařízení se nahradí. Předem lze použít Export JSON.')){status('GitHub: čeká na první potvrzení připojení');return}
+   status('GitHub: načítám změny z druhého zařízení…');
    app.applyState(r.state);
   }
-  sha=r.sha;setBaseline(app.getState());markPending(false);connected=true;conflicted=false;controls();status('GitHub: synchronizováno');
+  sha=r.sha;setBaseline(app.getState());markPending(false);connected=true;conflicted=false;controls();status('GitHub: data synchronizována');
  }catch(e){connected=false;controls();status('GitHub: '+e.message,true)}finally{busy=false}
 }
 async function resolveConflict(){
@@ -64,15 +67,15 @@ async function flush(){
  busy=true;
  try{
   const current=app.getState(),serial=json(current);
-  if(serial===baseline){markPending(false);status('GitHub: synchronizováno');return}
+  if(serial===baseline){markPending(false);status('GitHub: data synchronizována');return}
   const r=await remote();
   if(!r||r.sha!==sha){
-   conflicted=true;connected=false;controls();status('GitHub: konflikt! Místní data zachována. Otevři Nastavení a vytvoř zálohu.',true);return;
+   conflicted=true;connected=false;controls();status('GitHub: konflikt úprav – je potřeba rozhodnout v Nastavení. Místní data zachována.',true);return;
   }
   const saved=await put(current,sha);
   sha=saved.content.sha;setBaseline(current);
-  if(json(app.getState())===serial){markPending(false);status('GitHub: synchronizováno')}
-  else{markPending(true);status('GitHub: odesílám další změny…')}
+  if(json(app.getState())===serial){markPending(false);status('GitHub: data synchronizována')}
+  else{markPending(true);status('GitHub: čeká na synchronizaci dalších změn…')}
  }catch(e){
   if(e.status===409||e.status===422){conflicted=true;connected=false;controls();status('GitHub: konflikt souběžných změn! Místní data zachována.',true)}
   else status('GitHub: offline nebo chyba zápisu. Změny zůstaly v zařízení a čekají na odeslání.',true)
@@ -83,7 +86,7 @@ function changed(){
  if(!token)return;
  markPending(true);
  if(!connected){status('GitHub: změny uloženy místně, čekají na připojení',true);return}
- status('GitHub: ukládám změny…');clearTimeout(timer);timer=setTimeout(flush,1200)
+ status('GitHub: čeká na synchronizaci změn…');clearTimeout(timer);timer=setTimeout(flush,1200)
 }
 async function refresh(){
  if(!connected||busy||conflicted)return;
@@ -97,8 +100,8 @@ async function refresh(){
     markPending(true);conflicted=true;connected=false;controls();status('GitHub: konflikt místních změn. Data nebyla přepsána.',true);return;
    }
    // Před aplikací dat ověřujeme, že stav se od začátku kontroly nezměnil.
-   app.applyState(r.state);sha=r.sha;setBaseline(r.state);status('GitHub: nové změny načteny');
-  }else status('GitHub: synchronizováno');
+   app.applyState(r.state);sha=r.sha;setBaseline(r.state);status('GitHub: data synchronizována');
+  }else status('GitHub: data synchronizována');
  }catch(e){status('GitHub: nelze zkontrolovat spojení; místní data zachována ('+e.message+')',true)}
  finally{busy=false}
 }
