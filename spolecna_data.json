@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s fridátovými nudlemi",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "soup": "selská ii.",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
           "category": "RYBY",
-          "main2": "Rizoto z vepřového masa",
-          "category2": "VEPŘOVÉ A UZENÉ"
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s masem a vejcem",
-          "main": "Španělská čočka s mletým masem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Karbanátky pečené, Bramborová kaše",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
-        },
-        {
-          "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Nákyp rýžový s meruňkami",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Hovězí pečeně frankfurtská, Těstoviny",
-          "category2": "HOVĚZÍ A TELECÍ"
-        },
-        {
-          "closed": false,
-          "soup": "mrkvová",
-          "main": "Špagety s vepřovým masem a rajčaty",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "Brokolicová poezie (květák, niva)",
+          "main2": "Bramborové šišky s mákem (strouhankou)",
           "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "hovězí s těstovinami",
-          "main": "Žemlovka s jablky a tvarohem",
+          "soup": "fazolová",
+          "main": "Nákyp rýžový se švestkami",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Hovězí pečeně znojemská, Rýže dušená",
+          "category2": "HOVĚZÍ A TELECÍ"
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s těstovinou",
+          "main": "Rizoto z vepřového masa",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "Špekové knedlíky, Zelí kysané",
+          "category2": "BEZMASÁ SLANÁ"
+        },
+        {
+          "closed": false,
+          "soup": "z batátových brambor",
+          "main": "Kuskus s ovocem",
           "category": "SLADKÁ",
-          "main2": "Zapečené těstoviny s uzeninou",
+          "main2": "Sekaná zahradnická, Brambory",
           "category2": "MLETÉ MASO A ZAPÉKANÉ"
+        },
+        {
+          "closed": false,
+          "soup": "ze zahradních jahod",
+          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Vepřové na paprice, Těstoviny",
+          "category2": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
