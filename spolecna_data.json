@@ -1627,6 +1627,51 @@
             "category": "VEPŘOVÉ A UZENÉ"
           }
         ]
+      },
+      {
+        "week": "2026-12-21",
+        "days": [
+          {
+            "closed": false,
+            "soup": "hovězí se strouháním",
+            "main": "Čočkový kotlík, Chléb",
+            "category": "LUŠTĚNINOVÁ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "Špenátová s vajíčkem",
+            "main": "Knedlíky švestkové (bramborové) s mákem",
+            "category": "SLADKÁ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "vývar s drobením",
+            "main": "Guláš maďarský, Rýže dušená",
+            "category": "BEZMASÁ SLANÁ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "zeleninová s hrachovými nudlemi",
+            "main": "Karbanátek z rybího file - pečený, Brambory",
+            "category": "RYBY",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "selská ii.",
+            "main": "Domácí buchty plněné mákem, povidly, tvarohem",
+            "category": "BEZMASÁ SLANÁ",
+            "main2": "",
+            "category2": ""
+          }
+        ]
       }
     ],
     "rules": {
