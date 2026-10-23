@@ -537,3 +537,13 @@ dialog::backdrop { background: #10233b99; }
 .github-controls button[hidden]{display:none}
 .sync-hint{font-size:.8rem;line-height:1.45;margin:3px 0 0;color:#52677e}
 @media(max-width:500px){.sync-area{justify-content:space-between;gap:8px;margin-top:6px}.github-settings[open] .github-controls{right:0}#savedBadge{margin:0}}
+
+/* V9: kalendar kopirovani historie */
+.copy-week-dialog{width:min(460px,94vw);max-height:90vh;border:0;border-radius:14px;padding:20px;color:#203451;box-shadow:0 16px 60px #0004}
+.copy-cal-nav,.copy-cal-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0}
+.copy-cal-nav strong{text-transform:capitalize}.copy-cal-days,.copy-cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.copy-cal-days{text-align:center;font-size:12px;font-weight:700;color:#586b86;margin-bottom:6px}
+.copy-cal-day{min-width:0;aspect-ratio:1;border:1px solid transparent;border-radius:8px;background:#f0f3f8;color:#203451;padding:0;cursor:pointer;font-size:14px}
+.copy-cal-day.outside{opacity:.4}.copy-cal-day.in-week{background:#dce9fb}.copy-cal-day.is-today{background:#c2efd4;border:2px solid #168251;font-weight:700}
+.copy-cal-day.is-selected{background:#2457ad;color:white;border:2px solid #143b81;font-weight:700}.copy-cal-day:focus-visible{outline:3px solid #f59e0b;outline-offset:1px}
+.copy-cal-legend{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0;font-size:12px}.copy-cal-warning{color:#925000;font-weight:600}.copy-cal-actions{justify-content:flex-end}

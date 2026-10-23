@@ -219,7 +219,40 @@ function chosenHistory(){return state.history.find(h=>h.week===selectedHistory)}
 $('openHistory').onclick=$('historyManager').onclick=()=>showHistory();
 $('closeHistory').onclick=()=>$('historyDialog').close();
 $('historyLoad').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;snapshot();state.week=clone(h);state.count=h.days.some(d=>d.main2)?2:1;$('historyDialog').close();render();notice('Načtena pracovní kopie. Schválená historie se nezměnila.')});
-$('historyCopy').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;const target=prompt('Zadej datum nového týdne (RRRR-MM-DD):',iso(today));if(target===null)return;if(!/^\d{4}-\d{2}-\d{2}$/.test(target)||Number.isNaN(parseDate(target).getTime())||iso(parseDate(target))!==target)throw Error('Datum zadej jako RRRR-MM-DD.');snapshot();state.week=clone(h);state.week.week=monday(target);state.count=h.days.some(d=>d.main2)?2:1;$('historyDialog').close();render();notice('Týden zkopírován jako pracovní návrh. Historie se nepřepsala.')});
+// Vlastni kalendar pro kopirovani schvaleneho tydne.
+let copySource=null,copyDate=null,copyMonth=null;
+const copyDlg=$('copyWeekDialog');
+function drawCopyCalendar(){
+ const y=copyMonth.getFullYear(),m=copyMonth.getMonth(),start=new Date(y,m,1),offset=(start.getDay()+6)%7;
+ $('copyMonthLabel').textContent=new Intl.DateTimeFormat('cs-CZ',{month:'long',year:'numeric'}).format(copyMonth);
+ const grid=$('copyCalendar');grid.replaceChildren();
+ const todayKey=iso(new Date()),selectedKey=iso(copyDate),weekKey=monday(selectedKey);
+ for(let i=0;i<42;i++){
+  const d=new Date(y,m,1-offset+i),key=iso(d),button=document.createElement('button');
+  button.type='button';button.textContent=d.getDate();button.className='copy-cal-day';
+  button.setAttribute('aria-label',new Intl.DateTimeFormat('cs-CZ',{dateStyle:'full'}).format(d));
+  if(d.getMonth()!==m)button.classList.add('outside');
+  if(monday(key)===weekKey&&d.getDay()!==0&&d.getDay()!==6)button.classList.add('in-week');
+  if(key===todayKey){button.classList.add('is-today');button.setAttribute('aria-current','date')}
+  if(key===selectedKey){button.classList.add('is-selected');button.setAttribute('aria-pressed','true')}
+  button.onclick=()=>{copyDate=d;copyMonth=new Date(d.getFullYear(),d.getMonth(),1);drawCopyCalendar()};grid.append(button);
+ }
+ $('copyWeekRange').textContent='Cílový týden: '+format(parseDate(weekKey))+' – '+format(dateAt(weekKey,4));
+ $('copyWeekWarning').textContent=state.history.some(h=>h.week===weekKey)?'Tento týden už je ve schválené historii. Kopie bude jen pracovní návrh; historie se nepřepíše.':'';
+}
+$('copyPrevMonth').onclick=()=>{copyMonth=new Date(copyMonth.getFullYear(),copyMonth.getMonth()-1,1);drawCopyCalendar()};
+$('copyNextMonth').onclick=()=>{copyMonth=new Date(copyMonth.getFullYear(),copyMonth.getMonth()+1,1);drawCopyCalendar()};
+$('copyToday').onclick=()=>{copyDate=new Date();copyMonth=new Date(copyDate.getFullYear(),copyDate.getMonth(),1);drawCopyCalendar()};
+$('copyCancel').onclick=()=>copyDlg.close();
+$('copyConfirm').onclick=()=>safe(()=>{
+ const h=state.history.find(x=>x.week===copySource);if(!h)throw Error('Původní týden už není v historii.');
+ snapshot();state.week=clone(h);state.week.week=monday(iso(copyDate));state.count=h.days.some(d=>d.main2)?2:1;
+ copyDlg.close();$('historyDialog').close();render();notice('Týden zkopírován jako pracovní návrh. Historie se nezměnila.');
+});
+$('historyCopy').onclick=()=>safe(()=>{
+ const h=chosenHistory();if(!h)return;copySource=h.week;copyDate=new Date();copyMonth=new Date(copyDate.getFullYear(),copyDate.getMonth(),1);
+ drawCopyCalendar();copyDlg.showModal();
+});
 $('historyDelete').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;if(!confirm('Opravdu smazat schválený týden '+format(dateAt(h.week,0))+'? Změnu lze vrátit tlačítkem Zpět.'))return;snapshot();state.history=state.history.filter(x=>x.week!==h.week);selectedHistory=[...state.history].sort((a,b)=>b.week.localeCompare(a.week))[0]?.week||null;render();historyRows();historyDetail();notice('Týden smazán z historie. '+(selectedHistory?'Vybrán nejnovější zbývající týden. ':'Historie je prázdná. ')+'Lze vrátit tlačítkem Zpět.')});
 $('historyPrint').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;const previous=clone(state.week),count=state.count;printingHistory=true;try{state.week=clone(h);state.count=h.days.some(d=>d.main2)?2:1;render();$('historyDialog').close();window.print()}finally{state.week=previous;state.count=count;render();printingHistory=false}notice('Připraven tisk vybraného týdne.')});
 
