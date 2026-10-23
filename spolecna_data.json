@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-09",
+      "week": "2026-11-16",
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová s těstovinovou",
-          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+          "soup": "zeleninová se sýrovým kapáním",
+          "main": "Horňácký guláš (maso, fazole), Chléb",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Masová směs \"lamendr\", Rýže dušená",
+          "main2": "Kovbojská pánev, Chléb",
           "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "celerová se smaženým hráškem",
-          "main": "Těstovinový salát s marinovaným tofu",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Těstovinový salát s cizrnou a sušenými rajčaty",
-          "category2": "LUŠTĚNINOVÁ"
+          "soup": "zeleninová s těstovinami",
+          "main": "Rybí filé pečené na másle, Brambory",
+          "category": "RYBY",
+          "main2": "Kuřecí rizoto",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "Špenátová s vajíčkem",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Hovězí pečeně pražská, Rýže dušená",
+          "soup": "mrkvová",
+          "main": "Kapustové karbanátky, Bramborová kaše",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "main2": "Rizoto srbské",
+          "category2": "BEZMASÁ SLANÁ"
+        },
+        {
+          "closed": false,
+          "soup": "hráškový krém",
+          "main": "Džuveč, Chléb",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Hovězí guláš, Rýže dušená",
           "category2": "HOVĚZÍ A TELECÍ"
         },
         {
           "closed": false,
-          "soup": "rajčatová s těstovinami",
-          "main": "Obalované filé s brokolicí a sýrem, Brambory",
-          "category": "RYBY",
-          "main2": "Zeleninové placičky se sýrem, Brambory",
-          "category2": "BEZMASÁ SLANÁ"
-        },
-        {
-          "closed": false,
-          "soup": "dýňový krém",
-          "main": "Dukátové buchtičky s krémem",
-          "category": "SLADKÁ",
-          "main2": "Kuskus s kuřecím masem, brokolicí a suš.rajčaty",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "z kysaného zelí",
+          "main": "Rizoto z vepřového masa",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "Sekaná pečeně, Bramborová kaše",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         }
       ]
     },
