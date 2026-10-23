@@ -53,9 +53,8 @@ async function connect(){
 }
 async function resolveConflict(){
  if(busy||!conflicted)return;
- if(!confirm('Konflikt GitHubu. Nejprve se automaticky stáhne záloha aktuálních místních dat.\n\nOK = stáhnout zálohu a pokračovat k potvrzení načtení serverových dat.\nZrušit = ponechat vše beze změny.'))return;
+ if(!confirm('Na tomto zařízení jsou neodeslané změny.\n\nPřevzít data z GitHubu? Před nahrazením místních dat se automaticky stáhne jejich záloha JSON.\n\nZrušit = ponechat místní data beze změny.'))return;
  backup(app.getState());
- if(!confirm('Záloha místních dat byla nabídnuta ke stažení.\n\nOpravdu nyní převzít data z GitHubu? Neodeslané místní změny se nahradí serverovými.\nZrušit = místní data zachovat.'))return;
  busy=true;
  try{
   const r=await remote();if(!r)throw Error('Na GitHubu chybí společná data.');

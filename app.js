@@ -256,7 +256,6 @@ $('copyConfirm').onclick=()=>safe(()=>{
  const target=monday(iso(copyDate));
  if(calendarMode==='main'){
   if(target===state.week.week){copyDlg.close();return}
-  if(!confirm('Přejít na týden '+format(parseDate(target))+' – '+format(dateAt(target,4))+'?\n\nDosavadní pracovní návrh zůstane dostupný přes Zpět.'))return;
   snapshot();state.week=freshWeek(target);copyDlg.close();render();notice('Nastaven týden '+format(parseDate(target))+'. Předchozí návrh lze vrátit tlačítkem Zpět.');return;
  }
  const h=state.history.find(x=>x.week===copySource);if(!h)throw Error('Původní týden už není v historii.');
