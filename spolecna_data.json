@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-09",
+      "week": "2026-11-16",
       "days": [
         {
           "closed": false,
-          "soup": "z kysaného zelí",
-          "main": "Hrachová kaše s cibulkou, Vejce vařené",
+          "soup": "celerová se smaženým hráškem",
+          "main": "Čočka na kyselo, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Nudle s mákom",
-          "category2": "BEZMASÁ SLANÁ"
+          "main2": "Sicilské špagety (boloňské)",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "bramboračka nezahuštěná",
-          "main": "Rybí filé smažené, Bramborová kaše",
-          "category": "RYBY",
-          "main2": "Džuveč, Chléb",
-          "category2": "BEZMASÁ SLANÁ"
-        },
-        {
-          "closed": false,
-          "soup": "česneková s bramborem a vejcem",
-          "main": "Španělský plátek, Rýže dušená",
-          "category": "HOVĚZÍ A TELECÍ",
-          "main2": "Rybí filé po mlynářsku, Brambory",
-          "category2": "RYBY"
-        },
-        {
-          "closed": false,
-          "soup": "zeleninová s celozrnnými knedlíčky",
-          "main": "Těstoviny s brokolicí",
+          "soup": "zelenin. s rýží",
+          "main": "Těstoviny se sýrovou omáčkou",
           "category": "BEZMASÁ SLANÁ",
-          "main2": "Gnocchi s kuřecím masem, smetanou a špenátem",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "main2": "Španělský plátek, Rýže dušená",
+          "category2": "HOVĚZÍ A TELECÍ"
         },
         {
           "closed": false,
-          "soup": "čočková se zeleninou",
-          "main": "Kuřecí řízek smažený, Bramborová kaše",
+          "soup": "dýňový krém",
+          "main": "Králík pečený, Brambory",
           "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Vepřové na houbách se smetanou, Houskové knedlíky (kynuté)",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "main2": "Kapustové karbanátky, Bramborová kaše",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+        },
+        {
+          "closed": false,
+          "soup": "hrachová",
+          "main": "Rybí filé po mlynářsku, Brambory",
+          "category": "RYBY",
+          "main2": "Guláš maďarský, Houskové knedlíky (kynuté)",
+          "category2": "BEZMASÁ SLANÁ"
+        },
+        {
+          "closed": false,
+          "soup": "Špenátová s vajíčkem",
+          "main": "Zeleninový salát, Kuřecí stripsy",
+          "category": "DRŮBEŽ A KRÁLÍK",
+          "main2": "Hrachová kaše s cibulkou, Vejce vařené",
+          "category2": "LUŠTĚNINOVÁ"
         }
       ]
     },
