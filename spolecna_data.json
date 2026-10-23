@@ -252,29 +252,44 @@
       "week": "2026-11-02",
       "days": [
         {
-          "soup": "Rajská s ovesnými vločkami",
-          "main": "Rybí filé s rajčaty, bazalkou, brambory",
-          "category": "RYBY"
+          "closed": false,
+          "soup": "zeleninová s kuskusem",
+          "main": "Rybí filé pečené na másle, Brambory",
+          "category": "RYBY",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Ovarová s kroupami",
-          "main": "Krůtí maso na pórku, rýže",
-          "category": "DRŮBEŽ A KRÁLÍK"
+          "closed": false,
+          "soup": "celerová se smaženým hráškem",
+          "main": "Fazole a la Katův šleh, Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Zeleninová s pohankou",
-          "main": "Bulgur se zeleninou a kuřecím masem",
-          "category": "DRŮBEŽ A KRÁLÍK"
+          "closed": false,
+          "soup": "rajčatová s těstovinou",
+          "main": "Masová směs \"lamendr\", Rýže dušená",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Hovězí se strouháním",
-          "main": "Dukátové buchtičky se šódo",
-          "category": "SLADKÁ"
+          "closed": false,
+          "soup": "špenátová",
+          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "category": "RYBY",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Hrachová",
-          "main": "Domažlické vepřové ragů, těstoviny",
-          "category": "VEPŘOVÉ A UZENÉ"
+          "closed": false,
+          "soup": "česneková s bramborem a vejcem",
+          "main": "Losos přírodní, Brambory",
+          "category": "RYBY",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
