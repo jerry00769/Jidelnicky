@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "hráškový krém",
+          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Kuře pečené, Šťouchané brambory s cibulkou",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zelenin. s bulgurem",
+          "main": "Vepřová roláda (karlovarský kotouč), Bramborová kaše",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "Zapečené těstoviny s uzeninou",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "čočková",
+          "main": "Špekové knedlíky, Zelí kysané",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Španělský ptáček rozházený, Rýže dušená",
+          "category2": "HOVĚZÍ A TELECÍ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "bramborová",
+          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Losos přírodní, Brambory",
+          "category2": "RYBY"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zelenin. s kroupami",
+          "main": "Rybí filé pečené na másle, Brambory",
+          "category": "RYBY",
+          "main2": "Omáčka rajčatová, Hovězí maso vařené, Houskové knedlíky (kynuté)",
+          "category2": "HOVĚZÍ A TELECÍ"
         }
       ]
     },
