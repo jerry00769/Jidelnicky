@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-09",
+      "week": "2026-11-16",
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s kroupami",
-          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "soup": "zelenin. s fridátovými nudlemi",
+          "main": "Čočka na kyselo, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Žebrácké maso, Brambory opékané",
+          "main2": "Džuveč, Chléb",
           "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "zelenin. s pohankou",
-          "main": "Livance",
-          "category": "SLADKÁ",
-          "main2": "Pekingská směs, Rýže dušená",
+          "soup": "pórková s vejci",
+          "main": "Hovězí pečeně štěpánská, Rýže dušená",
+          "category": "HOVĚZÍ A TELECÍ",
+          "main2": "Bramborák",
           "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "bramborová",
-          "main": "Špekové knedlíky, Zelí kysané",
+          "soup": "zelenin. s bulgurem",
+          "main": "Rybí file pečené na másle, Bramborová kaše",
+          "category": "RYBY",
+          "main2": "Hovězí pečeně frankfurtská, Těstoviny",
+          "category2": "HOVĚZÍ A TELECÍ"
+        },
+        {
+          "closed": false,
+          "soup": "drožďová",
+          "main": "Těstoviny se sýrovou omáčkou",
           "category": "BEZMASÁ SLANÁ",
-          "main2": "Vepřové na paprice, Těstoviny",
+          "main2": "Bramborové knedlíky plň.uzeným masem (salám), Zelí kysané",
           "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
-          "soup": "dýňový krém",
-          "main": "Rybí filé po mlynářsku, Brambory",
-          "category": "RYBY",
-          "main2": "Sekaná pečeně, Bramborová kaše",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
-        },
-        {
-          "closed": false,
-          "soup": "Špenátová s vajíčkem",
-          "main": "Kapustové karbanátky s masem, Brambory",
+          "soup": "krupicová maďarská",
+          "main": "Francouzské brambory",
           "category": "MLETÉ MASO A ZAPÉKANÉ",
-          "main2": "Kuskus s kuřecím masem",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "main2": "Vepřové v kapustě, Brambory",
+          "category2": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
