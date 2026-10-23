@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-10-19",
+      "week": "2026-11-16",
       "days": [
         {
           "closed": false,
-          "soup": "česneková s osmaženou hostičkou",
-          "main": "Horňácký guláš (maso, fazole), Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "bramboračka nezahuštěná",
-          "main": "Těstoviny s brokolicí",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s bulgurem",
-          "main": "Obalované filé s brokolicí a sýrem, Brambory",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s játrovými knedlíčky",
-          "main": "Rybí filé po mlynářsku, Brambory",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s játrovými noky",
-          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         }
