@@ -222,6 +222,14 @@ $('historyLoad').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;snap
 // Vlastni kalendar pro kopirovani schvaleneho tydne.
 let copySource=null,copyDate=null,copyMonth=null;
 const copyDlg=$('copyWeekDialog');
+let calendarMode='history';
+$('openMainCalendar').onclick=()=>{
+ calendarMode='main';copySource=null;
+ copyDate=parseDate(state.week.week);copyMonth=new Date(copyDate.getFullYear(),copyDate.getMonth(),1);
+ $('copyWeekTitle').textContent='Vybrat týden';
+ $('copyConfirm').textContent='Nastavit týden';
+ drawCopyCalendar();copyDlg.showModal();
+};
 function drawCopyCalendar(){
  const y=copyMonth.getFullYear(),m=copyMonth.getMonth(),start=new Date(y,m,1),offset=(start.getDay()+6)%7;
  $('copyMonthLabel').textContent=new Intl.DateTimeFormat('cs-CZ',{month:'long',year:'numeric'}).format(copyMonth);
@@ -238,19 +246,25 @@ function drawCopyCalendar(){
   button.onclick=()=>{copyDate=d;copyMonth=new Date(d.getFullYear(),d.getMonth(),1);drawCopyCalendar()};grid.append(button);
  }
  $('copyWeekRange').textContent='Cílový týden: '+format(parseDate(weekKey))+' – '+format(dateAt(weekKey,4));
- $('copyWeekWarning').textContent=state.history.some(h=>h.week===weekKey)?'Tento týden už je ve schválené historii. Kopie bude jen pracovní návrh; historie se nepřepíše.':'';
+ $('copyWeekWarning').textContent=state.history.some(h=>h.week===weekKey)?(calendarMode==='main'?'Tento týden už je ve schválené historii. Přepnutí vytvoří nový pracovní návrh; schválený týden zůstane zachovaný.':'Tento týden už je ve schválené historii. Kopie bude jen pracovní návrh; historie se nepřepíše.') : '';
 }
 $('copyPrevMonth').onclick=()=>{copyMonth=new Date(copyMonth.getFullYear(),copyMonth.getMonth()-1,1);drawCopyCalendar()};
 $('copyNextMonth').onclick=()=>{copyMonth=new Date(copyMonth.getFullYear(),copyMonth.getMonth()+1,1);drawCopyCalendar()};
 $('copyToday').onclick=()=>{copyDate=new Date();copyMonth=new Date(copyDate.getFullYear(),copyDate.getMonth(),1);drawCopyCalendar()};
 $('copyCancel').onclick=()=>copyDlg.close();
 $('copyConfirm').onclick=()=>safe(()=>{
+ const target=monday(iso(copyDate));
+ if(calendarMode==='main'){
+  if(target===state.week.week){copyDlg.close();return}
+  if(!confirm('Přejít na týden '+format(parseDate(target))+' – '+format(dateAt(target,4))+'?\n\nDosavadní pracovní návrh zůstane dostupný přes Zpět.'))return;
+  snapshot();state.week=freshWeek(target);copyDlg.close();render();notice('Nastaven týden '+format(parseDate(target))+'. Předchozí návrh lze vrátit tlačítkem Zpět.');return;
+ }
  const h=state.history.find(x=>x.week===copySource);if(!h)throw Error('Původní týden už není v historii.');
- snapshot();state.week=clone(h);state.week.week=monday(iso(copyDate));state.count=h.days.some(d=>d.main2)?2:1;
+ snapshot();state.week=clone(h);state.week.week=target;state.count=h.days.some(d=>d.main2)?2:1;
  copyDlg.close();$('historyDialog').close();render();notice('Týden zkopírován jako pracovní návrh. Historie se nezměnila.');
 });
 $('historyCopy').onclick=()=>safe(()=>{
- const h=chosenHistory();if(!h)return;copySource=h.week;copyDate=new Date();copyMonth=new Date(copyDate.getFullYear(),copyDate.getMonth(),1);
+ const h=chosenHistory();if(!h)return;calendarMode='history';copySource=h.week;copyDate=new Date();copyMonth=new Date(copyDate.getFullYear(),copyDate.getMonth(),1);$('copyWeekTitle').textContent='Kopírovat do jiného týdne';$('copyConfirm').textContent='Kopírovat';
  drawCopyCalendar();copyDlg.showModal();
 });
 $('historyDelete').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;if(!confirm('Opravdu smazat schválený týden '+format(dateAt(h.week,0))+'? Změnu lze vrátit tlačítkem Zpět.'))return;snapshot();state.history=state.history.filter(x=>x.week!==h.week);selectedHistory=[...state.history].sort((a,b)=>b.week.localeCompare(a.week))[0]?.week||null;render();historyRows();historyDetail();notice('Týden smazán z historie. '+(selectedHistory?'Vybrán nejnovější zbývající týden. ':'Historie je prázdná. ')+'Lze vrátit tlačítkem Zpět.')});
