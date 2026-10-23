@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-16",
+      "week": "2026-11-09",
       "days": [
         {
           "closed": false,
-          "soup": "hovězí s játrovými knedlíčky",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "soup": "zeleninová s ovesnými vločkami",
+          "main": "Horňácký guláš (maso, fazole), Chléb",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Nákyp rýžový se švestkami",
-          "category2": "BEZMASÁ SLANÁ"
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s těstovinou",
-          "main": "Žemlovka s jablky a tvarohem",
-          "category": "SLADKÁ",
-          "main2": "Vepřové v kapustě, Brambory",
-          "category2": "VEPŘOVÉ A UZENÉ"
-        },
-        {
-          "closed": false,
-          "soup": "česneková s osmaženou hostičkou",
-          "main": "Těstovinový salát s marinovaným tofu",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Sicilské špagety (boloňské)",
+          "main2": "Zapečené těstoviny s uzeným masem",
           "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "kmínová s vejcem",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "soup": "z míchaných luštěnin",
+          "main": "Losos přírodní, Brambory",
           "category": "RYBY",
-          "main2": "Kuře na paprice, Těstoviny",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "main2": "Zeleninové rizoto",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "vývar s drobením",
-          "main": "Bramborové šišky s mákem (strouhankou)",
+          "soup": "hovězí s masem a vejcem",
+          "main": "Vepřový guláš, Rýže dušená",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "Omáčka koprová, Brambory, Vejce vařené",
+          "category2": "BEZMASÁ SLANÁ"
+        },
+        {
+          "closed": false,
+          "soup": "hrachová se smaženým hráškem",
+          "main": "Zapečené těstoviny s uzeninou",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "main2": "Špagety s vepřovým masem a rajčaty",
+          "category2": "VEPŘOVÉ A UZENÉ"
+        },
+        {
+          "closed": false,
+          "soup": "rajčatová s těstovinami",
+          "main": "Džuveč, Chléb",
           "category": "BEZMASÁ SLANÁ",
-          "main2": "Rybí filé po mlynářsku, Brambory",
-          "category2": "RYBY"
+          "main2": "Hrachová kaše s cibulkou, Vejce vařené",
+          "category2": "LUŠTĚNINOVÁ"
         }
       ]
     },
