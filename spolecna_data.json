@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "z kysaného zelí s klobásou",
+          "main": "Hrachová kaše s cibulkou, Vejce vařené",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Gnocchi s kuřecím masem, smetanou a špenátem",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "hovězí s kuskusem",
+          "main": "Hovězí pečeně frankfurtská, Těstoviny",
+          "category": "HOVĚZÍ A TELECÍ",
+          "main2": "Vepřová pečeně selská, Nastavovaná kaše s cibulkou",
+          "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "luštěninová",
+          "main": "Obalované filé s brokolicí a sýrem, Brambory",
+          "category": "RYBY",
+          "main2": "Nudle s mákom",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "vývar s drobením",
+          "main": "Vepřová kýta hamburská, Houskové knedlíky (kynuté)",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "Zeleninový salát, Kuřecí stripsy",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "dýňový krém",
+          "main": "Zeleninové rizoto",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Zapečené těstoviny s uzeným masem",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         }
       ]
     },
