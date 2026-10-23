@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-10-19",
+      "week": "2026-10-26",
       "days": [
         {
           "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Čočka na kyselo, Vejce vařené",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s těstovinami",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "z kysaného zelí s klobásou",
-          "main": "Guláš maďarský, Rýže dušená",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "brokolicová",
-          "main": "Čočkový kotlík, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "fazolová se zeleninou",
-          "main": "Smažené točenky s rozinkami",
-          "category": "SLADKÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         }
