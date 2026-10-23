@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-09",
+      "week": "2026-11-16",
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová se sýrovým kapáním",
-          "main": "Čočka na kyselo, Vejce vařené",
+          "soup": "z batátových brambor",
+          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Rizoto s kuřecím masem",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "main2": "Zapečené těstoviny s uzeninou",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "zelenin. s ovesnými vločkami",
-          "main": "Hovězí pečeně na paprice, Vícezrnný knedlík (směs)",
-          "category": "HOVĚZÍ A TELECÍ",
+          "soup": "dýňový krém",
+          "main": "Zeleninové rizoto",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "Moravský vrabec, Bramborové knedlíky (směs), Zelí kysané",
           "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
-          "soup": "zeleninová zahuštěná červenou čočkou",
-          "main": "Sekaná pečeně, Brambory",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
-          "main2": "Španělský plátek, Rýže dušená",
-          "category2": "HOVĚZÍ A TELECÍ"
-        },
-        {
-          "closed": false,
-          "soup": "květáková s červenou čočkou",
-          "main": "Rybí filé obalované, Brambory",
-          "category": "RYBY",
-          "main2": "Špagety s vepřovým masem a rajčaty",
-          "category2": "VEPŘOVÉ A UZENÉ"
-        },
-        {
-          "closed": false,
-          "soup": "čočková se zeleninou",
-          "main": "Nákyp rýžový se švestkami",
+          "soup": "hrachová",
+          "main": "Zeleninové placičky se sýrem, Brambory",
           "category": "BEZMASÁ SLANÁ",
-          "main2": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "main2": "Obalované filé s brokolicí a sýrem, Brambory",
+          "category2": "RYBY"
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s masem a vejcem",
+          "main": "Losos přírodní, Brambory",
+          "category": "RYBY",
+          "main2": "Masová směs \"lamendr\", Rýže dušená",
+          "category2": "BEZMASÁ SLANÁ"
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s celozrnnými knedlíčky",
+          "main": "Kuře na paprice, Těstoviny",
+          "category": "DRŮBEŽ A KRÁLÍK",
+          "main2": "Omáčka rajčatová, Hovězí maso vařené, Těstoviny",
+          "category2": "HOVĚZÍ A TELECÍ"
         }
       ]
     },
