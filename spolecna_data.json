@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-11-16",
+      "week": "2026-10-19",
       "days": [
         {
           "closed": false,
-          "soup": "cibulová se sýrem",
-          "main": "Hrachová kaše s cibulkou, Párky",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "dýňový krém",
-          "main": "Debrecínský guláš, Těstoviny",
-          "category": "VEPŘOVÉ A UZENÉ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "selská ii.",
-          "main": "Žemlovka s jablky a tvarohem",
-          "category": "SLADKÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "drůbková s nudlemi",
-          "main": "Bramborové šišky s mákem (strouhankou)",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "ovarová",
-          "main": "Tilápie s rajčaty a sýrem, Brambory",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         }
