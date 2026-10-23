@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "hovězí s česnekovými krutony",
-          "main": "Španělská čočka s mletým masem, Chléb",
+          "soup": "zeleninová se sýrovým kapáním",
+          "main": "Hrachová kaše s cibulkou, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s těstovinami",
-          "main": "Španělský plátek, Rýže dušená",
-          "category": "HOVĚZÍ A TELECÍ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zeleninová s těstovinovou rýží",
-          "main": "Bramborový guláš, Rohlík",
+          "soup": "hovězí s těstovinou",
+          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "z batátových brambor",
-          "main": "Nudle s mákem",
-          "category": "SLADKÁ",
+          "soup": "zelenin. s rýží",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "čočková se zeleninou",
-          "main": "Rybí filé smažené, Bramborová kaše",
-          "category": "RYBY",
+          "soup": "fazolová se zeleninou",
+          "main": "Segedínský guláš, Houskové knedlíky (kynuté)",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "rajčatová s těstovinami",
+          "main": "Těstoviny po Lotrinsku",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
