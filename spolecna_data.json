@@ -1627,51 +1627,6 @@
             "category": "VEPŘOVÉ A UZENÉ"
           }
         ]
-      },
-      {
-        "week": "2026-11-16",
-        "days": [
-          {
-            "closed": false,
-            "soup": "zeleninová s kuskusem",
-            "main": "Španělská čočka s mletým masem, Chléb",
-            "category": "LUŠTĚNINOVÁ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "fazolová se zeleninou",
-            "main": "Těstovinový salát s marinovaným tofu",
-            "category": "BEZMASÁ SLANÁ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "Špenátová s vajíčkem",
-            "main": "Nudle s mákem",
-            "category": "SLADKÁ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "květáková s červenou čočkou",
-            "main": "Rizoto srbské",
-            "category": "BEZMASÁ SLANÁ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "hovězí s játrovými knedlíčky",
-            "main": "Obalované filé s brokolicí a sýrem, Brambory",
-            "category": "RYBY",
-            "main2": "",
-            "category2": ""
-          }
-        ]
       }
     ],
     "rules": {
