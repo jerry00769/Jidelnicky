@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "kuřecí s nudlemi",
+          "main": "Fazole a la Katův šleh, Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "česneková s bramborem a vejcem",
+          "main": "Losos přírodní, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "pórková",
+          "main": "Rybí filé po mlynářsku, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "česneková s osmaženou hostičkou",
+          "main": "Omáčka koprová, Vejce vařené, Brambory",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "bramborová",
+          "main": "Žemlovka s jablky a tvarohem",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         }
