@@ -249,47 +249,47 @@
       }
     },
     "week": {
-      "week": "2026-11-02",
+      "week": "2026-11-09",
       "days": [
         {
           "closed": false,
-          "soup": "krupicová maďarská",
-          "main": "Rybí stripsy, Brambory",
-          "category": "RYBY",
-          "main2": "Karbanátky pečené, Bramborová kaše",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "gulášová",
-          "main": "Livance",
-          "category": "SLADKÁ",
-          "main2": "Pekingská směs, Rýže dušená",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s těstovinovou rýží",
-          "main": "Debrecínský guláš, Těstoviny",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "Králík pečený, Bramborové knedlíky (směs)",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "ovarová",
-          "main": "Čočka na kyselo, Vejce vařené",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Rizoto srbské",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "bramboračka nezahuštěná",
-          "main": "Zeleninové placičky se sýrem, Brambory",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Vepřové na paprice, Těstoviny",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
