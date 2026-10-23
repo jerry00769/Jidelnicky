@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-10-19",
+      "week": "2026-12-21",
       "days": [
         {
           "closed": false,
-          "soup": "hovězí s česnekovými krutony",
-          "main": "Srbská čočka, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s jáhly",
-          "main": "Obalované filé s brokolicí a sýrem, Brambory",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hráškový krém",
-          "main": "Těstoviny se sýrovou omáčkou",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "rychlá s vejcem",
-          "main": "Rybí filé po mlynářsku, Brambory",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "květáková s červenou čočkou",
-          "main": "Kuskus s ovocem",
-          "category": "SLADKÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         }
