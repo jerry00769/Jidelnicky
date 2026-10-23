@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s ovesnými vločkami",
-          "main": "Čočka na kyselo, Vejce vařené",
+          "soup": "hovězí s jáhly",
+          "main": "Hrachová kaše s cibulkou, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Perkelt z kuřecího masa, Těstoviny",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "main2": "Hovězí pečeně pražská, Rýže dušená",
+          "category2": "HOVĚZÍ A TELECÍ"
         },
         {
           "closed": false,
-          "soup": "mrkvová",
-          "main": "Vepřový řízek přírodní, Brambory",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "Zapečené těstoviny s kuřecím masem a zeleninou",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "brokolicová",
+          "main": "Bramborové šišky s mákem (strouhankou)",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Vepřový řízek přírodní, Brambory",
+          "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
-          "soup": "z fazolových lusků",
-          "main": "Rybí stripsy, Brambory",
-          "category": "RYBY",
-          "main2": "Pekingská směs, Rýže dušená",
-          "category2": "BEZMASÁ SLANÁ"
-        },
-        {
-          "closed": false,
-          "soup": "květáková s červenou čočkou",
-          "main": "Těstovinový salát s marinovaným tofu",
+          "soup": "hovězí s játrovými knedlíčky",
+          "main": "Guláš maďarský, Houskové knedlíky (kynuté)",
           "category": "BEZMASÁ SLANÁ",
           "main2": "Sicilské špagety (boloňské)",
           "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "z kysaného zelí",
-          "main": "Zapečené těstoviny s uzeným masem",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
-          "main2": "Lotrinské tagliatelle se sýrem",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "zel. vývar s dýňovým kapáním",
+          "main": "Knedlíky švestkové (bramborové) s mákem",
+          "category": "SLADKÁ",
+          "main2": "Kuře pečené, Šťouchané brambory s cibulkou",
+          "category2": "DRŮBEŽ A KRÁLÍK"
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová zahuštěná červenou čočkou",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
+          "category": "RYBY",
+          "main2": "Kuřecí nudličky se sýrovou omáčkou, Těstoviny",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         }
       ]
     },
