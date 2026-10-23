@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "krupicová s vejcem",
+          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Pizza se šunkou",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "kapustová s rýží",
+          "main": "Brokolicová poezie (květák, niva)",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Karbanátek z rybího file - pečený, Brambory",
+          "category2": "RYBY"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zelenin. s kroupami",
+          "main": "Zapečené těstoviny s kuřecím masem a zeleninou",
+          "category": "DRŮBEŽ A KRÁLÍK",
+          "main2": "Rybí filé pečené na másle, Brambory",
+          "category2": "RYBY"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "z batátových brambor",
+          "main": "Losos přírodní, Brambory",
+          "category": "RYBY",
+          "main2": "Svíčková na smetaně, Houskové knedlíky (kynuté)",
+          "category2": "HOVĚZÍ A TELECÍ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "hovězí s jáhly",
+          "main": "Kuřecí prsa na kari koření, Rýže dušená",
+          "category": "DRŮBEŽ A KRÁLÍK",
+          "main2": "Livance",
+          "category2": "SLADKÁ"
         }
       ]
     },
