@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "selská ii.",
+          "main": "Horňácký guláš (maso, fazole), Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Těstoviny penne s tuňákem a chery rajčaty",
+          "category2": "RYBY"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "frankfurtská s bramborem",
+          "main": "Kapustové karbanátky s masem, Brambory",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "main2": "Džuveč, Chléb",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zeleninová s těstovinovou",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
+          "category": "RYBY",
+          "main2": "Těstoviny s brokolicí a sýrovou omáčkou",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zelenin. s kroupami",
+          "main": "Smažené točenky s rozinkami",
+          "category": "SLADKÁ",
+          "main2": "Kuskus s kuřecím masem",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "rajčatová s těstovinami",
+          "main": "Těstoviny po Lotrinsku",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Kapustové karbanátky, Bramborová kaše",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         }
       ]
     },
