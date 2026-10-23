@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zelenin. s fridátovými nudlemi",
+          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Holandský řízek, Bramborová kaše",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "čočková se zeleninou",
+          "main": "Kapustové karbanátky, Bramborová kaše",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "main2": "Brokolicová poezie (květák, niva)",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "pórková s vejci",
+          "main": "Knedlíky švestkové (bramborové) s mákem",
+          "category": "SLADKÁ",
+          "main2": "Obalované filé s brokolicí a sýrem, Brambory",
+          "category2": "RYBY"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "cibulová se sýrem",
+          "main": "Rybí file pečené na másle, Bramborová kaše",
+          "category": "RYBY",
+          "main2": "Gnocchi s kuřecím masem, smetanou a špenátem",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "hovězí se strouháním",
+          "main": "Italský guláš (zbruf se sýrem), Těstoviny",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Sekaná pečeně, Bramborová kaše",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         }
       ]
     },
