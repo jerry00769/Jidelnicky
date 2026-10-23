@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-11-16",
+      "week": "2026-10-19",
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová s kuskusem",
-          "main": "Španělská čočka s mletým masem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "fazolová se zeleninou",
-          "main": "Těstovinový salát s marinovaným tofu",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "Špenátová s vajíčkem",
-          "main": "Nudle s mákem",
-          "category": "SLADKÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "květáková s červenou čočkou",
-          "main": "Rizoto srbské",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s játrovými knedlíčky",
-          "main": "Obalované filé s brokolicí a sýrem, Brambory",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         }
