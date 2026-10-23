@@ -253,42 +253,42 @@
       "days": [
         {
           "closed": false,
-          "soup": "hovězí se strouháním",
-          "main": "Karbanátek z rybího file - pečený, Brambory",
+          "soup": "cibulová se sýrem",
+          "main": "Těstoviny penne s tuňákem a chery rajčaty",
           "category": "RYBY",
-          "main2": "Vepřový guláš, Rýže dušená",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "main2": "Nákyp rýžový s meruňkami",
+          "category2": "BEZMASÁ SLANÁ"
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s ovesnými vločkami",
+          "main": "Těstovinový salát s marinovaným tofu",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Kuřecí prsa na kari koření, Rýže dušená",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
           "soup": "koprová (kulajda)",
-          "main": "Pekingská směs, Rýže dušená",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Rybí filé pečené na másle, Brambory",
-          "category2": "RYBY"
-        },
-        {
-          "closed": false,
-          "soup": "pórková s vejci",
-          "main": "Čočkový kotlík, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Zeleninový salát, Kuřecí stripsy",
+          "main": "Omáčka rajčatová, Hovězí maso vařené, Těstoviny",
+          "category": "HOVĚZÍ A TELECÍ",
+          "main2": "Kuře pečené, Šťouchané brambory s cibulkou",
           "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "zeleninová s tarhoňou",
-          "main": "Hrachová kaše s cibulkou, Vejce vařené",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Kuřecí řízek smažený, Bramborová kaše",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "cizrnová krémová s rajčaty",
+          "main": "Vepřové v kapustě, Brambory",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "Španělský ptáček rozházený, Rýže dušená",
+          "category2": "HOVĚZÍ A TELECÍ"
         },
         {
           "closed": false,
-          "soup": "hovězí s játrovými noky",
-          "main": "Zapečené těstoviny s kuřecím masem a zeleninou",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Bramborák",
+          "soup": "hovězí s játrovými knedlíčky",
+          "main": "Hrachová kaše s cibulkou, Párky",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Nudle s mákom",
           "category2": "BEZMASÁ SLANÁ"
         }
       ]
