@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zelenin. s kroupami",
+          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Žebrácké maso, Brambory opékané",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zelenin. s pohankou",
+          "main": "Livance",
+          "category": "SLADKÁ",
+          "main2": "Pekingská směs, Rýže dušená",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "bramborová",
+          "main": "Špekové knedlíky, Zelí kysané",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Vepřové na paprice, Těstoviny",
+          "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "dýňový krém",
+          "main": "Rybí filé po mlynářsku, Brambory",
+          "category": "RYBY",
+          "main2": "Sekaná pečeně, Bramborová kaše",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "Špenátová s vajíčkem",
+          "main": "Kapustové karbanátky s masem, Brambory",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "main2": "Kuskus s kuřecím masem",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         }
       ]
     },
