@@ -526,3 +526,14 @@ dialog::backdrop { background: #10233b99; }
 }
 
 .github-controls{display:flex;gap:8px;flex-wrap:wrap}.github-controls button{padding:8px 10px;font-size:.82rem}@media(max-width:650px){.github-controls{margin-top:8px}}
+
+/* Synchronizace v rozbalovacím nastavení. */
+.sync-area{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.github-settings{position:relative;font-size:.83rem}
+.github-settings summary{cursor:pointer;color:#e7f0ff;list-style:none;white-space:nowrap}
+.github-settings summary::-webkit-details-marker{display:none}
+.github-settings[open] .github-controls{position:absolute;z-index:30;right:0;top:calc(100% + 9px);width:min(320px,calc(100vw - 20px));background:#fff;color:#21314b;padding:14px;border-radius:10px;box-shadow:0 8px 28px #0b1e3c55;display:flex;flex-direction:column;align-items:stretch;gap:8px}
+.github-settings:not([open]) .github-controls{display:none}
+.github-controls button[hidden]{display:none}
+.sync-hint{font-size:.8rem;line-height:1.45;margin:3px 0 0;color:#52677e}
+@media(max-width:500px){.sync-area{justify-content:space-between;gap:8px;margin-top:6px}.github-settings[open] .github-controls{right:0}#savedBadge{margin:0}}

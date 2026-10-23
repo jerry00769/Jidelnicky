@@ -34,8 +34,19 @@ async function flush(){if(!connected||busy||!dirty)return;busy=true;try{
  const saved=await put(current,sha);sha=saved.content.sha;baseline=serial;dirty=json(app.getState())!==serial;status(dirty?'GitHub: čekají další změny':'GitHub: uloženo');
  }catch(e){if(e.status===409||e.status===422){connected=false;controls();status('GitHub: konflikt souběžného zápisu. Místní data zachována. Exportuj zálohu.',true)}else status('GitHub: zápis selhal ('+e.message+'). Místní data zachována.',true)}finally{busy=false;if(connected&&dirty){clearTimeout(timer);timer=setTimeout(flush,5000)}}}
 function changed(){if(!connected)return;dirty=true;status('GitHub: ukládám změny…');clearTimeout(timer);timer=setTimeout(flush,1100)}
-async function refresh(){if(!connected||busy)return;if(dirty){await flush();if(dirty||!connected)return}busy=true;try{const r=await remote();if(!r)throw Error('Společná data chybí.');if(r.sha!==sha){app.applyState(r.state);sha=r.sha;baseline=json(r.state)}status('GitHub: aktuální data načtena')}catch(e){status('GitHub: '+e.message,true)}finally{busy=false}}
+async function refresh(){if(!connected||busy)return;
+ if(dirty){await flush();if(dirty||!connected)return}
+ busy=true;
+ try{const r=await remote();if(!r)throw Error('Společná data chybí.');
+ if(r.sha!==sha){
+  if(dirty||json(app.getState())!==baseline){status('GitHub: místní změny čekají, nic nepřepsáno.',true);return}
+  app.applyState(r.state);sha=r.sha;baseline=json(r.state);status('GitHub: nové změny načteny');
+ }else status('GitHub: synchronizováno');
+ }catch(e){status('GitHub: kontrola selhala ('+e.message+'). Místní data zachována.',true)}finally{busy=false}}
+
 function disconnect(){if(dirty&&!confirm('Neodeslané změny zůstanou pouze v tomto prohlížeči. Odpojit?'))return;connected=false;dirty=false;sha=null;baseline=null;token='';localStorage.removeItem(tokenKey);controls();status('GitHub: odpojeno')}
-function start(a){app=a;$('ghConnect').onclick=()=>{if(!token){const t=prompt('Vlož GitHub fine-grained token s oprávněním Contents: Read and write pouze pro repozitář jerry00769/jidelnicky.\n\nToken se uloží do tohoto prohlížeče.');if(!t)return;token=t.trim();localStorage.setItem(tokenKey,token)}connect()};$('ghRefresh').onclick=refresh;$('ghDisconnect').onclick=disconnect;controls();if(token)connect();document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected)refresh()});window.addEventListener('online',()=>{if(connected)refresh()})}
+function start(a){app=a;$('ghConnect').onclick=()=>{if(!token){const t=prompt('Vlož GitHub fine-grained token s oprávněním Contents: Read and write pouze pro repozitář jerry00769/jidelnicky.\n\nToken se uloží do tohoto prohlížeče.');if(!t)return;token=t.trim();localStorage.setItem(tokenKey,token)}connect()};$('ghRefresh').onclick=refresh;$('ghDisconnect').onclick=disconnect;controls();if(token)connect();document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected)refresh()});window.addEventListener('online',()=>{if(connected)refresh()});
+ setInterval(()=>{if(connected&&!document.hidden&&!busy)refresh()},60000);
+}
 return {start,changed};
 })();
