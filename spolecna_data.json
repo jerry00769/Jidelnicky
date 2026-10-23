@@ -1627,51 +1627,6 @@
             "category": "VEPŘOVÉ A UZENÉ"
           }
         ]
-      },
-      {
-        "week": "2026-11-16",
-        "days": [
-          {
-            "closed": false,
-            "soup": "cibulová se sýrem",
-            "main": "Hrachová kaše s cibulkou, Párky",
-            "category": "LUŠTĚNINOVÁ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "dýňový krém",
-            "main": "Debrecínský guláš, Těstoviny",
-            "category": "VEPŘOVÉ A UZENÉ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "selská ii.",
-            "main": "Žemlovka s jablky a tvarohem",
-            "category": "SLADKÁ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "drůbková s nudlemi",
-            "main": "Bramborové šišky s mákem (strouhankou)",
-            "category": "BEZMASÁ SLANÁ",
-            "main2": "",
-            "category2": ""
-          },
-          {
-            "closed": false,
-            "soup": "ovarová",
-            "main": "Tilápie s rajčaty a sýrem, Brambory",
-            "category": "RYBY",
-            "main2": "",
-            "category2": ""
-          }
-        ]
       }
     ],
     "rules": {
