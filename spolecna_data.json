@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "krupicová s vejcem",
+          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Hovězí pečeně na houbách, Těstoviny",
+          "category2": "HOVĚZÍ A TELECÍ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "z kysaného zelí",
+          "main": "Rybí filé pečené na másle, Brambory",
+          "category": "RYBY",
+          "main2": "Vepřová kýta po cikánsku, Rýže dušená",
+          "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "hovězí se strouháním",
+          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Kuře pečené, Bulgur",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "zeleninová s celozrnnými knedlíčky",
+          "main": "Kovbojská pánev, Chléb",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Rožnovské halušky (střapačky) s uzeným masem",
+          "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
-          "main2": "",
-          "category2": ""
+          "soup": "hovězí s játrovými knedlíčky",
+          "main": "Žemlovka s jablky a tvarohem",
+          "category": "SLADKÁ",
+          "main2": "Omáčka koprová, Vejce vařené, Brambory",
+          "category2": "BEZMASÁ SLANÁ"
         }
       ]
     },
