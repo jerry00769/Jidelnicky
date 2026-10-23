@@ -253,42 +253,42 @@
       "days": [
         {
           "closed": false,
-          "soup": "bramboračka nezahuštěná",
-          "main": "Rybí filé obalované, Brambory",
+          "soup": "z fazolových lusků",
+          "main": "Rybí filé po mlynářsku, Brambory",
           "category": "RYBY",
-          "main2": "Pizza se šunkou",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s jáhly",
-          "main": "Fazole a la Katův šleh, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Karbanátky pečené, Bramborová kaše",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
-        },
-        {
-          "closed": false,
-          "soup": "gulášová",
-          "main": "Těstoviny s brokolicí",
-          "category": "BEZMASÁ SLANÁ",
           "main2": "Sekaná zahradnická, Brambory",
           "category2": "MLETÉ MASO A ZAPÉKANÉ"
         },
         {
           "closed": false,
-          "soup": "rychlá s vejcem",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
-          "category": "SLADKÁ",
-          "main2": "Těstoviny penne s tuňákem a chery rajčaty",
-          "category2": "RYBY"
+          "soup": "zeleninová s těstovinovou",
+          "main": "Rizoto srbské",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Bramborové knedlíky plň.uzeným masem (salám), Zelí kysané",
+          "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
-          "soup": "hovězí se strouháním",
-          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+          "soup": "zeleninová s drožďovými knedlíčky",
+          "main": "Těstoviny se sýrovou omáčkou",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Zapečené těstoviny s uzeninou",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+        },
+        {
+          "closed": false,
+          "soup": "gulášová",
+          "main": "Rybí filé smažené, Bramborová kaše",
+          "category": "RYBY",
+          "main2": "Hovězí pečeně pražská, Rýže dušená",
+          "category2": "HOVĚZÍ A TELECÍ"
+        },
+        {
+          "closed": false,
+          "soup": "zelenin. s fridátovými nudlemi",
+          "main": "Čočka na kyselo, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Rybí filé pečené na másle, Brambory",
+          "main2": "Obalované filé s brokolicí a sýrem, Brambory",
           "category2": "RYBY"
         }
       ]
