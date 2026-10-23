@@ -15,10 +15,10 @@ const hasSavedState=!!(state?.catalog?.main&&state?.catalog?.soup&&state?.week?.
 if(!state||!state.catalog||!state.week||!Array.isArray(state.week.days)||state.week.days.length!==5)state={catalog:clone(window.INITIAL_CATALOG),week:freshWeek(iso(today)),history:[],rules:clone(defaults),txt:'',count:1,lockMain:8,lockSoup:3};
 state.history??=[];state.rules={...defaults,...state.rules};state.txt??='';state.count=[1,2].includes(+state.count)?+state.count:1;
 
-const undo=[],redo=[];let lastSaved=JSON.stringify(state);
-const save=()=>{const json=JSON.stringify(state);if(json===lastSaved)return;try{localStorage.setItem(storeKey,json);lastSaved=json;window.GitHubSync?.changed()}catch(e){notice('Uložení do prohlížeče selhalo.',true)}};
+const undo=[],redo=[];let lastSaved=JSON.stringify(state),printingHistory=false;
+const save=()=>{if(printingHistory)return;const json=JSON.stringify(state);if(json===lastSaved)return;try{localStorage.setItem(storeKey,json);lastSaved=json;window.GitHubSync?.changed()}catch(e){notice('Uložení do prohlížeče selhalo.',true)}};
 function download(name,content,type){const b=new Blob([content],{type});const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}
-window.JidelnickyApp={getState:()=>clone(state),applyState(next){if(!next?.catalog?.main||!next?.catalog?.soup||!Array.isArray(next.history)||next?.week?.days?.length!==5)throw Error('Neplatná společná data');state=clone(next);state.rules={...defaults,...state.rules};state.txt??='';state.count=[1,2].includes(+state.count)?+state.count:1;undo.length=0;redo.length=0;lastSaved=JSON.stringify(state);localStorage.setItem(storeKey,lastSaved);render()},notice};
+window.JidelnickyApp={getState:()=>clone(state),applyState(next){if(!next?.catalog?.main||!next?.catalog?.soup||!Array.isArray(next.history)||next?.week?.days?.length!==5)throw Error('Neplatná společná data');state=clone(next);state.rules={...defaults,...state.rules};state.txt??='';state.count=[1,2].includes(+state.count)?+state.count:1;undo.length=0;redo.length=0;lastSaved=JSON.stringify(state);localStorage.setItem(storeKey,lastSaved);if(typeof selectedHistory!=='undefined'&&selectedHistory&&!state.history.some(h=>h.week===selectedHistory))selectedHistory=[...state.history].sort((a,b)=>b.week.localeCompare(a.week))[0]?.week||null;render();if($('historyDialog')?.open){historyRows();historyDetail()}},notice};
 const snapshot=()=>{undo.push(clone(state));if(undo.length>60)undo.shift();redo.length=0};
 let statusTimer;function notice(message,error=false){const el=$('status');el.textContent=message;el.className=error?'error':'';el.style.display='block';clearTimeout(statusTimer);statusTimer=setTimeout(()=>el.style.display='none',6500)}
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -55,8 +55,8 @@ function validate(w=state.week){
         }
         if(t.ban_soup.some(x=>contains(d.soup,x)))e.push('Zakázaná polévka.');
         const sc=all('soup').find(x=>x.name===d.soup)?.cat||'';
-        if(r.avoidLegumePair&&starts(d.category,'LUŠTĚNINOVÁ')&&contains(sc,'LUŠTĚNINOVÉ'))e.push('Luštěninová polévka s luštěninovým hlavním jídlem.');
-        if(r.avoidFishPair&&starts(d.category,'RYBY')&&contains(d.soup,'rybi'))e.push('Rybí polévka s rybím hlavním jídlem.');
+        if(r.avoidLegumePair&&(starts(d.category,'LUŠTĚNINOVÁ')||(state.count===2&&starts(d.category2,'LUŠTĚNINOVÁ')))&&contains(sc,'LUŠTĚNINOVÉ'))e.push('Luštěninová polévka s luštěninovým hlavním jídlem.');
+        if(r.avoidFishPair&&(starts(d.category,'RYBY')||(state.count===2&&starts(d.category2,'RYBY')))&&contains(d.soup,'rybi'))e.push('Rybí polévka s rybím hlavním jídlem.');
     }
     if(new Set(usedMain).size!==usedMain.length||new Set(usedSoup).size!==usedSoup.length)e.push('Opakování jídel nebo polévek v týdnu.');
     for(const [k,p] of [['fish','RYBY'],['legumes','LUŠTĚNINOVÁ'],['meatless','BEZMASÁ']])
@@ -82,7 +82,7 @@ function generate(){
     for(const [k,c] of [['fish',fish],['legumes',leg],['meatless',meatless]])for(let i=0;i<r[k];i++)required.push(c);
     const mon=mondayCat(week),monName=mon==='RYBY'?fish:leg;
     if(active.includes(0)&&!required.includes(monName))required.push(monName);
-    if(required.length>active.length)throw Error('Povinných kategorií je více než dní vaření.');
+    if(required.length>active.length*state.count)throw Error('Povinných kategorií je více než dostupných obědů.');
     const blockedMain=new Set(),blockedSoup=new Set();
     for(const h of state.history){
         const delta=(parseDate(week)-parseDate(h.week))/604800000;
@@ -95,11 +95,11 @@ function generate(){
     }
     let lastErrors=[];
     for(let attempt=0;attempt<500;attempt++){
-        const days=Array.from({length:5},(_,i)=>({...freshDay(),closed:!active.includes(i)})),target=[...required],pool=cats.filter(c=>!starts(c,'SLADKÁ'));
+        const days=Array.from({length:5},(_,i)=>({...freshDay(),closed:!active.includes(i)})),must=[...required],pool=cats.filter(c=>!starts(c,'SLADKÁ'));if(active.includes(0)){const at=must.indexOf(monName);if(at>=0)must.splice(at,1);must.unshift(monName)}const target=[...must.slice(0,active.length)],secondRequired=[...must.slice(active.length)];
         if(r.sweetMax>0&&target.length<active.length&&Math.random()<.5&&find('SLADKÁ'))target.push(find('SLADKÁ'));
         while(target.length<active.length)target.push(rand(pool));
         shuffle(target);
-        if(active.includes(0)){const pos=target.indexOf(monName);if(pos>=0)[target[0],target[pos]]=[target[pos],target[0]]}
+        if(active.includes(0)){const pos=target.indexOf(monName);if(pos>=0)[target[0],target[pos]]=[target[pos],target[0]];else target[0]=monName}
         const usedM=new Set(),usedS=new Set();let failed=false;
         for(const [index,day] of active.entries()){
             const cat=target[index],mains=shuffle((state.catalog.main[cat]||[]).filter(m=>!usedM.has(m)&&!blockedMain.has(m)&&!t.ban_main.some(x=>contains(m,x)))),soups=shuffle(all('soup').filter(({cat:sc,name:s})=>!usedS.has(s)&&!blockedSoup.has(s)&&!t.ban_soup.some(x=>contains(s,x))&&!(r.avoidLegumePair&&starts(cat,'LUŠTĚNINOVÁ')&&contains(sc,'LUŠTĚNINOVÉ'))&&!(r.avoidFishPair&&starts(cat,'RYBY')&&contains(s,'rybi'))).map(x=>x.name));
@@ -108,12 +108,12 @@ function generate(){
             if(!pair){failed=true;break}
             const d=days[day];d.closed=false;d.soup=pair.s;d.main=pair.m;d.category=cat;usedM.add(pair.m);usedS.add(pair.s);
             if(state.count===2){
-                const options=all('main').filter(x=>x.cat!==cat&&!usedM.has(x.name)&&!blockedMain.has(x.name)&&!t.ban_main.some(b=>contains(x.name,b))&&!t.ban_pair.some(([a,b])=>contains(pair.s,a)&&contains(x.name,b))&&!(r.avoidFishPair&&starts(x.cat,'RYBY')&&contains(pair.s,'rybi')));
+                const options=all('main').filter(x=>x.cat!==cat&&!usedM.has(x.name)&&!blockedMain.has(x.name)&&!t.ban_main.some(b=>contains(x.name,b))&&!t.ban_pair.some(([a,b])=>contains(pair.s,a)&&contains(x.name,b))&&!(r.avoidFishPair&&starts(x.cat,'RYBY')&&contains(pair.s,'rybi'))&&!(r.avoidLegumePair&&starts(x.cat,'LUŠTĚNINOVÁ')&&contains(all('soup').find(y=>y.name===pair.s)?.cat||'','LUŠTĚNINOVÉ')));
                 if(!options.length){failed=true;break}
-                const second=rand(options);d.main2=second.name;d.category2=second.cat;usedM.add(second.name)
+                const wanted=secondRequired.findIndex(c=>c!==cat&&options.some(x=>x.cat===c));const available=wanted>=0?options.filter(x=>x.cat===secondRequired[wanted]):options;const second=rand(available);if(wanted>=0)secondRequired.splice(wanted,1);d.main2=second.name;d.category2=second.cat;usedM.add(second.name)
             }
         }
-        if(failed)continue;
+        if(failed||secondRequired.length)continue;
         const w={week,days},errors=validate(w);
         if(!errors.length)return w;
         lastErrors=errors
@@ -209,7 +209,7 @@ $('closeHistory').onclick=()=>$('historyDialog').close();
 $('historyLoad').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;snapshot();state.week=clone(h);state.count=h.days.some(d=>d.main2)?2:1;$('historyDialog').close();render();notice('Načtena pracovní kopie. Schválená historie se nezměnila.')});
 $('historyCopy').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;const target=prompt('Zadej datum nového týdne (RRRR-MM-DD):',iso(today));if(target===null)return;if(!/^\d{4}-\d{2}-\d{2}$/.test(target)||Number.isNaN(parseDate(target).getTime())||iso(parseDate(target))!==target)throw Error('Datum zadej jako RRRR-MM-DD.');snapshot();state.week=clone(h);state.week.week=monday(target);state.count=h.days.some(d=>d.main2)?2:1;$('historyDialog').close();render();notice('Týden zkopírován jako pracovní návrh. Historie se nepřepsala.')});
 $('historyDelete').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;if(!confirm('Opravdu smazat schválený týden '+format(dateAt(h.week,0))+'? Změnu lze vrátit tlačítkem Zpět.'))return;snapshot();state.history=state.history.filter(x=>x.week!==h.week);selectedHistory=[...state.history].sort((a,b)=>b.week.localeCompare(a.week))[0]?.week||null;render();historyRows();historyDetail();notice('Týden smazán z historie. '+(selectedHistory?'Vybrán nejnovější zbývající týden. ':'Historie je prázdná. ')+'Lze vrátit tlačítkem Zpět.')});
-$('historyPrint').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;const previous=clone(state.week),count=state.count;state.week=clone(h);state.count=h.days.some(d=>d.main2)?2:1;render();$('historyDialog').close();window.print();state.week=previous;state.count=count;render();notice('Připraven tisk vybraného týdne.')});
+$('historyPrint').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;const previous=clone(state.week),count=state.count;printingHistory=true;try{state.week=clone(h);state.count=h.days.some(d=>d.main2)?2:1;render();$('historyDialog').close();window.print()}finally{state.week=previous;state.count=count;render();printingHistory=false}notice('Připraven tisk vybraného týdne.')});
 
 // Původní plně funkční import historie přes tlačítko
 $('importHistory').onchange=async e=>{
@@ -302,7 +302,7 @@ $('date').onchange=()=>safe(()=>{snapshot();state.week=freshWeek($('date').value
 $('count').onchange=()=>safe(()=>{snapshot();state.count=+$('count').value;render()});
 for(const key of ['lockMain','lockSoup'])$(key).onchange=()=>{snapshot();state[key]=Math.max(0,Math.min(key==='lockMain'?30:20,Number($(key).value)||0));render()};
 document.querySelectorAll('[data-day]').forEach(input=>input.onchange=()=>{snapshot();const d=state.week.days[+input.dataset.day];d.closed=!input.checked;if(d.closed){d.soup='';d.main='';d.category='';d.main2='';d.category2=''}render()});
-$('saveRules').onclick=()=>safe(()=>{const rules={};for(const input of document.querySelectorAll('[data-rule]'))rules[input.dataset.rule]=input.type==='checkbox'?input.checked:Math.max(0,Math.min(5,Number(input.value)||0));const txt=$('txtRules').value;const previous=state.txt;state.txt=txt;try{txtRules()}catch(e){state.txt=previous;throw e}snapshot();state.rules=rules;render();notice('Pravidla uložena.')});
+$('saveRules').onclick=()=>safe(()=>{const rules={};for(const input of document.querySelectorAll('[data-rule]'))rules[input.dataset.rule]=input.type==='checkbox'?input.checked:Math.max(0,Math.min(5,Number(input.value)||0));const txt=$('txtRules').value;const previous=state.txt;state.txt=txt;try{txtRules()}catch(e){state.txt=previous;throw e}state.txt=previous;snapshot();state.txt=txt;state.rules=rules;render();notice('Pravidla uložena.')});
 $('kind').onchange=()=>{renderCategories();renderCatalogList()};
 $('category').onchange=renderCatalogList;
 
@@ -332,7 +332,7 @@ function editCatalog(operation){safe(()=>{
    if(name.length<2)throw Error('Zadej nový název.');
    if(items.some(x=>x!==selectedCatalogMeal&&norm(x)===norm(name)))throw Error('Jídlo už existuje.');
    if(name===selectedCatalogMeal)return notice('Název se nezměnil.');
-   snapshot();items[items.indexOf(selectedCatalogMeal)]=name;selectedCatalogMeal=name;
+   snapshot();const oldName=selectedCatalogMeal;items[items.indexOf(oldName)]=name;for(const day of state.week.days){if(kind==='soup'&&day.soup===oldName)day.soup=name;if(kind==='main'){if(day.main===oldName&&day.category===cat)day.main=name;if(day.main2===oldName&&day.category2===cat)day.main2=name}}selectedCatalogMeal=name;
   }else{
    if(!confirm(`Opravdu smazat jídlo „${selectedCatalogMeal}“?`))return;
    snapshot();items.splice(items.indexOf(selectedCatalogMeal),1);selectedCatalogMeal='';$('mealName').value='';

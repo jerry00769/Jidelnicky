@@ -10,7 +10,7 @@ const status=(msg,err=false)=>{const b=$('savedBadge');if(b)b.textContent=msg; i
 function markPending(v){dirty=v;if(v)localStorage.setItem(pendingKey,'1');else localStorage.removeItem(pendingKey)}
 function setBaseline(s){baseline=json(s);localStorage.setItem(baselineKey,baseline)}
 function backup(s){const blob=new Blob([JSON.stringify(s,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='jidelnicky_zaloha_konflikt_'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000)}
-function controls(){ $('ghConnect').hidden=connected;$('ghRefresh').hidden=!connected;$('ghDisconnect').hidden=!connected }
+function controls(){ $('ghConnect').hidden=connected;$('ghRefresh').hidden=!connected;$('ghDisconnect').hidden=!connected;const resolve=$('ghResolve');if(resolve)resolve.hidden=!conflicted }
 const endpoint=`https://api.github.com/repos/${owner}/${repo}/contents/${file}`;
 async function request(method,body){const r=await fetch(endpoint+(method==='GET'?'?t='+Date.now():''),{method,headers:{'Accept':'application/vnd.github+json','Authorization':'Bearer '+token,'X-GitHub-Api-Version':'2022-11-28',...(body?{'Content-Type':'application/json'}:{})},cache:'no-store',body:body?JSON.stringify(body):undefined});if(r.status===404&&method==='GET')return null;let data;try{data=await r.json()}catch{data={}}if(!r.ok){const e=new Error(`GitHub ${r.status}: ${data.message||'chyba přístupu'}`);e.status=r.status;throw e}return data}
 function decode(s){const bin=atob(s.replace(/\s/g,''));return new TextDecoder().decode(Uint8Array.from(bin,c=>c.charCodeAt(0)))}
@@ -38,7 +38,7 @@ async function connect(){
   // Při neodeslaných úpravách se nikdy nepřepisuje automaticky.
   if(localJson!==remoteJson){
    if(dirty||storedBaseline&&localJson!==storedBaseline){
-    conflicted=true;status('GitHub: rozdílné změny! Místní data zachována.',true);
+    conflicted=true;controls();status('GitHub: rozdílné změny! Místní data zachována.',true);
     if(confirm('Na zařízení jsou místní změny odlišné od GitHubu.\n\nOK = stáhnout zálohu místních dat (doporučeno).\nZrušit = zatím nic neměnit.'))backup(local);
     return;
    }
@@ -47,6 +47,17 @@ async function connect(){
   }
   sha=r.sha;setBaseline(app.getState());markPending(false);connected=true;conflicted=false;controls();status('GitHub: synchronizováno');
  }catch(e){connected=false;controls();status('GitHub: '+e.message,true)}finally{busy=false}
+}
+async function resolveConflict(){
+ if(busy||!conflicted)return;
+ if(!confirm('Konflikt GitHubu. Nejprve se automaticky stáhne záloha aktuálních místních dat.\n\nOK = stáhnout zálohu a pokračovat k potvrzení načtení serverových dat.\nZrušit = ponechat vše beze změny.'))return;
+ backup(app.getState());
+ if(!confirm('Záloha místních dat byla nabídnuta ke stažení.\n\nOpravdu nyní převzít data z GitHubu? Neodeslané místní změny se nahradí serverovými.\nZrušit = místní data zachovat.'))return;
+ busy=true;
+ try{
+  const r=await remote();if(!r)throw Error('Na GitHubu chybí společná data.');
+  app.applyState(r.state);sha=r.sha;setBaseline(app.getState());markPending(false);conflicted=false;connected=true;controls();status('GitHub: konflikt vyřešen převzetím serverových dat');
+ }catch(e){status('GitHub: konflikt nevyřešen ('+e.message+')',true)}finally{busy=false}
 }
 async function flush(){
  if(!connected||busy||!dirty||conflicted)return;
@@ -101,12 +112,13 @@ function start(a){
   if(!token){const t=prompt('Vlož GitHub fine-grained token pro repozitář jerry00769/jidelnicky.\nToken nikomu neposílej.');if(!t)return;token=t.trim();localStorage.setItem(tokenKey,token)}
   connect()
  };
- $('ghRefresh').onclick=refresh;$('ghDisconnect').onclick=disconnect;
+ $('ghRefresh').onclick=refresh;$('ghDisconnect').onclick=disconnect;const resolver=$('ghResolve');if(resolver)resolver.onclick=resolveConflict;
  controls();if(token)connect();
  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected)refresh()});
  window.addEventListener('online',()=>{if(connected)refresh();else if(token&&!busy&&!conflicted)connect()});
  // Automatická kontrola při otevřené stránce; vyhneme se zbytečným API voláním na pozadí.
  setInterval(()=>{if(connected&&!document.hidden&&!busy)refresh()},15000);
+ window.addEventListener('focus',()=>{if(connected&&!busy)refresh()});
 }
 return {start,changed};
 })();
