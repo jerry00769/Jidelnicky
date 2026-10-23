@@ -35,16 +35,11 @@
       requestAnimationFrame(() => {
         const offset = header.getBoundingClientRect().height + 12;
         const top = window.scrollY + target.getBoundingClientRect().top - offset;
-        window.scrollTo({top: Math.max(0, top), behavior: 'instant'});
+        window.scrollTo({top: Math.max(0, top), behavior: 'auto'});
         history.replaceState(null, '', link.hash);
       });
     });
   });
-  let previousY = window.scrollY;
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (mobile.matches && menu.open && y > previousY + 2) menu.open = false;
-    previousY = y;
-  }, {passive:true});
+  // Nabídku nezavírat při scrollování: jinak se může zavřít hned po otevření.
 })();
 </script></body></html>
