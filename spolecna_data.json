@@ -252,10 +252,10 @@
       "week": "2026-10-19",
       "days": [
         {
-          "closed": false,
-          "soup": "dýňový krém",
-          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
-          "category": "LUŠTĚNINOVÁ",
+          "closed": true,
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
