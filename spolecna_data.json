@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s fridátovými nudlemi",
-          "main": "Obalované filé s brokolicí a sýrem, Brambory",
+          "soup": "gulášová",
+          "main": "Losos přírodní, Brambory",
           "category": "RYBY",
-          "main2": "Guláš maďarský, Houskové knedlíky (kynuté)",
-          "category2": "BEZMASÁ SLANÁ"
-        },
-        {
-          "closed": false,
-          "soup": "selská ii.",
-          "main": "Smažené točenky s rozinkami",
-          "category": "SLADKÁ",
-          "main2": "Těstovinový salát s marinovaným tofu",
-          "category2": "BEZMASÁ SLANÁ"
-        },
-        {
-          "closed": false,
-          "soup": "zelenin. s pohankou",
-          "main": "Rybí filé obalované, Brambory",
-          "category": "RYBY",
-          "main2": "Kuskus s kuřecím masem",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
           "soup": "hovězí s těstovinami",
-          "main": "Nudle s mákom",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Kapustové karbanátky s masem, Brambory",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "main": "Hrachová kaše s cibulkou, Párky",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
         },
         {
           "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Bratislavské vepřové plecko, Těstoviny",
-          "category2": "VEPŘOVÉ A UZENÉ"
+          "soup": "fazolová se zeleninou",
+          "main": "Bramborový guláš, Rohlík",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s kuskusem",
+          "main": "Těstoviny se sýrovou omáčkou",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "krupicová s vejcem",
+          "main": "Knedlíky švestkové (bramborové) s mákem",
+          "category": "SLADKÁ",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
@@ -1638,7 +1638,7 @@
       "avoidFishPair": true
     },
     "txt": "",
-    "count": 2,
+    "count": 1,
     "lockMain": 8,
     "lockSoup": 3
   }
