@@ -106,7 +106,7 @@ function start(a){
  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected)refresh()});
  window.addEventListener('online',()=>{if(connected)refresh();else if(token&&!busy&&!conflicted)connect()});
  // Automatická kontrola při otevřené stránce; vyhneme se zbytečným API voláním na pozadí.
- setInterval(()=>{if(connected&&!document.hidden&&!busy)refresh()},60000);
+ setInterval(()=>{if(connected&&!document.hidden&&!busy)refresh()},15000);
 }
 return {start,changed};
 })();
