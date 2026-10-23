@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "selská ii.",
-          "main": "Rybí filé zapečené se špenátem, Brambory",
+          "soup": "hovězí se strouháním",
+          "main": "Karbanátek z rybího file - pečený, Brambory",
           "category": "RYBY",
-          "main2": "Bramborové šišky s mákem (strouhankou)",
-          "category2": "BEZMASÁ SLANÁ"
-        },
-        {
-          "closed": false,
-          "soup": "fazolová",
-          "main": "Nákyp rýžový se švestkami",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Hovězí pečeně znojemská, Rýže dušená",
-          "category2": "HOVĚZÍ A TELECÍ"
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s těstovinou",
-          "main": "Rizoto z vepřového masa",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "Špekové knedlíky, Zelí kysané",
-          "category2": "BEZMASÁ SLANÁ"
-        },
-        {
-          "closed": false,
-          "soup": "z batátových brambor",
-          "main": "Kuskus s ovocem",
-          "category": "SLADKÁ",
-          "main2": "Sekaná zahradnická, Brambory",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
-        },
-        {
-          "closed": false,
-          "soup": "ze zahradních jahod",
-          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "Vepřové na paprice, Těstoviny",
+          "main2": "Vepřový guláš, Rýže dušená",
           "category2": "VEPŘOVÉ A UZENÉ"
+        },
+        {
+          "closed": false,
+          "soup": "koprová (kulajda)",
+          "main": "Pekingská směs, Rýže dušená",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Rybí filé pečené na másle, Brambory",
+          "category2": "RYBY"
+        },
+        {
+          "closed": false,
+          "soup": "pórková s vejci",
+          "main": "Čočkový kotlík, Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Zeleninový salát, Kuřecí stripsy",
+          "category2": "DRŮBEŽ A KRÁLÍK"
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s tarhoňou",
+          "main": "Hrachová kaše s cibulkou, Vejce vařené",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "Kuřecí řízek smažený, Bramborová kaše",
+          "category2": "DRŮBEŽ A KRÁLÍK"
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s játrovými noky",
+          "main": "Zapečené těstoviny s kuřecím masem a zeleninou",
+          "category": "DRŮBEŽ A KRÁLÍK",
+          "main2": "Bramborák",
+          "category2": "BEZMASÁ SLANÁ"
         }
       ]
     },
