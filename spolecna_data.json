@@ -253,43 +253,43 @@
       "days": [
         {
           "closed": false,
-          "soup": "cibulová se sýrem",
-          "main": "Těstoviny penne s tuňákem a chery rajčaty",
+          "soup": "hovězí s jáhly",
+          "main": "Obalované filé s brokolicí a sýrem, Brambory",
           "category": "RYBY",
-          "main2": "Nákyp rýžový s meruňkami",
-          "category2": "BEZMASÁ SLANÁ"
+          "main2": "Vepřové v mrkvi, Brambory",
+          "category2": "VEPŘOVÉ A UZENÉ"
+        },
+        {
+          "closed": false,
+          "soup": "gulášová",
+          "main": "Těstovinový salát s marinovaným tofu",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "Vepřové v kapustě, Brambory",
+          "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
           "soup": "zeleninová s ovesnými vločkami",
-          "main": "Těstovinový salát s marinovaným tofu",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "Kuřecí prsa na kari koření, Rýže dušená",
-          "category2": "DRŮBEŽ A KRÁLÍK"
-        },
-        {
-          "closed": false,
-          "soup": "koprová (kulajda)",
           "main": "Omáčka rajčatová, Hovězí maso vařené, Těstoviny",
           "category": "HOVĚZÍ A TELECÍ",
-          "main2": "Kuře pečené, Šťouchané brambory s cibulkou",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "main2": "Vepřové na houbách se smetanou, Houskové knedlíky (kynuté)",
+          "category2": "VEPŘOVÉ A UZENÉ"
         },
         {
           "closed": false,
-          "soup": "cizrnová krémová s rajčaty",
-          "main": "Vepřové v kapustě, Brambory",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "Španělský ptáček rozházený, Rýže dušená",
-          "category2": "HOVĚZÍ A TELECÍ"
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s játrovými knedlíčky",
-          "main": "Hrachová kaše s cibulkou, Párky",
+          "soup": "z rybího filé",
+          "main": "Čočkový kotlík, Chléb",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "Nudle s mákom",
+          "main2": "Zeleninové rizoto",
           "category2": "BEZMASÁ SLANÁ"
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s masem a vejcem",
+          "main": "Kuřecí řízek smažený, Bramborová kaše",
+          "category": "DRŮBEŽ A KRÁLÍK",
+          "main2": "Špagety s vepřovým masem a rajčaty",
+          "category2": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
