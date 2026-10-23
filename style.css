@@ -524,3 +524,5 @@ dialog::backdrop { background: #10233b99; }
  #historyDialog .history-actions {gap:7px;margin-top:10px;}
  #historyDialog .history-actions button {min-height:44px;font-size:14px;padding:8px;}
 }
+
+.github-controls{display:flex;gap:8px;flex-wrap:wrap}.github-controls button{padding:8px 10px;font-size:.82rem}@media(max-width:650px){.github-controls{margin-top:8px}}

@@ -11,10 +11,14 @@ const freshDay=()=>({closed:false,soup:'',main:'',category:'',main2:'',category2
 const freshWeek=s=>({week:monday(s),days:Array.from({length:5},freshDay)});
 
 let state;try{state=JSON.parse(localStorage.getItem(storeKey)||'null')}catch{};
+const hasSavedState=!!(state?.catalog?.main&&state?.catalog?.soup&&state?.week?.days?.length===5);
 if(!state||!state.catalog||!state.week||!Array.isArray(state.week.days)||state.week.days.length!==5)state={catalog:clone(window.INITIAL_CATALOG),week:freshWeek(iso(today)),history:[],rules:clone(defaults),txt:'',count:1,lockMain:8,lockSoup:3};
 state.history??=[];state.rules={...defaults,...state.rules};state.txt??='';state.count=[1,2].includes(+state.count)?+state.count:1;
 
-const undo=[],redo=[];const save=()=>{try{localStorage.setItem(storeKey,JSON.stringify(state))}catch(e){notice('Uložení selhalo. Prohlížeč může mít plné úložiště.',true)}};
+const undo=[],redo=[];let lastSaved=JSON.stringify(state);
+const save=()=>{const json=JSON.stringify(state);if(json===lastSaved)return;try{localStorage.setItem(storeKey,json);lastSaved=json;window.GitHubSync?.changed()}catch(e){notice('Uložení do prohlížeče selhalo.',true)}};
+function download(name,content,type){const b=new Blob([content],{type});const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}
+window.JidelnickyApp={getState:()=>clone(state),applyState(next){if(!next?.catalog?.main||!next?.catalog?.soup||!Array.isArray(next.history)||next?.week?.days?.length!==5)throw Error('Neplatná společná data');state=clone(next);state.rules={...defaults,...state.rules};state.txt??='';state.count=[1,2].includes(+state.count)?+state.count:1;undo.length=0;redo.length=0;lastSaved=JSON.stringify(state);localStorage.setItem(storeKey,lastSaved);render()},notice};
 const snapshot=()=>{undo.push(clone(state));if(undo.length>60)undo.shift();redo.length=0};
 let statusTimer;function notice(message,error=false){const el=$('status');el.textContent=message;el.className=error?'error':'';el.style.display='block';clearTimeout(statusTimer);statusTimer=setTimeout(()=>el.style.display='none',6500)}
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -395,6 +399,7 @@ async function loadTxtCatalogIntoState() {
 
 // Spuštění aplikace – načtení katalogu, historie a prvního jídelníčku
 window.addEventListener('DOMContentLoaded', async () => {
+    if(!hasSavedState){
     await loadTxtCatalogIntoState();
 
     try {
@@ -418,6 +423,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         console.log('Automatické načtení historie nebylo možné.', e);
     }
 
+    } // výchozí TXT a historie pouze při prvním spuštění
     // Automatické generování pouze při prvním spuštění.
     // Existující pracovní jídelníček se nikdy nepřepisuje.
     const hasMeals = state.week.days.some(d =>
@@ -444,5 +450,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 
     render();
+    window.GitHubSync?.start(window.JidelnickyApp);
 });
 })();
