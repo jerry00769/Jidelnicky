@@ -252,44 +252,29 @@
       "week": "2026-10-19",
       "days": [
         {
-          "closed": false,
-          "soup": "fazolová",
-          "main": "Rybí filé zapečené se špenátem, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
+          "soup": "Hovězí s masem a vejcem",
+          "main": "Srbská čočka, Chléb",
+          "category": "LUŠTĚNINOVÁ"
         },
         {
-          "closed": false,
-          "soup": "zeleninová zahuštěná červenou čočkou",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
+          "soup": "Bramboračka",
+          "main": "Španělský ptáček, rýže",
+          "category": "HOVĚZÍ A TELECÍ"
         },
         {
-          "closed": false,
-          "soup": "selská ii.",
-          "main": "Rybí filé pečené na másle, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
+          "soup": "Celerová se smaženým hráškem",
+          "main": "Těstovinový salát s kuřecím masem",
+          "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "closed": false,
-          "soup": "zelenin. s pohankou",
-          "main": "Těstoviny s brokolicí",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
+          "soup": "Kysané zelí",
+          "main": "Vepřové v mrkvi, brambor",
+          "category": "VEPŘOVÉ A UZENÉ"
         },
         {
-          "closed": false,
-          "soup": "z batátových brambor",
-          "main": "Kuře pečené, Šťouchané brambory s cibulkou",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "",
-          "category2": ""
+          "soup": "Zeleninová s kuskusem",
+          "main": "Vepřová pečeně selská, Bramborové knedlíky",
+          "category": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
