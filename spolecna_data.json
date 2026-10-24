@@ -253,7 +253,7 @@
       "days": [
         {
           "closed": false,
-          "soup": "rajčatová s těstovinami",
+          "soup": "zeleninová s celozrnnými knedlíčky",
           "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
@@ -261,32 +261,32 @@
         },
         {
           "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Nákyp rýžový se švestkami",
+          "soup": "z rybího filé",
+          "main": "Omáčka koprová, Vejce vařené, Brambory",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "rajčatová s ovesnými vločkami",
-          "main": "Losos přírodní, Brambory",
+          "soup": "zeleninová s těstovinami",
+          "main": "Sekaná pečeně, Brambory",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "ze zahradních jahod",
+          "main": "Rybí filé pečené na másle, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "mrkvová",
-          "main": "Livance",
-          "category": "SLADKÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "cizrnová",
-          "main": "Rybí filé po mlynářsku, Brambory",
+          "soup": "zeleninová s quinoou",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
