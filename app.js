@@ -40,17 +40,24 @@ function txtRules(){
 }
 
 const contains=(name,term)=>norm(name).includes(norm(term));
-// Pevné střídání podle ISO týdne, nezávislé na schválené historii.
-function isoWeekNumber(week){
-    const d=parseDate(monday(week));
-    d.setDate(d.getDate()+3); // čtvrtek určuje ISO rok
-    const first=new Date(d.getFullYear(),0,4,12);
-    first.setDate(first.getDate()-(first.getDay()+6)%7);
-    return 1+Math.round((d-first)/604800000);
+// Střídání podle posledního dřívějšího schváleného VAŘENÉHO pondělí.
+// Pondělí bez ryby/luštěnin ani zavřené pondělí nepřerušuje posloupnost.
+function mondayCat(week){
+    const previous=[...state.history]
+        .filter(h=>h.week<week&&h.days?.length&&h.days[0]&&!h.days[0].closed)
+        .sort((a,b)=>b.week.localeCompare(a.week));
+    for(const h of previous){
+        const cat=h.days[0].category||'';
+        if(starts(cat,'RYBY'))return 'LUŠTĚNINOVÁ';
+        if(starts(cat,'LUŠTĚNINOVÁ'))return 'RYBY';
+    }
+    return 'LUŠTĚNINOVÁ'; // Bez předchozího záznamu začínají luštěniny.
 }
-function mondayCat(week){return isoWeekNumber(week)%2===0?'RYBY':'LUŠTĚNINOVÁ'}
+function mondayException(w=state.week){
+    return !w.days[0].closed&&!starts(w.days[0].category,mondayCat(w.week));
+}
 
-function validate(w=state.week){
+function validate(w=state.week,{allowMondayException=false}={}){
     const e=[],r=state.rules,t=txtRules(),active=w.days.filter(d=>!d.closed),usedMain=[],usedSoup=[],cats=[];
     if(!active.length)return ['Není vybrán žádný den vaření.'];
     for(const d of active){
@@ -70,7 +77,7 @@ function validate(w=state.week){
     for(const [k,p] of [['fish','RYBY'],['legumes','LUŠTĚNINOVÁ'],['meatless','BEZMASÁ']])
         if(cats.filter(c=>starts(c,p)).length<r[k])e.push('Nedostatek jídel v kategorii '+p);
     if(cats.filter(c=>starts(c,'SLADKÁ')).length>r.sweetMax)e.push('Příliš mnoho sladkých jídel.');
-    if(!w.days[0].closed&&!starts(w.days[0].category,mondayCat(w.week)))e.push('Pondělní Oběd 1 nesplňuje střídání ryb a luštěnin.');
+    if(!allowMondayException&&mondayException(w))e.push('Pondělní Oběd 1 nesplňuje střídání podle historie.');
     if(state.count===2&&!w.days[0].closed&&w.days[0].category===w.days[0].category2)e.push('Pondělní obědy musí být různých kategorií.');
     for(const term of t.require_main)if(!active.some(d=>contains(d.main,term)||(state.count===2&&contains(d.main2,term))))e.push('Chybí požadované hlavní jídlo: '+term);
     for(const term of t.require_soup)if(!active.some(d=>contains(d.soup,term)))e.push('Chybí požadovaná polévka: '+term);
@@ -125,7 +132,7 @@ function generate(){
         const w={week,days},errors=validate(w);
         if(!errors.length){
             if(active.includes(0)&&!starts(w.days[0].category,mondayCat(week)))
-                throw Error('Vnitřní chyba: pondělní Oběd 1 neodpovídá ISO týdnu.');
+                throw Error('Vnitřní chyba: pondělní Oběd 1 neodpovídá střídání podle historie.');
             return w;
         }
         lastErrors=errors
@@ -337,6 +344,10 @@ function renderChoices(){
         const btn=document.createElement('button');btn.type='button';btn.className='choice';btn.dataset.meal=item.name;btn.dataset.category=item.cat;
         btn.textContent=duplicateNames.get(norm(item.name))>1?`${item.name}  [${item.cat}]`:item.name;
         btn.onclick=()=>{
+            if(picking.day===0&&picking.key==='main'&&!state.week.days[0].closed&&!starts(item.cat,mondayCat(state.week.week))){
+                const expected=mondayCat(state.week.week)==='RYBY'?'rybí':'luštěninové';
+                if(!confirm(`Pondělní Oběd 1 by měl být podle posledního schváleného pondělí ${expected}.\n\nOpravdu chcete vědomě povolit výjimku a vybrat „${item.name}“?`))return;
+            }
             snapshot();const d=state.week.days[picking.day];
             d[picking.key]=item.name;
             if(kind==='main')d[picking.key==='main'?'category':'category2']=item.cat;
@@ -358,7 +369,10 @@ function csv(){
 function safe(fn){try{fn()}catch(e){console.error(e);notice(e.message||'Nastala chyba.',true)}}
 
 $('generate').onclick=()=>safe(()=>{const proposal=generate();snapshot();state.week=proposal;render();notice('Vygenerováno pět dnů jídelníčku.')});
-$('approve').onclick=()=>safe(()=>{const errors=validate();if(errors.length)throw Error(errors.join(' · '));if(state.history.some(h=>h.week===state.week.week)&&!confirm('Tento týden už je v historii. Opravdu přepsat schválenou verzi?'))return;snapshot();state.history=state.history.filter(h=>h.week!==state.week.week);state.history.push(clone(state.week));render();notice('Jídelníček schválen a uložen do historie.')});
+$('approve').onclick=()=>safe(()=>{const errors=validate(state.week,{allowMondayException:true});if(errors.length)throw Error(errors.join(' · '));if(mondayException()){
+    const expected=mondayCat(state.week.week)==='RYBY'?'rybí':'luštěninové';
+    if(!confirm(`Pondělní Oběd 1 neodpovídá střídání podle historie (očekává se ${expected} jídlo).\n\nChcete tuto výjimku vědomě schválit a uložit týden?`))return;
+}if(state.history.some(h=>h.week===state.week.week)&&!confirm('Tento týden už je v historii. Opravdu přepsat schválenou verzi?'))return;snapshot();state.history=state.history.filter(h=>h.week!==state.week.week);state.history.push(clone(state.week));render();notice('Jídelníček schválen a uložen do historie.')});
 $('validate').onclick=()=>safe(()=>{const e=validate();notice(e.length?e.join(' · '):'Jídelníček splňuje nastavená pravidla.',!!e.length)});
 $('new').onclick=()=>safe(()=>{snapshot();const closed=state.week.days.map(d=>d.closed);state.week=freshWeek($('date').value);state.week.days.forEach((d,i)=>d.closed=closed[i]);render();notice('Prázdný týden připraven.')});
 $('undo').onclick=()=>{if(!undo.length)return notice('Není co vrátit.');redo.push(clone(state));state=undo.pop();render();notice('Změna vrácena.')};
