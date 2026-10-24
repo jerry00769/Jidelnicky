@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "koprová (kulajda)",
-          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
+          "soup": "zeleninová s drožďovými knedlíčky",
+          "main": "Čočka na kyselo, Vejce vařené",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová se sýrovým kapáním",
-          "main": "Rybí stripsy, Brambory",
+          "soup": "z fazolových lusků",
+          "main": "Těstoviny se sýrovou omáčkou",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "z batátových brambor",
+          "main": "Rybí filé po mlynářsku, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "celerová se smaženým hráškem",
-          "main": "Nákyp rýžový s meruňkami",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "rajčatová s těstovinami",
-          "main": "Kuskus s ovocem",
+          "soup": "zeleninová s těstovinovou",
+          "main": "Knedlíky švestkové (bramborové) s mákem",
           "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "fazolová se zeleninou",
-          "main": "Italský guláš (zbruf se sýrem), Těstoviny",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "z míchaných luštěnin",
+          "main": "Rybí filé pečené na másle, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         }
