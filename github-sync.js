@@ -10,9 +10,9 @@ const status=(msg,err=false)=>{const b=$('savedBadge');if(b)b.textContent=msg; i
 function markPending(v){dirty=v;if(v)localStorage.setItem(pendingKey,'1');else localStorage.removeItem(pendingKey)}
 function setBaseline(s){baseline=json(s);localStorage.setItem(baselineKey,baseline)}
 function backup(s){const blob=new Blob([JSON.stringify(s,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='jidelnicky_zaloha_konflikt_'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000)}
-function controls(){ $('ghConnect').hidden=connected;$('ghRefresh').hidden=!connected;$('ghDisconnect').hidden=!connected;const resolve=$('ghResolve');if(resolve)resolve.hidden=!conflicted }
+function controls(){ $('ghConnect').hidden=connected||conflicted;$('ghRefresh').hidden=!connected;$('ghDisconnect').hidden=!connected;const resolve=$('ghResolve');if(resolve)resolve.hidden=!conflicted }
 const endpoint=`https://api.github.com/repos/${owner}/${repo}/contents/${file}`;
-async function request(method,body){const r=await fetch(endpoint+(method==='GET'?'?t='+Date.now():''),{method,headers:{'Accept':'application/vnd.github+json','Authorization':'Bearer '+token,'X-GitHub-Api-Version':'2022-11-28',...(body?{'Content-Type':'application/json'}:{})},cache:'no-store',body:body?JSON.stringify(body):undefined});if(r.status===404&&method==='GET')return null;let data;try{data=await r.json()}catch{data={}}if(!r.ok){const e=new Error(`GitHub ${r.status}: ${data.message||'chyba přístupu'}`);e.status=r.status;throw e}return data}
+async function request(method,body){const r=await fetch(endpoint+(method==='GET'?'?t='+Date.now():''),{method,headers:{'Accept':'application/vnd.github+json','Authorization':'Bearer '+token,'X-GitHub-Api-Version':'2022-11-28',...(body?{'Content-Type':'application/json'}:{})},cache:'no-store',body:body?JSON.stringify(body):undefined});if(r.status===404&&method==='GET'&&!token)return null;let data;try{data=await r.json()}catch{data={}}if(!r.ok){const e=new Error(`GitHub ${r.status}: ${data.message||'chyba přístupu'}`);e.status=r.status;throw e}return data}
 function decode(s){const bin=atob(s.replace(/\s/g,''));return new TextDecoder().decode(Uint8Array.from(bin,c=>c.charCodeAt(0)))}
 function encode(s){const bytes=new TextEncoder().encode(s);let bin='';for(let i=0;i<bytes.length;i+=8192)bin+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(bin)}
 function valid(s){return !!(s?.catalog?.main&&s?.catalog?.soup&&Array.isArray(s?.history)&&s?.week?.days?.length===5)}
@@ -23,9 +23,10 @@ async function connect(){
  try{
   const r=await remote();
   if(!r){
+   if(dirty){conflicted=true;controls();status('GitHub: soubor chybí, místní změny zachovány.',true);return}
    if(!confirm('Společná databáze neexistuje. Vytvořit ji z tohoto zařízení? Doporučujeme nejprve Export JSON.')){status('GitHub: nepřipojeno');return}
-   const local=app.getState(),saved=await put(local,null);
-   sha=saved.content.sha;setBaseline(local);markPending(false);connected=true;conflicted=false;controls();status('GitHub: společná data vytvořena');return;
+   const local=app.getState(),serial=json(local),saved=await put(local,null);
+   sha=saved.content.sha;setBaseline(local);markPending(json(app.getState())!==serial);connected=true;conflicted=false;controls();status('GitHub: společná data vytvořena');return;
   }
   const local=app.getState(),localJson=json(local),remoteJson=json(r.state),storedBaseline=localStorage.getItem(baselineKey);
   // Bezpečné obnovení offline zápisu: server se od poslední synchronizace nezměnil.
@@ -46,6 +47,7 @@ async function connect(){
    // Při úplně prvním připojení (bez známé výchozí verze) zůstává jednorázová ochrana dat.
    if(!storedBaseline&&!confirm('První připojení: převzít společná data z GitHubu?\n\nMístní data tohoto zařízení se nahradí. Předem lze použít Export JSON.')){status('GitHub: čeká na první potvrzení připojení');return}
    status('GitHub: načítám změny z druhého zařízení…');
+   if(json(app.getState())!==localJson||dirty){markPending(true);conflicted=true;controls();status('GitHub: místní změny během načítání zachovány.',true);return}
    app.applyState(r.state);
   }
   sha=r.sha;setBaseline(app.getState());markPending(false);connected=true;conflicted=false;controls();status('GitHub: data synchronizována');
@@ -66,11 +68,12 @@ async function flush(){
  busy=true;
  try{
   const current=app.getState(),serial=json(current);
-  if(serial===baseline){markPending(false);status('GitHub: data synchronizována');return}
+  if(serial===baseline){if(json(app.getState())===serial)markPending(false);status('GitHub: data synchronizována');return}
   const r=await remote();
   if(!r||r.sha!==sha){
    conflicted=true;connected=false;controls();status('GitHub: konflikt úprav – je potřeba rozhodnout v Nastavení. Místní data zachována.',true);return;
   }
+  if(json(app.getState())!==serial){markPending(true);status('GitHub: další místní změny čekají na odeslání');return}
   const saved=await put(current,sha);
   sha=saved.content.sha;setBaseline(current);
   if(json(app.getState())===serial){markPending(false);status('GitHub: data synchronizována')}
@@ -82,8 +85,8 @@ async function flush(){
 }
 function changed(){
  // I při offline práci a při ztrátě připojení evidujeme neodeslané změny.
- if(!token)return;
  markPending(true);
+ if(!token)return;
  if(!connected){status('GitHub: změny uloženy místně, čekají na připojení',true);return}
  status('GitHub: čeká na synchronizaci změn…');clearTimeout(timer);timer=setTimeout(flush,1200)
 }
@@ -99,6 +102,7 @@ async function refresh(){
     markPending(true);conflicted=true;connected=false;controls();status('GitHub: konflikt místních změn. Data nebyla přepsána.',true);return;
    }
    // Před aplikací dat ověřujeme, že stav se od začátku kontroly nezměnil.
+   if(dirty||json(app.getState())!==json(local)){markPending(true);conflicted=true;connected=false;controls();status('GitHub: během načítání vznikly místní změny. Data zachována.',true);return}
    app.applyState(r.state);sha=r.sha;setBaseline(r.state);status('GitHub: data synchronizována');
   }else status('GitHub: data synchronizována');
  }catch(e){status('GitHub: nelze zkontrolovat spojení; místní data zachována ('+e.message+')',true)}
@@ -116,11 +120,11 @@ function start(a){
  };
  $('ghRefresh').onclick=refresh;$('ghDisconnect').onclick=disconnect;const resolver=$('ghResolve');if(resolver)resolver.onclick=resolveConflict;
  controls();const initialSync=token?connect():Promise.resolve();
- document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected)refresh()});
- window.addEventListener('online',()=>{if(connected)refresh();else if(token&&!busy&&!conflicted)connect()});
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected){if(dirty)flush();else refresh()}});
+ window.addEventListener('online',()=>{if(connected){if(dirty)flush();else refresh()}else if(token&&!busy&&!conflicted)connect()});
  // Automatická kontrola při otevřené stránce; vyhneme se zbytečným API voláním na pozadí.
- setInterval(()=>{if(connected&&!document.hidden&&!busy)refresh()},15000);
- window.addEventListener('focus',()=>{if(connected&&!busy)refresh()});
+ setInterval(()=>{if(connected&&!document.hidden&&!busy){if(dirty)flush();else refresh()}},15000);
+ window.addEventListener('focus',()=>{if(connected&&!busy){if(dirty)flush();else refresh()}});
  return initialSync;
 }
 return {start,changed};
