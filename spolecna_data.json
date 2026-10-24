@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "hovězí s těstovinami",
-          "main": "Čočkový kotlík, Chléb",
+          "soup": "zeleninová se sýrovým kapáním",
+          "main": "Srbská čočka, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "květáková",
-          "main": "Omáčka koprová, Brambory, Vejce vařené",
+          "soup": "hrachová se smaženým hráškem",
+          "main": "Bramborák",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "ze zahradních jahod",
-          "main": "Rybí filé zapečené se špenátem, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "cizrnová krémová s rajčaty",
-          "main": "Rybí filé smažené, Bramborová kaše",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "selská ii.",
-          "main": "Kuskus s ovocem",
+          "soup": "z batátových brambor",
+          "main": "Livance",
           "category": "SLADKÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "vývar s drobením",
+          "main": "Rybí filé pečené na másle, Brambory",
+          "category": "RYBY",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "mrkvová",
+          "main": "Karbanátky pečené, Bramborová kaše",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
           "main2": "",
           "category2": ""
         }
@@ -1640,6 +1640,11 @@
     "txt": "",
     "count": 1,
     "lockMain": 8,
-    "lockSoup": 3
+    "lockSoup": 3,
+    "learning": {
+      "main": {},
+      "soup": {},
+      "pair": {}
+    }
   }
 }
