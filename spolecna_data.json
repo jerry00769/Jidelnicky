@@ -253,7 +253,7 @@
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová s celozrnnými knedlíčky",
+          "soup": "brokolicová",
           "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
@@ -1643,8 +1643,14 @@
     "lockSoup": 3,
     "learning": {
       "main": {},
-      "soup": {},
-      "pair": {}
+      "soup": {
+        "zeleninová s celozrnnými knedlíčky": -1,
+        "brokolicová": 1
+      },
+      "pair": {
+        "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
+        "brokolicová ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": 1
+      }
     }
   }
 }
