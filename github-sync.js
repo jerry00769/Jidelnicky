@@ -35,7 +35,12 @@ async function connect(){
    status('GitHub: čeká na synchronizaci offline změn…');
    setTimeout(flush,0);return;
   }
-  // Nové zařízení: uživatel musí potvrdit první převzetí vzdálených dat.
+   // Offline změny a vzdálená změna: nejprve bezpečný pokus o sloučení.
+   if(dirty&&storedBaseline&&storedBaseline!==remoteJson){
+    const original=localJson;
+    if(await mergeAndPut(local,original,r.state,r.sha))return;
+   }
+   // Nové zařízení: uživatel musí potvrdit první převzetí vzdálených dat.
   // Při neodeslaných úpravách se nikdy nepřepisuje automaticky.
   if(localJson!==remoteJson){
    if(dirty||storedBaseline&&localJson!==storedBaseline){
@@ -63,6 +68,49 @@ async function resolveConflict(){
   app.applyState(r.state);sha=r.sha;setBaseline(app.getState());markPending(false);conflicted=false;connected=true;controls();status('GitHub: konflikt vyřešen převzetím serverových dat');
  }catch(e){status('GitHub: konflikt nevyřešen ('+e.message+')',true)}finally{busy=false}
 }
+// Konzervativní třícestné sloučení: jen přidání jídel do existujících kategorií.
+// Ostatní změny (mazání, přejmenování, historie, pravidla, návrh týdne) vyžadují rozhodnutí.
+function mergeIndependentAdds(base,local,server){
+ if(!base||!valid(base)||!valid(local)||!valid(server))return null;
+ const withoutCatalog=x=>{const y=structuredClone(x);delete y.catalog;return JSON.stringify(y)};
+ const common=withoutCatalog(base);
+ if(withoutCatalog(local)!==common||withoutCatalog(server)!==common)return null;
+ const merged=structuredClone(server);
+ for(const kind of ['main','soup']){
+  const baseCats=base.catalog[kind],localCats=local.catalog[kind],serverCats=server.catalog[kind];
+  if(!baseCats||!localCats||!serverCats)return null;
+  const keys=Object.keys(baseCats).sort();
+  if(JSON.stringify(Object.keys(localCats).sort())!==JSON.stringify(keys)||JSON.stringify(Object.keys(serverCats).sort())!==JSON.stringify(keys))return null;
+  for(const cat of keys){
+   const old=baseCats[cat],mine=localCats[cat],theirs=serverCats[cat];
+   if(![old,mine,theirs].every(Array.isArray))return null;
+   const original=new Set(old);
+   if(original.size!==old.length||old.some(x=>!mine.includes(x)||!theirs.includes(x)))return null;
+   if(new Set(mine).size!==mine.length||new Set(theirs).size!==theirs.length)return null;
+   const additions=mine.filter(x=>!original.has(x));
+   const result=[...theirs];
+   for(const name of additions){
+    if(result.some(x=>x.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()===name.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase())){
+     if(!result.includes(name))return null;
+    }else result.push(name);
+   }
+   merged.catalog[kind][cat]=result.sort((a,b)=>a.localeCompare(b,'cs'));
+  }
+ }
+ return merged;
+}
+async function mergeAndPut(local,serial,remoteState,remoteSha){
+ let original;try{original=JSON.parse(localStorage.getItem(baselineKey)||'null')}catch{return false}
+ const merged=mergeIndependentAdds(original,local,remoteState);
+ if(!merged)return false;
+ // Když mezitím uživatel provedl další změnu, neodesílat starý stav.
+ if(json(app.getState())!==serial)return false;
+ const saved=await put(merged,remoteSha);
+ if(json(app.getState())!==serial){conflicted=true;connected=false;controls();status('GitHub: během sloučení vznikly další změny. Místní data zachována.',true);return true}
+ app.applyState(merged);sha=saved.content.sha;setBaseline(app.getState());markPending(false);
+ conflicted=false;connected=true;controls();status('GitHub: nezávislá přidání jídel bezpečně sloučena');
+ return true;
+}
 async function flush(){
  if(!connected||busy||!dirty||conflicted)return;
  busy=true;
@@ -71,6 +119,7 @@ async function flush(){
   if(serial===baseline){if(json(app.getState())===serial)markPending(false);status('GitHub: data synchronizována');return}
   const r=await remote();
   if(!r||r.sha!==sha){
+   if(r&&await mergeAndPut(current,serial,r.state,r.sha))return;
    conflicted=true;connected=false;controls();status('GitHub: konflikt úprav – je potřeba rozhodnout v Nastavení. Místní data zachována.',true);return;
   }
   if(json(app.getState())!==serial){markPending(true);status('GitHub: další místní změny čekají na odeslání');return}

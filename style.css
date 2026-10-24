@@ -583,3 +583,22 @@ dialog::backdrop { background: #10233b99; }
  #catalogList.catalog-list {height:250px;min-height:250px;max-height:250px;}
  #catalogSearch {font-size:16px;}
 }
+
+/* v17: Nastavení GitHubu vždy uvnitř mobilního viewportu. */
+@media screen and (max-width: 650px) {
+  .sync-area { min-width: 0; width: 100%; }
+  .github-settings { position: static; }
+  .github-settings[open] .github-controls {
+    position: fixed;
+    top: max(12px, env(safe-area-inset-top));
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: none;
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+  }
+  .github-controls button { min-height: 44px; white-space: normal; }
+}
