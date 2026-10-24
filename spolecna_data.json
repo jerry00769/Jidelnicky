@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová se sýrovým kapáním",
-          "main": "Srbská čočka, Chléb",
+          "soup": "koprová (kulajda)",
+          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hrachová se smaženým hráškem",
-          "main": "Bramborák",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "z batátových brambor",
-          "main": "Livance",
-          "category": "SLADKÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "vývar s drobením",
-          "main": "Rybí filé pečené na másle, Brambory",
+          "soup": "zeleninová se sýrovým kapáním",
+          "main": "Rybí stripsy, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "mrkvová",
-          "main": "Karbanátky pečené, Bramborová kaše",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "soup": "celerová se smaženým hráškem",
+          "main": "Nákyp rýžový s meruňkami",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "rajčatová s těstovinami",
+          "main": "Kuskus s ovocem",
+          "category": "SLADKÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "fazolová se zeleninou",
+          "main": "Italský guláš (zbruf se sýrem), Těstoviny",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
