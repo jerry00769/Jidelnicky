@@ -13,12 +13,43 @@ const freshWeek=s=>({week:monday(s),days:Array.from({length:5},freshDay)});
 let state;try{state=JSON.parse(localStorage.getItem(storeKey)||'null')}catch{};
 const hasSavedState=!!(state?.catalog?.main&&state?.catalog?.soup&&state?.week?.days?.length===5);
 if(!state||!state.catalog||!state.week||!Array.isArray(state.week.days)||state.week.days.length!==5)state={catalog:clone(window.INITIAL_CATALOG),week:freshWeek(iso(today)),history:[],rules:clone(defaults),txt:'',count:1,lockMain:8,lockSoup:3};
-state.history??=[];state.rules={...defaults,...state.rules};state.txt??='';state.count=[1,2].includes(+state.count)?+state.count:1;
+state.history??=[];state.learning=cleanLearning(state.learning);state.rules={...defaults,...state.rules};state.txt??='';state.count=[1,2].includes(+state.count)?+state.count:1;
+
+// Preference z ručních úprav; omezené skóre zabraňuje zacyklení výběru.
+function cleanLearning(value){
+    const result={main:{},soup:{},pair:{}};
+    for(const kind of Object.keys(result)){
+        const source=value?.[kind];
+        if(!source||typeof source!=='object'||Array.isArray(source))continue;
+        for(const [name,score] of Object.entries(source)){
+            if(typeof score==='number'&&Number.isFinite(score))result[kind][name]=Math.max(-20,Math.min(20,Math.round(score)));
+        }
+    }
+    return result;
+}
+function learn(kind,key,delta){
+    if(!key)return;
+    const table=state.learning[kind];
+    table[key]=Math.max(-20,Math.min(20,(table[key]||0)+delta));
+}
+const pairKey=(soup,main)=>soup+' ||| '+main;
+function weightedPick(items,kind,getKey=x=>x){
+    if(!items.length)return undefined;
+    const weights=items.map(item=>Math.max(1,10+2*(state.learning[kind][getKey(item)]||0)));
+    let draw=Math.random()*weights.reduce((a,b)=>a+b,0);
+    for(let i=0;i<items.length;i++){draw-=weights[i];if(draw<0)return items[i]}
+    return items[items.length-1];
+}
+function weightedOrder(items,kind,getKey=x=>x){
+    const pool=[...items],result=[];
+    while(pool.length){const choice=weightedPick(pool,kind,getKey);result.push(choice);pool.splice(pool.indexOf(choice),1)}
+    return result;
+}
 
 const undo=[],redo=[];let lastSaved=JSON.stringify(state),printingHistory=false;
 const save=()=>{if(printingHistory)return;const json=JSON.stringify(state);if(json===lastSaved)return;try{localStorage.setItem(storeKey,json);lastSaved=json;window.GitHubSync?.changed()}catch(e){notice('Uložení do prohlížeče selhalo.',true)}};
 function download(name,content,type){const b=new Blob([content],{type});const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}
-window.JidelnickyApp={getState:()=>clone(state),applyState(next){if(!next?.catalog?.main||!next?.catalog?.soup||!Array.isArray(next.history)||next?.week?.days?.length!==5)throw Error('Neplatná společná data');state=clone(next);state.rules={...defaults,...state.rules};state.txt??='';state.count=[1,2].includes(+state.count)?+state.count:1;undo.length=0;redo.length=0;lastSaved=JSON.stringify(state);localStorage.setItem(storeKey,lastSaved);if(typeof selectedHistory!=='undefined'&&selectedHistory&&!state.history.some(h=>h.week===selectedHistory))selectedHistory=[...state.history].sort((a,b)=>b.week.localeCompare(a.week))[0]?.week||null;render();if($('historyDialog')?.open){historyRows();historyDetail()}},notice};
+window.JidelnickyApp={getState:()=>clone(state),applyState(next){if(!next?.catalog?.main||!next?.catalog?.soup||!Array.isArray(next.history)||next?.week?.days?.length!==5)throw Error('Neplatná společná data');state=clone(next);state.learning=cleanLearning(state.learning);state.rules={...defaults,...state.rules};state.txt??='';state.count=[1,2].includes(+state.count)?+state.count:1;undo.length=0;redo.length=0;lastSaved=JSON.stringify(state);localStorage.setItem(storeKey,lastSaved);if(typeof selectedHistory!=='undefined'&&selectedHistory&&!state.history.some(h=>h.week===selectedHistory))selectedHistory=[...state.history].sort((a,b)=>b.week.localeCompare(a.week))[0]?.week||null;render();if($('historyDialog')?.open){historyRows();historyDetail()}},notice};
 const snapshot=()=>{undo.push(clone(state));if(undo.length>60)undo.shift();redo.length=0};
 let statusTimer;function notice(message,error=false){const el=$('status');el.textContent=message;el.className=error?'error':'';el.style.display='block';clearTimeout(statusTimer);statusTimer=setTimeout(()=>el.style.display='none',6500)}
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
@@ -117,15 +148,15 @@ function generate(){
         if(active.includes(0)){const pos=target.indexOf(monName);if(pos>=0)[target[0],target[pos]]=[target[pos],target[0]];else target[0]=monName}
         const usedM=new Set(),usedS=new Set();let failed=false;
         for(const [index,day] of active.entries()){
-            const cat=target[index],mains=shuffle((state.catalog.main[cat]||[]).filter(m=>!usedM.has(m)&&!blockedMain.has(m)&&!t.ban_main.some(x=>contains(m,x)))),soups=shuffle(all('soup').filter(({cat:sc,name:s})=>!usedS.has(s)&&!blockedSoup.has(s)&&!t.ban_soup.some(x=>contains(s,x))&&!(r.avoidLegumePair&&starts(cat,'LUŠTĚNINOVÁ')&&contains(sc,'LUŠTĚNINOVÉ'))&&!(r.avoidFishPair&&starts(cat,'RYBY')&&contains(s,'rybi'))).map(x=>x.name));
+            const cat=target[index],mains=weightedOrder((state.catalog.main[cat]||[]).filter(m=>!usedM.has(m)&&!blockedMain.has(m)&&!t.ban_main.some(x=>contains(m,x))),'main'),soups=weightedOrder(all('soup').filter(({cat:sc,name:s})=>!usedS.has(s)&&!blockedSoup.has(s)&&!t.ban_soup.some(x=>contains(s,x))&&!(r.avoidLegumePair&&starts(cat,'LUŠTĚNINOVÁ')&&contains(sc,'LUŠTĚNINOVÉ'))&&!(r.avoidFishPair&&starts(cat,'RYBY')&&contains(s,'rybi'))).map(x=>x.name),'soup');
             let pair;
-            for(const m of mains){const s=soups.find(s=>!t.ban_pair.some(([a,b])=>contains(s,a)&&contains(m,b)));if(s){pair={s,m};break}}
+            for(const m of mains){const s=weightedPick(soups.filter(s=>!t.ban_pair.some(([a,b])=>contains(s,a)&&contains(m,b))),'pair',s=>pairKey(s,m));if(s){pair={s,m};break}}
             if(!pair){failed=true;break}
             const d=days[day];d.closed=false;d.soup=pair.s;d.main=pair.m;d.category=cat;usedM.add(pair.m);usedS.add(pair.s);
             if(state.count===2){
                 const options=all('main').filter(x=>x.cat!==cat&&!usedM.has(x.name)&&!blockedMain.has(x.name)&&!t.ban_main.some(b=>contains(x.name,b))&&!t.ban_pair.some(([a,b])=>contains(pair.s,a)&&contains(x.name,b))&&!(r.avoidFishPair&&starts(x.cat,'RYBY')&&contains(pair.s,'rybi'))&&!(r.avoidLegumePair&&starts(x.cat,'LUŠTĚNINOVÁ')&&contains(all('soup').find(y=>y.name===pair.s)?.cat||'','LUŠTĚNINOVÉ')));
                 if(!options.length){failed=true;break}
-                const wanted=secondRequired.findIndex(c=>c!==cat&&options.some(x=>x.cat===c));const available=wanted>=0?options.filter(x=>x.cat===secondRequired[wanted]):options;const second=rand(available);if(wanted>=0)secondRequired.splice(wanted,1);d.main2=second.name;d.category2=second.cat;usedM.add(second.name)
+                const wanted=secondRequired.findIndex(c=>c!==cat&&options.some(x=>x.cat===c));const available=wanted>=0?options.filter(x=>x.cat===secondRequired[wanted]):options;const second=weightedPick(available,'main',x=>x.name);if(wanted>=0)secondRequired.splice(wanted,1);d.main2=second.name;d.category2=second.cat;usedM.add(second.name)
             }
         }
         if(failed||secondRequired.length)continue;
@@ -348,10 +379,18 @@ function renderChoices(){
                 const expected=mondayCat(state.week.week)==='RYBY'?'rybí':'luštěninové';
                 if(!confirm(`Pondělní Oběd 1 by měl být podle posledního schváleného pondělí ${expected}.\n\nOpravdu chcete vědomě povolit výjimku a vybrat „${item.name}“?`))return;
             }
-            snapshot();const d=state.week.days[picking.day];
+            const d=state.week.days[picking.day];
+            const oldName=d[picking.key];
+            if(oldName===item.name)return $('picker').close();
+            snapshot();
+            const beforeSoup=d.soup,beforeMain=d.main;
+            if(oldName)learn(kind,oldName,-1);
+            learn(kind,item.name,1);
+            if(beforeSoup&&beforeMain)learn('pair',pairKey(beforeSoup,beforeMain),-1);
             d[picking.key]=item.name;
             if(kind==='main')d[picking.key==='main'?'category':'category2']=item.cat;
-            $('picker').close();render();notice('Jídlo upraveno.')
+            if(d.soup&&d.main)learn('pair',pairKey(d.soup,d.main),1);
+            $('picker').close();render();notice('Jídlo upraveno; preference se učí z ručních výměn.')
         };
         el.append(btn)
     }
@@ -439,7 +478,7 @@ $('restore').onchange=async e=>{
         const imported=JSON.parse(await file.text());const next=imported.state;
         if(imported.format!=='jidelnicky-static-v1'||!next?.catalog?.main||!next?.catalog?.soup||!Array.isArray(next?.history)||next?.week?.days?.length!==5)throw Error('Neplatná záloha jídelníčků.');
         if(!confirm('Import přepíše aktuální data v tomto prohlížeči. Pokračovat?'))return;
-        snapshot();state=next;state.rules={...defaults,...state.rules};render();notice('Záloha načtena.')
+        snapshot();state=next;state.learning=cleanLearning(state.learning);state.rules={...defaults,...state.rules};render();notice('Záloha načtena.')
     }catch(err){notice(err.message,true)}finally{e.target.value=''}
 };
 
