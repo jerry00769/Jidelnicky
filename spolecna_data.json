@@ -261,7 +261,7 @@
         },
         {
           "closed": false,
-          "soup": "květáková",
+          "soup": "bramboračka nezahuštěná",
           "main": "Rybí filé po mlynářsku, Brambory",
           "category": "RYBY",
           "main2": "",
@@ -1665,14 +1665,18 @@
         "zeleninová s celozrnnými knedlíčky": -1,
         "brokolicová": 1,
         "z kysaného zelí": -1,
-        "hovězí s masem a vejcem": 1
+        "hovězí s masem a vejcem": 1,
+        "květáková": -1,
+        "bramboračka nezahuštěná": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
         "brokolicová ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": 1,
         "z kysaného zelí ||| Vepřová pečeně, Fazolové lusky na slanině, Brambory": -1,
         "hovězí s masem a vejcem ||| Vepřová pečeně, Fazolové lusky na slanině, Brambory": 0,
-        "hovězí s masem a vejcem ||| Srbská čočka, Chléb": 1
+        "hovězí s masem a vejcem ||| Srbská čočka, Chléb": 1,
+        "květáková ||| Rybí filé po mlynářsku, Brambory": -1,
+        "bramboračka nezahuštěná ||| Rybí filé po mlynářsku, Brambory": 1
       }
     }
   }
