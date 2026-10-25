@@ -269,7 +269,7 @@
         },
         {
           "closed": false,
-          "soup": "cizrnová krémová s rajčaty",
+          "soup": "celerová se smaženým hráškem",
           "main": "Španělský plátek, Rýže dušená",
           "category": "HOVĚZÍ A TELECÍ",
           "main2": "",
@@ -1669,7 +1669,9 @@
         "z kysaného zelí": -1,
         "hovězí s masem a vejcem": 1,
         "květáková": -1,
-        "bramboračka nezahuštěná": 1
+        "bramboračka nezahuštěná": 1,
+        "cizrnová krémová s rajčaty": -1,
+        "celerová se smaženým hráškem": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
@@ -1679,7 +1681,9 @@
         "hovězí s masem a vejcem ||| Srbská čočka, Chléb": 1,
         "květáková ||| Rybí filé po mlynářsku, Brambory": -1,
         "bramboračka nezahuštěná ||| Rybí filé po mlynářsku, Brambory": 0,
-        "bramboračka nezahuštěná ||| Španělský ptáček rozházený, Rýže dušená": 1
+        "bramboračka nezahuštěná ||| Španělský ptáček rozházený, Rýže dušená": 1,
+        "cizrnová krémová s rajčaty ||| Španělský plátek, Rýže dušená": -1,
+        "celerová se smaženým hráškem ||| Španělský plátek, Rýže dušená": 1
       }
     }
   }
