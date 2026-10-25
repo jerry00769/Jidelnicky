@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "drožďová",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "frankfurtská s bramborem",
+          "main": "Těstoviny se sýrovou omáčkou",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "zeleninová s ovesnými vločkami",
+          "main": "Horňácký guláš (maso, fazole), Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "hovězí s kapustou a rýží",
+          "main": "Hovězí guláš, Rýže dušená",
+          "category": "HOVĚZÍ A TELECÍ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "cibulová se sýrem",
+          "main": "Dukátové buchtičky s krémem",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         }
