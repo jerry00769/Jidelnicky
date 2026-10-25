@@ -253,40 +253,40 @@
       "days": [
         {
           "closed": false,
-          "soup": "rychlá s vejcem",
-          "main": "Srbská čočka, Chléb",
+          "soup": "ze zahradních jahod",
+          "main": "Španělská čočka s mletým masem, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "fazolová se zeleninou",
-          "main": "Tilápie s rajčaty a sýrem, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Bramborák",
+          "soup": "zeleninová s těstovinovou rýží",
+          "main": "Nákyp rýžový s meruňkami",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová zahuštěná červenou čočkou",
-          "main": "Kuřecí rizoto",
-          "category": "DRŮBEŽ A KRÁLÍK",
+          "soup": "krupicová s vejcem",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "česneková s bramborem a vejcem",
-          "main": "Žebrácké maso, Brambory opékané",
+          "soup": "hovězí s játrovými noky",
+          "main": "Vepřové v kapustě, Brambory",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "krupicová maďarská",
+          "main": "Těstovinový salát s marinovaným tofu",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
