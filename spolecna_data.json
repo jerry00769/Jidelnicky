@@ -286,8 +286,8 @@
         {
           "closed": false,
           "soup": "celerová se smaženým hráškem",
-          "main": "Španělský ptáček rozházený, Rýže dušená",
-          "category": "HOVĚZÍ A TELECÍ",
+          "main": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
+          "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
           "category2": ""
         }
@@ -1661,7 +1661,8 @@
         "Vepřová pečeně, Fazolové lusky na slanině, Brambory": -1,
         "Srbská čočka, Chléb": 1,
         "Rybí filé po mlynářsku, Brambory": -1,
-        "Španělský ptáček rozházený, Rýže dušená": 1
+        "Španělský ptáček rozházený, Rýže dušená": 0,
+        "Vepřová pečeně selská, Bramborové knedlíky (směs)": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1683,7 +1684,9 @@
         "bramboračka nezahuštěná ||| Rybí filé po mlynářsku, Brambory": 0,
         "bramboračka nezahuštěná ||| Španělský ptáček rozházený, Rýže dušená": 1,
         "cizrnová krémová s rajčaty ||| Španělský plátek, Rýže dušená": -1,
-        "celerová se smaženým hráškem ||| Španělský plátek, Rýže dušená": 1
+        "celerová se smaženým hráškem ||| Španělský plátek, Rýže dušená": 1,
+        "celerová se smaženým hráškem ||| Španělský ptáček rozházený, Rýže dušená": -1,
+        "celerová se smaženým hráškem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 1
       }
     }
   }
