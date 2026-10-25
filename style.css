@@ -1062,3 +1062,108 @@ header { padding-top: 11px; padding-bottom: 11px; }
   .toolbar .toolbar-fields input#date::-webkit-date-and-time-value {text-align:center;}
   .toolbar .toolbar-fields input#date::-webkit-datetime-edit {text-align:center;width:100%;}
 }
+
+/* v60: sjednoceni skutecne velikosti hodnot na mobilu a tabletu.
+   Pevne px zabranuji zmenam pri zmene sirky okna a prepisuji historicke procentni upravy. */
+@media screen and (max-width:1099px) {
+  .toolbar .toolbar-fields input,
+  .toolbar .toolbar-fields select,
+  .toolbar .toolbar-fields input#date {
+    font-size:15px !important;
+    line-height:1.25;
+  }
+  .toolbar .toolbar-fields input#date {
+    text-align:center !important;
+    text-align-last:center !important;
+    white-space:nowrap;
+  }
+  .toolbar .toolbar-fields input#date::-webkit-date-and-time-value,
+  .toolbar .toolbar-fields input#date::-webkit-datetime-edit {
+    text-align:center;
+    width:100%;
+  }
+}
+
+/* v61: mobil i tablet maji presne stejnou velikost hodnot jako PC (0.882 x 15px = 13.23px). */
+@media screen and (max-width:1099px) {
+  .toolbar .toolbar-fields input,
+  .toolbar .toolbar-fields select,
+  .toolbar .toolbar-fields input#date { font-size:13.23px !important; }
+}
+
+/* v62: pouze mobil/tablet, hodnoty ve ctyrech hornich polich -10 % oproti v61 (13.23 -> 11.907 px). */
+@media screen and (max-width:1099px) {
+  .toolbar .toolbar-fields input,
+  .toolbar .toolbar-fields select,
+  .toolbar .toolbar-fields input#date { font-size:11.907px !important; }
+}
+
+/* v63: mobil/tablet - vsechna ctyri vstupni pole stejne vysoka jako hlavni tlacitka (36px). */
+@media screen and (max-width:1099px) {
+  .toolbar .toolbar-fields input,
+  .toolbar .toolbar-fields select,
+  .toolbar .toolbar-fields input#date {
+    box-sizing:border-box;
+    height:36px !important;
+    min-height:36px !important;
+    max-height:36px !important;
+    padding-top:4px !important;
+    padding-bottom:4px !important;
+    line-height:1.2;
+  }
+  .toolbar .toolbar-fields .main-date-wrap {height:36px;}
+}
+
+/* v64: jednotne svisle zarovnani poli a jejich hodnot na mobilu/tabletu. */
+@media screen and (max-width:1099px) {
+  .toolbar .toolbar-fields {
+    grid-auto-rows: minmax(0,auto);
+    align-items: stretch;
+    row-gap: 6px;
+  }
+  .toolbar .toolbar-fields > label {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 4px;
+    margin: 0;
+    line-height: 16px;
+  }
+  .toolbar .toolbar-fields > label > input,
+  .toolbar .toolbar-fields > label > select,
+  .toolbar .toolbar-fields > label > .main-date-wrap,
+  .toolbar .toolbar-fields .main-date-wrap > input {
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+  .toolbar .toolbar-fields > label > input,
+  .toolbar .toolbar-fields > label > select,
+  .toolbar .toolbar-fields .main-date-wrap > input {
+    padding-block: 0 !important;
+    line-height: normal !important;
+    vertical-align: middle;
+  }
+  .toolbar .toolbar-fields input#date::-webkit-datetime-edit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .toolbar .toolbar-fields .main-date-overlay {height:36px !important;min-height:36px !important;}
+}
+
+/* v65: stejna velikost a vyska textu hodnot ve vsech ctyrech polich na PC, tabletu i mobilu.
+   Nemeni fyzickou vysku poli ani tlacitek a nezasahuje do jinych formularu. */
+@media screen {
+  .toolbar .toolbar-fields input,
+  .toolbar .toolbar-fields select,
+  .toolbar .toolbar-fields input#date {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif !important;
+  }
+}
