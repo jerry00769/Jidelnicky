@@ -253,7 +253,7 @@
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová s těstovinami",
+          "soup": "zeleninová s těstovinovou",
           "main": "Horňácký guláš (maso, fazole), Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
@@ -261,7 +261,23 @@
         },
         {
           "closed": false,
-          "soup": "hovězí s jáhly",
+          "soup": "cizrnová krémová s rajčaty",
+          "main": "Nudle s mákom",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s kuskusem",
+          "main": "Rybí filé smažené, Bramborová kaše",
+          "category": "RYBY",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zelenin. s pohankou",
           "main": "Vepřová kotleta na houbách, Těstoviny",
           "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
@@ -269,25 +285,9 @@
         },
         {
           "closed": false,
-          "soup": "krupicová s vejcem",
-          "main": "Kuře Šanghaj s rýží",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "fazolová se zeleninou",
-          "main": "Džuveč, Chléb",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zeleninová s kuskusem",
-          "main": "Těstoviny penne s tuňákem a chery rajčaty",
-          "category": "RYBY",
+          "soup": "z míchaných luštěnin",
+          "main": "Kapustové karbanátky, Bramborová kaše",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
           "main2": "",
           "category2": ""
         }
