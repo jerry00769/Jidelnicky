@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-10-19",
+      "week": "2026-10-26",
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s kroupami",
-          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hrachová se smaženým hráškem",
-          "main": "Těstoviny penne s tuňákem a chery rajčaty",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí se strouháním",
-          "main": "Guláš maďarský, Rýže dušená",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "celerová se smaženým hráškem",
-          "main": "Vepřové na paprice, Těstoviny",
-          "category": "VEPŘOVÉ A UZENÉ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s kuskusem",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
-          "category": "SLADKÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         }
