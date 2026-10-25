@@ -173,7 +173,7 @@ function generate(){
 
 function render(){
     const w=state.week;
-    $('date').value=w.week;$('count').value=state.count;$('lockMain').value=state.lockMain;$('lockSoup').value=state.lockSoup;
+    $('date').value=w.week;$('count').value=state.count;$('lockMain').value=state.lockMain;$('lockSoup').value=state.lockSoup;$('lockMainMobile').value=state.lockMain;$('lockSoupMobile').value=state.lockSoup;
     $('range').textContent=`${format(dateAt(w.week,0))} – ${format(dateAt(w.week,4))}`;
     $('days').replaceChildren();
     for(let i=0;i<5;i++){
