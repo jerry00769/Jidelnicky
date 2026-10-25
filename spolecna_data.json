@@ -254,7 +254,7 @@
       "days": [
         {
           "closed": false,
-          "soup": "hovězí s masem a vejcem",
+          "soup": "bramboračka",
           "main": "Srbská čočka, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
@@ -1674,20 +1674,21 @@
         "zeleninová s celozrnnými knedlíčky": -1,
         "brokolicová": 1,
         "z kysaného zelí": 0,
-        "hovězí s masem a vejcem": 1,
+        "hovězí s masem a vejcem": 0,
         "květáková": -1,
         "bramboračka nezahuštěná": 1,
         "cizrnová krémová s rajčaty": -1,
         "celerová se smaženým hráškem": 0,
         "zeleninová s kuskusem": 1,
-        "hovězí s játrovými knedlíčky": -1
+        "hovězí s játrovými knedlíčky": -1,
+        "bramboračka": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
         "brokolicová ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": 1,
         "z kysaného zelí ||| Vepřová pečeně, Fazolové lusky na slanině, Brambory": -1,
         "hovězí s masem a vejcem ||| Vepřová pečeně, Fazolové lusky na slanině, Brambory": 0,
-        "hovězí s masem a vejcem ||| Srbská čočka, Chléb": 1,
+        "hovězí s masem a vejcem ||| Srbská čočka, Chléb": 0,
         "květáková ||| Rybí filé po mlynářsku, Brambory": -1,
         "bramboračka nezahuštěná ||| Rybí filé po mlynářsku, Brambory": 0,
         "bramboračka nezahuštěná ||| Španělský ptáček rozházený, Rýže dušená": 1,
@@ -1700,7 +1701,8 @@
         "hovězí s játrovými knedlíčky ||| Vepřové v mrkvi, Brambory": 0,
         "z kysaného zelí ||| Vepřové v mrkvi, Brambory": 1,
         "celerová se smaženým hráškem ||| Těstovinový salát se zeleninou a šunkou": 0,
-        "celerová se smaženým hráškem ||| Těstovinový salát s kuřecím masem": 1
+        "celerová se smaženým hráškem ||| Těstovinový salát s kuřecím masem": 1,
+        "bramboračka ||| Srbská čočka, Chléb": 1
       }
     }
   }
