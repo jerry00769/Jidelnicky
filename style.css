@@ -1010,3 +1010,55 @@ header { padding-top: 11px; padding-bottom: 11px; }
 @media (max-width:500px) {
  .copy-week-dialog {width:min(364px,94vw);padding:12px;}
 }
+
+/* v55: pouze text ve vstupnich polich mobil/tablet o dalsich 10 % mensi oproti v54. */
+@media screen and (max-width:1099px) {
+  .toolbar-fields input, .toolbar-fields select {font-size:.7524rem;}
+  .toolbar-fields #date {font-size:clamp(9.504px,2.6136vw,11.88px);}
+}
+
+/* v56: text HODNOT ve ctyrech hornich polich o 20 % mensi nez v55. */
+@media screen and (max-width:1099px) {
+  .toolbar .toolbar-fields input,
+  .toolbar .toolbar-fields select { font-size: .60192rem !important; }
+  .toolbar .toolbar-fields input#date { font-size: clamp(7.6032px,2.09088vw,9.504px) !important; }
+}
+
+/* v57: oprava rozdilnych velikosti textu hodnot v hornich polich.
+   Mobil/tablet +20 % oproti v56; PC -10 % oproti v56.
+   Kalendarovy dialog, tlacitka a ostatni rozlozeni beze zmeny. */
+@media screen and (max-width:1099px) {
+  .toolbar .toolbar-fields input,
+  .toolbar .toolbar-fields select {font-size:.722304rem !important;}
+  .toolbar .toolbar-fields input#date {font-size:clamp(9.12384px,2.509056vw,11.4048px) !important;}
+}
+@media screen and (min-width:1100px) {
+  .toolbar .toolbar-fields input,
+  .toolbar .toolbar-fields select {font-size:.882rem !important;}
+}
+
+/* v58: pouze mobil do 600px: hodnoty poli +20 % proti v57, datum na stred. */
+@media screen and (max-width:600px) {
+  .toolbar .toolbar-fields input,
+  .toolbar .toolbar-fields select {font-size:.8667648rem !important;}
+  .toolbar .toolbar-fields input#date {
+    font-size:clamp(10.948608px,3.0108672vw,13.68576px) !important;
+    text-align:center !important;
+    text-align-last:center !important;
+  }
+  .toolbar .toolbar-fields input#date::-webkit-date-and-time-value {text-align:center;}
+  .toolbar .toolbar-fields input#date::-webkit-datetime-edit {text-align:center;width:100%;}
+}
+
+/* v59: tablet 601–1099 px ma stejnou velikost hodnot a centrovani data jako mobil v58. */
+@media screen and (min-width:601px) and (max-width:1099px) {
+  .toolbar .toolbar-fields input,
+  .toolbar .toolbar-fields select {font-size:.8667648rem !important;}
+  .toolbar .toolbar-fields input#date {
+    font-size:clamp(10.948608px,3.0108672vw,13.68576px) !important;
+    text-align:center !important;
+    text-align-last:center !important;
+  }
+  .toolbar .toolbar-fields input#date::-webkit-date-and-time-value {text-align:center;}
+  .toolbar .toolbar-fields input#date::-webkit-datetime-edit {text-align:center;width:100%;}
+}
