@@ -618,3 +618,33 @@ dialog::backdrop { background: #10233b99; }
 
 /* Zvýraznění právě upravovaného pokrmu v seznamu. */
 .picker-edit-selected .choice{background:#dbeafe;outline:2px solid #2457ad;outline-offset:-2px;font-weight:700}
+
+/* v22: jedno kliknutí pouze označí, potvrzení samostatným tlačítkem */
+#picker .choice.selected{background:#dbeafe;outline:2px solid #2457ad;outline-offset:-2px;font-weight:700}
+#picker .picker-management-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+#picker .picker-management-actions button{min-width:0;padding:9px 4px;font-size:.88rem}
+#pickerChoose{background:#1768b1;color:#fff}
+@media(max-width:480px){#picker .picker-management-actions button{font-size:.77rem;padding:10px 2px}}
+
+.new-meal-category-dialog{width:min(480px,95vw);height:auto;min-height:0;max-height:85dvh}.new-meal-category-dialog h2{margin:0 0 12px;font-size:1.2rem}.new-meal-category-dialog .actions{margin-top:16px}.new-meal-category-dialog select{width:100%}
+
+.new-meal-summary{background:#f0f5fb;border:1px solid #cbd9ea;border-radius:9px;padding:12px;margin:12px 0;overflow-wrap:anywhere;line-height:1.6}.new-meal-category-dialog button:disabled{opacity:.45;cursor:not-allowed}
+
+/* v26: potvrzení kategorie je kompaktní a svisle vystředěné; hlavní výběrový dialog zůstává vysoký. */
+#newMealCategoryDialog[open] {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(480px, calc(100vw - 24px));
+  height: fit-content;
+  min-height: 0;
+  max-height: min(85dvh, 560px);
+  overflow-y: auto;
+  padding: 18px 20px;
+  box-sizing: border-box;
+}
+#newMealCategoryDialog .new-meal-summary { margin: 8px 0; padding: 10px 12px; }
+#newMealCategoryDialog .actions { margin-top: 12px; }
+@media (max-width: 480px) {
+  #newMealCategoryDialog[open] { padding: 16px; }
+}
