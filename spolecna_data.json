@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "brokolicová",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "soup": "z kysaného zelí",
+          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "z rybího filé",
-          "main": "Omáčka koprová, Vejce vařené, Brambory",
+          "soup": "květáková",
+          "main": "Rybí filé po mlynářsku, Brambory",
+          "category": "RYBY",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "cizrnová krémová s rajčaty",
+          "main": "Španělský plátek, Rýže dušená",
+          "category": "HOVĚZÍ A TELECÍ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s játrovými knedlíčky",
+          "main": "Těstoviny s brokolicí",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s těstovinami",
-          "main": "Sekaná pečeně, Brambory",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "ze zahradních jahod",
-          "main": "Rybí filé pečené na másle, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zeleninová s quinoou",
-          "main": "Rybí filé zapečené se špenátem, Brambory",
-          "category": "RYBY",
+          "soup": "celerová se smaženým hráškem",
+          "main": "Španělský ptáček rozházený, Rýže dušená",
+          "category": "HOVĚZÍ A TELECÍ",
           "main2": "",
           "category2": ""
         }
