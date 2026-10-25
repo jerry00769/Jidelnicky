@@ -253,7 +253,7 @@
       "days": [
         {
           "closed": false,
-          "soup": "z kysaného zelí",
+          "soup": "hovězí s masem a vejcem",
           "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
@@ -1660,11 +1660,15 @@
       "main": {},
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
-        "brokolicová": 1
+        "brokolicová": 1,
+        "z kysaného zelí": -1,
+        "hovězí s masem a vejcem": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
-        "brokolicová ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": 1
+        "brokolicová ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": 1,
+        "z kysaného zelí ||| Vepřová pečeně, Fazolové lusky na slanině, Brambory": -1,
+        "hovězí s masem a vejcem ||| Vepřová pečeně, Fazolové lusky na slanině, Brambory": 1
       }
     }
   }
