@@ -197,24 +197,9 @@ function render(){
         const checkbox=document.querySelector(`[data-day="${i}"]`);
         if(checkbox)checkbox.checked=!d.closed
     }
-    renderHistory();renderRules();
+    renderRules();
     $('txtRules').value=state.txt;save();
     if($('days').children.length!==5)notice('Chyba vykreslení pěti dnů.',true)
-}
-
-function renderHistory(){
-    const el=$('history');el.replaceChildren();
-    if(!state.history.length){el.textContent='Zatím žádné schválené týdny.';return}
-    for(const h of [...state.history].sort((a,b)=>b.week.localeCompare(a.week)).slice(0,6)){
-        const row=document.createElement('div');row.className='entry';
-        const label=document.createElement('strong');label.textContent=`${format(dateAt(h.week,0))} – ${format(dateAt(h.week,4))}`;
-        const open=document.createElement('button');open.className='alt';open.textContent='Náhled';open.onclick=()=>showHistory(h.week);
-        row.append(label,open);el.append(row)
-    }
-    if(state.history.length>6){
-        const more=document.createElement('p');more.className='muted';more.textContent=`Dalších ${state.history.length-6} týdnů najdeš ve správci historie.`;
-        el.append(more)
-    }
 }
 
 let selectedHistory=null;
@@ -254,7 +239,7 @@ function showHistory(week){
 
 function chosenHistory(){return state.history.find(h=>h.week===selectedHistory)}
 
-$('openHistory').onclick=$('historyManager').onclick=()=>showHistory();
+$('openHistory').onclick=()=>showHistory();
 $('closeHistory').onclick=()=>$('historyDialog').close();
 $('historyLoad').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;snapshot();state.week=clone(h);state.count=h.days.some(d=>d.main2)?2:1;$('historyDialog').close();render();notice('Načtena pracovní kopie. Schválená historie se nezměnila.')});
 // Vlastni kalendar pro kopirovani schvaleneho tydne.
@@ -492,14 +477,6 @@ $('count').onchange=()=>safe(()=>{snapshot();state.count=+$('count').value;rende
 for(const key of ['lockMain','lockSoup'])$(key).onchange=()=>{snapshot();state[key]=Math.max(0,Math.min(key==='lockMain'?30:20,Number($(key).value)||0));render()};
 document.querySelectorAll('[data-day]').forEach(input=>input.onchange=()=>{snapshot();const d=state.week.days[+input.dataset.day];d.closed=!input.checked;if(d.closed){d.soup='';d.main='';d.category='';d.main2='';d.category2=''}render()});
 $('saveRules').onclick=()=>safe(()=>{const rules={};for(const input of document.querySelectorAll('[data-rule]'))rules[input.dataset.rule]=input.type==='checkbox'?input.checked:Math.max(0,Math.min(5,Number(input.value)||0));const txt=$('txtRules').value;const previous=state.txt;state.txt=txt;try{txtRules()}catch(e){state.txt=previous;throw e}state.txt=previous;snapshot();state.txt=txt;state.rules=rules;render();save();notice('Pravidla uložena.')});
-$('openCatalog').onclick=()=>{
- picking={day:null,key:null,kind:'main'};pickerSelected=null;
- $('pickerTitle').textContent='Databáze jídel';$('search').value='';$('pickerMealName').value='';
- $('pickerCategory').replaceChildren(new Option('VŠECHNY',''));
- $('pickerChoose').hidden=true;
- let kindSelect=$('pickerKind');$('pickerKindLabel').hidden=false;kindSelect.value='main';
- renderChoices();$('picker').showModal();$('search').focus();
-};
 $('pickerKind').onchange=()=>{if(picking?.day!==null)return;picking.kind=$('pickerKind').value;pickerSelected=null;$('pickerMealName').value='';$('pickerCategory').replaceChildren(new Option('VŠECHNY',''));renderChoices()};
 $('search').oninput=renderChoices;
 $('pickerCategory').onchange=renderChoices;
@@ -628,3 +605,16 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 });
 })();
+
+// v44: kliknutí na backdrop zavře dialog bez spuštění potvrzovacích akcí.
+// Používáme hranice dialogu, nikoli target===dialog (vnitřní padding může být také dialog).
+for (const dlg of document.querySelectorAll('dialog')) {
+  dlg.addEventListener('click', (event) => {
+    if (event.button !== 0 || !dlg.open) return;
+    const r = dlg.getBoundingClientRect();
+    if (event.clientX < r.left || event.clientX > r.right ||
+        event.clientY < r.top || event.clientY > r.bottom) {
+      dlg.close();
+    }
+  });
+}

@@ -648,3 +648,229 @@ dialog::backdrop { background: #10233b99; }
 @media (max-width: 480px) {
   #newMealCategoryDialog[open] { padding: 16px; }
 }
+
+/* v27: Import historie je v horní liště, na mobilu se přirozeně zalamuje. */
+.toolbar-import-history{display:inline-flex;align-items:center;justify-content:center;cursor:pointer;white-space:normal;text-align:center;min-height:40px;background:#1768b1;color:white;border-radius:7px;padding:10px 13px;font:inherit;font-weight:600;line-height:1.2;max-width:100%;}
+.toolbar-import-history:hover{filter:brightness(.94)}
+@media(max-width:680px){.toolbar-import-history{flex:1 1 auto;min-width:0;font-size:.9rem;min-height:44px}}
+
+/* v28: shodna spodni hrana panelu a postranniho sloupce na PC */
+@media (min-width:901px) {
+  .layout { align-items:stretch; }
+  .layout > .panel {display:flex;flex-direction:column;min-height:100%;}
+  .layout > .panel > .muted:last-child {margin-top:auto;padding-top:16px;}
+  .layout > aside {display:flex;flex-direction:column;min-height:100%;}
+  .layout > aside > .panel:last-child {flex:1 1 auto;}
+  #historyDialog .history-layout {grid-template-columns:minmax(190px, 245px) minmax(0,1fr);}
+  #historyDialog .history-list {min-width:0;}
+}
+/* Import patri do spravce historie, nikoliv do hlavni listy */
+#historyDialog .history-import-button {display:inline-flex;align-items:center;justify-content:center;
+  min-height:40px;padding:10px 13px;white-space:normal;text-align:center;line-height:1.2;
+  border-radius:7px;background:#1768b1;color:white;font-weight:600;cursor:pointer;max-width:100%;}
+#historyDialog .history-import-button:hover {filter:brightness(.94)}
+@media (max-width:680px) {
+  #historyDialog .history-import-button {width:100%;min-height:44px;font-size:14px;}
+}
+
+/* v29: PC - oba sloupce konci na stejne urovni; zaloha zustava kompaktni. */
+@media (min-width:901px) {
+  .layout {align-items:stretch;grid-template-columns:minmax(0,1fr) 318px;}
+  .layout > .panel {height:100%;min-height:0;}
+  .layout > aside {display:grid;grid-template-rows:minmax(0,1fr) auto;align-content:stretch;min-height:0;gap:15px;}
+  .layout > aside > .panel {margin:0;min-height:0;}
+  .layout > aside > .panel:first-child {min-height:0;}
+  .layout > aside > .panel:last-child {flex:none;align-self:end;}
+  #historyDialog {width:min(1120px,96vw);}
+  #historyDialog .history-layout {grid-template-columns:205px minmax(0,1fr);gap:16px;}
+  #historyDialog .history-actions {gap:6px;}
+  #historyDialog .history-actions button,#historyDialog .history-import-button {padding:9px 10px;font-size:.9rem;}
+}
+
+/* v30: čitelná celá období a kompaktnější historie na desktopu */
+@media (min-width:901px) {
+  #historyDialog { width:min(950px,96vw); max-width:96vw; }
+  #historyDialog .history-layout { grid-template-columns: minmax(245px,260px) minmax(0,1fr); gap:14px; }
+  #historyDialog .history-item { font-size:.88rem; white-space:nowrap; padding:9px 8px; }
+  #historyDialog .history-actions {gap:5px;}
+  #historyDialog .history-actions button,
+  #historyDialog .history-import-button {font-size:.82rem;padding:8px 8px;}
+}
+
+/* v31: kompaktní šířka historie na PC, bez zbytečné pravé mezery. */
+@media (min-width:901px) {
+  dialog#historyDialog {width:min(790px,96vw);max-width:96vw;}
+  #historyDialog .history-layout {grid-template-columns:205px minmax(0,1fr);gap:16px;}
+  #historyDialog .history-actions {gap:6px;}
+}
+
+/* v32: všech pět akcí historie v jednom řádku na PC. */
+@media (min-width:901px) {
+  dialog#historyDialog {width:min(900px,96vw);max-width:96vw;}
+  #historyDialog .history-layout {grid-template-columns:225px minmax(0,1fr);gap:14px;}
+  #historyDialog .history-actions {display:flex;flex-wrap:nowrap;gap:5px;align-items:center;}
+  #historyDialog .history-actions button,
+  #historyDialog .history-actions .history-import-button {flex:0 0 auto;white-space:nowrap;font-size:11px;padding:8px 7px;min-height:36px;}
+  #historyDialog .history-item {white-space:nowrap;font-size:.88rem;}
+}
+
+/* v33: stejne odsazeni vlevo a vpravo, prohozeni Smazat / Tisk. */
+@media (min-width:901px) {
+  #historyDialog .history-actions {
+    box-sizing:border-box; width:100%; padding-inline:12px;
+    display:flex; flex-wrap:nowrap; justify-content:space-between; gap:4px;
+  }
+  #historyDialog .history-actions button,
+  #historyDialog .history-actions .history-import-button {
+    flex:0 1 auto; min-width:0; white-space:nowrap;
+    font-size:11px; padding:8px 6px;
+  }
+}
+
+/* v34: kompaktní skupina akcí historie; bez roztažených mezer. */
+@media (min-width:901px) {
+ #historyDialog .history-actions {
+   display:flex; flex-wrap:nowrap; justify-content:center; align-items:center;
+   gap:4px; padding-inline:0; width:100%;
+ }
+ #historyDialog .history-actions button,
+ #historyDialog .history-actions .history-import-button {
+   flex:0 0 auto; white-space:nowrap; font-size:12px;
+   padding:9px 11px; min-height:38px;
+ }
+}
+
+/* v35 – přehledná chronologická horní lišta, bez překrývání tlačítek */
+.toolbar {display:flex;flex-direction:column;align-items:stretch;gap:10px;}
+.toolbar-fields,.toolbar-actions {display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap;min-width:0;}
+.toolbar-fields > label {flex:0 1 auto;min-width:0;}
+.toolbar-actions > button,.toolbar-actions > .help-link {flex:0 0 auto;min-height:36px;}
+.toolbar-actions {align-items:center;}
+@media (min-width:1100px) {
+ .toolbar {display:grid;grid-template-columns:auto minmax(0,1fr);align-items:end;column-gap:10px;row-gap:8px;}
+ .toolbar-fields {grid-column:1;grid-row:1;flex-wrap:nowrap;}
+ .toolbar-actions {grid-column:2;grid-row:1;}
+ .toolbar-fields label {white-space:nowrap;}
+ .toolbar-fields input[type=number] {width:88px;}
+ .toolbar-fields input {max-width:130px;}
+ .toolbar-actions button,.toolbar-actions .help-link {padding:9px 11px;font-size:.88rem;}
+}
+@media (max-width:1099px) {
+ .toolbar-fields {width:100%;}
+ .toolbar-actions {width:100%;}
+}
+@media (max-width:600px) {
+ .toolbar-fields {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+ .toolbar-fields > label {width:100%;white-space:normal;}
+ .toolbar-fields input,.toolbar-fields select {width:100%;max-width:none;}
+ .toolbar-actions {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}
+ .toolbar-actions > button,.toolbar-actions > .help-link {width:100%;min-width:0;min-height:42px;text-align:center;white-space:normal;}
+ .toolbar-actions > #generate,.toolbar-actions > #approve {grid-column:span 1;}
+}
+@media (max-width:360px) {.toolbar-actions {grid-template-columns:1fr;}}
+
+/* v36 – přesné dva řádky: Zpět začíná pod Generuj další. */
+@media (min-width:1100px) {
+ .toolbar {display:grid;grid-template-columns:120px 70px 145px 145px 130px 140px 145px 140px;grid-template-rows:auto auto;gap:8px 8px;align-items:end;}
+ .toolbar-fields,.toolbar-actions {display:contents;}
+ .toolbar-fields > label {display:flex;flex-direction:column;justify-content:end;gap:4px;min-width:0;white-space:nowrap;font-size:11px;}
+ .toolbar-fields > label:nth-child(1) {grid-column:1;grid-row:1;}
+ .toolbar-fields > label:nth-child(2) {grid-column:2;grid-row:1;}
+ .toolbar-fields > label:nth-child(3) {grid-column:3;grid-row:1;}
+ .toolbar-fields > label:nth-child(4) {grid-column:4;grid-row:1;}
+ .toolbar-fields input,.toolbar-fields select {box-sizing:border-box;width:100%;max-width:none;height:38px;min-width:0;}
+ .toolbar-actions > button,.toolbar-actions > .help-link {box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:0;min-height:38px;height:38px;padding:6px 7px;font-size:12px;white-space:nowrap;text-align:center;}
+ #generate {grid-column:5;grid-row:1;} #approve {grid-column:6;grid-row:1;}
+ #validate {grid-column:7;grid-row:1;} #new {grid-column:8;grid-row:1;}
+ #print {grid-column:1;grid-row:2;} #csv {grid-column:2;grid-row:2;}
+ #openHistory {grid-column:3;grid-row:2;} .toolbar .help-link {grid-column:4;grid-row:2;}
+ #undo {grid-column:5;grid-row:2;} #redo {grid-column:6;grid-row:2;}
+}
+@media (max-width:1099px) {
+ .toolbar {display:flex;flex-direction:column;gap:10px;}
+ .toolbar-fields {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;}
+ .toolbar-fields > label {min-width:0;width:100%;}
+ .toolbar-fields input,.toolbar-fields select {width:100%;max-width:none;}
+ .toolbar-actions {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;}
+ .toolbar-actions > button,.toolbar-actions > .help-link {box-sizing:border-box;min-width:0;width:100%;min-height:42px;height:auto;white-space:normal;text-align:center;}
+}
+@media (max-width:360px) {.toolbar-actions {grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+/* v37: pevne kompaktni sirky tlacitek oznacenych na snimku; zadne roztahovani do volna. */
+
+/* v38: sjednocené zarovnání popisků a kompaktnější mobilní tlačítka. */
+.toolbar-actions > button, .toolbar-actions > .help-link {
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  line-height:1.2;
+}
+.toolbar-actions > .help-link {font-weight:400 !important;}
+@media (max-width:1099px) {
+ .toolbar-actions {grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;justify-items:stretch;}
+ .toolbar-actions > button,.toolbar-actions > .help-link {
+   width:100%;max-width:100%;min-width:0;min-height:38px;height:40px;
+   padding:7px 5px;box-sizing:border-box;font-size:12px;
+   font-weight:400;line-height:1.2;white-space:normal;
+ }
+ .toolbar-actions > #generate,.toolbar-actions > #approve {font-weight:600;}
+}
+@media (max-width:600px) {
+ .toolbar-actions {gap:6px;grid-template-columns:repeat(2,minmax(0,1fr));}
+ .toolbar-actions > button,.toolbar-actions > .help-link {height:40px;min-height:40px;padding:6px 4px;}
+}
+
+/* v39: Export CSV širší, Historie užší; Nápověda stejný řez písma jako ostatní tlačítka. */
+@media (min-width:1100px) {
+  .toolbar { grid-template-columns:120px 88px 127px 145px 130px 140px 145px 140px; }
+  .toolbar-actions > .help-link { font-weight:600 !important; }
+}
+@media (max-width:1099px) {
+  .toolbar-actions > .help-link { font-weight:400 !important; }
+}
+
+/* v40: čitelnější hodnoty vstupních polí; kalendář na 90 % původní šířky. */
+.toolbar-fields input, .toolbar-fields select { font-size: 1.05rem; }
+.copy-week-dialog { width: min(414px, 94vw); }
+.copy-cal-day { font-size: 13px; }
+@media (max-width: 500px) {
+  .toolbar-fields input, .toolbar-fields select { font-size: 1rem; }
+  .copy-week-dialog { width: min(414px, 94vw); }
+}
+
+/* v41: mírně menší hodnoty a vystředění všech polí kromě data. */
+.toolbar-fields input, .toolbar-fields select { font-size: .98rem; }
+.toolbar-fields label:not(:first-child) input,
+.toolbar-fields label:not(:first-child) select { text-align: center; text-align-last: center; }
+@media (max-width:500px) {
+ .toolbar-fields input, .toolbar-fields select { font-size: .95rem; }
+}
+
+/* v42: desktopova pole presne vyplnuji prislusne sloupce tlacitek. */
+@media (min-width:1100px) {
+  .toolbar-fields > label { width:100%; max-width:100%; }
+  .toolbar-fields > label input,
+  .toolbar-fields > label select,
+  .toolbar-fields .main-date-wrap { width:100% !important; max-width:100% !important; min-width:0; }
+  .toolbar-fields > label:nth-child(1) { grid-column:1; }
+  .toolbar-fields > label:nth-child(2) { grid-column:2; }
+  .toolbar-fields > label:nth-child(3) { grid-column:3; }
+  .toolbar-fields > label:nth-child(4) { grid-column:4; }
+}
+
+/* v43: pouze tablet (601–1099 px) – pole vyplní celé dva sloupce. */
+@media (min-width:601px) and (max-width:1099px) {
+  .toolbar-fields > label { box-sizing:border-box; width:100% !important; max-width:100% !important; min-width:0; }
+  .toolbar-fields > label input,
+  .toolbar-fields > label select,
+  .toolbar-fields .main-date-wrap { box-sizing:border-box; width:100% !important; max-width:100% !important; min-width:0; }
+}
+
+
+/* v44: konzistentní šířka vstupů v každém dvousloupcovém rozložení. */
+@media (max-width:1099px) {
+ .toolbar-fields {grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+ .toolbar-fields > label {display:flex;flex-direction:column;align-items:stretch;min-width:0;width:100%;max-width:none;}
+ .toolbar-fields > label > input,
+ .toolbar-fields > label > select,
+ .toolbar-fields > label > .main-date-wrap,
+ .toolbar-fields > label > .main-date-wrap input {box-sizing:border-box;width:100% !important;max-width:none !important;min-width:0 !important;}
+}
