@@ -249,32 +249,47 @@
       }
     },
     "week": {
-      "week": "2025-12-01",
+      "week": "2026-10-19",
       "days": [
         {
-          "soup": "Zelenin. s pohankou",
-          "main": "Kovbojská pánev, Chléb",
-          "category": "BEZMASÁ SLANÁ"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Zeleninová se sýrovým kapáním",
-          "main": "Kuře Šanghaj s rýží",
-          "category": "DRŮBEŽ A KRÁLÍK"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Hrachová s hrachovými krutony",
-          "main": "Nákyp rýžový se švestkami",
-          "category": "BEZMASÁ SLANÁ"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Z fazolových lusků",
-          "main": "Omáčka rajčatová, Hovězí maso vařené, Houskové knedlíky (kynuté)",
-          "category": "HOVĚZÍ A TELECÍ"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "Krupicová s vejcem",
-          "main": "Kapustové karbanátky, Bramborová kaše",
-          "category": "MLETÉ MASO A ZAPÉKANÉ"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
