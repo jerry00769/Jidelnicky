@@ -1167,3 +1167,27 @@ header { padding-top: 11px; padding-bottom: 11px; }
     font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif !important;
   }
 }
+
+/* v66: jednotna typografie hodnot pro vsechny sirky viewportu.
+   Stejny rez, velikost a radkova vyska bez breakpointu a clamp(). */
+@media screen {
+  .toolbar .toolbar-fields input#date,
+  .toolbar .toolbar-fields input#lockMain,
+  .toolbar .toolbar-fields input#lockSoup,
+  .toolbar .toolbar-fields select#count {
+    font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 14.4px !important;
+    letter-spacing: normal !important;
+    font-variant-numeric: normal !important;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  .toolbar .toolbar-fields input#date::-webkit-datetime-edit,
+  .toolbar .toolbar-fields input#date::-webkit-date-and-time-value,
+  .toolbar .toolbar-fields input#date::-webkit-datetime-edit-fields-wrapper {
+    font: inherit !important;
+    line-height: 14.4px !important;
+  }
+}
