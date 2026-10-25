@@ -1203,3 +1203,10 @@ header { padding-top: 11px; padding-bottom: 11px; }
     letter-spacing: normal !important;
   }
 }
+
+/* Mobil/tablet: ciselny vyber neopakovani; PC zachova sipky. */
+.mobile-lock-select { display: none !important; }
+@media screen and (max-width:1099px) {
+  .toolbar .toolbar-fields input#lockMain, .toolbar .toolbar-fields input#lockSoup { display:none !important; }
+  .toolbar .toolbar-fields select.mobile-lock-select { display:block !important; }
+}

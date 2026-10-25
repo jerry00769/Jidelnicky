@@ -474,7 +474,8 @@ $('undo').onclick=()=>{if(!undo.length)return notice('Není co vrátit.');redo.p
 $('redo').onclick=()=>{~redo.length||notice('Není co zopakovat.');if(!redo.length)return;undo.push(clone(state));state=redo.pop();render();notice('Změna zopakována.')};
 $('date').onchange=()=>safe(()=>{snapshot();state.week=freshWeek($('date').value);render()});
 $('count').onchange=()=>safe(()=>{snapshot();state.count=+$('count').value;render()});
-for(const key of ['lockMain','lockSoup'])$(key).onchange=()=>{snapshot();state[key]=Math.max(0,Math.min(key==='lockMain'?30:20,Number($(key).value)||0));render()};
+for(const key of ['lockMain','lockSoup'])$(key).onchange=()=>{snapshot();state[key]=Math.max(0,Math.min(20,Number($(key).value)||0));render()};
+for(const key of ['lockMain','lockSoup'])$(key+'Mobile').onchange=()=>{snapshot();state[key]=Math.max(0,Math.min(20,Number($(key+'Mobile').value)||0));render()};
 document.querySelectorAll('[data-day]').forEach(input=>input.onchange=()=>{snapshot();const d=state.week.days[+input.dataset.day];d.closed=!input.checked;if(d.closed){d.soup='';d.main='';d.category='';d.main2='';d.category2=''}render()});
 $('saveRules').onclick=()=>safe(()=>{const rules={};for(const input of document.querySelectorAll('[data-rule]'))rules[input.dataset.rule]=input.type==='checkbox'?input.checked:Math.max(0,Math.min(5,Number(input.value)||0));const txt=$('txtRules').value;const previous=state.txt;state.txt=txt;try{txtRules()}catch(e){state.txt=previous;throw e}state.txt=previous;snapshot();state.txt=txt;state.rules=rules;render();save();notice('Pravidla uložena.')});
 $('pickerKind').onchange=()=>{if(picking?.day!==null)return;picking.kind=$('pickerKind').value;pickerSelected=null;$('pickerMealName').value='';$('pickerCategory').replaceChildren(new Option('VŠECHNY',''));renderChoices()};
