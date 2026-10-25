@@ -285,7 +285,7 @@
         },
         {
           "closed": false,
-          "soup": "celerová se smaženým hráškem",
+          "soup": "zeleninová s kuskusem",
           "main": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
           "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
@@ -1672,7 +1672,8 @@
         "květáková": -1,
         "bramboračka nezahuštěná": 1,
         "cizrnová krémová s rajčaty": -1,
-        "celerová se smaženým hráškem": 1
+        "celerová se smaženým hráškem": 0,
+        "zeleninová s kuskusem": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
@@ -1686,7 +1687,8 @@
         "cizrnová krémová s rajčaty ||| Španělský plátek, Rýže dušená": -1,
         "celerová se smaženým hráškem ||| Španělský plátek, Rýže dušená": 1,
         "celerová se smaženým hráškem ||| Španělský ptáček rozházený, Rýže dušená": -1,
-        "celerová se smaženým hráškem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 1
+        "celerová se smaženým hráškem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 0,
+        "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 1
       }
     }
   }
