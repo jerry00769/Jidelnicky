@@ -271,8 +271,8 @@
         {
           "closed": false,
           "soup": "celerová se smaženým hráškem",
-          "main": "Těstovinový salát se zeleninou a šunkou",
-          "category": "BEZMASÁ SLANÁ",
+          "main": "Těstovinový salát s kuřecím masem",
+          "category": "DRŮBEŽ A KRÁLÍK",
           "main2": "",
           "category2": ""
         },
@@ -1667,7 +1667,8 @@
         "Těstoviny s brokolicí": -1,
         "Vepřové v mrkvi, Brambory": 1,
         "Španělský plátek, Rýže dušená": -1,
-        "Těstovinový salát se zeleninou a šunkou": 1
+        "Těstovinový salát se zeleninou a šunkou": 0,
+        "Těstovinový salát s kuřecím masem": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1698,7 +1699,8 @@
         "hovězí s játrovými knedlíčky ||| Těstoviny s brokolicí": -1,
         "hovězí s játrovými knedlíčky ||| Vepřové v mrkvi, Brambory": 0,
         "z kysaného zelí ||| Vepřové v mrkvi, Brambory": 1,
-        "celerová se smaženým hráškem ||| Těstovinový salát se zeleninou a šunkou": 1
+        "celerová se smaženým hráškem ||| Těstovinový salát se zeleninou a šunkou": 0,
+        "celerová se smaženým hráškem ||| Těstovinový salát s kuřecím masem": 1
       }
     }
   }
