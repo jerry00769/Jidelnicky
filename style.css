@@ -891,3 +891,62 @@ dialog::backdrop { background: #10233b99; }
  .mobile-more-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding-top:6px}
  .mobile-more-items > button,.mobile-more-items > a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-height:40px;padding:8px 4px;border:0;border-radius:6px;background:#e8eef6;color:#213b65;font-size:12px;font-weight:400;line-height:1.2;font-family:inherit;text-decoration:none;text-align:center;cursor:pointer}
 }
+
+/* v47: jednotná výška ovládacích polí a tlačítek na mobilu a tabletu. */
+@media (max-width:1099px) {
+  .toolbar-fields > label > input,
+  .toolbar-fields > label > select,
+  .toolbar-fields .main-date-wrap,
+  .toolbar-fields .main-date-wrap > input,
+  .toolbar-fields .main-date-overlay {
+    box-sizing:border-box;
+    height:40px !important;
+    min-height:40px !important;
+  }
+  .toolbar-actions > button,
+  .mobile-more > summary,
+  .mobile-more-items > button,
+  .mobile-more-items > a {
+    box-sizing:border-box;
+    height:40px;
+    min-height:40px;
+    padding-top:6px;
+    padding-bottom:6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+}
+
+/* v48: sjednocena vyska ovladacich prvku na PC, tabletu i mobilu. */
+@media (min-width:1100px) {
+  .toolbar-fields input,
+  .toolbar-fields select,
+  .toolbar-fields .main-date-wrap,
+  .toolbar-fields .main-date-overlay,
+  .toolbar-actions > button,
+  .toolbar-actions > .help-link {
+    box-sizing:border-box;
+    height:40px;
+    min-height:40px;
+  }
+}
+/* Zalohovani JSON: tlacitko a popisek souboroveho vstupu jsou stejne vysoke. */
+#backup,
+label.upload:has(> #restore) {
+  box-sizing:border-box;
+  height:40px;
+  min-height:40px;
+  padding:6px 13px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  line-height:1.2;
+}
+
+/* v49: kompaktní horní pruh bez podtitulku */
+header { padding-top: 11px; padding-bottom: 11px; }
+@media (max-width: 900px) { header { padding-top: 10px; padding-bottom: 10px; } }
+@media (max-width: 500px) { header { padding-top: 10px; padding-bottom: 10px; } }
