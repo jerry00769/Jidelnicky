@@ -1307,3 +1307,8 @@ select option:not(:checked) { background-color: #fff; color: #1c314c; }
 
 /* Centrování číslic v polích Pravidla jídelny – PC, tablet i mobil */
 #rules .rule input[type="number"] { text-align: center; }
+
+/* Sjednocení titulku aplikace: PC a tablet podle mobilu. */
+@media screen {
+  header h1 { font-size: 1.25rem !important; }
+}
