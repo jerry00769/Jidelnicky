@@ -950,3 +950,12 @@ label.upload:has(> #restore) {
 header { padding-top: 11px; padding-bottom: 11px; }
 @media (max-width: 900px) { header { padding-top: 10px; padding-bottom: 10px; } }
 @media (max-width: 500px) { header { padding-top: 10px; padding-bottom: 10px; } }
+
+/* v50: kompaktni mobilni/tabletove ovladani; desktop zachovan. */
+@media (max-width:1099px) {
+ .toolbar-actions{gap:5px}
+ .toolbar-actions > button, .mobile-more > summary {height:36px;min-height:36px;padding:5px 8px}
+ .mobile-more-items{gap:5px;padding-top:5px}
+ .mobile-more-items > button,.mobile-more-items > a{height:36px;min-height:36px;padding:5px 6px}
+ .toolbar-fields{row-gap:7px}
+}
