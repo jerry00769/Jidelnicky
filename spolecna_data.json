@@ -1569,36 +1569,6 @@
         ]
       },
       {
-        "week": "2026-10-19",
-        "days": [
-          {
-            "soup": "Hovězí s masem a vejcem",
-            "main": "Srbská čočka, Chléb",
-            "category": "LUŠTĚNINOVÁ"
-          },
-          {
-            "soup": "Bramboračka",
-            "main": "Španělský ptáček, rýže",
-            "category": "HOVĚZÍ A TELECÍ"
-          },
-          {
-            "soup": "Celerová se smaženým hráškem",
-            "main": "Těstovinový salát s kuřecím masem",
-            "category": "DRŮBEŽ A KRÁLÍK"
-          },
-          {
-            "soup": "Kysané zelí",
-            "main": "Vepřové v mrkvi, brambor",
-            "category": "VEPŘOVÉ A UZENÉ"
-          },
-          {
-            "soup": "Zeleninová s kuskusem",
-            "main": "Vepřová pečeně selská, Bramborové knedlíky",
-            "category": "VEPŘOVÉ A UZENÉ"
-          }
-        ]
-      },
-      {
         "week": "2026-11-02",
         "days": [
           {
@@ -1625,6 +1595,51 @@
             "soup": "Hrachová",
             "main": "Domažlické vepřové ragů, těstoviny",
             "category": "VEPŘOVÉ A UZENÉ"
+          }
+        ]
+      },
+      {
+        "week": "2026-10-19",
+        "days": [
+          {
+            "closed": false,
+            "soup": "z kysaného zelí",
+            "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
+            "category": "LUŠTĚNINOVÁ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "květáková",
+            "main": "Rybí filé po mlynářsku, Brambory",
+            "category": "RYBY",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "cizrnová krémová s rajčaty",
+            "main": "Španělský plátek, Rýže dušená",
+            "category": "HOVĚZÍ A TELECÍ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "hovězí s játrovými knedlíčky",
+            "main": "Těstoviny s brokolicí",
+            "category": "BEZMASÁ SLANÁ",
+            "main2": "",
+            "category2": ""
+          },
+          {
+            "closed": false,
+            "soup": "celerová se smaženým hráškem",
+            "main": "Španělský ptáček rozházený, Rýže dušená",
+            "category": "HOVĚZÍ A TELECÍ",
+            "main2": "",
+            "category2": ""
           }
         ]
       }
