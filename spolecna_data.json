@@ -270,8 +270,8 @@
         {
           "closed": false,
           "soup": "celerová se smaženým hráškem",
-          "main": "Španělský plátek, Rýže dušená",
-          "category": "HOVĚZÍ A TELECÍ",
+          "main": "Těstovinový salát se zeleninou a šunkou",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
@@ -1664,7 +1664,9 @@
         "Španělský ptáček rozházený, Rýže dušená": 0,
         "Vepřová pečeně selská, Bramborové knedlíky (směs)": 1,
         "Těstoviny s brokolicí": -1,
-        "Vepřové v mrkvi, Brambory": 1
+        "Vepřové v mrkvi, Brambory": 1,
+        "Španělský plátek, Rýže dušená": -1,
+        "Těstovinový salát se zeleninou a šunkou": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1688,13 +1690,14 @@
         "bramboračka nezahuštěná ||| Rybí filé po mlynářsku, Brambory": 0,
         "bramboračka nezahuštěná ||| Španělský ptáček rozházený, Rýže dušená": 1,
         "cizrnová krémová s rajčaty ||| Španělský plátek, Rýže dušená": -1,
-        "celerová se smaženým hráškem ||| Španělský plátek, Rýže dušená": 1,
+        "celerová se smaženým hráškem ||| Španělský plátek, Rýže dušená": 0,
         "celerová se smaženým hráškem ||| Španělský ptáček rozházený, Rýže dušená": -1,
         "celerová se smaženým hráškem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 0,
         "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 1,
         "hovězí s játrovými knedlíčky ||| Těstoviny s brokolicí": -1,
         "hovězí s játrovými knedlíčky ||| Vepřové v mrkvi, Brambory": 0,
-        "z kysaného zelí ||| Vepřové v mrkvi, Brambory": 1
+        "z kysaného zelí ||| Vepřové v mrkvi, Brambory": 1,
+        "celerová se smaženým hráškem ||| Těstovinový salát se zeleninou a šunkou": 1
       }
     }
   }
