@@ -1258,3 +1258,49 @@ select option:not(:checked) { background-color: #fff; color: #1c314c; }
     text-size-adjust: 100%;
   }
 }
+
+/* v70: sjednoceni vysky vlastnich rozbalovacich poli s polem data. */
+@media screen {
+  .toolbar .toolbar-fields .toolbar-select-shell {
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+  }
+  .toolbar .toolbar-fields .toolbar-select-trigger {
+    box-sizing: border-box !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* v71: PC i mobil/tablet - presne stejna vyska vsech ctyr ovladacich poli. */
+@media screen {
+  .toolbar .toolbar-fields input#date,
+  .toolbar .toolbar-fields select#count,
+  .toolbar .toolbar-fields input#lockMain,
+  .toolbar .toolbar-fields input#lockSoup,
+  .toolbar .toolbar-fields .main-date-wrap,
+  .toolbar .toolbar-fields .toolbar-select-shell,
+  .toolbar .toolbar-fields .toolbar-select-trigger {
+    box-sizing: border-box !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+  }
+  .toolbar .toolbar-fields input#date,
+  .toolbar .toolbar-fields select#count,
+  .toolbar .toolbar-fields input#lockMain,
+  .toolbar .toolbar-fields input#lockSoup {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .toolbar .toolbar-fields > label { justify-content: flex-end; }
+}
