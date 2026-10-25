@@ -1191,3 +1191,15 @@ header { padding-top: 11px; padding-bottom: 11px; }
     line-height: 14.4px !important;
   }
 }
+
+/* v67: jednotne NADPISY nad ctyrmi hornimi poli, nikoliv hodnoty.
+   Stejnych 11px na PC, tabletu i mobilu; bez zasahu do vstupu. */
+@media screen {
+  .toolbar .toolbar-fields > label {
+    font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    line-height: 16px !important;
+    letter-spacing: normal !important;
+  }
+}
