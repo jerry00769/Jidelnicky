@@ -1243,3 +1243,18 @@ select option:not(:checked) { background-color: #fff; color: #1c314c; }
   .toolbar .toolbar-fields .toolbar-select-shell:has(> #lockMainMobile),
   .toolbar .toolbar-fields .toolbar-select-shell:has(> #lockSoupMobile) {display:block!important;}
 }
+
+/* v69: Hodnoty vlastnich rozbalitek maji stejny font jako datum na PC, tabletu i mobilu. */
+@media screen {
+  .toolbar .toolbar-fields .toolbar-select-trigger,
+  .toolbar .toolbar-fields .toolbar-select-item {
+    font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 14.4px !important;
+    letter-spacing: normal !important;
+    font-variant-numeric: normal !important;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
