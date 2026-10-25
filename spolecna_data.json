@@ -249,47 +249,34 @@
       }
     },
     "week": {
-      "week": "2026-10-19",
+      "week": "2025-09-29",
       "days": [
         {
-          "closed": false,
-          "soup": "zeleninová s těstovinami",
-          "main": "Španělská čočka s mletým masem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
+          "soup": "",
+          "main": "",
+          "category": ""
         },
         {
-          "closed": false,
-          "soup": "zeleninová s hrachovými nudlemi",
-          "main": "Guláš maďarský, Houskové knedlíky (kynuté)",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
+          "soup": "",
+          "main": "",
+          "category": ""
         },
         {
-          "closed": false,
-          "soup": "gulášová",
-          "main": "Rybí stripsy, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
+          "soup": "Zelenin. s drožďovými knedlíčky",
+          "main": "Lotrinské tagliatelle se sýrem",
+          "category": "BEZMASÁ SLANÁ"
         },
         {
-          "closed": false,
-          "soup": "hovězí s kuskusem",
-          "main": "Čočkový kotlík, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
+          "soup": "Z rybího filé",
+          "main": "Kuře pečené, Brambory",
+          "category": "DRŮBEŽ A KRÁLÍK",
+          "main2": "Kuskus s ovocem",
+          "category2": "SLADKÁ"
         },
         {
-          "closed": false,
-          "soup": "zeleninová s těstovinovou rýží",
-          "main": "Sekaná zahradnická, Brambory",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
-          "main2": "",
-          "category2": ""
+          "soup": "Zelenin. s fridátovými nudlemi",
+          "main": "Svíčková na smetaně, Houskové knedlíky (kynuté)",
+          "category": "HOVĚZÍ A TELECÍ"
         }
       ]
     },
@@ -1653,7 +1640,7 @@
       "avoidFishPair": true
     },
     "txt": "",
-    "count": 1,
+    "count": 2,
     "lockMain": 8,
     "lockSoup": 3,
     "learning": {
