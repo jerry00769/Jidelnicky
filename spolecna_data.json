@@ -254,7 +254,7 @@
         {
           "closed": false,
           "soup": "hovězí s masem a vejcem",
-          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
+          "main": "Srbská čočka, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
@@ -1657,7 +1657,10 @@
     "lockMain": 8,
     "lockSoup": 3,
     "learning": {
-      "main": {},
+      "main": {
+        "Vepřová pečeně, Fazolové lusky na slanině, Brambory": -1,
+        "Srbská čočka, Chléb": 1
+      },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
         "brokolicová": 1,
@@ -1668,7 +1671,8 @@
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
         "brokolicová ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": 1,
         "z kysaného zelí ||| Vepřová pečeně, Fazolové lusky na slanině, Brambory": -1,
-        "hovězí s masem a vejcem ||| Vepřová pečeně, Fazolové lusky na slanině, Brambory": 1
+        "hovězí s masem a vejcem ||| Vepřová pečeně, Fazolové lusky na slanině, Brambory": 0,
+        "hovězí s masem a vejcem ||| Srbská čočka, Chléb": 1
       }
     }
   }
