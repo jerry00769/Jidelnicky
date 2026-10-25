@@ -974,3 +974,23 @@ header { padding-top: 11px; padding-bottom: 11px; }
  .toolbar-fields > label {min-width:0;}
  .toolbar-fields {row-gap:6px;column-gap:7px;}
 }
+
+/* v52: Další se rozbaluje jako plovoucí nabídka, nikoli do výšky panelu. */
+@media (max-width:1099px) {
+  .mobile-more { position:relative; z-index:20; }
+  .mobile-more[open] { z-index:50; }
+  .mobile-more-items {
+    position:absolute; top:calc(100% + 6px); right:0;
+    width:min(310px, calc(100vw - 32px));
+    display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:6px; padding:9px;
+    background:#fff; border:1px solid #d6e1ef; border-radius:10px;
+    box-shadow:0 10px 28px #102c4b35;
+  }
+  .mobile-more:not([open]) .mobile-more-items {display:none;}
+  .mobile-more-items > button,.mobile-more-items > a {
+    width:100%; min-width:0; height:38px; min-height:38px;
+    padding:6px 7px; font-size:12px; line-height:1.15;
+    overflow-wrap:normal; white-space:normal;
+  }
+}
