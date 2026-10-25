@@ -1304,3 +1304,6 @@ select option:not(:checked) { background-color: #fff; color: #1c314c; }
   }
   .toolbar .toolbar-fields > label { justify-content: flex-end; }
 }
+
+/* Centrování číslic v polích Pravidla jídelny – PC, tablet i mobil */
+#rules .rule input[type="number"] { text-align: center; }
