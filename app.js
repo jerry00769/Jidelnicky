@@ -333,7 +333,7 @@ function openPicker(day,key){
     picking={day,key,kind:key==='soup'?'soup':'main'};
     $('pickerChoose').hidden=false;
     $('pickerTitle').textContent=`${weekdays[day]} – ${key==='soup'?'Polévka':key==='main'?'Oběd 1':'Oběd 2'}`;
-    $('pickerKindLabel').hidden=true;$('pickerCategory').replaceChildren(new Option('VŠECHNY',''));$('search').value='';$('pickerCategory').value='';$('pickerMealName').value='';pickerSelected=null;renderChoices();$('picker').showModal();$('search').focus()
+    $('pickerKind').value=picking.kind;$('pickerKind').disabled=true;$('pickerKindLabel').hidden=false;$('pickerCategory').replaceChildren(new Option('VŠECHNY',''));$('search').value='';$('pickerCategory').value='';$('pickerMealName').value='';pickerSelected=null;renderChoices();$('picker').showModal();$('search').focus()
 }
 
 function renderChoices(){
