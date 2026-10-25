@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "pórková s vejci",
+          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "drůbková s nudlemi",
+          "main": "Kuře pečené, Bulgur",
+          "category": "DRŮBEŽ A KRÁLÍK",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "zeleninová s ovesnými vločkami",
+          "main": "Rybí filé smažené, Bramborová kaše",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "zeleninová s celozrnnými knedlíčky",
+          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "květáková",
+          "main": "Livance",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         }
