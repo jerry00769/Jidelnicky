@@ -253,31 +253,31 @@
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s drožďovými knedlíčky",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "soup": "zelenin. s kroupami",
+          "main": "Rybí filé smažené, Bramborová kaše",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "frankfurtská s bramborem",
-          "main": "Těstoviny se sýrovou omáčkou",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "zelenin. s ovesnými vločkami",
+          "main": "Knedlíky švestkové (bramborové) s mákem",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s rýží",
-          "main": "Nudle s mákom",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "Špenátová s vajíčkem",
+          "main": "Španělská čočka s mletým masem, Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "špenátová",
+          "soup": "zimní zeleninová s ovesnými vločkami",
           "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
@@ -285,9 +285,9 @@
         },
         {
           "closed": false,
-          "soup": "kapustová s rýží",
-          "main": "Kuřecí nudličky se sýrovou omáčkou, Těstoviny",
-          "category": "DRŮBEŽ A KRÁLÍK",
+          "soup": "zelenin. s fridátovými nudlemi",
+          "main": "Rizoto srbské",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
