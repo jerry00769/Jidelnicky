@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová s těstovinovou rýží",
-          "main": "Těstoviny penne s tuňákem a chery rajčaty",
+          "soup": "zelenin. s drožďovými knedlíčky",
+          "main": "Hejk pečený na bylinkovém másle, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "z kysaného zelí s klobásou",
-          "main": "Omáčka koprová, Vejce vařené, Brambory",
+          "soup": "frankfurtská s bramborem",
+          "main": "Těstoviny se sýrovou omáčkou",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s celozrnnými knedlíčky",
-          "main": "Žemlovka s jablky a tvarohem",
-          "category": "SLADKÁ",
+          "soup": "zelenin. s rýží",
+          "main": "Nudle s mákom",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s játrovými knedlíčky",
-          "main": "Španělská čočka s mletým masem, Chléb",
+          "soup": "špenátová",
+          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "luštěninová",
-          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "kapustová s rýží",
+          "main": "Kuřecí nudličky se sýrovou omáčkou, Těstoviny",
+          "category": "DRŮBEŽ A KRÁLÍK",
           "main2": "",
           "category2": ""
         }
