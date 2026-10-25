@@ -602,3 +602,19 @@ dialog::backdrop { background: #10233b99; }
   }
   .github-controls button { min-height: 44px; white-space: normal; }
 }
+
+/* v18: stálá výška výběru a úpravy katalogu přímo v dialogu */
+#picker[open]{display:flex;flex-direction:column;height:min(760px,88dvh);max-height:88dvh;overflow:hidden}
+#picker #choices{flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto}
+.picker-choice-row{display:flex;gap:5px;align-items:stretch;margin:3px 0}
+.picker-choice-row .choice{flex:1;min-width:0;margin:0}
+.picker-edit-button{flex:0 0 auto;padding:7px 10px;font-size:.82rem}
+.picker-edit-selected .picker-edit-button{outline:2px solid #2457ad}
+.picker-management{flex:0 0 auto;border-top:1px solid #dce7f3;padding-top:9px;display:grid;gap:6px}
+.picker-management label{font-size:.83rem;font-weight:600}
+.picker-management-actions{display:flex;gap:7px;flex-wrap:wrap}
+.picker-management-actions button{flex:1;min-width:90px;padding:8px}
+@media(max-width:680px){#picker[open]{height:calc(100dvh - 12px);max-height:calc(100dvh - 12px)}.picker-management-actions button{min-width:0}.picker-edit-button{min-width:68px}}
+
+/* Zvýraznění právě upravovaného pokrmu v seznamu. */
+.picker-edit-selected .choice{background:#dbeafe;outline:2px solid #2457ad;outline-offset:-2px;font-weight:700}
