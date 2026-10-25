@@ -253,7 +253,7 @@
       "days": [
         {
           "closed": false,
-          "soup": "drožďová",
+          "soup": "česneková s bramborem a vejcem",
           "main": "Rybí filé zapečené se špenátem, Brambory",
           "category": "RYBY",
           "main2": "",
@@ -1681,7 +1681,9 @@
         "zeleninová s kuskusem": 1,
         "hovězí s játrovými knedlíčky": -1,
         "bramboračka": -1,
-        "bramborová": 2
+        "bramborová": 2,
+        "drožďová": -1,
+        "česneková s bramborem a vejcem": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
@@ -1705,7 +1707,9 @@
         "bramboračka ||| Srbská čočka, Chléb": 0,
         "bramborová ||| Srbská čočka, Chléb": 1,
         "bramboračka ||| Španělský ptáček rozházený, Rýže dušená": -1,
-        "bramborová ||| Španělský ptáček rozházený, Rýže dušená": 1
+        "bramborová ||| Španělský ptáček rozházený, Rýže dušená": 1,
+        "drožďová ||| Rybí filé zapečené se špenátem, Brambory": -1,
+        "česneková s bramborem a vejcem ||| Rybí filé zapečené se špenátem, Brambory": 1
       }
     }
   }
