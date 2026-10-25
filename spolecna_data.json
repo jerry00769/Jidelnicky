@@ -277,7 +277,7 @@
         },
         {
           "closed": false,
-          "soup": "hovězí s játrovými knedlíčky",
+          "soup": "z kysaného zelí",
           "main": "Vepřové v mrkvi, Brambory",
           "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
@@ -1669,13 +1669,14 @@
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
         "brokolicová": 1,
-        "z kysaného zelí": -1,
+        "z kysaného zelí": 0,
         "hovězí s masem a vejcem": 1,
         "květáková": -1,
         "bramboračka nezahuštěná": 1,
         "cizrnová krémová s rajčaty": -1,
         "celerová se smaženým hráškem": 0,
-        "zeleninová s kuskusem": 1
+        "zeleninová s kuskusem": 1,
+        "hovězí s játrovými knedlíčky": -1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
@@ -1692,7 +1693,8 @@
         "celerová se smaženým hráškem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 0,
         "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 1,
         "hovězí s játrovými knedlíčky ||| Těstoviny s brokolicí": -1,
-        "hovězí s játrovými knedlíčky ||| Vepřové v mrkvi, Brambory": 1
+        "hovězí s játrovými knedlíčky ||| Vepřové v mrkvi, Brambory": 0,
+        "z kysaného zelí ||| Vepřové v mrkvi, Brambory": 1
       }
     }
   }
