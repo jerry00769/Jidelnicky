@@ -261,7 +261,7 @@
         },
         {
           "closed": false,
-          "soup": "bramboračka",
+          "soup": "bramborová",
           "main": "Španělský ptáček rozházený, Rýže dušená",
           "category": "HOVĚZÍ A TELECÍ",
           "main2": "",
@@ -1680,8 +1680,8 @@
         "celerová se smaženým hráškem": 0,
         "zeleninová s kuskusem": 1,
         "hovězí s játrovými knedlíčky": -1,
-        "bramboračka": 0,
-        "bramborová": 1
+        "bramboračka": -1,
+        "bramborová": 2
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
@@ -1703,7 +1703,9 @@
         "celerová se smaženým hráškem ||| Těstovinový salát se zeleninou a šunkou": 0,
         "celerová se smaženým hráškem ||| Těstovinový salát s kuřecím masem": 1,
         "bramboračka ||| Srbská čočka, Chléb": 0,
-        "bramborová ||| Srbská čočka, Chléb": 1
+        "bramborová ||| Srbská čočka, Chléb": 1,
+        "bramboračka ||| Španělský ptáček rozházený, Rýže dušená": -1,
+        "bramborová ||| Španělský ptáček rozházený, Rýže dušená": 1
       }
     }
   }
