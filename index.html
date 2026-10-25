@@ -14,4 +14,17 @@
 <div class="copy-cal-legend"><span>🟩 Dnes</span><span>🟦 Vybraný den</span><span>▫️ Cílový týden</span></div>
 <p id="copyWeekRange" aria-live="polite"></p><p id="copyWeekWarning" class="copy-cal-warning" aria-live="polite"></p>
 <div class="copy-cal-actions"><button type="button" id="copyToday" class="alt">Dnes</button><button type="button" id="copyConfirm">Kopírovat</button></div></dialog>
-<script src="catalog-data.js"></script><script src="catalog.js"></script><script src="github-sync.js?v=18"></script><script src="app.js?v=37"></script><script>(function(){const menu=document.getElementById('mobileMore');if(!menu)return;menu.querySelectorAll('[data-original]').forEach(button=>button.addEventListener('click',()=>{menu.open=false;document.getElementById(button.dataset.original)?.click()}));menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.open=false}));document.addEventListener('pointerdown',e=>{if(menu.open&&!menu.contains(e.target))menu.open=false});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.open)menu.open=false});})();</script></body></html>
+<script src="catalog-data.js"></script><script src="catalog.js"></script><script src="github-sync.js?v=18"></script><script src="app.js?v=37"></script><script>(function(){const menu=document.getElementById('mobileMore');if(!menu)return;menu.querySelectorAll('[data-original]').forEach(button=>button.addEventListener('click',()=>{menu.open=false;document.getElementById(button.dataset.original)?.click()}));menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.open=false}));document.addEventListener('pointerdown',e=>{if(menu.open&&!menu.contains(e.target))menu.open=false});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.open)menu.open=false});})();</script><script>/* Presne barvy jednotlivych polozek bez systemoveho sedeho hoveru. */
+(()=>{const ids=['count','lockMainMobile','lockSoupMobile'];let active=null;
+function close(){if(active){active.hidden=true;active=null}}
+for(const id of ids){const sel=document.getElementById(id);if(!sel)continue;
+const shell=document.createElement('span');shell.className='toolbar-select-shell';sel.parentNode.insertBefore(shell,sel);shell.append(sel);
+const trigger=document.createElement('button');trigger.type='button';trigger.className='toolbar-select-trigger';trigger.setAttribute('aria-label',sel.getAttribute('aria-label')||sel.closest('label')?.textContent.trim()||id);shell.append(trigger);
+const menu=document.createElement('div');menu.className='toolbar-select-list';menu.hidden=true;shell.append(menu);
+function refresh(){trigger.textContent=sel.selectedOptions[0]?.textContent||sel.value;menu.replaceChildren();for(const opt of sel.options){const b=document.createElement('button');b.type='button';b.className='toolbar-select-item';b.textContent=opt.textContent;b.addEventListener('click',()=>{sel.value=opt.value;sel.dispatchEvent(new Event('change',{bubbles:true}));refresh();close();trigger.focus()});menu.append(b)}}
+trigger.addEventListener('click',()=>{const was=!menu.hidden;close();if(!was){refresh();menu.hidden=false;active=menu}});
+sel.addEventListener('change',refresh);const obs=new MutationObserver(refresh);obs.observe(sel,{attributes:true,attributeFilter:['value']});
+refresh();const oldValue=Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype,'value');if(oldValue){Object.defineProperty(sel,'value',{get(){return oldValue.get.call(this)},set(v){oldValue.set.call(this,v);refresh()},configurable:true})}
+}
+document.addEventListener('pointerdown',e=>{if(active&&!e.target.closest('.toolbar-select-shell'))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+})();</script></body></html>
