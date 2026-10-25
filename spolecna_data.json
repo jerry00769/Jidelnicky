@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-10-26",
+      "week": "2026-10-19",
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s kroupami",
-          "main": "Rybí filé smažené, Bramborová kaše",
-          "category": "RYBY",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s ovesnými vločkami",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
-          "category": "SLADKÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "Špenátová s vajíčkem",
-          "main": "Španělská čočka s mletým masem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s fridátovými nudlemi",
-          "main": "Rizoto srbské",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "",
+          "main": "",
+          "category": "",
           "main2": "",
           "category2": ""
         }
