@@ -253,7 +253,7 @@
       "days": [
         {
           "closed": false,
-          "soup": "hovězí s masem a vejcem",
+          "soup": "rychlá s vejcem",
           "main": "Srbská čočka, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
@@ -261,33 +261,33 @@
         },
         {
           "closed": false,
-          "soup": "bramborová",
-          "main": "Španělský ptáček rozházený, Rýže dušená",
-          "category": "HOVĚZÍ A TELECÍ",
+          "soup": "fazolová se zeleninou",
+          "main": "Tilápie s rajčaty a sýrem, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "celerová se smaženým hráškem",
-          "main": "Těstovinový salát s kuřecím masem",
+          "soup": "zimní zeleninová s ovesnými vločkami",
+          "main": "Bramborák",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová zahuštěná červenou čočkou",
+          "main": "Kuřecí rizoto",
           "category": "DRŮBEŽ A KRÁLÍK",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "z kysaného zelí",
-          "main": "Vepřové v mrkvi, Brambory",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zeleninová s kuskusem",
-          "main": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
-          "category": "VEPŘOVÉ A UZENÉ",
+          "soup": "česneková s bramborem a vejcem",
+          "main": "Žebrácké maso, Brambory opékané",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
