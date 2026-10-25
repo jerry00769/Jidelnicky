@@ -249,34 +249,38 @@
       }
     },
     "week": {
-      "week": "2025-09-29",
+      "week": "2025-10-06",
       "days": [
         {
-          "soup": "",
-          "main": "",
-          "category": ""
+          "soup": "Zeleninová s quinoou",
+          "main": "Debrecínský guláš, Těstoviny",
+          "category": "VEPŘOVÉ A UZENÉ"
         },
         {
-          "soup": "",
-          "main": "",
-          "category": ""
+          "soup": "Gulášová",
+          "main": "Karbanátek z rybího file - pečený, Brambory",
+          "category": "RYBY",
+          "main2": "Kuskus s kuřecím masem",
+          "category2": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "soup": "Zelenin. s drožďovými knedlíčky",
-          "main": "Lotrinské tagliatelle se sýrem",
-          "category": "BEZMASÁ SLANÁ"
-        },
-        {
-          "soup": "Z rybího filé",
-          "main": "Kuře pečené, Brambory",
+          "soup": "Hovězí se strouháním",
+          "main": "Kuřecí čína, Rýže dušená",
           "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Kuskus s ovocem",
-          "category2": "SLADKÁ"
+          "main2": "Brokolicová poezie (květák, niva)",
+          "category2": "BEZMASÁ SLANÁ"
         },
         {
-          "soup": "Zelenin. s fridátovými nudlemi",
-          "main": "Svíčková na smetaně, Houskové knedlíky (kynuté)",
-          "category": "HOVĚZÍ A TELECÍ"
+          "soup": "Květáková s červenou čočkou",
+          "main": "Knedlíky švestkové (bramborové) s mákem",
+          "category": "SLADKÁ",
+          "main2": "Pizza se šunkou",
+          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+        },
+        {
+          "soup": "Z kysaného zelí",
+          "main": "Vepřová roláda (karlovarský kotouč), Bramborová kaše",
+          "category": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
