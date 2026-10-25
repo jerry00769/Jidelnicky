@@ -249,38 +249,32 @@
       }
     },
     "week": {
-      "week": "2025-10-06",
+      "week": "2025-12-01",
       "days": [
         {
-          "soup": "Zeleninová s quinoou",
-          "main": "Debrecínský guláš, Těstoviny",
-          "category": "VEPŘOVÉ A UZENÉ"
+          "soup": "Zelenin. s pohankou",
+          "main": "Kovbojská pánev, Chléb",
+          "category": "BEZMASÁ SLANÁ"
         },
         {
-          "soup": "Gulášová",
-          "main": "Karbanátek z rybího file - pečený, Brambory",
-          "category": "RYBY",
-          "main2": "Kuskus s kuřecím masem",
-          "category2": "DRŮBEŽ A KRÁLÍK"
+          "soup": "Zeleninová se sýrovým kapáním",
+          "main": "Kuře Šanghaj s rýží",
+          "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "soup": "Hovězí se strouháním",
-          "main": "Kuřecí čína, Rýže dušená",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "Brokolicová poezie (květák, niva)",
-          "category2": "BEZMASÁ SLANÁ"
+          "soup": "Hrachová s hrachovými krutony",
+          "main": "Nákyp rýžový se švestkami",
+          "category": "BEZMASÁ SLANÁ"
         },
         {
-          "soup": "Květáková s červenou čočkou",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
-          "category": "SLADKÁ",
-          "main2": "Pizza se šunkou",
-          "category2": "MLETÉ MASO A ZAPÉKANÉ"
+          "soup": "Z fazolových lusků",
+          "main": "Omáčka rajčatová, Hovězí maso vařené, Houskové knedlíky (kynuté)",
+          "category": "HOVĚZÍ A TELECÍ"
         },
         {
-          "soup": "Z kysaného zelí",
-          "main": "Vepřová roláda (karlovarský kotouč), Bramborová kaše",
-          "category": "VEPŘOVÉ A UZENÉ"
+          "soup": "Krupicová s vejcem",
+          "main": "Kapustové karbanátky, Bramborová kaše",
+          "category": "MLETÉ MASO A ZAPÉKANÉ"
         }
       ]
     },
@@ -1644,7 +1638,7 @@
       "avoidFishPair": true
     },
     "txt": "",
-    "count": 2,
+    "count": 1,
     "lockMain": 8,
     "lockSoup": 3,
     "learning": {
