@@ -262,8 +262,8 @@
         {
           "closed": false,
           "soup": "bramboračka nezahuštěná",
-          "main": "Rybí filé po mlynářsku, Brambory",
-          "category": "RYBY",
+          "main": "Španělský ptáček rozházený, Rýže dušená",
+          "category": "HOVĚZÍ A TELECÍ",
           "main2": "",
           "category2": ""
         },
@@ -1659,7 +1659,9 @@
     "learning": {
       "main": {
         "Vepřová pečeně, Fazolové lusky na slanině, Brambory": -1,
-        "Srbská čočka, Chléb": 1
+        "Srbská čočka, Chléb": 1,
+        "Rybí filé po mlynářsku, Brambory": -1,
+        "Španělský ptáček rozházený, Rýže dušená": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1676,7 +1678,8 @@
         "hovězí s masem a vejcem ||| Vepřová pečeně, Fazolové lusky na slanině, Brambory": 0,
         "hovězí s masem a vejcem ||| Srbská čočka, Chléb": 1,
         "květáková ||| Rybí filé po mlynářsku, Brambory": -1,
-        "bramboračka nezahuštěná ||| Rybí filé po mlynářsku, Brambory": 1
+        "bramboračka nezahuštěná ||| Rybí filé po mlynářsku, Brambory": 0,
+        "bramboračka nezahuštěná ||| Španělský ptáček rozházený, Rýže dušená": 1
       }
     }
   }
