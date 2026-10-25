@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová s těstovinovou",
-          "main": "Horňácký guláš (maso, fazole), Chléb",
+          "soup": "zelenin. s kroupami",
+          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "cizrnová krémová s rajčaty",
-          "main": "Nudle s mákom",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s kuskusem",
-          "main": "Rybí filé smažené, Bramborová kaše",
+          "soup": "hrachová se smaženým hráškem",
+          "main": "Těstoviny penne s tuňákem a chery rajčaty",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s pohankou",
-          "main": "Vepřová kotleta na houbách, Těstoviny",
+          "soup": "hovězí se strouháním",
+          "main": "Guláš maďarský, Rýže dušená",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "celerová se smaženým hráškem",
+          "main": "Vepřové na paprice, Těstoviny",
           "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "z míchaných luštěnin",
-          "main": "Kapustové karbanátky, Bramborová kaše",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "soup": "hovězí s kuskusem",
+          "main": "Knedlíky švestkové (bramborové) s mákem",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         }
