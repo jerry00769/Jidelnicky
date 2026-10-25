@@ -278,8 +278,8 @@
         {
           "closed": false,
           "soup": "hovězí s játrovými knedlíčky",
-          "main": "Těstoviny s brokolicí",
-          "category": "BEZMASÁ SLANÁ",
+          "main": "Vepřové v mrkvi, Brambory",
+          "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
           "category2": ""
         },
@@ -1662,7 +1662,9 @@
         "Srbská čočka, Chléb": 1,
         "Rybí filé po mlynářsku, Brambory": -1,
         "Španělský ptáček rozházený, Rýže dušená": 0,
-        "Vepřová pečeně selská, Bramborové knedlíky (směs)": 1
+        "Vepřová pečeně selská, Bramborové knedlíky (směs)": 1,
+        "Těstoviny s brokolicí": -1,
+        "Vepřové v mrkvi, Brambory": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1688,7 +1690,9 @@
         "celerová se smaženým hráškem ||| Španělský plátek, Rýže dušená": 1,
         "celerová se smaženým hráškem ||| Španělský ptáček rozházený, Rýže dušená": -1,
         "celerová se smaženým hráškem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 0,
-        "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 1
+        "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 1,
+        "hovězí s játrovými knedlíčky ||| Těstoviny s brokolicí": -1,
+        "hovězí s játrovými knedlíčky ||| Vepřové v mrkvi, Brambory": 1
       }
     }
   }
