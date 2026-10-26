@@ -253,41 +253,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "zelenin. s bulgurem",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "frankfurtská s bramborem",
-          "main": "Těstoviny se sýrovou omáčkou",
+          "soup": "mrkvová",
+          "main": "Knedlíky švestkové (bramborové) s mákem",
+          "category": "SLADKÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s tarhoňou",
+          "main": "Nákyp rýžový se švestkami",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "zelenin. s ovesnými vločkami",
+          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s kapustou a rýží",
-          "main": "Hovězí guláš, Rýže dušená",
+          "soup": "čočková se zeleninou",
+          "main": "Omáčka rajčatová, Hovězí maso vařené, Těstoviny",
           "category": "HOVĚZÍ A TELECÍ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "cibulová se sýrem",
-          "main": "Dukátové buchtičky s krémem",
-          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         }
