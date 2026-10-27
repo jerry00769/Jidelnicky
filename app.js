@@ -446,10 +446,11 @@ function suggestMealCategory(kind,name){
 }
 function confirmNewMealCategory(kind,name){
  const cats=Object.keys(state.catalog[kind]||{});
- const suggested=suggestMealCategory(kind,name);
+ const suggested=(pickerSelected?.cat&&state.catalog[kind]?.[pickerSelected.cat]?.includes(pickerSelected.name)?pickerSelected.cat:'')||suggestMealCategory(kind,name);
  const select=$('newMealCategory'),description=$('newMealCategoryHint');
  $('newMealKind').textContent=kind==='soup'?'Polévka':'Hlavní jídlo';
- $('newMealName').textContent=name;
+ $('newMealName').value=''; // Přidání nového pokrmu: název se nepředvyplňuje z označené položky.
+ $('newMealName').placeholder='Zadej název nového pokrmu';
  select.replaceChildren(new Option('— Vyber kategorii —',''),...cats.map(cat=>new Option(cat,cat)));
  select.value=suggested||'';
  $('newMealCategoryAccept').disabled=!select.value;
@@ -457,11 +458,12 @@ function confirmNewMealCategory(kind,name){
  description.textContent=suggested?'Navržená kategorie podle názvu a existujících jídel. Před uložením ji zkontroluj.':'Kategorii se nepodařilo spolehlivě určit. Vyber správnou kategorii.';
  return new Promise(resolve=>{
   const dialog=$('newMealCategoryDialog');
-  const finish=ok=>{const chosen=ok?select.value:null;if(ok&&!chosen)return;dialog.close();resolve(chosen)};
+  const finish=ok=>{const chosen=ok?{cat:select.value,name:$('newMealName').value.trim()}:null;if(ok&&(!chosen.cat||chosen.name.length<2)){notice('Vyplň název a kategorii.',true);return;}dialog.close();resolve(chosen)};
   $('newMealCategoryAccept').onclick=()=>finish(true);
   $('newMealCategoryCancel').onclick=()=>finish(false);
   dialog.oncancel=e=>{e.preventDefault();finish(false)};
   dialog.showModal();
+  $('newMealName').focus();
  });
 }
 
@@ -508,14 +510,17 @@ async function pickerCatalogEdit(operation){
    $('picker').close();return;
   }
   if(operation==='add'){
-   const found=all(kind).find(x=>norm(x.name)===norm(name));
-   const cat=found?.cat||await confirmNewMealCategory(kind,name);
-   if(!cat)return;
+   // Dialog se zobrazí vždy, i když jídlo už v katalogu existuje.
+   // Potvrzená existující položka se neduplikuje, pouze přiřadí do historie.
+   const entry=await confirmNewMealCategory(kind,name);
+   if(!entry)return;
+   const {cat,name:newName}=entry;
    if(!state.catalog[kind]?.[cat])throw Error('Neplatná kategorie.');
+   const existing=state.catalog[kind][cat].find(x=>norm(x)===norm(newName));
    historyMutation(d=>{
-    if(!found){state.catalog[kind][cat].push(name);state.catalog[kind][cat].sort((a,b)=>a.localeCompare(b,'cs'));}
-    d[field]=found?.name||name;if(kind==='main')d[categoryField]=cat;
-   },'Jídlo přidáno do historie i katalogu.');
+    if(!existing){state.catalog[kind][cat].push(newName);state.catalog[kind][cat].sort((a,b)=>a.localeCompare(b,'cs'));}
+    d[field]=existing||newName;if(kind==='main')d[categoryField]=cat;
+   },existing?'Existující jídlo přiřazeno do historie.':'Jídlo přidáno do historie i katalogu.');
    $('picker').close();return;
   }
  }
@@ -523,11 +528,13 @@ async function pickerCatalogEdit(operation){
  let cat=$('pickerCategory').value;
  if(operation==='add'){
   if(name.length<2)throw Error('Zadej název nového jídla.');
-  cat=await confirmNewMealCategory(kind,name);
-  if(!cat)return;
+  const entry=await confirmNewMealCategory(kind,name);
+  if(!entry)return;
+  cat=entry.cat;
+  const newName=entry.name;
   if(!state.catalog[kind]?.[cat])throw Error('Neplatná kategorie.');
-  if(state.catalog[kind][cat].some(x=>norm(x)===norm(name)))throw Error('Jídlo už v kategorii existuje.');
-  snapshot();state.catalog[kind][cat].push(name);state.catalog[kind][cat].sort((a,b)=>a.localeCompare(b,'cs'));pickerSelected={name,cat};
+  if(state.catalog[kind][cat].some(x=>norm(x)===norm(newName)))throw Error('Jídlo už v kategorii existuje.');
+  snapshot();state.catalog[kind][cat].push(newName);state.catalog[kind][cat].sort((a,b)=>a.localeCompare(b,'cs'));pickerSelected={name:newName,cat};
  }else{
   if(!pickerSelected)throw Error('Nejdříve označ jídlo v seznamu.');
   const {name:oldName,cat:oldCat}=pickerSelected,items=state.catalog[kind]?.[oldCat];
