@@ -262,7 +262,7 @@
         },
         {
           "soup": "zeleninová s celozrnnými nudlemi",
-          "main": "Krůtí maso na pórku, rýže",
+          "main": "Krůtí nudličky s pórkem, Rýže dušená",
           "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
@@ -1659,7 +1659,9 @@
         "Těstovinový salát s kuřecím masem": 1,
         "Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí": 1,
         "Rybí filé s rajčaty, bazalkou, brambory": -1,
-        "Smažené rybí prsty, Brambory m.m.": 1
+        "Smažené rybí prsty, Brambory m.m.": 1,
+        "Krůtí maso na pórku, rýže": -1,
+        "Krůtí nudličky s pórkem, Rýže dušená": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1711,7 +1713,8 @@
         "rajčatová s tarhoňou ||| Rybí filé s rajčaty, bazalkou, brambory": 0,
         "rajčatová s tarhoňou ||| Smažené rybí prsty, Brambory m.m.": 1,
         "Ovarová s kroupami ||| Krůtí maso na pórku, rýže": -1,
-        "zeleninová s celozrnnými nudlemi ||| Krůtí maso na pórku, rýže": 1
+        "zeleninová s celozrnnými nudlemi ||| Krůtí maso na pórku, rýže": 0,
+        "zeleninová s celozrnnými nudlemi ||| Krůtí nudličky s pórkem, Rýže dušená": 1
       }
     }
   }
