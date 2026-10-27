@@ -51,6 +51,56 @@ const save=()=>{if(printingHistory)return;const json=JSON.stringify(state);if(js
 function download(name,content,type){const b=new Blob([content],{type});const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}
 window.JidelnickyApp={getState:()=>clone(state),applyState(next){if(!next?.catalog?.main||!next?.catalog?.soup||!Array.isArray(next.history)||next?.week?.days?.length!==5)throw Error('Neplatná společná data');state=clone(next);state.learning=cleanLearning(state.learning);state.rules={...defaults,...state.rules};state.txt??='';state.count=[1,2].includes(+state.count)?+state.count:1;undo.length=0;redo.length=0;lastSaved=JSON.stringify(state);localStorage.setItem(storeKey,lastSaved);if(typeof selectedHistory!=='undefined'&&selectedHistory&&!state.history.some(h=>h.week===selectedHistory))selectedHistory=[...state.history].sort((a,b)=>b.week.localeCompare(a.week))[0]?.week||null;render();if($('historyDialog')?.open){historyRows();historyDetail()}},notice};
 const snapshot=()=>{undo.push(clone(state));if(undo.length>60)undo.shift();redo.length=0};
+
+// Kontrola je pouze čtecí; GitHub se nemění bez výslovného souhlasu.
+function auditCatalogHistory(){
+ const key=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().toLocaleLowerCase('cs');
+ const known={soup:new Set(),main:new Set()};
+ const extras={soup:[],main:[]};
+ for(const kind of ['soup','main'])for(const [cat,items] of Object.entries(state.catalog[kind]||{}))for(const name of items){known[kind].add(key(name));extras[kind].push({name,cat})}
+ const used={soup:new Set(),main:new Set()},missing={soup:new Map(),main:new Map()};
+ for(const week of state.history||[])for(const day of week.days||[]){
+  for(const [kind,field,catField] of [['soup','soup',null],['main','main','category'],['main','main2','category2']]){
+   const name=String(day[field]||'').trim();if(!name)continue;
+   const k=key(name);used[kind].add(k);
+   if(!known[kind].has(k)&&!missing[kind].has(k))missing[kind].set(k,{name,cat:catField?String(day[catField]||'').trim():''});
+  }
+ }
+ return {missing,extras:{soup:extras.soup.filter(x=>!used.soup.has(key(x.name))),main:extras.main.filter(x=>!used.main.has(key(x.name)))},counts:{soup:known.soup.size,main:known.main.size,usedSoup:used.soup.size,usedMain:used.main.size}};
+}
+async function runCatalogAudit(){
+ const audit=auditCatalogHistory(),s=[...audit.missing.soup.values()],m=[...audit.missing.main.values()];
+ const report=`Kontrola aktuální WEB databáze vůči ${state.history.length} týdnům historie:\n\n`+
+ `Polévky: ${audit.counts.soup} v katalogu, ${audit.counts.usedSoup} v historii, chybí ${s.length}, navíc ${audit.extras.soup.length}.\n`+
+ `Hlavní jídla: ${audit.counts.main} v katalogu, ${audit.counts.usedMain} v historii, chybí ${m.length}, navíc ${audit.extras.main.length}.\n\n`+
+ (s.length||m.length?'CHYBÍ:\n'+[...s.map(x=>'Polévka: '+x.name),...m.map(x=>'Oběd: '+x.name)].join('\n')+'\n\n':'')+
+ (audit.extras.soup.length||audit.extras.main.length?'POUZE V KATALOGU (NEBUDOU SMAZÁNY):\n'+[...audit.extras.soup.map(x=>'Polévka: '+x.name),...audit.extras.main.map(x=>'Oběd: '+x.name)].join('\n'):'');
+ if(!s.length&&!m.length){alert(report+'\n\nŽádný zápis nebyl proveden.');return}
+ if(!confirm(report+'\n\nChceš doplnit chybějící položky? Nejdřív se stáhne úplná záloha JSON. Změna se následně synchronizuje podle stávajících pravidel GitHubu.'))return;
+ const choices=[];
+ for(const [kind,items] of [['soup',s],['main',m]])for(const item of items){
+  const cats=Object.keys(state.catalog[kind]||{});
+  const proposed=cats.includes(item.cat)?item.cat:'';
+  const answer=prompt(`Zařaď ${kind==='soup'?'polévku':'hlavní jídlo'}:\n${item.name}\n\nDostupné kategorie:\n${cats.map((c,i)=>`${i+1}. ${c}`).join('\n')}\n\nZadej číslo kategorie (nebo Zrušit pro přeskočení).`,proposed?String(cats.indexOf(proposed)+1):'');
+  if(answer===null||answer.trim()==='')continue;
+  const index=Number(answer.trim())-1;
+  if(!Number.isInteger(index)||!cats[index]){alert('Neplatná kategorie. Položka přeskočena: '+item.name);continue}
+  choices.push({kind,name:item.name,cat:cats[index]});
+ }
+ if(!choices.length){notice('Kontrola dokončena bez změn.');return}
+ if(!confirm(`Připraveno ${choices.length} položek. Stáhnout zálohu a doplnit je do katalogu?`))return;
+ const backup=JSON.stringify({format:'jidelnicky-static-v1',state:clone(state)},null,2);
+ download('jidelnicky_pred_kontrolou_katalogu_'+new Date().toISOString().replace(/[:.]/g,'-')+'.json',backup,'application/json;charset=utf-8');
+ snapshot();
+ for(const item of choices){
+  const list=state.catalog[item.kind][item.cat];
+  if(!Object.values(state.catalog[item.kind]).flat().some(x=>norm(x)===norm(item.name)))list.push(item.name);
+ }
+ for(const kind of ['soup','main'])for(const list of Object.values(state.catalog[kind]))list.sort((a,b)=>a.localeCompare(b,'cs'));
+ render();save();notice(`Kontrola katalogu: doplněno ${choices.length} položek. Záloha nabídnuta ke stažení; GitHub synchronizuje standardním způsobem.`);
+}
+$('auditCatalog')?.addEventListener('click',()=>runCatalogAudit().catch(e=>notice('Kontrola katalogu selhala: '+e.message,true)));
+
 let statusTimer;function notice(message,error=false){const el=$('status');el.textContent=message;el.className=error?'error':'';el.style.display='block';clearTimeout(statusTimer);statusTimer=setTimeout(()=>el.style.display='none',6500)}
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 const starts=(cat,p)=>cat.startsWith(p);
