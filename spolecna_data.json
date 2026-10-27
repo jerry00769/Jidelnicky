@@ -119,9 +119,6 @@
           "Rizoto z vepřového masa",
           "Rožnovské halušky (střapačky) s uzeným masem",
           "Segedínský guláš, Houskové knedlíky (kynuté)",
-          "Šoulet, Vepřová pečeně",
-          "Špagety po uhlířsku",
-          "Špagety s vepřovým masem a rajčaty",
           "Vepřová kotleta na houbách, Těstoviny",
           "Vepřová kýta hamburská, Houskové knedlíky (kynuté)",
           "Vepřová kýta po cikánsku, Rýže dušená",
@@ -139,7 +136,10 @@
           "Vepřový guláš, Rýže dušená",
           "Vepřový řízek přírodní, Brambory",
           "Vepřový řízek přírodní, Kuskus - příloha",
-          "Vinná klobása smažená"
+          "Vinná klobása smažená přírodní, Bramborová kaše - příloha",
+          "Šoulet, Vepřová pečeně",
+          "Špagety po uhlířsku (vejce, sýr)",
+          "Špagety s vepřovým masem a rajčaty"
         ],
         "DRŮBEŽ A KRÁLÍK": [
           "Bulgur s kuřecím masem a zeleninou",
@@ -202,19 +202,19 @@
           "Tilápie s rajčaty a sýrem, Brambory"
         ],
         "LUŠTĚNINOVÁ": [
-          "Čočka na kyselo, Vejce vařené",
-          "Čočkový kotlík, Chléb",
           "Fazole a la Katův šleh, Chléb",
           "Horňácký guláš (maso, fazole), Chléb",
           "Hrachová kaše s cibulkou, Párky",
           "Hrachová kaše s cibulkou, Vejce vařené",
-          "Hrachová kaše s vepřovými výpečky",
+          "Hrachová kaše s cibulkou, Vepřové výpečky, Salát z červené řepy - příloha",
           "Kuřecí stehna pečená se zel.fazolkami a kroupami",
           "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
           "Srbská čočka, Chléb",
-          "Španělská čočka s mletým masem, Chléb",
           "Těstovinový salát s cizrnou a sušenými rajčaty",
-          "Vepřová pečeně, Fazolové lusky na slanině, Brambory"
+          "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
+          "Čočka na kyselo, Vejce vařené",
+          "Čočkový kotlík, Chléb",
+          "Španělská čočka s mletým masem, Chléb"
         ],
         "BEZMASÁ SLANÁ": [
           "Bramborák",
