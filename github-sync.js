@@ -116,7 +116,7 @@ async function flush(){
  busy=true;
  try{
   const current=app.getState(),serial=json(current);
-  if(serial===baseline){if(json(app.getState())===serial)markPending(false);status('GitHub: data synchronizována');return}
+  if(serial===baseline){if(json(app.getState())===serial){markPending(false);status('GitHub: data synchronizována')}else{markPending(true);status('GitHub: další místní změny čekají na odeslání…')}return}
   const r=await remote();
   if(!r||r.sha!==sha){
    if(r&&await mergeAndPut(current,serial,r.state,r.sha))return;
@@ -126,11 +126,11 @@ async function flush(){
   const saved=await put(current,sha);
   sha=saved.content.sha;setBaseline(current);
   if(json(app.getState())===serial){markPending(false);status('GitHub: data synchronizována')}
-  else{markPending(true);status('GitHub: čeká na synchronizaci dalších změn…')}
+  else{markPending(true);status('GitHub: čeká na synchronizaci dalších změn…');clearTimeout(timer);timer=setTimeout(flush,1200)}
  }catch(e){
   if(e.status===409||e.status===422){conflicted=true;connected=false;controls();status('GitHub: konflikt souběžných změn! Místní data zachována.',true)}
   else status('GitHub: offline nebo chyba zápisu. Změny zůstaly v zařízení a čekají na odeslání.',true)
- }finally{busy=false;if(connected&&dirty&&!conflicted){clearTimeout(timer);timer=setTimeout(flush,15000)}}
+ }finally{busy=false;if(connected&&dirty&&!conflicted){clearTimeout(timer);timer=setTimeout(flush,1200)}}
 }
 function changed(){
  // I při offline práci a při ztrátě připojení evidujeme neodeslané změny.
@@ -153,7 +153,8 @@ async function refresh(){
    // Před aplikací dat ověřujeme, že stav se od začátku kontroly nezměnil.
    if(dirty||json(app.getState())!==json(local)){markPending(true);conflicted=true;connected=false;controls();status('GitHub: během načítání vznikly místní změny. Data zachována.',true);return}
    app.applyState(r.state);sha=r.sha;setBaseline(r.state);status('GitHub: data synchronizována');
-  }else status('GitHub: data synchronizována');
+  }else if(json(app.getState())!==baseline){markPending(true);status('GitHub: místní změny čekají na odeslání…');clearTimeout(timer);timer=setTimeout(flush,1200)}
+  else status('GitHub: data synchronizována');
  }catch(e){status('GitHub: nelze zkontrolovat spojení; místní data zachována ('+e.message+')',true)}
  finally{busy=false}
 }
