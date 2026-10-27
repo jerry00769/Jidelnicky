@@ -250,47 +250,32 @@
       }
     },
     "week": {
-      "week": "2026-10-19",
+      "week": "2026-11-02",
       "days": [
         {
-          "closed": false,
-          "soup": "hovězí s masem a vejcem",
-          "main": "Srbská čočka, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
+          "soup": "Rajská s ovesnými vločkami",
+          "main": "Rybí filé s rajčaty, bazalkou, brambory",
+          "category": "RYBY"
         },
         {
-          "closed": false,
-          "soup": "bramboračka nezahuštěná",
-          "main": "Španělský ptáček rozházený, Rýže dušená",
-          "category": "HOVĚZÍ A TELECÍ",
-          "main2": "",
-          "category2": ""
+          "soup": "Ovarová s kroupami",
+          "main": "Krůtí maso na pórku, rýže",
+          "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "closed": false,
-          "soup": "celerová se smaženým hráškem",
-          "main": "Těstovinový salát s kuřecím masem",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "",
-          "category2": ""
+          "soup": "Zeleninová s pohankou",
+          "main": "Bulgur se zeleninou a kuřecím masem",
+          "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "closed": false,
-          "soup": "z kysaného zelí",
-          "main": "Vepřové v mrkvi, Brambory",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "",
-          "category2": ""
+          "soup": "Hovězí se strouháním",
+          "main": "Dukátové buchtičky se šódo",
+          "category": "SLADKÁ"
         },
         {
-          "closed": false,
-          "soup": "zeleninová s kuskusem",
-          "main": "Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "",
-          "category2": ""
+          "soup": "Hrachová",
+          "main": "Domažlické vepřové ragů, těstoviny",
+          "category": "VEPŘOVÉ A UZENÉ"
         }
       ]
     },
