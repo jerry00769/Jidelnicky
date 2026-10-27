@@ -137,6 +137,7 @@
           "Vepřový řízek přírodní, Kuskus - příloha"
         ],
         "DRŮBEŽ A KRÁLÍK": [
+          "Bulgur s kuřecím masem a zeleninou",
           "Gnocchi s kuřecím masem, smetanou a špenátem",
           "Králík pečený, Bramborové knedlíky (směs)",
           "Králík pečený, Brambory",
@@ -267,7 +268,7 @@
         },
         {
           "soup": "zelenin. s fridátovými nudlemi",
-          "main": "Bulgur se zeleninou a kuřecím masem",
+          "main": "Bulgur s kuřecím masem a zeleninou",
           "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
@@ -1661,7 +1662,9 @@
         "Rybí filé s rajčaty, bazalkou, brambory": -1,
         "Smažené rybí prsty, Brambory m.m.": 1,
         "Krůtí maso na pórku, rýže": -1,
-        "Krůtí nudličky s pórkem, Rýže dušená": 1
+        "Krůtí nudličky s pórkem, Rýže dušená": 1,
+        "Bulgur se zeleninou a kuřecím masem": -1,
+        "Bulgur s kuřecím masem a zeleninou": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1718,7 +1721,8 @@
         "zeleninová s celozrnnými nudlemi ||| Krůtí maso na pórku, rýže": 0,
         "zeleninová s celozrnnými nudlemi ||| Krůtí nudličky s pórkem, Rýže dušená": 1,
         "Zeleninová s pohankou ||| Bulgur se zeleninou a kuřecím masem": -1,
-        "zelenin. s fridátovými nudlemi ||| Bulgur se zeleninou a kuřecím masem": 1
+        "zelenin. s fridátovými nudlemi ||| Bulgur se zeleninou a kuřecím masem": 0,
+        "zelenin. s fridátovými nudlemi ||| Bulgur s kuřecím masem a zeleninou": 1
       }
     }
   }
