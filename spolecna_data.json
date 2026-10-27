@@ -259,41 +259,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "zeleninová s tarhoňou",
+          "main": "Smažené rybí prsty, Brambory m.m.",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "rajčatová s těstovinou",
+          "main": "Nudle s mákem",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "cibulová se sýrem",
+          "main": "Rizoto z vepřového masa",
+          "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "rajčatová s těstovinami",
+          "main": "Fazole a la Katův šleh, Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "",
-          "main": "",
-          "category": "",
+          "soup": "hovězí s vaječnou jíškou",
+          "main": "Džuveč, Chléb",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
