@@ -272,7 +272,7 @@
           "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "soup": "Hovězí se strouháním",
+          "soup": "ovarová",
           "main": "Dukátové buchtičky se šódo",
           "category": "SLADKÁ"
         },
@@ -1686,7 +1686,9 @@
         "Ovarová s kroupami": -1,
         "zeleninová s celozrnnými nudlemi": 1,
         "Zeleninová s pohankou": -1,
-        "zelenin. s fridátovými nudlemi": 1
+        "zelenin. s fridátovými nudlemi": 1,
+        "Hovězí se strouháním": -1,
+        "ovarová": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
@@ -1722,7 +1724,9 @@
         "zeleninová s celozrnnými nudlemi ||| Krůtí nudličky s pórkem, Rýže dušená": 1,
         "Zeleninová s pohankou ||| Bulgur se zeleninou a kuřecím masem": -1,
         "zelenin. s fridátovými nudlemi ||| Bulgur se zeleninou a kuřecím masem": 0,
-        "zelenin. s fridátovými nudlemi ||| Bulgur s kuřecím masem a zeleninou": 1
+        "zelenin. s fridátovými nudlemi ||| Bulgur s kuřecím masem a zeleninou": 1,
+        "Hovězí se strouháním ||| Dukátové buchtičky se šódo": -1,
+        "ovarová ||| Dukátové buchtičky se šódo": 1
       }
     }
   }
