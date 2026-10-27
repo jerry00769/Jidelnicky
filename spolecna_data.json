@@ -254,7 +254,7 @@
       "week": "2026-11-02",
       "days": [
         {
-          "soup": "Rajská s ovesnými vločkami",
+          "soup": "rajčatová s tarhoňou",
           "main": "Rybí filé s rajčaty, bazalkou, brambory",
           "category": "RYBY"
         },
@@ -1671,7 +1671,9 @@
         "bramboračka": -1,
         "bramborová": 2,
         "drožďová": -1,
-        "česneková s bramborem a vejcem": 1
+        "česneková s bramborem a vejcem": 1,
+        "Rajská s ovesnými vločkami": -1,
+        "rajčatová s tarhoňou": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
@@ -1698,7 +1700,9 @@
         "bramborová ||| Španělský ptáček rozházený, Rýže dušená": 1,
         "drožďová ||| Rybí filé zapečené se špenátem, Brambory": -1,
         "česneková s bramborem a vejcem ||| Rybí filé zapečené se špenátem, Brambory": 1,
-        "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí": 1
+        "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí": 1,
+        "Rajská s ovesnými vločkami ||| Rybí filé s rajčaty, bazalkou, brambory": -1,
+        "rajčatová s tarhoňou ||| Rybí filé s rajčaty, bazalkou, brambory": 1
       }
     }
   }
