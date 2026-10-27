@@ -1312,3 +1312,64 @@ select option:not(:checked) { background-color: #fff; color: #1c314c; }
 @media screen {
   header h1 { font-size: 1.25rem !important; }
 }
+
+
+/* v39: pouze PC – širší historie a jednotná výška všech šesti akcí.
+   Mobilní a tabletové rozložení se nemění. */
+@media (min-width:1100px) {
+  dialog#historyDialog {
+    width: min(1088px, calc(100vw - 40px));
+    position: relative;
+    left: -16px;
+    max-width: calc(100vw - 40px);
+  }
+  #historyDialog .history-layout {
+    grid-template-columns: 245px minmax(0, 1fr);
+    gap: 18px;
+  }
+  #historyDialog .history-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 7px;
+    width: 100%;
+    padding-inline: 0;
+  }
+  #historyDialog .history-actions button,
+  #historyDialog .history-actions .history-import-button {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    height: 50px;
+    min-height: 50px;
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+}
+
+
+/* v40: při zúžení PC okna se akce historie zalomí místo oříznutí.
+   Široké PC zůstává v jednom řádku; tablet/mobil beze změn. */
+@media (min-width:901px) {
+  #historyDialog .history-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 7px;
+    min-width: 0;
+    max-width: 100%;
+    padding-inline: 0;
+  }
+  #historyDialog .history-actions button,
+  #historyDialog .history-actions .history-import-button {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+  #historyDialog .history-detail { min-width: 0; }
+}

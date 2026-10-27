@@ -292,27 +292,45 @@ $('historyCopy').onclick=()=>safe(()=>{
 $('historyDelete').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;if(!confirm('Opravdu smazat schválený týden '+format(dateAt(h.week,0))+'? Změnu lze vrátit tlačítkem Zpět.'))return;snapshot();state.history=state.history.filter(x=>x.week!==h.week);selectedHistory=[...state.history].sort((a,b)=>b.week.localeCompare(a.week))[0]?.week||null;render();historyRows();historyDetail();notice('Týden smazán z historie. '+(selectedHistory?'Vybrán nejnovější zbývající týden. ':'Historie je prázdná. ')+'Lze vrátit tlačítkem Zpět.')});
 $('historyPrint').onclick=()=>safe(()=>{const h=chosenHistory();if(!h)return;const previous=clone(state.week),count=state.count;printingHistory=true;try{state.week=clone(h);state.count=h.days.some(d=>d.main2)?2:1;render();$('historyDialog').close();window.print()}finally{state.week=previous;state.count=count;render();printingHistory=false}notice('Připraven tisk vybraného týdne.')});
 
-// Původní plně funkční import historie přes tlačítko
+// Samostatný přenos historie mezi WEBem a Pythonem (pole týdnů JSON).
+function validHistoryRecords(data){
+ if(!Array.isArray(data))throw Error('Soubor musí obsahovat pouze seznam týdnů historie JSON. Nepoužívejte kompletní zálohu aplikace.');
+ const seen=new Set();
+ for(const [i,h] of data.entries()){
+  if(!h||typeof h!=='object'||Array.isArray(h)||typeof h.week!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(h.week)||!Array.isArray(h.days)||h.days.length!==5)throw Error(`Neplatný týden historie na pozici ${i+1}.`);
+  const date=parseDate(h.week);
+  if(Number.isNaN(date.getTime())||iso(date)!==h.week||date.getDay()!==1)throw Error(`Neplatné pondělí týdne ${h.week}.`);
+  if(seen.has(h.week))throw Error(`Duplicitní týden ${h.week}.`);seen.add(h.week);
+  for(const [j,d] of h.days.entries()){
+   if(!d||typeof d!=='object'||Array.isArray(d))throw Error(`Neplatný den ${j+1} týdne ${h.week}.`);
+   for(const field of ['soup','main','main2','category','category2'])if(field in d&&typeof d[field]!=='string')throw Error(`Neplatné pole ${field} týdne ${h.week}.`);
+   if('closed' in d&&typeof d.closed!=='boolean')throw Error(`Neplatný příznak closed týdne ${h.week}, den ${j+1}.`);
+  }
+ }
+ return data.map(h=>({...clone(h),days:h.days.map(d=>({...freshDay(),...d,closed:typeof d.closed==='boolean'?d.closed:(!d.soup&&!d.main)}))}));
+}
+$('exportHistory').onclick=()=>safe(()=>{
+ const records=validHistoryRecords(state.history);
+ download('historie_jidelnicku_'+iso(today)+'.json',JSON.stringify(records,null,2),'application/json;charset=utf-8');
+ notice(`Exportována pouze historie: ${records.length} týdnů. Soubor lze importovat i v Pythonu.`);
+});
 $('importHistory').onchange=async e=>{
-    const f=e.target.files[0];if(!f)return;
-    try{
-        const data=JSON.parse(await f.text());
-        if(!Array.isArray(data)||!data.every(h=>typeof h.week==='string'&&Array.isArray(h.days)&&h.days.length===5))throw Error('Soubor neobsahuje historii jídelníčků ve formátu Python JSON.');
-        if(!confirm(`Importovat ${data.length} týdnů? Existující týdny se stejným datem budou zachovány.`))return;
-        snapshot();
-        const seen=new Set(state.history.map(h=>h.week));let added=0;
-        for(const h of data){
-            if(seen.has(h.week))continue;
-            const copy=clone(h);
-            copy.days=copy.days.map(d=>({...freshDay(),...d,closed:!!d.closed||(!d.soup&&!d.main)}));
-            state.history.push(copy);seen.add(h.week);added++
-        }
-        render();notice(`Importováno ${added} nových týdnů. Původní historie zachována.`)
-    }catch(err){
-        notice(err.message,true)
-    }finally{
-        e.target.value=''
-    }
+ const f=e.target.files[0];if(!f)return;
+ try{
+  const incoming=validHistoryRecords(JSON.parse(await f.text()));
+  if(!incoming.length)throw Error('Importovaná historie je prázdná. Přepsání bylo z bezpečnostních důvodů zrušeno.');
+  const oldHistory=clone(state.history);
+  if(!confirm(`Načteno ${incoming.length} týdnů historie.\nSoučasná WEB historie: ${oldHistory.length} týdnů.\n\nANO = zálohovat původní historii a NAHRADIT všechny týdny.\nNE = nic neměnit.\n\nKatalog, pravidla a pracovní týden zůstanou zachované.`))return;
+  // Trvalá lokální záloha navíc ke staženému souboru; při nemožnosti uložit import zastavit.
+  const stamp=new Date().toISOString().replace(/[:.]/g,'-');
+  const backupJson=JSON.stringify(oldHistory,null,2);
+  try{localStorage.setItem('jidelnicky_historie_pred_importem',backupJson)}catch(err){throw Error('Nepodařilo se bezpečně uložit místní zálohu historie. Import zrušen: '+err.message)}
+  download(`historie_jidelnicku_pred_importem_${stamp}.json`,backupJson,'application/json;charset=utf-8');
+  snapshot();state.history=incoming;
+  if(selectedHistory&&!state.history.some(h=>h.week===selectedHistory))selectedHistory=[...state.history].sort((a,b)=>b.week.localeCompare(a.week))[0]?.week||null;
+  render();if($('historyDialog')?.open){historyRows();historyDetail()}
+  notice(`Historie nahrazena (${incoming.length} týdnů). Záloha historie nabídnuta ke stažení a uložena v prohlížeči. GitHub: čeká na synchronizaci.`);
+ }catch(err){notice(err.message,true)}finally{e.target.value=''}
 };
 
 const ruleNames={fish:'Ryby – minimálně',legumes:'Luštěniny – minimálně',meatless:'Bezmasá – minimálně',sweetMax:'Sladká – maximálně',avoidLegumePair:'Ne kombinace luštěnina + luštěnina',avoidFishPair:'Ne kombinace ryba + rybí polévka'};
@@ -333,7 +351,22 @@ function openPicker(day,key){
     picking={day,key,kind:key==='soup'?'soup':'main'};
     $('pickerChoose').hidden=false;
     $('pickerTitle').textContent=`${weekdays[day]} – ${key==='soup'?'Polévka':key==='main'?'Oběd 1':'Oběd 2'}`;
-    $('pickerKind').value=picking.kind;$('pickerKind').disabled=true;$('pickerKindLabel').hidden=false;$('pickerCategory').replaceChildren(new Option('VŠECHNY',''));$('search').value='';$('pickerCategory').value='';$('pickerMealName').value='';pickerSelected=null;renderChoices();$('picker').showModal();$('search').focus()
+    $('pickerKind').value=picking.kind;$('pickerKind').disabled=true;$('pickerKindLabel').hidden=false;$('pickerCategory').replaceChildren(new Option('VŠECHNY',''));$('search').value='';$('pickerCategory').value='';const currentName=state.week.days[day]?.[key]||'';
+    const currentCat=key==='soup'?null:state.week.days[day]?.[key==='main'?'category':'category2'];
+    const matches=all(picking.kind).filter(x=>norm(x.name)===norm(currentName));
+    const match=matches.find(x=>currentCat&&x.cat===currentCat)||matches[0];
+    pickerSelected=match?{name:match.name,cat:match.cat}:null;
+    $('pickerMealName').value=currentName;
+    renderChoices();$('picker').showModal();$('search').focus({preventScroll:true});
+    // Po otevření posuň pouze seznam jídel, aby byl aktuální výběr uprostřed.
+    requestAnimationFrame(()=>centerPickerSelection())
+}
+
+function centerPickerSelection(){
+    const list=$('choices'),selected=Array.from(list.querySelectorAll('.choice.selected'))[0];
+    if(!selected)return;
+    const target=list.scrollTop+selected.getBoundingClientRect().top-list.getBoundingClientRect().top-(list.clientHeight-selected.offsetHeight)/2;
+    list.scrollTop=Math.max(0,Math.min(list.scrollHeight-list.clientHeight,target));
 }
 
 function renderChoices(){
@@ -342,7 +375,7 @@ function renderChoices(){
     if(categorySelect.options.length!==cats.length+1||cats.some((c,i)=>categorySelect.options[i+1]?.value!==c)){categorySelect.replaceChildren();categorySelect.add(new Option('VŠECHNY',''));for(const cat of cats)categorySelect.add(new Option(cat,cat));categorySelect.value=cats.includes(catFilter)?catFilter:'';}
     const current=picking.day===null?null:state.week.days[picking.day];
     // Presny podretezec nazvu NEBO kategorie, bez diakritiky; bez fuzzy shod a aliasu.
-    const options=all(kind).filter(x=>(!categorySelect.value||x.cat===categorySelect.value)&&(contains(x.name,q)||contains(x.cat,q))).filter(x=>!current||picking.key==='soup'||(picking.key==='main'?x.name!==current.main2:x.name!==current.main));
+    const options=all(kind).filter(x=>(!categorySelect.value||x.cat===categorySelect.value)&&(contains(x.name,q)||contains(x.cat,q))).filter(x=>!current||picking.key==='soup'||(picking.key==='main'?norm(x.name)!==norm(current.main2):norm(x.name)!==norm(current.main)));
     options.sort((a,b)=>a.name.localeCompare(b.name,'cs')||a.cat.localeCompare(b.cat,'cs'));
     const duplicateNames=new Map();
     for(const item of options){const key=norm(item.name);duplicateNames.set(key,(duplicateNames.get(key)||0)+1)}
