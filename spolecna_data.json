@@ -1339,7 +1339,7 @@
         "week": "2026-04-06",
         "days": [
           {
-            "closed": true,
+            "closed": false,
             "soup": "",
             "main": "",
             "category": "",
