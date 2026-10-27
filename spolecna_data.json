@@ -278,7 +278,7 @@
           "category": "SLADKÁ"
         },
         {
-          "soup": "Hrachová",
+          "soup": "hovězí s kapáním",
           "main": "Domažlické vepřové ragů, těstoviny",
           "category": "VEPŘOVÉ A UZENÉ"
         }
@@ -1691,7 +1691,9 @@
         "Zeleninová s pohankou": -1,
         "zelenin. s fridátovými nudlemi": 1,
         "Hovězí se strouháním": -1,
-        "ovarová": 1
+        "ovarová": 1,
+        "Hrachová": -1,
+        "hovězí s kapáním": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
@@ -1730,7 +1732,9 @@
         "zelenin. s fridátovými nudlemi ||| Bulgur s kuřecím masem a zeleninou": 1,
         "Hovězí se strouháním ||| Dukátové buchtičky se šódo": -1,
         "ovarová ||| Dukátové buchtičky se šódo": 0,
-        "ovarová ||| Dukátové buchtičky s krémem, Kakao": 1
+        "ovarová ||| Dukátové buchtičky s krémem, Kakao": 1,
+        "Hrachová ||| Domažlické vepřové ragů, těstoviny": -1,
+        "hovězí s kapáním ||| Domažlické vepřové ragů, těstoviny": 1
       }
     }
   }
