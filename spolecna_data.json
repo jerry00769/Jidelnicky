@@ -244,6 +244,7 @@
         ],
         "SLADKÁ": [
           "Dukátové buchtičky s krémem",
+          "Dukátové buchtičky s krémem, Kakao",
           "Knedlíky švestkové (bramborové) s mákem",
           "Kuskus s ovocem",
           "Livance",
@@ -273,7 +274,7 @@
         },
         {
           "soup": "ovarová",
-          "main": "Dukátové buchtičky se šódo",
+          "main": "Dukátové buchtičky s krémem, Kakao",
           "category": "SLADKÁ"
         },
         {
@@ -1664,7 +1665,9 @@
         "Krůtí maso na pórku, rýže": -1,
         "Krůtí nudličky s pórkem, Rýže dušená": 1,
         "Bulgur se zeleninou a kuřecím masem": -1,
-        "Bulgur s kuřecím masem a zeleninou": 1
+        "Bulgur s kuřecím masem a zeleninou": 1,
+        "Dukátové buchtičky se šódo": -1,
+        "Dukátové buchtičky s krémem, Kakao": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1726,7 +1729,8 @@
         "zelenin. s fridátovými nudlemi ||| Bulgur se zeleninou a kuřecím masem": 0,
         "zelenin. s fridátovými nudlemi ||| Bulgur s kuřecím masem a zeleninou": 1,
         "Hovězí se strouháním ||| Dukátové buchtičky se šódo": -1,
-        "ovarová ||| Dukátové buchtičky se šódo": 1
+        "ovarová ||| Dukátové buchtičky se šódo": 0,
+        "ovarová ||| Dukátové buchtičky s krémem, Kakao": 1
       }
     }
   }
