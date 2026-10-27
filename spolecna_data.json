@@ -266,7 +266,7 @@
           "category": "DRŮBEŽ A KRÁLÍK"
         },
         {
-          "soup": "Zeleninová s pohankou",
+          "soup": "zelenin. s fridátovými nudlemi",
           "main": "Bulgur se zeleninou a kuřecím masem",
           "category": "DRŮBEŽ A KRÁLÍK"
         },
@@ -1681,7 +1681,9 @@
         "Rajská s ovesnými vločkami": -1,
         "rajčatová s tarhoňou": 1,
         "Ovarová s kroupami": -1,
-        "zeleninová s celozrnnými nudlemi": 1
+        "zeleninová s celozrnnými nudlemi": 1,
+        "Zeleninová s pohankou": -1,
+        "zelenin. s fridátovými nudlemi": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
@@ -1714,7 +1716,9 @@
         "rajčatová s tarhoňou ||| Smažené rybí prsty, Brambory m.m.": 1,
         "Ovarová s kroupami ||| Krůtí maso na pórku, rýže": -1,
         "zeleninová s celozrnnými nudlemi ||| Krůtí maso na pórku, rýže": 0,
-        "zeleninová s celozrnnými nudlemi ||| Krůtí nudličky s pórkem, Rýže dušená": 1
+        "zeleninová s celozrnnými nudlemi ||| Krůtí nudličky s pórkem, Rýže dušená": 1,
+        "Zeleninová s pohankou ||| Bulgur se zeleninou a kuřecím masem": -1,
+        "zelenin. s fridátovými nudlemi ||| Bulgur se zeleninou a kuřecím masem": 1
       }
     }
   }
