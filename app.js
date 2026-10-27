@@ -216,19 +216,54 @@ function historyRows(){
 }
 
 function historyDetail(){
-    const h=state.history.find(x=>x.week===selectedHistory);
-    const el=$('historyPreview');el.replaceChildren();
-    $('historyTitle').textContent=h?`Jídelníček ${format(dateAt(h.week,0))} – ${format(dateAt(h.week,4))}`:'Vyber uložený týden';
-    for(const id of ['historyLoad','historyCopy','historyPrint','historyDelete'])$(id).disabled=!h;
-    if(!h)return;
-    for(let i=0;i<5;i++){
-        const d=h.days[i]||{};const day=document.createElement('section');day.className='history-day';
-        const name=document.createElement('strong');name.textContent=`${weekdays[i]} ${format(dateAt(h.week,i))}`;
-        day.append(name);
-        const content=document.createElement('div');
-        content.textContent=d.closed||(!d.soup&&!d.main)?'(nevaří se)':`Polévka: ${d.soup||'—'}\nOběd 1: ${d.main||'—'}${d.main2?'\nOběd 2: '+d.main2:''}`;
-        content.style.whiteSpace='pre-line';day.append(content);el.append(day)
-    }
+ const h=state.history.find(x=>x.week===selectedHistory),el=$('historyPreview');el.replaceChildren();
+ $('historyTitle').textContent=h?`Jídelníček ${format(dateAt(h.week,0))} – ${format(dateAt(h.week,4))}`:'Vyber uložený týden';
+ for(const id of ['historyLoad','historyCopy','historyPrint','historyDelete'])$(id).disabled=!h;
+ if(!h)return;
+ for(let i=0;i<5;i++){
+  const d=h.days[i]||{},day=document.createElement('section');day.className='history-day';
+  const header=document.createElement('div');header.className='history-day-head';
+  const name=document.createElement('strong');name.textContent=`${weekdays[i]} ${format(dateAt(h.week,i))}`;
+  const closed=document.createElement('button');closed.type='button';closed.className='history-closed-toggle alt';closed.textContent=d.closed?'Nevaří se':'Vaří se';
+  closed.onclick=()=>{snapshot();d.closed=!d.closed;render();historyDetail();notice('Stav vaření uložen do historie.');};
+  header.append(name,closed);day.append(header);
+  // Stejně jako v Pythonu: při Nevaří se skrýt VŠECHNA jídla,
+  // ale ponechat je beze změny v datech pro případné opětovné zapnutí.
+  if(!d.closed)for(const [key,label] of [['soup','Polévka'],['main','Oběd 1'],['main2','Oběd 2']]){
+   if(key==='main2'&&!d.main2&&!d.category2&&!h.days.some(x=>x.main2))continue;
+   const b=document.createElement('button');b.type='button';b.className='history-meal-edit';
+   b.textContent=`${label}: ${d[key]||(key==='soup'?'[Vybrat polévku]':'[Vybrat jídlo]')}`;b.title='Kliknutím upravit přímo v historii';
+   b.onclick=()=>openHistoryPicker(h.week,i,key);day.append(b);
+  }
+  el.append(day);
+ }
+}
+function bestCatalogMatch(kind,name,cat=''){
+ if(!name)return null;
+ const items=all(kind),needle=norm(name).trim();
+ const exact=items.find(x=>norm(x.name)===needle&&(!cat||x.cat===cat))||items.find(x=>norm(x.name)===needle);
+ if(exact)return exact;
+ const partial=items.filter(x=>norm(x.name).includes(needle)||needle.includes(norm(x.name)));
+ if(partial.length)return partial.sort((a,b)=>Number(b.cat===cat)-Number(a.cat===cat)||Math.abs(a.name.length-name.length)-Math.abs(b.name.length-name.length))[0];
+ const words=needle.split(/[^a-z0-9]+/).filter(w=>w.length>=4);
+ const ranked=items.map(x=>({item:x,score:words.filter(w=>norm(x.name).includes(w)).length})).sort((a,b)=>b.score-a.score);
+ return ranked[0]?.score>=2?ranked[0].item:null;
+}
+function openHistoryPicker(week,day,key){
+ const h=state.history.find(x=>x.week===week);if(!h)return;
+ const kind=key==='soup'?'soup':'main',d=h.days[day],currentName=d[key]||'',cat=key==='main'?'category':'category2';
+ picking={day,key,kind,historyWeek:week};
+ $('pickerTitle').textContent=`Historie – ${weekdays[day]} – ${key==='soup'?'Polévka':key==='main'?'Oběd 1':'Oběd 2'}`;
+ $('pickerKind').value=kind;$('pickerKind').disabled=true;$('pickerKindLabel').hidden=false;
+ $('pickerCategory').replaceChildren(new Option('VŠECHNY',''));$('search').value='';
+ pickerSelected=bestCatalogMatch(kind,currentName,key==='soup'?'':d[cat]);
+ $('pickerMealName').value=currentName;
+ $('pickerChoose').hidden=false;
+ renderChoices();$('picker').showModal();requestAnimationFrame(()=>requestAnimationFrame(centerPickerSelection));
+}
+function historyMutation(fn,message){
+ const h=state.history.find(x=>x.week===picking?.historyWeek);if(!h)throw Error('Historický týden již neexistuje.');
+ snapshot();fn(h.days[picking.day]);render();historyDetail();notice(message);
 }
 
 function showHistory(week){
@@ -307,7 +342,7 @@ function validHistoryRecords(data){
    if('closed' in d&&typeof d.closed!=='boolean')throw Error(`Neplatný příznak closed týdne ${h.week}, den ${j+1}.`);
   }
  }
- return data.map(h=>({...clone(h),days:h.days.map(d=>({...freshDay(),...d,closed:typeof d.closed==='boolean'?d.closed:(!d.soup&&!d.main)}))}));
+ return data.map(h=>({...clone(h),days:h.days.map(d=>({...freshDay(),...d,closed:typeof d.closed==='boolean'?d.closed:false}))}));
 }
 $('exportHistory').onclick=()=>safe(()=>{
  const records=validHistoryRecords(state.history);
@@ -353,18 +388,19 @@ function openPicker(day,key){
     $('pickerTitle').textContent=`${weekdays[day]} – ${key==='soup'?'Polévka':key==='main'?'Oběd 1':'Oběd 2'}`;
     $('pickerKind').value=picking.kind;$('pickerKind').disabled=true;$('pickerKindLabel').hidden=false;$('pickerCategory').replaceChildren(new Option('VŠECHNY',''));$('search').value='';$('pickerCategory').value='';const currentName=state.week.days[day]?.[key]||'';
     const currentCat=key==='soup'?null:state.week.days[day]?.[key==='main'?'category':'category2'];
-    const matches=all(picking.kind).filter(x=>norm(x.name)===norm(currentName));
-    const match=matches.find(x=>currentCat&&x.cat===currentCat)||matches[0];
+    const match=bestCatalogMatch(picking.kind,currentName,currentCat);
     pickerSelected=match?{name:match.name,cat:match.cat}:null;
     $('pickerMealName').value=currentName;
     renderChoices();$('picker').showModal();$('search').focus({preventScroll:true});
     // Po otevření posuň pouze seznam jídel, aby byl aktuální výběr uprostřed.
-    requestAnimationFrame(()=>centerPickerSelection())
+    requestAnimationFrame(()=>requestAnimationFrame(centerPickerSelection))
 }
 
 function centerPickerSelection(){
-    const list=$('choices'),selected=Array.from(list.querySelectorAll('.choice.selected'))[0];
+    const list=$('choices'),selected=list.querySelector('.choice.selected');
     if(!selected)return;
+    // U mobilu i PC počkej na rozměry otevřeného dialogu.
+    if(!list.clientHeight){requestAnimationFrame(centerPickerSelection);return;}
     const target=list.scrollTop+selected.getBoundingClientRect().top-list.getBoundingClientRect().top-(list.clientHeight-selected.offsetHeight)/2;
     list.scrollTop=Math.max(0,Math.min(list.scrollHeight-list.clientHeight,target));
 }
@@ -373,7 +409,7 @@ function renderChoices(){
     const kind=picking.kind,q=norm($('search').value.trim()),catFilter=$('pickerCategory').value,el=$('choices');el.replaceChildren();
     const cats=Object.keys(state.catalog[kind]||{});const categorySelect=$('pickerCategory');
     if(categorySelect.options.length!==cats.length+1||cats.some((c,i)=>categorySelect.options[i+1]?.value!==c)){categorySelect.replaceChildren();categorySelect.add(new Option('VŠECHNY',''));for(const cat of cats)categorySelect.add(new Option(cat,cat));categorySelect.value=cats.includes(catFilter)?catFilter:'';}
-    const current=picking.day===null?null:state.week.days[picking.day];
+    const current=picking.day===null?null:(picking.historyWeek?state.history.find(h=>h.week===picking.historyWeek)?.days[picking.day]:state.week.days[picking.day]);
     // Presny podretezec nazvu NEBO kategorie, bez diakritiky; bez fuzzy shod a aliasu.
     const options=all(kind).filter(x=>(!categorySelect.value||x.cat===categorySelect.value)&&(contains(x.name,q)||contains(x.cat,q))).filter(x=>!current||picking.key==='soup'||(picking.key==='main'?norm(x.name)!==norm(current.main2):norm(x.name)!==norm(current.main)));
     options.sort((a,b)=>a.name.localeCompare(b.name,'cs')||a.cat.localeCompare(b.cat,'cs'));
@@ -384,7 +420,7 @@ function renderChoices(){
         btn.textContent=duplicateNames.get(norm(item.name))>1?`${item.name}  [${item.cat}]`:item.name;
         if(pickerSelected?.name===item.name&&pickerSelected?.cat===item.cat){btn.classList.add('selected');btn.setAttribute('aria-pressed','true')}
         else btn.setAttribute('aria-pressed','false');
-        btn.onclick=()=>{pickerSelected={name:item.name,cat:item.cat};$('pickerMealName').value=item.name;renderChoices()};
+        btn.onclick=()=>{pickerSelected={name:item.name,cat:item.cat};$('pickerMealName').value=item.name;renderChoices();requestAnimationFrame(centerPickerSelection)};
         el.append(btn);
     }
     if(!options.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='Žádné odpovídající jídlo.';el.append(empty)}
@@ -432,6 +468,58 @@ function confirmNewMealCategory(kind,name){
 async function pickerCatalogEdit(operation){
  try {
  const kind=picking.kind,name=$('pickerMealName').value.trim();
+ if(picking.historyWeek){
+  const field=picking.key,categoryField=field==='main'?'category':'category2';
+  const old=state.history.find(h=>h.week===picking.historyWeek)?.days[picking.day]?.[field]||'';
+  if(operation==='remove'){
+   if(!old)return notice('Jídlo je již prázdné.');
+   if(!confirm(`Opravdu smazat „${old}“ z tohoto dne historie?`))return;
+   historyMutation(d=>{d[field]='';if(kind==='main')d[categoryField]='';},'Jídlo smazáno pouze z historie.');
+   $('picker').close();return;
+  }
+  if(name.length<2)throw Error('Zadej název jídla.');
+  if(operation==='rename'){
+   // Přejmenování katalogové položky je transakční: katalog, všechny přesné
+   // výskyty v historii a pracovní týden se mění v jednom snapshotu.
+   const chosen=pickerSelected;
+   const items=chosen&&state.catalog[kind]?.[chosen.cat];
+   if(!chosen||!items?.includes(chosen.name))throw Error('Přejmenování v databázi vyžaduje označené existující jídlo. Pokud chybí, nejprve ho přidej.');
+   if(items.some(x=>x!==chosen.name&&norm(x)===norm(name)))throw Error('Nový název už v kategorii existuje.');
+   const original=chosen.name,category=chosen.cat;
+   if(original===name&&old===name)return notice('Název se nezměnil.');
+   const targetWeek=state.history.find(h=>h.week===picking.historyWeek);
+   if(!targetWeek)throw Error('Historický týden již neexistuje.');
+   snapshot();
+   items[items.indexOf(original)]=name;
+   items.sort((a,b)=>a.localeCompare(b,'cs'));
+   const changeDay=(d)=>{
+    if(kind==='soup'){if(d.soup===original)d.soup=name;}
+    else {
+     if(d.main===original&&d.category===category)d.main=name;
+     if(d.main2===original&&d.category2===category)d.main2=name;
+    }
+   };
+   for(const week of state.history)for(const day of week.days)changeDay(day);
+   for(const day of state.week.days)changeDay(day);
+   // U kliknutého historického záznamu oprav také odlišný starý název.
+   const target=targetWeek.days[picking.day];target[field]=name;
+   if(kind==='main')target[categoryField]=category;
+   render();historyDetail();notice('Přejmenováno v katalogu i historii. Změny čekají na synchronizaci GitHubu.');
+   $('picker').close();return;
+  }
+  if(operation==='add'){
+   const found=all(kind).find(x=>norm(x.name)===norm(name));
+   const cat=found?.cat||await confirmNewMealCategory(kind,name);
+   if(!cat)return;
+   if(!state.catalog[kind]?.[cat])throw Error('Neplatná kategorie.');
+   historyMutation(d=>{
+    if(!found){state.catalog[kind][cat].push(name);state.catalog[kind][cat].sort((a,b)=>a.localeCompare(b,'cs'));}
+    d[field]=found?.name||name;if(kind==='main')d[categoryField]=cat;
+   },'Jídlo přidáno do historie i katalogu.');
+   $('picker').close();return;
+  }
+ }
+
  let cat=$('pickerCategory').value;
  if(operation==='add'){
   if(name.length<2)throw Error('Zadej název nového jídla.');
@@ -449,6 +537,14 @@ async function pickerCatalogEdit(operation){
    if(items.some(x=>x!==oldName&&norm(x)===norm(name)))throw Error('Jídlo už existuje.');
    if(name===oldName)return notice('Název se nezměnil.');
    snapshot();items[items.indexOf(oldName)]=name;
+   for(const week of state.history)for(const day of week.days){
+    if(kind==='soup'&&day.soup===oldName)day.soup=name;
+    if(kind==='main'){
+     if(day.main===oldName&&day.category===oldCat)day.main=name;
+     if(day.main2===oldName&&day.category2===oldCat)day.main2=name;
+    }
+   }
+
    for(const day of state.week.days){if(kind==='soup'&&day.soup===oldName)day.soup=name;if(kind==='main'){if(day.main===oldName&&day.category===oldCat)day.main=name;if(day.main2===oldName&&day.category2===oldCat)day.main2=name}}
    pickerSelected={name,cat:oldCat};
   }else{
@@ -463,6 +559,12 @@ async function pickerCatalogEdit(operation){
 $('pickerChoose').onclick=()=>safe(()=>{
  if(!picking||!pickerSelected)throw Error('Nejdříve označ jídlo nebo polévku v seznamu.');
  const item=pickerSelected,kind=picking.kind;
+ if(picking.historyWeek){
+  const field=picking.key,categoryField=field==='main'?'category':'category2';
+  historyMutation(d=>{d[field]=item.name;if(kind==='main')d[categoryField]=item.cat;},'Jídlo změněno přímo v historii.');
+  $('picker').close();return;
+ }
+
  if(!state.catalog[kind]?.[item.cat]?.includes(item.name))throw Error('Vybrané jídlo již není v databázi.');
  if(picking.day===0&&picking.key==='main'&&!state.week.days[0].closed&&!starts(item.cat,mondayCat(state.week.week))){
   const expected=mondayCat(state.week.week)==='RYBY'?'rybí':'luštěninové';
