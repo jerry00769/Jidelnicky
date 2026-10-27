@@ -260,7 +260,7 @@
           "category": "RYBY"
         },
         {
-          "soup": "Ovarová s kroupami",
+          "soup": "zeleninová s celozrnnými nudlemi",
           "main": "Krůtí maso na pórku, rýže",
           "category": "DRŮBEŽ A KRÁLÍK"
         },
@@ -1676,7 +1676,9 @@
         "drožďová": -1,
         "česneková s bramborem a vejcem": 1,
         "Rajská s ovesnými vločkami": -1,
-        "rajčatová s tarhoňou": 1
+        "rajčatová s tarhoňou": 1,
+        "Ovarová s kroupami": -1,
+        "zeleninová s celozrnnými nudlemi": 1
       },
       "pair": {
         "zeleninová s celozrnnými knedlíčky ||| Mexická pánev (vepř.maso, fazole) se sýrem, Chléb": -1,
@@ -1706,7 +1708,9 @@
         "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí": 1,
         "Rajská s ovesnými vločkami ||| Rybí filé s rajčaty, bazalkou, brambory": -1,
         "rajčatová s tarhoňou ||| Rybí filé s rajčaty, bazalkou, brambory": 0,
-        "rajčatová s tarhoňou ||| Smažené rybí prsty, Brambory m.m.": 1
+        "rajčatová s tarhoňou ||| Smažené rybí prsty, Brambory m.m.": 1,
+        "Ovarová s kroupami ||| Krůtí maso na pórku, rýže": -1,
+        "zeleninová s celozrnnými nudlemi ||| Krůtí maso na pórku, rýže": 1
       }
     }
   }
