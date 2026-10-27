@@ -249,45 +249,45 @@
       }
     },
     "week": {
-      "week": "2026-10-26",
+      "week": "2026-10-19",
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s bulgurem",
-          "main": "Rybí filé zapečené se špenátem, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "mrkvová",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
-          "category": "SLADKÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zeleninová s tarhoňou",
-          "main": "Nákyp rýžový se švestkami",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zelenin. s ovesnými vločkami",
-          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "soup": "hovězí s masem a vejcem",
+          "main": "Srbská čočka, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "čočková se zeleninou",
-          "main": "Omáčka rajčatová, Hovězí maso vařené, Těstoviny",
+          "soup": "bramborová",
+          "main": "Španělský ptáček rozházený, Rýže dušená",
           "category": "HOVĚZÍ A TELECÍ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "celerová se smaženým hráškem",
+          "main": "Těstovinový salát s kuřecím masem",
+          "category": "DRŮBEŽ A KRÁLÍK",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "z kysaného zelí",
+          "main": "Vepřové v mrkvi, Brambory",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s kuskusem",
+          "main": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
+          "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
           "category2": ""
         }
