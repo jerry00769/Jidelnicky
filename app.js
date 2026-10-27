@@ -54,7 +54,7 @@ const snapshot=()=>{undo.push(clone(state));if(undo.length>60)undo.shift();redo.
 
 // Kontrola je pouze čtecí; GitHub se nemění bez výslovného souhlasu.
 function auditCatalogHistory(){
- const key=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().toLocaleLowerCase('cs');
+ const key=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().replace(/\s+/g,' ').toLocaleLowerCase('cs');
  const known={soup:new Set(),main:new Set()};
  const extras={soup:[],main:[]};
  for(const kind of ['soup','main'])for(const [cat,items] of Object.entries(state.catalog[kind]||{}))for(const name of items){known[kind].add(key(name));extras[kind].push({name,cat})}
@@ -97,9 +97,9 @@ async function runCatalogAudit(){
   if(!Object.values(state.catalog[item.kind]).flat().some(x=>norm(x)===norm(item.name)))list.push(item.name);
  }
  for(const kind of ['soup','main'])for(const list of Object.values(state.catalog[kind]))list.sort((a,b)=>a.localeCompare(b,'cs'));
- render();save();notice(`Kontrola katalogu: doplněno ${choices.length} položek. Záloha nabídnuta ke stažení; GitHub synchronizuje standardním způsobem.`);
+ render();save();notice(`Kontrola databáze: doplněno ${choices.length} položek. Záloha nabídnuta ke stažení; GitHub synchronizuje standardním způsobem.`);
 }
-$('auditCatalog')?.addEventListener('click',()=>runCatalogAudit().catch(e=>notice('Kontrola katalogu selhala: '+e.message,true)));
+$('auditCatalog')?.addEventListener('click',()=>runCatalogAudit().catch(e=>notice('Kontrola databáze selhala: '+e.message,true)));
 
 let statusTimer;function notice(message,error=false){const el=$('status');el.textContent=message;el.className=error?'error':'';el.style.display='block';clearTimeout(statusTimer);statusTimer=setTimeout(()=>el.style.display='none',6500)}
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
