@@ -190,6 +190,7 @@
           "Rybí filé smažené, Bramborová kaše",
           "Rybí filé zapečené se špenátem, Brambory",
           "Rybí stripsy, Brambory",
+          "Smažené rybí prsty, Brambory m.m.",
           "Těstoviny penne s tuňákem a chery rajčaty",
           "Tilápie s rajčaty a sýrem, Brambory"
         ],
@@ -255,7 +256,7 @@
       "days": [
         {
           "soup": "rajčatová s tarhoňou",
-          "main": "Rybí filé s rajčaty, bazalkou, brambory",
+          "main": "Smažené rybí prsty, Brambory m.m.",
           "category": "RYBY"
         },
         {
@@ -1655,7 +1656,9 @@
         "Španělský plátek, Rýže dušená": -1,
         "Těstovinový salát se zeleninou a šunkou": 0,
         "Těstovinový salát s kuřecím masem": 1,
-        "Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí": 1
+        "Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí": 1,
+        "Rybí filé s rajčaty, bazalkou, brambory": -1,
+        "Smažené rybí prsty, Brambory m.m.": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1702,7 +1705,8 @@
         "česneková s bramborem a vejcem ||| Rybí filé zapečené se špenátem, Brambory": 1,
         "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí": 1,
         "Rajská s ovesnými vločkami ||| Rybí filé s rajčaty, bazalkou, brambory": -1,
-        "rajčatová s tarhoňou ||| Rybí filé s rajčaty, bazalkou, brambory": 1
+        "rajčatová s tarhoňou ||| Rybí filé s rajčaty, bazalkou, brambory": 0,
+        "rajčatová s tarhoňou ||| Smažené rybí prsty, Brambory m.m.": 1
       }
     }
   }
