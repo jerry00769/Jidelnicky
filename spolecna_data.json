@@ -1560,36 +1560,6 @@
         ]
       },
       {
-        "week": "2026-11-02",
-        "days": [
-          {
-            "soup": "Rajská s ovesnými vločkami",
-            "main": "Rybí filé s rajčaty, bazalkou, brambory",
-            "category": "RYBY"
-          },
-          {
-            "soup": "Ovarová s kroupami",
-            "main": "Krůtí maso na pórku, rýže",
-            "category": "DRŮBEŽ A KRÁLÍK"
-          },
-          {
-            "soup": "Zeleninová s pohankou",
-            "main": "Bulgur se zeleninou a kuřecím masem",
-            "category": "DRŮBEŽ A KRÁLÍK"
-          },
-          {
-            "soup": "Hovězí se strouháním",
-            "main": "Dukátové buchtičky se šódo",
-            "category": "SLADKÁ"
-          },
-          {
-            "soup": "Hrachová",
-            "main": "Domažlické vepřové ragů, těstoviny",
-            "category": "VEPŘOVÉ A UZENÉ"
-          }
-        ]
-      },
-      {
         "week": "2026-10-19",
         "days": [
           {
@@ -1631,6 +1601,36 @@
             "category": "VEPŘOVÉ A UZENÉ",
             "main2": "",
             "category2": ""
+          }
+        ]
+      },
+      {
+        "week": "2026-11-02",
+        "days": [
+          {
+            "soup": "rajčatová s tarhoňou",
+            "main": "Smažené rybí prsty, Brambory m.m.",
+            "category": "RYBY"
+          },
+          {
+            "soup": "zeleninová s celozrnnými nudlemi",
+            "main": "Krůtí nudličky s pórkem, Rýže dušená",
+            "category": "DRŮBEŽ A KRÁLÍK"
+          },
+          {
+            "soup": "zelenin. s fridátovými nudlemi",
+            "main": "Bulgur s kuřecím masem a zeleninou",
+            "category": "DRŮBEŽ A KRÁLÍK"
+          },
+          {
+            "soup": "ovarová",
+            "main": "Dukátové buchtičky s krémem, Kakao",
+            "category": "SLADKÁ"
+          },
+          {
+            "soup": "hovězí s kapáním",
+            "main": "Bratislavské vepřové plecko, Těstoviny",
+            "category": "VEPŘOVÉ A UZENÉ"
           }
         ]
       }
