@@ -255,32 +255,47 @@
       }
     },
     "week": {
-      "week": "2026-11-02",
+      "week": "2026-10-26",
       "days": [
         {
-          "soup": "rajčatová s tarhoňou",
-          "main": "Smažené rybí prsty, Brambory m.m.",
-          "category": "RYBY"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "zeleninová s celozrnnými nudlemi",
-          "main": "Krůtí nudličky s pórkem, Rýže dušená",
-          "category": "DRŮBEŽ A KRÁLÍK"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "zelenin. s fridátovými nudlemi",
-          "main": "Bulgur s kuřecím masem a zeleninou",
-          "category": "DRŮBEŽ A KRÁLÍK"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "ovarová",
-          "main": "Dukátové buchtičky s krémem, Kakao",
-          "category": "SLADKÁ"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         },
         {
-          "soup": "hovězí s kapáním",
-          "main": "Bratislavské vepřové plecko, Těstoviny",
-          "category": "VEPŘOVÉ A UZENÉ"
+          "closed": false,
+          "soup": "",
+          "main": "",
+          "category": "",
+          "main2": "",
+          "category2": ""
         }
       ]
     },
