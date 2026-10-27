@@ -279,7 +279,7 @@
         },
         {
           "soup": "hovězí s kapáním",
-          "main": "Domažlické vepřové ragů, těstoviny",
+          "main": "Bratislavské vepřové plecko, Těstoviny",
           "category": "VEPŘOVÉ A UZENÉ"
         }
       ]
@@ -1667,7 +1667,9 @@
         "Bulgur se zeleninou a kuřecím masem": -1,
         "Bulgur s kuřecím masem a zeleninou": 1,
         "Dukátové buchtičky se šódo": -1,
-        "Dukátové buchtičky s krémem, Kakao": 1
+        "Dukátové buchtičky s krémem, Kakao": 1,
+        "Domažlické vepřové ragů, těstoviny": -1,
+        "Bratislavské vepřové plecko, Těstoviny": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1734,7 +1736,8 @@
         "ovarová ||| Dukátové buchtičky se šódo": 0,
         "ovarová ||| Dukátové buchtičky s krémem, Kakao": 1,
         "Hrachová ||| Domažlické vepřové ragů, těstoviny": -1,
-        "hovězí s kapáním ||| Domažlické vepřové ragů, těstoviny": 1
+        "hovězí s kapáním ||| Domažlické vepřové ragů, těstoviny": 0,
+        "hovězí s kapáním ||| Bratislavské vepřové plecko, Těstoviny": 1
       }
     }
   }
