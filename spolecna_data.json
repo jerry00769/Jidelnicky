@@ -287,7 +287,7 @@
         {
           "closed": false,
           "soup": "zeleninová s kuskusem",
-          "main": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
+          "main": "Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí",
           "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
           "category2": ""
@@ -1663,12 +1663,13 @@
         "Srbská čočka, Chléb": 1,
         "Rybí filé po mlynářsku, Brambory": -1,
         "Španělský ptáček rozházený, Rýže dušená": 0,
-        "Vepřová pečeně selská, Bramborové knedlíky (směs)": 1,
+        "Vepřová pečeně selská, Bramborové knedlíky (směs)": 0,
         "Těstoviny s brokolicí": -1,
         "Vepřové v mrkvi, Brambory": 1,
         "Španělský plátek, Rýže dušená": -1,
         "Těstovinový salát se zeleninou a šunkou": 0,
-        "Těstovinový salát s kuřecím masem": 1
+        "Těstovinový salát s kuřecím masem": 1,
+        "Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí": 1
       },
       "soup": {
         "zeleninová s celozrnnými knedlíčky": -1,
@@ -1699,7 +1700,7 @@
         "celerová se smaženým hráškem ||| Španělský plátek, Rýže dušená": 0,
         "celerová se smaženým hráškem ||| Španělský ptáček rozházený, Rýže dušená": -1,
         "celerová se smaženým hráškem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 0,
-        "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 1,
+        "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs)": 0,
         "hovězí s játrovými knedlíčky ||| Těstoviny s brokolicí": -1,
         "hovězí s játrovými knedlíčky ||| Vepřové v mrkvi, Brambory": 0,
         "z kysaného zelí ||| Vepřové v mrkvi, Brambory": 1,
@@ -1710,7 +1711,8 @@
         "bramboračka ||| Španělský ptáček rozházený, Rýže dušená": -1,
         "bramborová ||| Španělský ptáček rozházený, Rýže dušená": 1,
         "drožďová ||| Rybí filé zapečené se špenátem, Brambory": -1,
-        "česneková s bramborem a vejcem ||| Rybí filé zapečené se špenátem, Brambory": 1
+        "česneková s bramborem a vejcem ||| Rybí filé zapečené se špenátem, Brambory": 1,
+        "zeleninová s kuskusem ||| Vepřová pečeně selská, Bramborové knedlíky (směs), Červené zelí": 1
       }
     }
   }
