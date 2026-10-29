@@ -1504,3 +1504,23 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
   #picker #pickerMealName {min-height:32px !important;padding:4px 8px !important;}
   #picker .picker-management-actions button {min-height:32px !important;padding:5px 3px !important;}
 }
+
+/* v29102026.08: landscape modal follows the *visual* viewport, not the
+   full page viewport. Android keyboard may shrink or shift that viewport. */
+@media screen and (min-width:681px) and (max-width:1800px) and (orientation:landscape) and (pointer:coarse) {
+ html.tablet-landscape-picker dialog#picker[open] {
+   inset:auto !important;
+   top:var(--picker-viewport-top, 6px) !important;
+   left:calc(var(--picker-viewport-left, 0px) + var(--picker-viewport-width, 100vw) / 2) !important;
+   right:auto !important;
+   transform:translateX(-50%) !important;
+   margin:0 !important;
+   width:min(760px, calc(var(--picker-viewport-width, 100vw) - 20px)) !important;
+   max-width:calc(var(--picker-viewport-width, 100vw) - 20px) !important;
+   height:var(--picker-viewport-height, calc(100vh - 12px)) !important;
+   max-height:var(--picker-viewport-height, calc(100vh - 12px)) !important;
+   overflow-y:auto !important;
+   overflow-x:hidden !important;
+ }
+ html.tablet-landscape-picker #picker #choices {min-height:35px !important;}
+}
