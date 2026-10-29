@@ -1465,3 +1465,42 @@ html.tablet-landscape-picker #picker #pickerCategory {min-height:34px;padding:5p
 html.tablet-landscape-picker #picker .picker-management {margin-top:4px;padding-top:5px;gap:3px;}
 html.tablet-landscape-picker #picker #pickerMealName {padding:5px 8px;min-height:32px;}
 html.tablet-landscape-picker #picker .picker-management-actions button {padding:6px 4px;min-height:34px;}
+
+/* v29102026.07 – velke dotykove tablety 11–13 palcu v landscape.
+   Nezavisi jen na sirce 1100px: 12" tablety maji casto 1200–1600 CSS px.
+   Pri otevrene klavesnici je scrollovatelny cely dialog, nikoli jen vysledky. */
+@media screen and (min-width:681px) and (max-width:1800px) and (orientation:landscape) and (pointer:coarse) {
+  dialog#picker[open] {
+    position:fixed !important;
+    inset:auto !important;
+    top:var(--picker-viewport-top, 6px) !important;
+    left:50% !important;
+    right:auto !important;
+    transform:translateX(-50%) !important;
+    margin:0 !important;
+    width:min(900px, calc(100vw - 24px)) !important;
+    max-width:calc(100vw - 24px) !important;
+    height:var(--picker-viewport-height, calc(100vh - 12px)) !important;
+    max-height:var(--picker-viewport-height, calc(100vh - 12px)) !important;
+    min-height:0 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    padding:8px 12px !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch;
+  }
+  #picker .dialogtop, #picker #pickerKindLabel, #picker #search,
+  #picker .picker-category-label, #picker .picker-management {flex:0 0 auto !important;}
+  #picker .dialogtop {margin-bottom:2px !important;}
+  #picker .dialogtop h2 {margin:0 !important;font-size:16px !important;}
+  #picker .dialogtop button {min-height:32px !important;padding:5px 10px !important;}
+  #picker #search {min-height:34px !important;margin-bottom:4px !important;padding:5px 8px !important;font-size:16px !important;}
+  #picker .picker-category-label {gap:2px !important;margin-bottom:4px !important;font-size:12px !important;}
+  #picker #pickerKind, #picker #pickerCategory {min-height:32px !important;padding:4px 8px !important;font-size:16px !important;}
+  #picker #choices {flex:1 1 70px !important;min-height:45px !important;max-height:none !important;overflow-y:auto !important;}
+  #picker .choice {padding:6px 9px !important;}
+  #picker .picker-management {margin-top:3px !important;padding-top:4px !important;gap:2px !important;}
+  #picker #pickerMealName {min-height:32px !important;padding:4px 8px !important;}
+  #picker .picker-management-actions button {min-height:32px !important;padding:5px 3px !important;}
+}
