@@ -1,4 +1,4 @@
-<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Generátor školních jídelníčků</title><link rel="icon" href="favicon.ico?v=1" sizes="any"><link rel="apple-touch-icon" href="icon-192.png"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#ffb43d"><link rel="stylesheet" href="style.css?v=2910202610"><style id="tablet-picker-stable-height">
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Generátor školních jídelníčků</title><link rel="icon" href="favicon.ico?v=1" sizes="any"><link rel="apple-touch-icon" href="icon-192.png"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#ffb43d"><link rel="stylesheet" href="style.css?v=81"><style id="tablet-picker-stable-height">
 /* Tablet: vyska dialogu nezavisi na poctu vysledku vyhledavani. */
 @media (min-width: 601px) and (max-width: 1100px) {
   dialog#picker[open] {
@@ -48,7 +48,7 @@
  dialog#picker .picker-management {margin-top:auto!important;}
 }
 </style></head><body>
-<header><div><h1>Generátor jídelníčků <small style="font-size:10px;font-weight:400;opacity:.7;white-space:nowrap;vertical-align:middle">v29102026.10</small></h1></div><div class="sync-area"><span id="savedBadge" role="status" aria-live="polite">GitHub: nepřipojeno</span><details class="github-settings"><summary>⚙ Nastavení</summary><div class="github-controls"><button id="ghConnect" type="button" class="alt">Připojit GitHub</button><button id="ghRefresh" type="button" class="alt" hidden>Načíst společná data</button><button id="ghResolve" type="button" class="alt" hidden>Vyřešit konflikt</button><button id="ghDisconnect" type="button" class="alt" hidden>Odpojit</button><p class="sync-hint">Změny se ukládají automaticky. Nová data se kontrolují při návratu do aplikace a průběžně. Při konfliktu se nic tiše nepřepíše.</p></div></details></div></header>
+<header><div><h1>Generátor jídelníčků <small style="font-size:10px;font-weight:400;opacity:.7;white-space:nowrap;vertical-align:middle">v29102026.11</small></h1></div><div class="sync-area"><span id="savedBadge" role="status" aria-live="polite">GitHub: nepřipojeno</span><details class="github-settings"><summary>⚙ Nastavení</summary><div class="github-controls"><button id="ghConnect" type="button" class="alt">Připojit GitHub</button><button id="ghRefresh" type="button" class="alt" hidden>Načíst společná data</button><button id="ghResolve" type="button" class="alt" hidden>Vyřešit konflikt</button><button id="ghDisconnect" type="button" class="alt" hidden>Odpojit</button><p class="sync-hint">Změny se ukládají automaticky. Nová data se kontrolují při návratu do aplikace a průběžně. Při konfliktu se nic tiše nepřepíše.</p></div></details></div></header>
 <main><section class="panel toolbar"><div class="toolbar-fields"><label>Týden od <span class="main-date-wrap"><input type="date" id="date" tabindex="-1" aria-hidden="true"><button type="button" id="openMainCalendar" class="main-date-overlay" aria-label="Vybrat týden v kalendáři" title="Vybrat týden v kalendáři"></button></span></label><label>Počet obědů <select id="count"><option value="1">1</option><option value="2">2</option></select></label><label>Neopakovat hlavní <input id="lockMain" type="number" min="0" max="20" value="8"><select id="lockMainMobile" class="mobile-lock-select" aria-label="Neopakovat hlavní"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8" selected>8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option></select></label><label>Neopakovat polévky <input id="lockSoup" type="number" min="0" max="20" value="3"><select id="lockSoupMobile" class="mobile-lock-select" aria-label="Neopakovat polévky"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option></select></label></div><div class="toolbar-actions"><button id="generate">Generuj další</button><button id="approve">Schválit a uložit</button><button id="validate" class="alt">Kontrola pravidel</button><button id="auditCatalog" class="alt">Kontrola databáze</button><button id="new" class="alt">Prázdný týden</button><button id="print" class="alt">Tisk / PDF</button><button id="csv" class="alt">Export CSV</button><button id="openHistory" class="alt">Historie</button><a class="help-link" href="napoveda.html?v=22" target="_blank" rel="noopener">Nápověda</a><button id="undo" class="alt">Zpět</button><button id="redo" class="alt">Znovu</button><details class="mobile-more" id="mobileMore"><summary>☰ Další</summary><div class="mobile-more-items"><button type="button" data-original="validate">Kontrola pravidel</button><button type="button" data-original="new">Prázdný týden</button><button type="button" data-original="print">Tisk / PDF</button><button type="button" data-original="csv">Export CSV</button><button type="button" data-original="openHistory">Historie</button><a href="napoveda.html?v=22" target="_blank" rel="noopener">Nápověda</a><button type="button" data-original="auditCatalog">Kontrola databáze</button></div></details></div></section>
 <section class="panel daybar"><strong>Vaří se:</strong><label><input type="checkbox" data-day="0" checked> Po</label><label><input type="checkbox" data-day="1" checked> Út</label><label><input type="checkbox" data-day="2" checked> St</label><label><input type="checkbox" data-day="3" checked> Čt</label><label><input type="checkbox" data-day="4" checked> Pá</label></section>
 <div class="layout"><section class="panel"><div class="heading"><h2>JÍDELNÍ LÍSTEK</h2><strong id="range"></strong></div><div id="days"></div><p class="muted">Klikni na polévku nebo oběd pro změnu. Nevařící dny zůstávají v jídelníčku označené.</p></section>
@@ -108,4 +108,34 @@ document.addEventListener('pointerdown',e=>{if(active&&!e.target.closest('.toolb
  function update(){picker.classList.toggle('picker-fixed-kind',kind.disabled);}
  new MutationObserver(update).observe(picker,{attributes:true,attributeFilter:['open']});
  update();
+})();</script><script id="mobile-picker-keyboard-v11">(function(){
+ var picker=document.getElementById('picker');
+ var search=document.getElementById('search');
+ if(!picker||!search)return;
+ var baseline=0;
+ function mobile(){return window.matchMedia('(max-width:600px)').matches;}
+ function height(){return window.visualViewport?window.visualViewport.height:window.innerHeight;}
+ function update(){
+  if(!picker.open||!mobile()){
+   picker.classList.remove('mobile-keyboard-open');
+   if(!picker.open)baseline=0;
+   return;
+  }
+  var current=height();
+  if(!baseline||current>baseline)baseline=current;
+  // Focus alone is insufficient: hardware keyboards and desktop emulation.
+  var typing=document.activeElement===search;
+  var reduced=baseline-current>Math.max(110,baseline*.19);
+  picker.classList.toggle('mobile-keyboard-open',typing&&reduced);
+ }
+ function checkLater(){update();setTimeout(update,100);setTimeout(update,300);setTimeout(update,600);}
+ picker.addEventListener('focusin',checkLater);
+ picker.addEventListener('focusout',function(){setTimeout(update,80);});
+ picker.addEventListener('click',function(e){
+  if(e.target.closest('#choices')&&document.activeElement===search){search.blur();}
+ });
+ new MutationObserver(checkLater).observe(picker,{attributes:true,attributeFilter:['open']});
+ if(window.visualViewport){visualViewport.addEventListener('resize',checkLater);visualViewport.addEventListener('scroll',update);}
+ window.addEventListener('resize',checkLater);
+ window.addEventListener('orientationchange',function(){baseline=0;checkLater();});
 })();</script></body></html>
