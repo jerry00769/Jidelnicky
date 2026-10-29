@@ -1557,3 +1557,16 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
   #picker .picker-management { display:grid !important; flex:0 0 auto !important; }
   #picker #choices { flex:1 1 0 !important; min-height:0 !important; }
 }
+
+/* v29102026.11 – pouze mobil: klavesnice = hledani + kategorie + vysledky.
+   Po zavreni klavesnice se cela sprava jidla vrati bez ztraty hodnot. */
+@media screen and (max-width:600px) {
+  #picker.mobile-keyboard-open .picker-management {
+    display:none !important;
+  }
+  #picker.mobile-keyboard-open #choices {
+    flex:1 1 0 !important;
+    min-height:0 !important;
+    overflow-y:auto !important;
+  }
+}
