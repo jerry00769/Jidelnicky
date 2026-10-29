@@ -1524,3 +1524,36 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
  }
  html.tablet-landscape-picker #picker #choices {min-height:35px !important;}
 }
+
+
+/* v29102026.09: vyber z jidelniho listku ma druh urceny nadpisem. */
+#picker.picker-fixed-kind #pickerKindLabel { display:none !important; }
+
+/* Kompaktni mobilni vyhledavani: pri psani ma prednost seznam vysledku. */
+@media screen and (max-width:600px) {
+  dialog#picker[open] {
+    box-sizing:border-box !important;
+    padding:9px 10px !important;
+    gap:0 !important;
+    height:var(--picker-viewport-height, calc(100dvh - 12px)) !important;
+    max-height:var(--picker-viewport-height, calc(100dvh - 12px)) !important;
+    overflow:hidden !important;
+  }
+  #picker .dialogtop { margin:0 0 5px !important; min-height:32px !important; }
+  #picker .dialogtop h2 { font-size:1rem !important; line-height:1.2 !important; margin:0 !important; }
+  #picker .dialogtop button { padding:5px 9px !important; min-height:32px !important; font-size:.85rem !important; }
+  #picker #search { min-height:38px !important; height:38px !important; padding:7px 9px !important; margin:0 0 5px !important; font-size:16px !important; }
+  #picker .picker-category-label { margin:0 0 5px !important; gap:2px !important; font-size:.76rem !important; }
+  #picker #pickerCategory, #picker #pickerKind { min-height:34px !important; height:34px !important; padding:4px 8px !important; font-size:16px !important; }
+  #picker #choices { flex:1 1 0 !important; min-height:0 !important; max-height:none !important; overflow-y:auto !important; }
+  #picker .picker-choice-row { margin:2px 0 !important; }
+  #picker .choice { min-height:35px !important; padding:6px 8px !important; font-size:.9rem !important; }
+  #picker .picker-management { padding-top:5px !important; margin-top:3px !important; gap:3px !important; }
+  #picker .picker-management label { font-size:.72rem !important; }
+  #picker #pickerMealName { min-height:35px !important; padding:5px 8px !important; font-size:16px !important; }
+  #picker .picker-management-actions { gap:4px !important; }
+  #picker .picker-management-actions button { min-height:35px !important; padding:5px 2px !important; font-size:.73rem !important; }
+  /* Behem hledani s otevrenou klavesnici uvolnit misto pro vysledky.
+     Sprava jidla se vrati po zavreni klavesnice / ztrate fokusu. */
+  #picker.picker-search-focused .picker-management { display:none !important; }
+}
