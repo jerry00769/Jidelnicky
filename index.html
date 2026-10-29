@@ -25,8 +25,30 @@
     flex-shrink: 0 !important;
   }
 }
+</style><style id="lenovo-picker-keyboard-fix">
+/* Older Android WebView: visual viewport height is supplied by JS in pixels. */
+@media (max-width: 1100px) {
+ dialog#picker[open] {
+  box-sizing:border-box!important;
+  position:fixed!important;
+  top:var(--picker-viewport-top, 0px)!important;
+  bottom:auto!important;
+  left:8px!important;right:8px!important;
+  width:calc(100% - 16px)!important;
+  max-width:none!important;
+  height:var(--picker-viewport-height, calc(100vh - 16px))!important;
+  max-height:var(--picker-viewport-height, calc(100vh - 16px))!important;
+  margin:0 auto!important;
+  padding:12px!important;
+  display:flex!important;flex-direction:column!important;
+  overflow:hidden!important;
+ }
+ dialog#picker #choices {flex:1 1 0!important;min-height:0!important;max-height:none!important;overflow-y:auto!important;overscroll-behavior:contain;}
+ dialog#picker .dialogtop,dialog#picker #pickerKindLabel,dialog#picker #search,dialog#picker .picker-category-label,dialog#picker .picker-management {flex-shrink:0!important;}
+ dialog#picker .picker-management {margin-top:auto!important;}
+}
 </style></head><body>
-<header><div><h1>Generátor jídelníčků <small style="font-size:10px;font-weight:400;opacity:.7;white-space:nowrap;vertical-align:middle">v29102026.03</small></h1></div><div class="sync-area"><span id="savedBadge" role="status" aria-live="polite">GitHub: nepřipojeno</span><details class="github-settings"><summary>⚙ Nastavení</summary><div class="github-controls"><button id="ghConnect" type="button" class="alt">Připojit GitHub</button><button id="ghRefresh" type="button" class="alt" hidden>Načíst společná data</button><button id="ghResolve" type="button" class="alt" hidden>Vyřešit konflikt</button><button id="ghDisconnect" type="button" class="alt" hidden>Odpojit</button><p class="sync-hint">Změny se ukládají automaticky. Nová data se kontrolují při návratu do aplikace a průběžně. Při konfliktu se nic tiše nepřepíše.</p></div></details></div></header>
+<header><div><h1>Generátor jídelníčků <small style="font-size:10px;font-weight:400;opacity:.7;white-space:nowrap;vertical-align:middle">v29102026.04</small></h1></div><div class="sync-area"><span id="savedBadge" role="status" aria-live="polite">GitHub: nepřipojeno</span><details class="github-settings"><summary>⚙ Nastavení</summary><div class="github-controls"><button id="ghConnect" type="button" class="alt">Připojit GitHub</button><button id="ghRefresh" type="button" class="alt" hidden>Načíst společná data</button><button id="ghResolve" type="button" class="alt" hidden>Vyřešit konflikt</button><button id="ghDisconnect" type="button" class="alt" hidden>Odpojit</button><p class="sync-hint">Změny se ukládají automaticky. Nová data se kontrolují při návratu do aplikace a průběžně. Při konfliktu se nic tiše nepřepíše.</p></div></details></div></header>
 <main><section class="panel toolbar"><div class="toolbar-fields"><label>Týden od <span class="main-date-wrap"><input type="date" id="date" tabindex="-1" aria-hidden="true"><button type="button" id="openMainCalendar" class="main-date-overlay" aria-label="Vybrat týden v kalendáři" title="Vybrat týden v kalendáři"></button></span></label><label>Počet obědů <select id="count"><option value="1">1</option><option value="2">2</option></select></label><label>Neopakovat hlavní <input id="lockMain" type="number" min="0" max="20" value="8"><select id="lockMainMobile" class="mobile-lock-select" aria-label="Neopakovat hlavní"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8" selected>8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option></select></label><label>Neopakovat polévky <input id="lockSoup" type="number" min="0" max="20" value="3"><select id="lockSoupMobile" class="mobile-lock-select" aria-label="Neopakovat polévky"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option></select></label></div><div class="toolbar-actions"><button id="generate">Generuj další</button><button id="approve">Schválit a uložit</button><button id="validate" class="alt">Kontrola pravidel</button><button id="auditCatalog" class="alt">Kontrola databáze</button><button id="new" class="alt">Prázdný týden</button><button id="print" class="alt">Tisk / PDF</button><button id="csv" class="alt">Export CSV</button><button id="openHistory" class="alt">Historie</button><a class="help-link" href="napoveda.html?v=22" target="_blank" rel="noopener">Nápověda</a><button id="undo" class="alt">Zpět</button><button id="redo" class="alt">Znovu</button><details class="mobile-more" id="mobileMore"><summary>☰ Další</summary><div class="mobile-more-items"><button type="button" data-original="validate">Kontrola pravidel</button><button type="button" data-original="new">Prázdný týden</button><button type="button" data-original="print">Tisk / PDF</button><button type="button" data-original="csv">Export CSV</button><button type="button" data-original="openHistory">Historie</button><a href="napoveda.html?v=22" target="_blank" rel="noopener">Nápověda</a><button type="button" data-original="auditCatalog">Kontrola databáze</button></div></details></div></section>
 <section class="panel daybar"><strong>Vaří se:</strong><label><input type="checkbox" data-day="0" checked> Po</label><label><input type="checkbox" data-day="1" checked> Út</label><label><input type="checkbox" data-day="2" checked> St</label><label><input type="checkbox" data-day="3" checked> Čt</label><label><input type="checkbox" data-day="4" checked> Pá</label></section>
 <div class="layout"><section class="panel"><div class="heading"><h2>JÍDELNÍ LÍSTEK</h2><strong id="range"></strong></div><div id="days"></div><p class="muted">Klikni na polévku nebo oběd pro změnu. Nevařící dny zůstávají v jídelníčku označené.</p></section>
@@ -54,4 +76,21 @@ sel.addEventListener('change',refresh);const obs=new MutationObserver(refresh);o
 refresh();const oldValue=Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype,'value');if(oldValue){Object.defineProperty(sel,'value',{get(){return oldValue.get.call(this)},set(v){oldValue.set.call(this,v);refresh()},configurable:true})}
 }
 document.addEventListener('pointerdown',e=>{if(active&&!e.target.closest('.toolbar-select-shell'))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-})();</script></body></html>
+})();</script><script id="lenovo-picker-keyboard-js">
+(function(){
+ const picker=document.getElementById('picker');if(!picker)return;
+ function fit(){
+  if(!picker.open)return;
+  const vv=window.visualViewport;
+  const h=vv?vv.height:window.innerHeight;
+  const top=vv?vv.offsetTop:0;
+  picker.style.setProperty('--picker-viewport-height',Math.max(220,Math.floor(h-12))+'px');
+  picker.style.setProperty('--picker-viewport-top',Math.round(top+6)+'px');
+ }
+ if(window.visualViewport){visualViewport.addEventListener('resize',fit);visualViewport.addEventListener('scroll',fit)}
+ window.addEventListener('resize',fit);
+ picker.addEventListener('focusin',()=>{fit();setTimeout(fit,100);setTimeout(fit,350)});
+ new MutationObserver(fit).observe(picker,{attributes:true,attributeFilter:['open']});
+ document.getElementById('search')?.addEventListener('input',fit);
+})();
+</script></body></html>
