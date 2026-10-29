@@ -1553,7 +1553,7 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
   #picker #pickerMealName { min-height:35px !important; padding:5px 8px !important; font-size:16px !important; }
   #picker .picker-management-actions { gap:4px !important; }
   #picker .picker-management-actions button { min-height:35px !important; padding:5px 2px !important; font-size:.73rem !important; }
-  /* Behem hledani s otevrenou klavesnici uvolnit misto pro vysledky.
-     Sprava jidla se vrati po zavreni klavesnice / ztrate fokusu. */
-  #picker.picker-search-focused .picker-management { display:none !important; }
+  /* Sprava jidla zustava dostupna i pri fokusu hledani. */
+  #picker .picker-management { display:grid !important; flex:0 0 auto !important; }
+  #picker #choices { flex:1 1 0 !important; min-height:0 !important; }
 }
