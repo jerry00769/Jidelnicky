@@ -1427,3 +1427,41 @@ select option:not(:checked) { background-color: #fff; color: #1c314c; }
     max-height:135px !important;
   }
 }
+
+/* v29102026.06: tablet na sirku, dialog vyberu se vejde nad klavesnici.
+   Trida se zapina pouze na dotykovem zarizeni v landscape. */
+html.tablet-landscape-picker dialog#picker[open] {
+  box-sizing:border-box !important;
+  position:fixed !important;
+  top:var(--picker-viewport-top, 6px) !important;
+  bottom:auto !important;
+  left:12px !important; right:12px !important;
+  margin:0 auto !important;
+  width:calc(100% - 24px) !important;
+  max-width:900px !important;
+  height:var(--picker-viewport-height, calc(100vh - 12px)) !important;
+  max-height:var(--picker-viewport-height, calc(100vh - 12px)) !important;
+  min-height:0 !important;
+  padding:9px 12px !important;
+  display:flex !important; flex-direction:column !important;
+  overflow-y:auto !important; overflow-x:hidden !important;
+}
+html.tablet-landscape-picker #picker .dialogtop,
+html.tablet-landscape-picker #picker #pickerKindLabel,
+html.tablet-landscape-picker #picker #search,
+html.tablet-landscape-picker #picker .picker-category-label,
+html.tablet-landscape-picker #picker .picker-management {flex-shrink:0 !important;}
+html.tablet-landscape-picker #picker #choices {
+  flex:1 1 90px !important; min-height:50px !important;
+  max-height:none !important; overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch;
+}
+html.tablet-landscape-picker #picker .dialogtop {margin-bottom:3px;}
+html.tablet-landscape-picker #picker .dialogtop h2 {margin:0;font-size:1.05rem;}
+html.tablet-landscape-picker #picker #search {min-height:34px;margin-bottom:5px;padding:6px 8px;font-size:16px;}
+html.tablet-landscape-picker #picker .picker-category-label {gap:2px;margin-bottom:5px;font-size:.82rem;}
+html.tablet-landscape-picker #picker #pickerKind,
+html.tablet-landscape-picker #picker #pickerCategory {min-height:34px;padding:5px 8px;font-size:16px;}
+html.tablet-landscape-picker #picker .picker-management {margin-top:4px;padding-top:5px;gap:3px;}
+html.tablet-landscape-picker #picker #pickerMealName {padding:5px 8px;min-height:32px;}
+html.tablet-landscape-picker #picker .picker-management-actions button {padding:6px 4px;min-height:34px;}
