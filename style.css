@@ -1726,3 +1726,53 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
     padding:5px 7px !important;
   }
 }
+
+/* Oprava Nastaveni: kompaktni nabidka pod hlavickou na mobilu a tabletu. */
+@media screen and (max-width: 900px) {
+  body > header .github-settings[open] .github-controls {
+    position: fixed !important;
+    top: calc(var(--github-settings-bottom, 58px) + 7px) !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: 420px !important;
+    margin: 0 12px 0 auto !important;
+    padding: 10px !important;
+    gap: 6px !important;
+    max-height: calc(100dvh - var(--github-settings-bottom, 58px) - 20px) !important;
+    overflow-y: auto !important;
+    z-index: 100 !important;
+  }
+  body > header .github-controls button {
+    min-height: 34px !important;
+    padding: 7px 10px !important;
+    font-size: 13px !important;
+    line-height: 1.25 !important;
+  }
+  body > header .github-controls .sync-hint {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    margin: 5px 0 0 !important;
+  }
+}
+
+/* v91: Nastaveni je ukotvene POD celou hlavickou, ne pres jeji nadpis. */
+@media screen and (max-width:900px) {
+ body > header { position:relative !important; overflow:visible !important; }
+ body > header .github-settings[open] .github-controls {
+   position:absolute !important; top:calc(100% + 7px) !important;
+   bottom:auto !important; left:auto !important; right:10px !important;
+   width:min(300px, calc(100vw - 20px)) !important; max-width:calc(100vw - 20px) !important;
+   max-height:calc(100dvh - 100px) !important; margin:0 !important;
+   padding:9px !important; gap:5px !important; z-index:2000 !important;
+ }
+ body > header .github-settings[open] .github-controls button:not([hidden]) {
+   display:flex !important; width:100% !important; height:34px !important;
+   min-height:34px !important; max-height:34px !important;
+   padding:5px 8px !important; font-size:12px !important;
+   line-height:1.2 !important; flex:none !important;
+ }
+ body > header .github-settings[open] .github-controls .sync-hint {
+   font-size:11px !important; line-height:1.35 !important; margin:4px 0 0 !important;
+ }
+}
