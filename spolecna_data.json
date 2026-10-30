@@ -266,31 +266,23 @@
       "days": [
         {
           "closed": false,
-          "soup": "pórková",
-          "main": "Rybí filé smažené, Bramborová kaše",
+          "soup": "rajčatová s těstovinami",
+          "main": "Tilápie s rajčaty a sýrem, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "luštěninová",
-          "main": "Kuskus s ovocem",
-          "category": "SLADKÁ",
+          "soup": "zelenin. s drožďovými knedlíčky",
+          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hráškový krém",
-          "main": "Těstoviny s brokolicí",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "brokolicová",
+          "soup": "česneková s bramborem a vejcem",
           "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
@@ -298,9 +290,17 @@
         },
         {
           "closed": false,
-          "soup": "zeleninová s těstovinovou rýží",
-          "main": "Smažené rybí prsty, Brambory m.m.",
-          "category": "RYBY",
+          "soup": "zimní zeleninová s ovesnými vločkami",
+          "main": "Omáčka koprová, Brambory, Vejce vařené",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "špenátová",
+          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         }
