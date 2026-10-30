@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "čočková se zeleninou",
-          "main": "Rybí filé zapečené se špenátem, Brambory",
+          "soup": "cizrnová",
+          "main": "Hejk pečený na bylinkovém másle, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "krupicová s vejcem",
-          "main": "Hovězí pečeně frankfurtská, Těstoviny",
-          "category": "HOVĚZÍ A TELECÍ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zelenin. s fridátovými nudlemi",
-          "main": "Pekingská směs, Rýže dušená",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "ze zahradních jahod",
-          "main": "Horňácký guláš (maso, fazole), Chléb",
+          "soup": "hráškový krém",
+          "main": "Čočkový kotlík, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "špenátová",
-          "main": "Dukátové buchtičky s krémem",
+          "soup": "z fazolových lusků",
+          "main": "Masová směs \"lamendr\", Rýže dušená",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s kapáním",
+          "main": "Nudle s mákem",
           "category": "SLADKÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová zahuštěná červenou čočkou",
+          "main": "Zeleninové rizoto",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
