@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "kapustová s rýží",
-          "main": "Rybí filé smažené, Bramborová kaše",
+          "soup": "z kysaného zelí s klobásou",
+          "main": "Tilápie s rajčaty a sýrem, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s drožďovými knedlíčky",
-          "main": "Španělská čočka s mletým masem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "rajčatová s těstovinou",
+          "main": "Vepřová kotleta na houbách, Těstoviny",
+          "category": "VEPŘOVÉ A UZENÉ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Omáčka rajčatová, Hovězí maso vařené, Těstoviny",
-          "category": "HOVĚZÍ A TELECÍ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "rychlá s vejcem",
-          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zelenin. s fridátovými nudlemi",
-          "main": "Pekingská směs, Rýže dušená",
+          "soup": "zeleninová s celozrnnými knedlíčky",
+          "main": "Nákyp rýžový se švestkami",
           "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s těstovinovou",
+          "main": "Kuře na paprice, Houskové knedlíky (kynuté)",
+          "category": "DRŮBEŽ A KRÁLÍK",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "ovarová",
+          "main": "Čočkový kotlík, Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         }
