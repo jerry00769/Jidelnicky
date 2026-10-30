@@ -266,24 +266,24 @@
       "days": [
         {
           "closed": false,
-          "soup": "česneková s bramborem a vejcem",
-          "main": "Losos přírodní, Brambory",
+          "soup": "z batátových brambor",
+          "main": "Těstoviny penne s tuňákem a chery rajčaty",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s quinoou",
-          "main": "Brokolicová poezie (květák, niva)",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "dýňový krém",
+          "main": "Knedlíky švestkové (bramborové) s mákem",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s kuskusem",
-          "main": "Horňácký guláš (maso, fazole), Chléb",
+          "soup": "hovězí s kapustou a rýží",
+          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
@@ -298,9 +298,9 @@
         },
         {
           "closed": false,
-          "soup": "bramborová",
-          "main": "Rybí filé po mlynářsku, Brambory",
-          "category": "RYBY",
+          "soup": "rajčatová s těstovinou",
+          "main": "Těstoviny se sýrovou omáčkou",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
