@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová s drožďovými knedlíčky",
-          "main": "Smažené rybí prsty, Brambory m.m.",
+          "soup": "pórková",
+          "main": "Rybí filé smažené, Bramborová kaše",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s rýží",
-          "main": "Kuřecí řízek smažený, Bramborová kaše",
-          "category": "DRŮBEŽ A KRÁLÍK",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "rajčatová s ovesnými vločkami",
-          "main": "Livance",
+          "soup": "luštěninová",
+          "main": "Kuskus s ovocem",
           "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s česnekovými krutony",
-          "main": "Těstovinový salát se zeleninou a šunkou",
+          "soup": "hráškový krém",
+          "main": "Těstoviny s brokolicí",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zel. vývar s dýňovým kapáním",
-          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "soup": "brokolicová",
+          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
           "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s těstovinovou rýží",
+          "main": "Smažené rybí prsty, Brambory m.m.",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         }
