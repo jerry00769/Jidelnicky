@@ -266,7 +266,7 @@
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s pohankou",
+          "soup": "zeleninová s drožďovými knedlíčky",
           "main": "Smažené rybí prsty, Brambory m.m.",
           "category": "RYBY",
           "main2": "",
@@ -274,33 +274,33 @@
         },
         {
           "closed": false,
-          "soup": "špenátová",
-          "main": "Sekaná zahradnická, Brambory",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "soup": "zelenin. s rýží",
+          "main": "Kuřecí řízek smažený, Bramborová kaše",
+          "category": "DRŮBEŽ A KRÁLÍK",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s ovesnými vločkami",
-          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
+          "soup": "rajčatová s ovesnými vločkami",
+          "main": "Livance",
+          "category": "SLADKÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s česnekovými krutony",
+          "main": "Těstovinový salát se zeleninou a šunkou",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s těstovinou",
-          "main": "Fazole a la Katův šleh, Chléb",
+          "soup": "zel. vývar s dýňovým kapáním",
+          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "vývar s drobením",
-          "main": "Rybí filé pečené na másle, Brambory",
-          "category": "RYBY",
           "main2": "",
           "category2": ""
         }
