@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "z míchaných luštěnin",
-          "main": "Obalované filé s brokolicí a sýrem, Brambory",
+          "soup": "zelenin. s ovesnými vločkami",
+          "main": "Rybí filé smažené, Bramborová kaše",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
+          "soup": "špenátová",
+          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
           "soup": "zeleninová s hrachovými nudlemi",
-          "main": "Nákyp rýžový s meruňkami",
-          "category": "BEZMASÁ SLANÁ",
+          "main": "Kaše krupicová",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s drožďovými knedlíčky",
-          "main": "Holandský řízek, Bramborová kaše",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "květáková s červenou čočkou",
-          "main": "Brokolicová poezie (květák, niva)",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s kapustou a rýží",
+          "soup": "pórková s vejci",
           "main": "Čočkový kotlík, Chléb",
           "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s těstovinovou",
+          "main": "Pekingská směs, Rýže dušená",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
