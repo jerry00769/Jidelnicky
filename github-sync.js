@@ -43,6 +43,10 @@ async function connect(){
    sha=saved.content.sha;setBaseline(local);markPending(json(app.getState())!==serial);connected=true;conflicted=false;controls();status('GitHub: společná data vytvořena');return;
   }
   const local=app.getState(),localJson=json(local),remoteJson=json(r.state),storedBaseline=localStorage.getItem(baselineKey);
+   // Stejný obsah není konflikt ani při starém příznaku dirty či novém SHA.
+   if(localJson===remoteJson){sha=r.sha;setBaseline(r.state);markPending(false);connected=true;conflicted=false;controls();status('GitHub: data synchronizována');return;}
+   // Pokud se lokálně nic fakticky nezměnilo, starý dirty příznak lze zrušit.
+   if(dirty&&storedBaseline===localJson)markPending(false);
   // Bezpečné obnovení offline zápisu: server se od poslední synchronizace nezměnil.
   if(dirty&&storedBaseline===remoteJson){
    sha=r.sha;baseline=storedBaseline;connected=true;conflicted=false;controls();
@@ -132,6 +136,8 @@ async function flush(){
   const current=app.getState(),serial=json(current);
   if(serial===baseline){if(json(app.getState())===serial){markPending(false);status('GitHub: data synchronizována')}else{markPending(true);status('GitHub: další místní změny čekají na odeslání…')}return}
   const r=await remote();
+  if(r&&json(r.state)===serial){sha=r.sha;setBaseline(r.state);if(json(app.getState())===serial){markPending(false);status('GitHub: data synchronizována')}return;}
+  if(r&&json(r.state)===baseline){sha=r.sha;}
   if(!r||r.sha!==sha){
    if(r&&await mergeAndPut(current,serial,r.state,r.sha))return;
    conflicted=true;connected=false;controls();status('GitHub: konflikt úprav – je potřeba rozhodnout v Nastavení. Místní data zachována.',true);return;
@@ -161,6 +167,7 @@ async function refresh(){
   const r=await remote();if(!r)throw Error('Společná data chybí.');
   if(r.sha!==sha){
    const local=app.getState();
+   if(json(local)===json(r.state)){sha=r.sha;setBaseline(r.state);markPending(false);status('GitHub: data synchronizována');return;}
    if(dirty||json(local)!==baseline){
     markPending(true);conflicted=true;connected=false;controls();status('GitHub: konflikt místních změn. Data nebyla přepsána.',true);return;
    }
