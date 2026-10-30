@@ -1572,10 +1572,38 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
 }
 
 /* Staly indikator synchronizace podle Sportky – PC, tablet i mobil. */
-#githubIndicator.github-indicator{position:fixed!important;left:12px!important;bottom:12px!important;right:auto!important;top:auto!important;z-index:1900!important;display:block!important;width:max-content!important;max-width:calc(100vw - 24px)!important;margin:0!important;padding:7px 10px!important;border-radius:7px!important;background:#e8eef6!important;border:1px solid #d5e0ed!important;box-shadow:0 2px 8px #0004!important;color:#1d4268!important;font:500 11px/1.2 Arial,sans-serif!important;overflow-wrap:anywhere!important;pointer-events:none!important}
-#githubIndicator.github-indicator.synced{color:#1d4268!important;border-color:#d5e0ed!important;background:#e8eef6!important}
-#githubIndicator.github-indicator.local-change{color:#1d4268!important;border-color:#d5e0ed!important;background:#e8eef6!important}
-#githubIndicator.github-indicator.error{color:#a82b37!important;border-color:#d5e0ed!important;background:#e8eef6!important}
+#githubIndicator.github-indicator{position:fixed!important;left:12px!important;bottom:12px!important;right:auto!important;top:auto!important;z-index:1900!important;display:block!important;width:max-content!important;max-width:calc(100vw - 24px)!important;margin:0!important;padding:7px 10px!important;border-radius:7px!important;background:#23395d!important;border:1px solid #405675!important;box-shadow:0 2px 8px #0004!important;color:#a8d5ff!important;font:500 11px/1.2 Arial,sans-serif!important;overflow-wrap:anywhere!important;pointer-events:none!important}
+#githubIndicator.github-indicator.synced{color:#9be3a5!important;border-color:#405675!important;background:#23395d!important}
+#githubIndicator.github-indicator.local-change{color:#a8d5ff!important;border-color:#405675!important;background:#23395d!important}
+#githubIndicator.github-indicator.error{color:#ffbf69!important;border-color:#405675!important;background:#23395d!important}
 
 /* Mobil: pri zobrazeni softwarove klavesnice skryt pouze indikator. */
 @media(max-width:600px){#githubIndicator.github-indicator.keyboard-hidden{display:none!important}}
+
+
+/* Oprava 30.10.2026: Nastaveni vedle nadpisu i na mobilu. */
+@media (max-width:650px) {
+  body > header {display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;}
+  body > header > div:first-child {min-width:0!important;flex:1 1 auto!important;}
+  body > header h1 {font-size:clamp(13px,3.6vw,18px)!important;white-space:nowrap!important;}
+  body > header h1 small {font-size:9px!important;}
+  body > header .sync-area {width:auto!important;min-width:0!important;flex:0 0 auto!important;display:flex!important;justify-content:flex-end!important;align-items:center!important;margin:0!important;}
+  body > header .github-settings {position:static!important;margin:0!important;}
+  body > header .github-settings summary {font-size:11px!important;white-space:nowrap!important;}
+}
+/* Pevna osmisloupcova mrizka vyzadovala vic mista nez uzsi okno.
+   V rozmezi 1100–1249 px prepnout na prehledne zalamovani bez pretoku. */
+@media (min-width:1100px) and (max-width:1249px) {
+  main .toolbar {display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:9px!important;min-width:0!important;}
+  main .toolbar .toolbar-fields {display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;width:100%!important;gap:8px!important;min-width:0!important;}
+  main .toolbar .toolbar-fields > label {grid-column:auto!important;grid-row:auto!important;min-width:0!important;width:100%!important;}
+  main .toolbar .toolbar-fields input,main .toolbar .toolbar-fields select,main .toolbar .toolbar-fields .main-date-wrap {width:100%!important;max-width:100%!important;min-width:0!important;}
+  main .toolbar .toolbar-actions {display:flex!important;flex-wrap:wrap!important;align-items:stretch!important;width:100%!important;gap:8px!important;min-width:0!important;}
+  main .toolbar .toolbar-actions > button,main .toolbar .toolbar-actions > .help-link {display:inline-flex!important;flex:1 1 125px!important;width:auto!important;min-width:0!important;max-width:100%!important;height:40px!important;min-height:40px!important;padding:6px 8px!important;white-space:normal!important;text-align:center!important;}
+  main .toolbar .toolbar-actions > #auditCatalog {display:none!important;}
+}
+/* U sirokeho desktopu take zabranit pretoku pri zvetsenem pismu. */
+@media (min-width:1250px) {
+  main .toolbar {grid-template-columns:minmax(110px,1fr) minmax(70px,.62fr) minmax(115px,1.16fr) minmax(115px,1.16fr) repeat(4,minmax(0,1.13fr))!important;min-width:0!important;}
+  main .toolbar > .toolbar-actions > button {min-width:0!important;max-width:100%!important;}
+}
