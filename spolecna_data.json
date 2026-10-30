@@ -266,40 +266,40 @@
       "days": [
         {
           "closed": false,
-          "soup": "květáková",
-          "main": "Rybí stripsy, Brambory",
+          "soup": "hovězí s játrovými knedlíčky",
+          "main": "Rybí filé smažené, Bramborová kaše",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "z kysaného zelí s klobásou",
-          "main": "Španělská čočka s mletým masem, Chléb",
+          "soup": "zelenin. s drožďovými knedlíčky",
+          "main": "Nákyp rýžový se švestkami",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "Špenátová s vajíčkem",
+          "main": "Těstoviny s brokolicí",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s celozrnnými knedlíčky",
+          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "dýňový krém",
-          "main": "Těstoviny penne s tuňákem a chery rajčaty",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "gulášová",
-          "main": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zeleninová s těstovinovou rýží",
-          "main": "Žebrácké maso, Brambory opékané",
+          "soup": "z fazolových lusků",
+          "main": "Špekové knedlíky, Zelí kysané",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
