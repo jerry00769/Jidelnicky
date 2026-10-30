@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "rajčatová s těstovinami",
-          "main": "Tilápie s rajčaty a sýrem, Brambory",
+          "soup": "koprová (kulajda)",
+          "main": "Rybí filé po mlynářsku, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s drožďovými knedlíčky",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "česneková s bramborem a vejcem",
-          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Omáčka koprová, Brambory, Vejce vařené",
+          "soup": "kmínová s vejcem",
+          "main": "Pekingská směs, Rýže dušená",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "špenátová",
-          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "soup": "zelenin. s drožďovými knedlíčky",
+          "main": "Rybí filé smažené, Bramborová kaše",
+          "category": "RYBY",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s těstovinami",
+          "main": "Hrachová kaše s cibulkou, Vepřové výpečky, Salát z červené řepy - příloha",
           "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "čočková",
+          "main": "Hovězí pečeně na houbách, Těstoviny",
+          "category": "HOVĚZÍ A TELECÍ",
           "main2": "",
           "category2": ""
         }
