@@ -661,7 +661,7 @@ $('approve').onclick=()=>safe(()=>{
     snapshot();state.history=state.history.filter(h=>h.week!==state.week.week);state.history.push(clone(state.week));render();notice(errors.length?'Jídelníček schválen s vědomou výjimkou a uložen do historie.':'Jídelníček schválen a uložen do historie.');
 });
 $('validate').onclick=()=>safe(()=>{const e=validate();notice(e.length?e.join(' · '):'Jídelníček splňuje nastavená pravidla.',!!e.length)});
-$('new').onclick=()=>safe(()=>{snapshot();const closed=state.week.days.map(d=>d.closed);state.week=freshWeek($('date').value);state.week.days.forEach((d,i)=>d.closed=closed[i]);render();notice('Prázdný týden připraven.')});
+
 $('undo').onclick=()=>{if(!undo.length)return notice('Není co vrátit.');redo.push(clone(state));state=undo.pop();render();notice('Změna vrácena.')};
 $('redo').onclick=()=>{~redo.length||notice('Není co zopakovat.');if(!redo.length)return;undo.push(clone(state));state=redo.pop();render();notice('Změna zopakována.')};
 $('date').onchange=()=>safe(()=>{snapshot();state.week=freshWeek($('date').value);render()});
@@ -750,31 +750,8 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 
     } // výchozí TXT a historie pouze při prvním spuštění
-    // Automatické generování pouze při prvním spuštění.
-    // Existující pracovní jídelníček se nikdy nepřepisuje.
-    const hasMeals = state.week.days.some(d =>
-        d.soup || d.main || d.main2
-    );
-
-    // Nový uživatel má prázdný pracovní týden.
-    // Pokud již má uložený stav, ponecháme jej beze změny.
-    const isFirstStart =
-        localStorage.getItem(storeKey) === null;
-
-    if (isFirstStart && !hasMeals) {
-        try {
-            // Generátor používá datum z formuláře.
-            $('date').value = state.week.week;
-
-            state.week = generate();
-            console.log('První jídelníček byl automaticky vygenerován.');
-        } catch (e) {
-            console.error('Automatické generování se nezdařilo:', e);
-            notice('První jídelníček se nepodařilo vygenerovat: ' +
-                   e.message, true);
-        }
-    }
-
+    // Při prvním spuštění zůstává pracovní týden prázdný pro ruční výběr.
+    // Tlačítko Generovat jej může kdykoli vyplnit automaticky.
     render();
     // Nejprve dokončíme první načtení z GitHubu. Jinak by vzdálená data
     // mohla následně přepsat uživatelem zvolený aktuální týden.

@@ -1619,3 +1619,13 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
 }
 @media(max-width:600px){.desktop-more{display:none!important}}
 /* Potvrzovací toast už není používán; chyby se zobrazují dál. */
+
+/* v85: jedna nabídka Další pro úzké obrazovky; žádný samostatný Prázdný týden. */
+.desktop-more{display:none!important}
+@media (min-width:1100px){
+  main .toolbar .toolbar-actions > #auditCatalog{display:flex!important;grid-column:8;grid-row:1}
+}
+@media (min-width:601px) and (max-width:1099px){
+  .mobile-more{display:block!important;position:relative;flex:1 1 125px;min-width:0}
+  .mobile-more > summary{min-height:40px}
+}
