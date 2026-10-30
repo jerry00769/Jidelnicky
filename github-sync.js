@@ -5,8 +5,10 @@ const owner='jerry00769',repo='jidelnicky',file='spolecna_data.json';
 const tokenKey='jidelnicky_github_token_v1',pendingKey='jidelnicky_github_pending_v3',baselineKey='jidelnicky_github_baseline_v3';
 let token=localStorage.getItem(tokenKey)||'',sha=null,baseline=null,app=null,busy=false,dirty=localStorage.getItem(pendingKey)==='1',timer=null,connected=false,conflicted=false;
 const $=id=>document.getElementById(id);
+let manualMessageUntil=0,manualMessageTimer=null;
 const json=x=>JSON.stringify(x);
 const status=(msg,err=false)=>{
+ if(!err&&Date.now()<manualMessageUntil&&/data synchronizována/i.test(msg))return;
  const b=$('githubIndicator');
  if(b){
   const message=String(msg).replace(/^GitHub:\s*/i,'');
@@ -160,11 +162,19 @@ function changed(){
  status('GitHub: čeká na synchronizaci změn…');clearTimeout(timer);timer=setTimeout(flush,1200)
 }
 function manualRefreshConfirmed(){
- const old=document.getElementById('ghManualNotice');if(old)old.remove();
- const el=document.createElement('div');el.id='ghManualNotice';el.setAttribute('role','status');
- el.textContent='✓ Společná data znovu načtena';
- Object.assign(el.style,{position:'fixed',bottom:'54px',left:'12px',maxWidth:'calc(100vw - 24px)',padding:'9px 12px',borderRadius:'8px',background:'#23395d',color:'#9be3a5',font:'600 13px Arial,sans-serif',boxShadow:'0 3px 12px #0005',zIndex:'2001',pointerEvents:'none'});
- document.body.append(el);setTimeout(()=>{if(el.isConnected)el.remove()},3500);
+ clearTimeout(manualMessageTimer);
+ manualMessageUntil=Date.now()+3500;
+ const b=$('githubIndicator');
+ if(b){
+  b.textContent='↻ Společná data znovu načtena';
+  b.classList.remove('synced','error');
+  b.classList.add('local-change');
+  b.title='GitHub: Společná data znovu načtena';
+ }
+ manualMessageTimer=setTimeout(()=>{
+  manualMessageUntil=0;
+  status('GitHub: data synchronizována');
+ },3500);
 }
 async function refresh(manual=false){
  const syncOk=()=>{status('GitHub: data synchronizována');if(manual)manualRefreshConfirmed()};
