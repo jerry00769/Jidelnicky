@@ -266,31 +266,31 @@
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s kroupami",
-          "main": "Losos přírodní, Brambory",
+          "soup": "zelenin. s rýží",
+          "main": "Rybí filé pečené na másle, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "rajčatová s ovesnými vločkami",
-          "main": "Lotrinské tagliatelle se sýrem",
+          "soup": "zeleninová s těstovinovou",
+          "main": "Španělská čočka s mletým masem, Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "brokolicová",
+          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "pórková s vejci",
-          "main": "Vepřová kotleta na houbách, Těstoviny",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "drožďová",
+          "soup": "hráškový krém",
           "main": "Dukátové buchtičky s krémem",
           "category": "SLADKÁ",
           "main2": "",
@@ -299,7 +299,7 @@
         {
           "closed": false,
           "soup": "zel. vývar s dýňovým kapáním",
-          "main": "Hrachová kaše s cibulkou, Vepřové výpečky, Salát z červené řepy - příloha",
+          "main": "Čočkový kotlík, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
