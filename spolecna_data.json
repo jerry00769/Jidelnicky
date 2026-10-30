@@ -266,31 +266,31 @@
       "days": [
         {
           "closed": false,
-          "soup": "rychlá s vejcem",
-          "main": "Těstoviny penne s tuňákem a chery rajčaty",
+          "soup": "kapustová s rýží",
+          "main": "Rybí filé smažené, Bramborová kaše",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová se sýrovým kapáním",
-          "main": "Těstovinový salát se zeleninou a šunkou",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s těstovinou",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "soup": "zelenin. s drožďovými knedlíčky",
+          "main": "Španělská čočka s mletým masem, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s játrovými noky",
+          "soup": "zimní zeleninová s ovesnými vločkami",
+          "main": "Omáčka rajčatová, Hovězí maso vařené, Těstoviny",
+          "category": "HOVĚZÍ A TELECÍ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "rychlá s vejcem",
           "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
@@ -298,9 +298,9 @@
         },
         {
           "closed": false,
-          "soup": "hovězí s vaječnou jíškou",
-          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "zelenin. s fridátovými nudlemi",
+          "main": "Pekingská směs, Rýže dušená",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
