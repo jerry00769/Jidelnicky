@@ -1607,3 +1607,15 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
   main .toolbar {grid-template-columns:minmax(110px,1fr) minmax(70px,.62fr) minmax(115px,1.16fr) minmax(115px,1.16fr) repeat(4,minmax(0,1.13fr))!important;min-width:0!important;}
   main .toolbar > .toolbar-actions > button {min-width:0!important;max-width:100%!important;}
 }
+
+/* v84: Prázdný týden zůstává dostupný v nabídce Další. */
+@media(min-width:601px){
+ .toolbar-actions > #new{display:none!important}
+ .desktop-more{display:block;position:relative;align-self:center;z-index:30}
+ .desktop-more > summary{list-style:none;cursor:pointer;background:#e6eef7;color:#1d4268;border-radius:7px;padding:10px 13px;min-height:38px;font-size:12px;text-align:center;white-space:nowrap}
+ .desktop-more > summary::-webkit-details-marker{display:none}
+ .desktop-more-items{position:absolute;right:0;top:calc(100% + 5px);background:white;border:1px solid #dbe4ee;box-shadow:0 8px 20px #1234;border-radius:8px;padding:7px;min-width:160px;z-index:50}
+ .desktop-more-items button{width:100%;white-space:nowrap}
+}
+@media(max-width:600px){.desktop-more{display:none!important}}
+/* Potvrzovací toast už není používán; chyby se zobrazují dál. */
