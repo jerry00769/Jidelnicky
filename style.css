@@ -1695,3 +1695,34 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
     margin:0!important;box-sizing:border-box!important;
   }
 }
+
+
+/* v89: Kompaktni horni ovladani pouze na telefonech; rozlozeni zustava stejne. */
+@media screen and (max-width:600px) {
+  main > section.panel.toolbar { padding:10px 10px !important; gap:7px !important; }
+  main .toolbar .toolbar-fields { column-gap:7px !important; row-gap:6px !important; }
+  main .toolbar .toolbar-fields > label { gap:3px !important; line-height:15px !important; }
+  main .toolbar .toolbar-fields input#date,
+  main .toolbar .toolbar-fields select#count,
+  main .toolbar .toolbar-fields input#lockMain,
+  main .toolbar .toolbar-fields input#lockSoup,
+  main .toolbar .toolbar-fields .main-date-wrap,
+  main .toolbar .toolbar-fields .main-date-overlay,
+  main .toolbar .toolbar-fields .toolbar-select-shell,
+  main .toolbar .toolbar-fields .toolbar-select-trigger {
+    box-sizing:border-box !important;
+    height:34px !important; min-height:34px !important; max-height:34px !important;
+  }
+  main .toolbar .toolbar-actions { gap:5px !important; }
+  main .toolbar .toolbar-actions > #generate,
+  main .toolbar .toolbar-actions > #approve {
+    height:38px !important; min-height:38px !important;
+    padding:5px 6px !important;
+  }
+  main .toolbar .toolbar-actions > #undo,
+  main .toolbar .toolbar-actions > #redo,
+  main .toolbar .mobile-more > summary {
+    height:36px !important; min-height:36px !important;
+    padding:5px 7px !important;
+  }
+}
