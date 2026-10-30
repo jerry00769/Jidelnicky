@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "hovězí s játrovými noky",
-          "main": "Rybí filé pečené na másle, Brambory",
+          "soup": "luštěninová",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "gulášová",
-          "main": "Hovězí pečeně na paprice, Vícezrnný knedlík (směs)",
-          "category": "HOVĚZÍ A TELECÍ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "bramborová",
-          "main": "Těstovinový salát se zeleninou a šunkou",
+          "soup": "Špenátová s vajíčkem",
+          "main": "Těstovinový salát s marinovaným tofu",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "z míchaných luštěnin",
-          "main": "Livance",
-          "category": "SLADKÁ",
+          "soup": "zeleninová s těstovinovou",
+          "main": "Fazole a la Katův šleh, Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s celozrnnými nudlemi",
-          "main": "Čočkový kotlík, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "rajčatová s těstovinami",
+          "main": "Pizza se šunkou",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zelenin. s kroupami",
+          "main": "Livance",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         }
