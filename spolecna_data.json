@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "koprová (kulajda)",
-          "main": "Rybí filé po mlynářsku, Brambory",
+          "soup": "květáková",
+          "main": "Rybí stripsy, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "kmínová s vejcem",
-          "main": "Pekingská směs, Rýže dušená",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zelenin. s drožďovými knedlíčky",
-          "main": "Rybí filé smažené, Bramborová kaše",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zeleninová s těstovinami",
-          "main": "Hrachová kaše s cibulkou, Vepřové výpečky, Salát z červené řepy - příloha",
+          "soup": "z kysaného zelí s klobásou",
+          "main": "Španělská čočka s mletým masem, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "čočková",
-          "main": "Hovězí pečeně na houbách, Těstoviny",
-          "category": "HOVĚZÍ A TELECÍ",
+          "soup": "dýňový krém",
+          "main": "Těstoviny penne s tuňákem a chery rajčaty",
+          "category": "RYBY",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "gulášová",
+          "main": "Vepřová pečeně selská, Bramborové knedlíky (směs)",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "zeleninová s těstovinovou rýží",
+          "main": "Žebrácké maso, Brambory opékané",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
