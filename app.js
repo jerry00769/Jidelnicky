@@ -451,7 +451,7 @@ function centerPickerSelection(){
     if(!selected)return;
     // U mobilu i PC počkej na rozměry otevřeného dialogu.
     if(!list.clientHeight){requestAnimationFrame(centerPickerSelection);return;}
-    const target=list.scrollTop+selected.getBoundingClientRect().top-list.getBoundingClientRect().top-(list.clientHeight-selected.offsetHeight)/2;
+    const target=list.scrollTop+selected.getBoundingClientRect().top-list.getBoundingClientRect().top;
     list.scrollTop=Math.max(0,Math.min(list.scrollHeight-list.clientHeight,target));
 }
 
@@ -671,7 +671,7 @@ for(const key of ['lockMain','lockSoup'])$(key+'Mobile').onchange=()=>{snapshot(
 document.querySelectorAll('[data-day]').forEach(input=>input.onchange=()=>{snapshot();const d=state.week.days[+input.dataset.day];d.closed=!input.checked;if(d.closed){d.soup='';d.main='';d.category='';d.main2='';d.category2=''}render()});
 $('saveRules').onclick=()=>safe(()=>{const rules={};for(const input of document.querySelectorAll('[data-rule]'))rules[input.dataset.rule]=input.type==='checkbox'?input.checked:Math.max(0,Math.min(5,Number(input.value)||0));const txt=$('txtRules').value;const previous=state.txt;state.txt=txt;try{txtRules()}catch(e){state.txt=previous;throw e}state.txt=previous;snapshot();state.txt=txt;state.rules=rules;render();save();notice('Pravidla uložena.')});
 $('pickerKind').onchange=()=>{if(picking?.day!==null)return;picking.kind=$('pickerKind').value;pickerSelected=null;$('pickerMealName').value='';$('pickerCategory').replaceChildren(new Option('VŠECHNY',''));renderChoices()};
-$('search').oninput=renderChoices;
+$('search').oninput=()=>{pickerSelected=null;renderChoices()};
 $('pickerCategory').onchange=renderChoices;
 $('closePicker').onclick=()=>$('picker').close();
 $('csv').onclick=csv;
