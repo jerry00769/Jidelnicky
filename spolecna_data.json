@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "pórková",
-          "main": "Rybí stripsy, Brambory",
+          "soup": "hovězí s játrovými noky",
+          "main": "Rybí filé pečené na másle, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "česneková s osmaženou hostičkou",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
+          "soup": "gulášová",
+          "main": "Hovězí pečeně na paprice, Vícezrnný knedlík (směs)",
+          "category": "HOVĚZÍ A TELECÍ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "bramborová",
+          "main": "Těstovinový salát se zeleninou a šunkou",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "z míchaných luštěnin",
+          "main": "Livance",
           "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s těstovinou",
-          "main": "Sekaná zahradnická, Brambory",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "květáková",
-          "main": "Hrachová kaše s cibulkou, Párky",
+          "soup": "zeleninová s celozrnnými nudlemi",
+          "main": "Čočkový kotlík, Chléb",
           "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zel. vývar s dýňovým kapáním",
-          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
-          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
