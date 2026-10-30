@@ -266,31 +266,15 @@
       "days": [
         {
           "closed": false,
-          "soup": "hrachová s hrachovými krutony",
-          "main": "Těstoviny penne s tuňákem a chery rajčaty",
+          "soup": "drůbková s nudlemi",
+          "main": "Losos přírodní, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "brokolicová",
-          "main": "Sekaná zahradnická, Brambory",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zelenin. s kroupami",
-          "main": "Vepřový řízek přírodní, Brambory",
-          "category": "VEPŘOVÉ A UZENÉ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "dýňový krém",
+          "soup": "zimní zeleninová s ovesnými vločkami",
           "main": "Guláš maďarský, Rýže dušená",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
@@ -298,8 +282,24 @@
         },
         {
           "closed": false,
-          "soup": "z batátových brambor",
-          "main": "Španělská čočka s mletým masem, Chléb",
+          "soup": "zeleninová s těstovinovou rýží",
+          "main": "Kuskus s ovocem",
+          "category": "SLADKÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s česnekovými krutony",
+          "main": "Žebrácké maso, Brambory opékané",
+          "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "kmínová s vejcem",
+          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
