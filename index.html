@@ -1,4 +1,4 @@
-<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Generátor školních jídelníčků</title><link rel="icon" href="favicon.ico?v=1" sizes="any"><link rel="apple-touch-icon" href="icon-192.png"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#ffb43d"><link rel="stylesheet" href="style.css?v=89"><style id="tablet-picker-stable-height">
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Generátor školních jídelníčků</title><link rel="icon" href="favicon.ico?v=1" sizes="any"><link rel="apple-touch-icon" href="icon-192.png"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#ffb43d"><link rel="stylesheet" href="style.css?v=90"><style id="tablet-picker-stable-height">
 /* Tablet: vyska dialogu nezavisi na poctu vysledku vyhledavani. */
 @media (min-width: 601px) and (max-width: 1100px) {
   dialog#picker[open] {
@@ -161,4 +161,13 @@ document.addEventListener('pointerdown',e=>{if(active&&!e.target.closest('.toolb
   window.addEventListener('resize',deferred);
   window.addEventListener('orientationchange',function(){baseline=0;deferred();});
   deferred();
+})();</script><script id="github-settings-close-fix">(function(){
+  const settings=document.querySelector('header .github-settings');
+  if(!settings)return;
+  const update=()=>{const header=document.querySelector('body > header');if(header)document.documentElement.style.setProperty('--github-settings-bottom',Math.ceil(header.getBoundingClientRect().bottom)+'px')};
+  settings.addEventListener('toggle',()=>{if(settings.open)update()});
+  document.addEventListener('pointerdown',e=>{if(settings.open&&!settings.contains(e.target))settings.open=false});
+  settings.querySelectorAll('.github-controls button').forEach(button=>button.addEventListener('click',()=>{settings.open=false}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&settings.open)settings.open=false});
+  window.addEventListener('resize',()=>{if(settings.open)update()});
 })();</script></body></html>
