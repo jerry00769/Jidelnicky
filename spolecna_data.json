@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "květáková s červenou čočkou",
-          "main": "Rybí filé smažené, Bramborová kaše",
+          "soup": "česneková s bramborem a vejcem",
+          "main": "Losos přírodní, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "vývar s drobením",
-          "main": "Rizoto srbské",
+          "soup": "zeleninová s quinoou",
+          "main": "Brokolicová poezie (květák, niva)",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "krupicová s vejcem",
-          "main": "Španělská čočka s mletým masem, Chléb",
+          "soup": "hovězí s kuskusem",
+          "main": "Horňácký guláš (maso, fazole), Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zimní zeleninová s ovesnými vločkami",
-          "main": "Králík pečený, Bramborové knedlíky (směs)",
-          "category": "DRŮBEŽ A KRÁLÍK",
+          "soup": "pórková",
+          "main": "Fazole a la Katův šleh, Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "mrkvová",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "bramborová",
+          "main": "Rybí filé po mlynářsku, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         }
