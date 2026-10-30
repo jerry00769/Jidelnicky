@@ -1629,3 +1629,69 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
   .mobile-more{display:block!important;position:relative;flex:1 1 125px;min-width:0}
   .mobile-more > summary{min-height:40px}
 }
+
+/* v86: pri uzsim desktopu Kontrola databaze primo pod Kontrolou pravidel. */
+@media (min-width:1250px) and (max-width:1399px) {
+  main .toolbar .toolbar-actions > #auditCatalog {
+    display:flex!important; grid-column:7!important; grid-row:2!important;
+    min-width:0!important; width:100%!important;
+  }
+}
+@media (min-width:1100px) and (max-width:1249px) {
+  main .toolbar .toolbar-actions {
+    display:grid!important; grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:8px!important;
+  }
+  main .toolbar .toolbar-actions > #validate {grid-column:4!important;grid-row:1!important;}
+  main .toolbar .toolbar-actions > #auditCatalog {
+    display:flex!important;grid-column:4!important;grid-row:2!important;
+    width:100%!important;min-width:0!important;
+  }
+  main .toolbar .toolbar-actions > #generate {grid-column:1!important;grid-row:1!important;}
+  main .toolbar .toolbar-actions > #approve {grid-column:2!important;grid-row:1!important;}
+  main .toolbar .toolbar-actions > #print {grid-column:3!important;grid-row:1!important;}
+  main .toolbar .toolbar-actions > #csv {grid-column:1!important;grid-row:2!important;}
+  main .toolbar .toolbar-actions > #openHistory {grid-column:2!important;grid-row:2!important;}
+  main .toolbar .toolbar-actions > .help-link {grid-column:3!important;grid-row:2!important;}
+  main .toolbar .toolbar-actions > #undo {grid-column:1!important;grid-row:3!important;}
+  main .toolbar .toolbar-actions > #redo {grid-column:2!important;grid-row:3!important;}
+}
+
+/* v87: Obě kontroly vždy pod sebou na širokém PC.
+   Ostatní prvky ponechávají původní pozice. */
+@media (min-width:1400px) {
+  main .toolbar .toolbar-actions > #auditCatalog {
+    display:flex!important;
+    grid-column:7!important;
+    grid-row:2!important;
+    width:100%!important;
+    min-width:0!important;
+  }
+}
+
+/* v88: Stredne siroky desktop – vsech 10 tlacitek ve 2 radach.
+   Kontroly sdileji posledni sloupec, zadny treti radek. */
+@media (min-width:1100px) and (max-width:1249px) {
+  main .toolbar .toolbar-actions {
+    display:grid!important;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    grid-template-rows:repeat(2,40px)!important;
+    gap:8px!important;
+    width:100%!important;
+  }
+  main .toolbar .toolbar-actions > #generate {grid-column:1!important;grid-row:1!important;}
+  main .toolbar .toolbar-actions > #approve {grid-column:2!important;grid-row:1!important;}
+  main .toolbar .toolbar-actions > #print {grid-column:3!important;grid-row:1!important;}
+  main .toolbar .toolbar-actions > #undo {grid-column:4!important;grid-row:1!important;}
+  main .toolbar .toolbar-actions > #validate {grid-column:5!important;grid-row:1!important;}
+  main .toolbar .toolbar-actions > #csv {grid-column:1!important;grid-row:2!important;}
+  main .toolbar .toolbar-actions > #openHistory {grid-column:2!important;grid-row:2!important;}
+  main .toolbar .toolbar-actions > .help-link {grid-column:3!important;grid-row:2!important;}
+  main .toolbar .toolbar-actions > #redo {grid-column:4!important;grid-row:2!important;}
+  main .toolbar .toolbar-actions > #auditCatalog {grid-column:5!important;grid-row:2!important;}
+  main .toolbar .toolbar-actions > button,
+  main .toolbar .toolbar-actions > .help-link {
+    width:100%!important;min-width:0!important;max-width:100%!important;
+    margin:0!important;box-sizing:border-box!important;
+  }
+}
