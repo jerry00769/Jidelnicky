@@ -266,40 +266,40 @@
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s rýží",
-          "main": "Rybí filé pečené na másle, Brambory",
+          "soup": "hrachová s hrachovými krutony",
+          "main": "Těstoviny penne s tuňákem a chery rajčaty",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s těstovinovou",
-          "main": "Španělská čočka s mletým masem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "brokolicová",
+          "main": "Sekaná zahradnická, Brambory",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "brokolicová",
-          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
+          "soup": "zelenin. s kroupami",
+          "main": "Vepřový řízek přírodní, Brambory",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "dýňový krém",
+          "main": "Guláš maďarský, Rýže dušená",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hráškový krém",
-          "main": "Dukátové buchtičky s krémem",
-          "category": "SLADKÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zel. vývar s dýňovým kapáním",
-          "main": "Čočkový kotlík, Chléb",
+          "soup": "z batátových brambor",
+          "main": "Španělská čočka s mletým masem, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
