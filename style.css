@@ -1572,10 +1572,10 @@ html.tablet-landscape-picker #picker .picker-management-actions button {padding:
 }
 
 /* Staly indikator synchronizace podle Sportky – PC, tablet i mobil. */
-#githubIndicator.github-indicator{position:fixed!important;left:12px!important;bottom:12px!important;right:auto!important;top:auto!important;z-index:1900!important;display:block!important;width:max-content!important;max-width:calc(100vw - 24px)!important;margin:0!important;padding:7px 10px!important;border-radius:7px!important;background:#1b2942!important;border:1px solid #3a4c68!important;box-shadow:0 2px 8px #0004!important;color:#8bb7f0!important;font:500 11px/1.2 Arial,sans-serif!important;overflow-wrap:anywhere!important;pointer-events:none!important}
-#githubIndicator.github-indicator.synced{color:#9be3a5!important;border-color:#3a4c68!important;background:#1b2942!important}
-#githubIndicator.github-indicator.local-change{color:#a8d5ff!important;border-color:#3a4c68!important;background:#1b2942!important}
-#githubIndicator.github-indicator.error{color:#ffbf69!important;border-color:#3a4c68!important;background:#1b2942!important}
+#githubIndicator.github-indicator{position:fixed!important;left:12px!important;bottom:12px!important;right:auto!important;top:auto!important;z-index:1900!important;display:block!important;width:max-content!important;max-width:calc(100vw - 24px)!important;margin:0!important;padding:7px 10px!important;border-radius:7px!important;background:#e8eef6!important;border:1px solid #d5e0ed!important;box-shadow:0 2px 8px #0004!important;color:#1d4268!important;font:500 11px/1.2 Arial,sans-serif!important;overflow-wrap:anywhere!important;pointer-events:none!important}
+#githubIndicator.github-indicator.synced{color:#1d4268!important;border-color:#d5e0ed!important;background:#e8eef6!important}
+#githubIndicator.github-indicator.local-change{color:#1d4268!important;border-color:#d5e0ed!important;background:#e8eef6!important}
+#githubIndicator.github-indicator.error{color:#a82b37!important;border-color:#d5e0ed!important;background:#e8eef6!important}
 
 /* Mobil: pri zobrazeni softwarove klavesnice skryt pouze indikator. */
 @media(max-width:600px){#githubIndicator.github-indicator.keyboard-hidden{display:none!important}}
