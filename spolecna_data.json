@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "luštěninová",
-          "main": "Rybí filé zapečené se špenátem, Brambory",
+          "soup": "zeleninová s celozrnnými nudlemi",
+          "main": "Hejk pečený na bylinkovém másle, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "Špenátová s vajíčkem",
-          "main": "Těstovinový salát s marinovaným tofu",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "hrachová s hrachovými krutony",
+          "main": "Dukátové buchtičky s krémem, Kakao",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s těstovinovou",
-          "main": "Fazole a la Katův šleh, Chléb",
+          "soup": "drůbková s nudlemi",
+          "main": "Hrachová kaše s cibulkou, Párky",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "rajčatová s těstovinami",
-          "main": "Pizza se šunkou",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "soup": "drožďová",
+          "main": "Bramborák",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zelenin. s kroupami",
-          "main": "Livance",
-          "category": "SLADKÁ",
+          "soup": "zeleninová s quinoou",
+          "main": "Kapustové karbanátky, Bramborová kaše",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
           "main2": "",
           "category2": ""
         }
