@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s ovesnými vločkami",
-          "main": "Rybí filé smažené, Bramborová kaše",
+          "soup": "čočková se zeleninou",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "špenátová",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "krupicová s vejcem",
+          "main": "Hovězí pečeně frankfurtská, Těstoviny",
+          "category": "HOVĚZÍ A TELECÍ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s hrachovými nudlemi",
-          "main": "Kaše krupicová",
-          "category": "SLADKÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "pórková s vejci",
-          "main": "Čočkový kotlík, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zeleninová s těstovinovou",
+          "soup": "zelenin. s fridátovými nudlemi",
           "main": "Pekingská směs, Rýže dušená",
           "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "ze zahradních jahod",
+          "main": "Horňácký guláš (maso, fazole), Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "špenátová",
+          "main": "Dukátové buchtičky s krémem",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         }
