@@ -101,7 +101,7 @@ async function runCatalogAudit(){
 }
 $('auditCatalog')?.addEventListener('click',()=>runCatalogAudit().catch(e=>notice('Kontrola databáze selhala: '+e.message,true)));
 
-let statusTimer;function notice(message,error=false){const el=$('status');if(!el)return;clearTimeout(statusTimer);if(!error){el.style.display='none';return;}el.textContent=message;el.className='error';el.style.display='block';statusTimer=setTimeout(()=>el.style.display='none',6500)}
+let statusTimer;function notice(message,error=false){const el=$('status');el.textContent=message;el.className=error?'error':'';el.style.display='block';clearTimeout(statusTimer);statusTimer=setTimeout(()=>el.style.display='none',6500)}
 const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 const starts=(cat,p)=>cat.startsWith(p);
 const all=(kind)=>Object.entries(state.catalog[kind]||{}).flatMap(([cat,items])=>items.map(name=>({cat,name})));
@@ -309,7 +309,7 @@ function openHistoryPicker(week,day,key){
  pickerSelected=bestCatalogMatch(kind,currentName,key==='soup'?'':d[cat]);
  $('pickerMealName').value=currentName;
  $('pickerChoose').hidden=false;
- renderChoices();$('picker').showModal();requestAnimationFrame(()=>requestAnimationFrame(centerPickerSelection));
+ renderChoices();$('picker').showModal();$('search').focus({preventScroll:true});requestAnimationFrame(()=>requestAnimationFrame(centerPickerSelection));
 }
 function historyMutation(fn,message){
  const h=state.history.find(x=>x.week===picking?.historyWeek);if(!h)throw Error('Historický týden již neexistuje.');
@@ -661,7 +661,7 @@ $('approve').onclick=()=>safe(()=>{
     snapshot();state.history=state.history.filter(h=>h.week!==state.week.week);state.history.push(clone(state.week));render();notice(errors.length?'Jídelníček schválen s vědomou výjimkou a uložen do historie.':'Jídelníček schválen a uložen do historie.');
 });
 $('validate').onclick=()=>safe(()=>{const e=validate();notice(e.length?e.join(' · '):'Jídelníček splňuje nastavená pravidla.',!!e.length)});
-
+$('new').onclick=()=>safe(()=>{snapshot();const closed=state.week.days.map(d=>d.closed);state.week=freshWeek($('date').value);state.week.days.forEach((d,i)=>d.closed=closed[i]);render();notice('Prázdný týden připraven.')});
 $('undo').onclick=()=>{if(!undo.length)return notice('Není co vrátit.');redo.push(clone(state));state=undo.pop();render();notice('Změna vrácena.')};
 $('redo').onclick=()=>{~redo.length||notice('Není co zopakovat.');if(!redo.length)return;undo.push(clone(state));state=redo.pop();render();notice('Změna zopakována.')};
 $('date').onchange=()=>safe(()=>{snapshot();state.week=freshWeek($('date').value);render()});
@@ -750,8 +750,31 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 
     } // výchozí TXT a historie pouze při prvním spuštění
-    // Při prvním spuštění zůstává pracovní týden prázdný pro ruční výběr.
-    // Tlačítko Generovat jej může kdykoli vyplnit automaticky.
+    // Automatické generování pouze při prvním spuštění.
+    // Existující pracovní jídelníček se nikdy nepřepisuje.
+    const hasMeals = state.week.days.some(d =>
+        d.soup || d.main || d.main2
+    );
+
+    // Nový uživatel má prázdný pracovní týden.
+    // Pokud již má uložený stav, ponecháme jej beze změny.
+    const isFirstStart =
+        localStorage.getItem(storeKey) === null;
+
+    if (isFirstStart && !hasMeals) {
+        try {
+            // Generátor používá datum z formuláře.
+            $('date').value = state.week.week;
+
+            state.week = generate();
+            console.log('První jídelníček byl automaticky vygenerován.');
+        } catch (e) {
+            console.error('Automatické generování se nezdařilo:', e);
+            notice('První jídelníček se nepodařilo vygenerovat: ' +
+                   e.message, true);
+        }
+    }
+
     render();
     // Nejprve dokončíme první načtení z GitHubu. Jinak by vzdálená data
     // mohla následně přepsat uživatelem zvolený aktuální týden.
