@@ -6,7 +6,21 @@ const tokenKey='jidelnicky_github_token_v1',pendingKey='jidelnicky_github_pendin
 let token=localStorage.getItem(tokenKey)||'',sha=null,baseline=null,app=null,busy=false,dirty=localStorage.getItem(pendingKey)==='1',timer=null,connected=false,conflicted=false;
 const $=id=>document.getElementById(id);
 const json=x=>JSON.stringify(x);
-const status=(msg,err=false)=>{const b=$('savedBadge');if(b)b.textContent=msg; if(err)app?.notice(msg,true)};
+const status=(msg,err=false)=>{
+ const b=$('githubIndicator');
+ if(b){
+  const message=String(msg).replace(/^GitHub:\s*/i,'');
+  const pending=/čeká|načítám|odesíl|změny uloženy místně|kontrol|připojov/i.test(message);
+  const failed=err||/nepřipojeno|odpojeno|konflikt|chybí|chyba|nelze|rozdílné|nevyřešen/i.test(message);
+  const kind=failed?'error':pending?'info':'ok';
+  b.textContent=(kind==='ok'?'✓ ':kind==='error'?'⚠ ':'↻ ')+message;
+  b.classList.toggle('synced',kind==='ok');
+  b.classList.toggle('local-change',kind==='info');
+  b.classList.toggle('error',kind==='error');
+  b.title='GitHub: '+message;
+ }
+ if(err)app?.notice(msg,true);
+};
 function markPending(v){dirty=v;if(v)localStorage.setItem(pendingKey,'1');else localStorage.removeItem(pendingKey)}
 function setBaseline(s){baseline=json(s);localStorage.setItem(baselineKey,baseline)}
 function backup(s){const blob=new Blob([JSON.stringify(s,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='jidelnicky_zaloha_konflikt_'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000)}
