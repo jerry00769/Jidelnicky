@@ -266,40 +266,40 @@
       "days": [
         {
           "closed": false,
-          "soup": "hovězí se strouháním",
-          "main": "Rybí stripsy, Brambory",
+          "soup": "rychlá s vejcem",
+          "main": "Těstoviny penne s tuňákem a chery rajčaty",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s tarhoňou",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
-          "category": "SLADKÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "zeleninová s ovesnými vločkami",
-          "main": "Rybí filé pečené na másle, Brambory",
-          "category": "RYBY",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "drůbková s nudlemi",
-          "main": "Těstoviny se sýrovou omáčkou",
+          "soup": "zeleninová se sýrovým kapáním",
+          "main": "Těstovinový salát se zeleninou a šunkou",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s kuskusem",
-          "main": "Horňácký guláš (maso, fazole), Chléb",
+          "soup": "hovězí s těstovinou",
+          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s játrovými noky",
+          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s vaječnou jíškou",
+          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
