@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová s celozrnnými nudlemi",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "soup": "drůbková s nudlemi",
+          "main": "Rybí filé pečené na másle, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hrachová s hrachovými krutony",
-          "main": "Dukátové buchtičky s krémem, Kakao",
-          "category": "SLADKÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "drůbková s nudlemi",
-          "main": "Hrachová kaše s cibulkou, Párky",
+          "soup": "z batátových brambor",
+          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "drožďová",
-          "main": "Bramborák",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "zimní zeleninová s ovesnými vločkami",
+          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s quinoou",
-          "main": "Kapustové karbanátky, Bramborová kaše",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "soup": "hráškový krém",
+          "main": "Bramborové knedlíky plň.uzeným masem (salám), Zelí kysané",
+          "category": "VEPŘOVÉ A UZENÉ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí se strouháním",
+          "main": "Brokolicová poezie (květák, niva)",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         }
