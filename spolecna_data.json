@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "rajčatová s tarhoňou",
-          "main": "Losos přírodní, Brambory",
+          "soup": "květáková s červenou čočkou",
+          "main": "Rybí filé smažené, Bramborová kaše",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "česneková s osmaženou hostičkou",
-          "main": "Těstovinový salát se zeleninou a šunkou",
+          "soup": "vývar s drobením",
+          "main": "Rizoto srbské",
           "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "dýňový krém",
-          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
+          "soup": "krupicová s vejcem",
+          "main": "Španělská čočka s mletým masem, Chléb",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s těstovinami",
-          "main": "Horňácký guláš (maso, fazole), Chléb",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "zimní zeleninová s ovesnými vločkami",
+          "main": "Králík pečený, Bramborové knedlíky (směs)",
+          "category": "DRŮBEŽ A KRÁLÍK",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová s těstovinovou rýží",
-          "main": "Dukátové buchtičky s krémem, Kakao",
-          "category": "SLADKÁ",
+          "soup": "mrkvová",
+          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         }
