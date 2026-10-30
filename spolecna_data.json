@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "cizrnová",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "soup": "hovězí se strouháním",
+          "main": "Rybí stripsy, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hráškový krém",
-          "main": "Čočkový kotlík, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "z fazolových lusků",
-          "main": "Masová směs \"lamendr\", Rýže dušená",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "hovězí s kapáním",
-          "main": "Nudle s mákem",
+          "soup": "zeleninová s tarhoňou",
+          "main": "Knedlíky švestkové (bramborové) s mákem",
           "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "zeleninová zahuštěná červenou čočkou",
-          "main": "Zeleninové rizoto",
+          "soup": "zeleninová s ovesnými vločkami",
+          "main": "Rybí filé pečené na másle, Brambory",
+          "category": "RYBY",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "drůbková s nudlemi",
+          "main": "Těstoviny se sýrovou omáčkou",
           "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s kuskusem",
+          "main": "Horňácký guláš (maso, fazole), Chléb",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         }
