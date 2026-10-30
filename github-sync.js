@@ -159,7 +159,15 @@ function changed(){
  if(!connected){status('GitHub: změny uloženy místně, čekají na připojení',true);return}
  status('GitHub: čeká na synchronizaci změn…');clearTimeout(timer);timer=setTimeout(flush,1200)
 }
-async function refresh(){
+function manualRefreshConfirmed(){
+ const old=document.getElementById('ghManualNotice');if(old)old.remove();
+ const el=document.createElement('div');el.id='ghManualNotice';el.setAttribute('role','status');
+ el.textContent='✓ Společná data znovu načtena';
+ Object.assign(el.style,{position:'fixed',bottom:'54px',left:'12px',maxWidth:'calc(100vw - 24px)',padding:'9px 12px',borderRadius:'8px',background:'#23395d',color:'#9be3a5',font:'600 13px Arial,sans-serif',boxShadow:'0 3px 12px #0005',zIndex:'2001',pointerEvents:'none'});
+ document.body.append(el);setTimeout(()=>{if(el.isConnected)el.remove()},3500);
+}
+async function refresh(manual=false){
+ const syncOk=()=>{status('GitHub: data synchronizována');if(manual)manualRefreshConfirmed()};
  if(!connected||busy||conflicted)return;
  if(dirty){await flush();if(dirty||!connected)return}
  busy=true;
@@ -167,15 +175,15 @@ async function refresh(){
   const r=await remote();if(!r)throw Error('Společná data chybí.');
   if(r.sha!==sha){
    const local=app.getState();
-   if(json(local)===json(r.state)){sha=r.sha;setBaseline(r.state);markPending(false);status('GitHub: data synchronizována');return;}
+   if(json(local)===json(r.state)){sha=r.sha;setBaseline(r.state);markPending(false);syncOk();return;}
    if(dirty||json(local)!==baseline){
     markPending(true);conflicted=true;connected=false;controls();status('GitHub: konflikt místních změn. Data nebyla přepsána.',true);return;
    }
    // Před aplikací dat ověřujeme, že stav se od začátku kontroly nezměnil.
    if(dirty||json(app.getState())!==json(local)){markPending(true);conflicted=true;connected=false;controls();status('GitHub: během načítání vznikly místní změny. Data zachována.',true);return}
-   app.applyState(r.state);sha=r.sha;setBaseline(r.state);status('GitHub: data synchronizována');
+   app.applyState(r.state);sha=r.sha;setBaseline(r.state);syncOk();
   }else if(json(app.getState())!==baseline){markPending(true);status('GitHub: místní změny čekají na odeslání…');clearTimeout(timer);timer=setTimeout(flush,1200)}
-  else status('GitHub: data synchronizována');
+  else syncOk();
  }catch(e){status('GitHub: nelze zkontrolovat spojení; místní data zachována ('+e.message+')',true)}
  finally{busy=false}
 }
@@ -189,7 +197,7 @@ function start(a){
   if(!token){const t=prompt('Vlož GitHub fine-grained token pro repozitář jerry00769/jidelnicky.\nToken nikomu neposílej.');if(!t)return;token=t.trim();localStorage.setItem(tokenKey,token)}
   connect()
  };
- $('ghRefresh').onclick=refresh;$('ghDisconnect').onclick=disconnect;const resolver=$('ghResolve');if(resolver)resolver.onclick=resolveConflict;
+ $('ghRefresh').onclick=()=>refresh(true);$('ghDisconnect').onclick=disconnect;const resolver=$('ghResolve');if(resolver)resolver.onclick=resolveConflict;
  controls();const initialSync=token?connect():Promise.resolve();
  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&connected){if(dirty)flush();else refresh()}});
  window.addEventListener('online',()=>{if(connected){if(dirty)flush();else refresh()}else if(token&&!busy&&!conflicted)connect()});
