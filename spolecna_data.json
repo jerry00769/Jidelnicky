@@ -266,41 +266,41 @@
       "days": [
         {
           "closed": false,
-          "soup": "zeleninová s těstovinami",
-          "main": "Rybí stripsy, Brambory",
+          "soup": "zelenin. s pohankou",
+          "main": "Smažené rybí prsty, Brambory m.m.",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "z míchaných luštěnin",
-          "main": "Těstoviny se sýrovou omáčkou",
-          "category": "BEZMASÁ SLANÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "krupicová s vejcem",
-          "main": "Mexická pánev (vepř.maso, fazole) se sýrem, Chléb",
-          "category": "LUŠTĚNINOVÁ",
-          "main2": "",
-          "category2": ""
-        },
-        {
-          "closed": false,
-          "soup": "hrachová",
-          "main": "Sekaná pečeně, Brambory",
+          "soup": "špenátová",
+          "main": "Sekaná zahradnická, Brambory",
           "category": "MLETÉ MASO A ZAPÉKANÉ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "špenátová",
-          "main": "Lotrinské tagliatelle se sýrem",
+          "soup": "zelenin. s ovesnými vločkami",
+          "main": "Domácí buchty plněné mákem, povidly, tvarohem",
           "category": "BEZMASÁ SLANÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "hovězí s těstovinou",
+          "main": "Fazole a la Katův šleh, Chléb",
+          "category": "LUŠTĚNINOVÁ",
+          "main2": "",
+          "category2": ""
+        },
+        {
+          "closed": false,
+          "soup": "vývar s drobením",
+          "main": "Rybí filé pečené na másle, Brambory",
+          "category": "RYBY",
           "main2": "",
           "category2": ""
         }
