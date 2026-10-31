@@ -266,25 +266,25 @@
       "days": [
         {
           "closed": false,
-          "soup": "zelenin. s kroupami",
-          "main": "Hejk pečený na bylinkovém másle, Brambory",
+          "soup": "rajčatová s tarhoňou",
+          "main": "Rybí filé zapečené se špenátem, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "Špenátová s vajíčkem",
-          "main": "Rizoto srbské",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "hovězí s jáhly",
+          "main": "Hrachová kaše s cibulkou, Párky",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "bramborová",
-          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "koprová (kulajda)",
+          "main": "Džuveč, Chléb",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
@@ -298,9 +298,9 @@
         },
         {
           "closed": false,
-          "soup": "zelenin. s pohankou",
-          "main": "Karbanátky pečené, Bramborová kaše",
-          "category": "MLETÉ MASO A ZAPÉKANÉ",
+          "soup": "pórková",
+          "main": "Dukátové buchtičky s krémem, Kakao",
+          "category": "SLADKÁ",
           "main2": "",
           "category2": ""
         }
