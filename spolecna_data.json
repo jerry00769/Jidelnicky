@@ -266,24 +266,24 @@
       "days": [
         {
           "closed": false,
-          "soup": "z batátových brambor",
-          "main": "Těstoviny penne s tuňákem a chery rajčaty",
+          "soup": "zelenin. s kroupami",
+          "main": "Hejk pečený na bylinkovém másle, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "dýňový krém",
-          "main": "Knedlíky švestkové (bramborové) s mákem",
-          "category": "SLADKÁ",
+          "soup": "Špenátová s vajíčkem",
+          "main": "Rizoto srbské",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s kapustou a rýží",
-          "main": "Kuřecí stehna pečená se zel.fazolkami a kroupami",
+          "soup": "bramborová",
+          "main": "Vepřová pečeně, Fazolové lusky na slanině, Brambory",
           "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
@@ -298,9 +298,9 @@
         },
         {
           "closed": false,
-          "soup": "rajčatová s těstovinou",
-          "main": "Těstoviny se sýrovou omáčkou",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "zelenin. s pohankou",
+          "main": "Karbanátky pečené, Bramborová kaše",
+          "category": "MLETÉ MASO A ZAPÉKANÉ",
           "main2": "",
           "category2": ""
         }
