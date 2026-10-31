@@ -266,25 +266,25 @@
       "days": [
         {
           "closed": false,
-          "soup": "rajčatová s tarhoňou",
-          "main": "Rybí filé zapečené se špenátem, Brambory",
+          "soup": "z míchaných luštěnin",
+          "main": "Tilápie s rajčaty a sýrem, Brambory",
           "category": "RYBY",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "hovězí s jáhly",
-          "main": "Hrachová kaše s cibulkou, Párky",
-          "category": "LUŠTĚNINOVÁ",
+          "soup": "hrachová se smaženým hráškem",
+          "main": "Pekingská směs, Rýže dušená",
+          "category": "BEZMASÁ SLANÁ",
           "main2": "",
           "category2": ""
         },
         {
           "closed": false,
-          "soup": "koprová (kulajda)",
-          "main": "Džuveč, Chléb",
-          "category": "BEZMASÁ SLANÁ",
+          "soup": "zeleninová s těstovinovou",
+          "main": "Těstovinový salát s cizrnou a sušenými rajčaty",
+          "category": "LUŠTĚNINOVÁ",
           "main2": "",
           "category2": ""
         },
@@ -298,8 +298,8 @@
         },
         {
           "closed": false,
-          "soup": "pórková",
-          "main": "Dukátové buchtičky s krémem, Kakao",
+          "soup": "hovězí se strouháním",
+          "main": "Nudle s mákem",
           "category": "SLADKÁ",
           "main2": "",
           "category2": ""
